@@ -77,6 +77,10 @@
                             <i class="bi bi-person-lines-fill text-yellow-400 text-xl"></i>
                             <a href="{{route('admin.contact.list')}}" class="text-[#eee] font-medium text-lg">Contact List</a>
                         </li>
+                       <li class="flex items-center gap-3 hover:bg-gray-700 p-2 rounded transition duration-300 mt-2 hover:border-r-8 border-yellow-500">
+                            <i class="bi bi-person-lines-fill text-yellow-400 text-xl"></i>
+                            <a href="{{route('banner.create')}}" class="text-[#eee] font-medium text-lg">Banner</a>
+                        </li>
                        
                     </ul>
                 </div>
