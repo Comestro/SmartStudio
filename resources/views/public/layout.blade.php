@@ -140,7 +140,7 @@
                     </div>
                     <div class="flex justify-between items-center w-full">
                         <a href="{{ route('category.view') }}"
-                            class="text-white text-lg bg-red-600 px-3 py-1 rounded">Book Now -></a>
+                            class="text-black text-lg bg-yellow-400 px-3 py-1 rounded">Book Now -></a>
                         <i class="bi bi-caret-left-fill text-white text-2xl"></i>
                     </div>
                 </div>
