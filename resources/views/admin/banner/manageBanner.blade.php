@@ -36,7 +36,13 @@
                     </td>
                     <td class="px-4 py-2 border-b border-gray-200 text-sm text-gray-600">
                         <a href="#" class="text-blue-500 hover:underline">Edit</a>
-                        <a href="#" class="text-red-500 hover:underline ml-2">Delete</a>
+                        {{-- <a href="#" >Delete</a> --}}
+                        <form action="{{ route('banner.delete', $banner->id) }}"
+                            method="GET"
+                            onsubmit="return confirm('Are you sure you want to delete this category?');">
+                            @csrf
+                            <button type="submit"  class="text-red-500 hover:underline ml-2">Delete</button>
+                        </form>
                     </td>
                 </tr>
                 @endforeach
