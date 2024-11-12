@@ -10,7 +10,7 @@ class CallingBanner extends Component
     public $backgroundImage;
     public function mount()
     {
-        $this->backgroundImage = session('background_image', 'https://img.freepik.com/premium-photo/beautiful-female-model-posing-studio-light-flashes_382934-4673.jpg');
+        $this->backgroundImage = session('background_image', $this->getDefaultImage());
     }
 
     public function updateBackgroundImage($image)
@@ -18,6 +18,17 @@ class CallingBanner extends Component
         session()->put('background_image', $image);
 
         $this->backgroundImage = $image;
+    }
+
+    public function getDefaultImage()
+    {
+        $banner = Banner::where('status', 1)->first();
+
+        if (!$banner) {
+            return 'https://img.freepik.com/premium-photo/beautiful-female-model-posing-studio-light-flashes_382934-4673.jpg';
+        }
+
+        return asset('images/' . $banner->b_image);
     }
     public function render()
     {
