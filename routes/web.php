@@ -6,6 +6,7 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\BannerController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\contactController;
 
@@ -71,14 +72,17 @@ Route::prefix('admin')->group(function () {
         Route::get('/dashboard', function () {
             return view('admin.dashboard');
         })->name('dashboard');
-        Route::get('/gallery', function () {
-            return view('admin.gallery');
-        })->name('gallery');
+       
         // category
         Route::controller(CategoryController::class)->prefix('category')->group(function () {
             Route::match(['get', 'post'], '/', 'manageCategory')->name('category');
 
             Route::get('/delete/{id}', 'deleteCategory')->name('category.delete');
+        });
+         // gallery
+         Route::controller(GalleryController::class)->prefix('gallery')->group(function(){
+           
+            Route::match(["get","post"],"/insert","manageGallery")->name("gallery.manageGallery");
         });
 
         // contact

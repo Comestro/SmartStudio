@@ -107,7 +107,7 @@
                             </summary>
                             <ul class="pl-8">
                                 <li class="flex items-center gap-3 hover:bg-gray-700 p-2 rounded transition duration-300">
-                                    <a href="{{route('gallery')}}" class="text-[#eee] font-medium text-md">Add Gallery</a>
+                                    <a href="{{route('gallery.manageGallery')}}" class="text-[#eee] font-medium text-md">Add Gallery</a>
                                 </li>
                                 <li class="flex items-center gap-3 hover:bg-gray-700 p-2 rounded transition duration-300">
                                     <a href="" class="text-[#eee] font-medium text-md">Manage Gallery</a>
