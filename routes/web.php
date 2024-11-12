@@ -4,7 +4,9 @@ use App\Http\Controllers\BookingController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\BannerController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\contactController;
 
@@ -47,17 +49,16 @@ Route::post('/login', [LoginController::class, 'login'])->name('login.submit');
 // Register Routes
 Route::get('/register', [RegisterController::class, 'signupform'])->name('register');
 Route::post('/register', [RegisterController::class, 'register'])->name('register.submit');
-Route::get('/booking',[BookingController::class,'index'])->name('category.view');
-Route::get('/booking/{category}',function($category){
-    $data['categorySlug']=$category;
-    return view('public.insertForm',$data);
+Route::get('/booking', [BookingController::class, 'index'])->name('category.view');
+Route::get('/booking/{category}', function ($category) {
+    $data['categorySlug'] = $category;
+    return view('public.insertForm', $data);
 })->name('category.name');
 
-Route::post('/booking/{category}',[BookingController::class,'store'])->name('category.store');
-Route::get('admin/checkschedule',[BookingController::class,'showBooking'])->name('booking.show');
+Route::post('/booking/{category}', [BookingController::class, 'store'])->name('category.store');
+Route::get('admin/checkschedule', [BookingController::class, 'showBooking'])->name('booking.show');
 
 
-// Logout Route
 
 
 
@@ -71,22 +72,33 @@ Route::prefix('admin')->group(function () {
         Route::get('/dashboard', function () {
             return view('admin.dashboard');
         })->name('dashboard');
-        Route::get('/gallery', function () {
-            return view('admin.gallery');
-        })->name('gallery');
+       
         // category
         Route::controller(CategoryController::class)->prefix('category')->group(function () {
             Route::match(['get', 'post'], '/', 'manageCategory')->name('category');
-            
+
             Route::get('/delete/{id}', 'deleteCategory')->name('category.delete');
         });
-        // gallery
+         // gallery
+         Route::controller(GalleryController::class)->prefix('gallery')->group(function(){
+           
+            Route::match(["get","post"],"/insert","manageGallery")->name("gallery.insertGallery");
+            Route::get("/managegallery","manageGallery")->name("gallery.manageGallery");
+            Route::get('/delete/{id}', 'deleteGallery')->name('gallery.delete');
+        });
 
         // contact
         Route::get('/contact-list', [ContactController::class, 'ManageContact'])->name('admin.contact.list');
+
+        Route::get('/banner/create', [BannerController::class, 'create'])->name('banner.create');
+        Route::post('/banner/store', [BannerController::class, 'store'])->name('banner.store');
+        Route::get('/banners', [BannerController::class, 'index'])->name('admin.banners.index');
+        Route::post('/banner/{id}/toggle-status', [BannerController::class, 'toggleStatus'])->name('admin.banner.toggleStatus');
+        Route::get('/delete/{id}', [BannerController::class, 'destroy'])->name('banner.delete');
+
+
 
     });
 });
 
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
-
