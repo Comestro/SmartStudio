@@ -8,6 +8,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css"
         rel="stylesheet">
+        @livewireStyles
 
         @livewireStyles
 
@@ -201,7 +202,10 @@
                 </div>
             </div>
         </div>
+<<<<<<< HEAD
 
+=======
+>>>>>>> b65c0b96a18b37650cc4951342853be67b5a7f17
         @livewireScripts
 </body>
 
