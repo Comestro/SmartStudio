@@ -8,6 +8,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css"
         rel="stylesheet">
+        @livewireStyles
 
     <style>
         .gallery {
@@ -199,6 +200,7 @@
                 </div>
             </div>
         </div>
+        @livewireScripts
 </body>
 
 </html>

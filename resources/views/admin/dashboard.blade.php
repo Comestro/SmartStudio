@@ -48,24 +48,8 @@
               </div>
           </div>
       </div>
-      <!-- <div class="w-full md:w-1/3 h-auto flex justify-center items-center gap-2">
-          <div class="w-full md:w-24 h-10 bg-gray-500 rounded-lg flex items-center justify-center text-center p-2">
-              <form action="{{ route('logout') }}" method="POST">
-                  @csrf
-                  <button type="submit" class=" text-base font-semibold text-[#eee] px-4 py-2 rounded flex item-center justify-center">
-                      <img width="24" height="24" src="https://img.icons8.com/sf-black/64/FFFFFF/exit.png" alt="exit" class="ml-1"/>
-                      Logout
-                  </button>
-              </form>
-             
-          </div>
-           <div class="w-12 h-12  rounded-full flex items-center justify-center">
-              <img src="https://pics.craiyon.com/2023-11-26/oMNPpACzTtO5OVERUZwh3Q.webp" class="rounded-full" alt=""/>
-          </div> 
-      </div> -->
-
       <div class="absolute right-4 top-4 w-full md:w-auto h-auto flex items-center gap-2">
-    <!-- Logout Button -->
+   
     <div class="w-full md:w-24 h-10 rounded-lg flex items-center justify-center text-center">
     <form action="{{ route('logout') }}" method="POST" class="w-full">
     @csrf
