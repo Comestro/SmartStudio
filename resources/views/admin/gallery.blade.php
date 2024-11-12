@@ -44,63 +44,71 @@
             </div>
         </div>
     </div>
-
-
-    {{-- Dashboard --}}
-
-
     <div class="flex justify-center item-center">
 
 
 
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+        <div class="grid grid-cols-1 lg:grid-cols-1 gap-10">
 
             {{-- category form --}}
             <div class="bg-gray-800 p-8 rounded-lg shadow-lg">
-                <h2 class="text-2xl font-semibold mb-6">Add New Category</h2>
-                <form class="space-y-4" {{ route('category') }} method="POST" enctype="multipart/form-data">
+                <h2 class="text-2xl font-semibold mb-6">Add New Images</h2>
+                <form class="space-y-4" action="{{ route('gallery.manageGallery') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div>
-                        {{-- Category-Name --}}
-                        <label for="category-name" class="block text-sm font-medium">Category Name</label>
-                        <input type="text" id="" name="cat_name" value="{{ old('cat_name') }}"
+                        {{-- img-Name --}}
+                        <label for="" class="block text-sm font-medium">Image Name</label>
+                        <input type="text" id="" name="gallery_title" value="{{ old('gallery_title') }}"
                             placeholder="Enter category name"
                             class="w-full p-3 mt-2 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500">
-                        @error('cat_name')
+                        @error('gallery_title')
                             <p class="text-sm text-red-500">{{ $message }}</p>
                         @enderror
                     </div>
-                    {{-- Category-slug --}}
                     <div>
-                        <label for="category-slug" class="block text-sm font-medium">Category slug</label>
-                        <input type="text" id="" name="cat_slug" value="{{ old('cat_slug') }}"
+                        {{-- img-Name --}}
+                        <label for="" class="block text-sm font-medium">category Name</label>
+                        <select name="category_id" class="w-full p-3 mt-2 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                            <option>Select category here</option>
+                            @foreach ($categories as $item)
+                            <option value="{{$item->id}}">{{$item->cat_name}}</option>
+                            @endforeach
+                        </select>
+                        @error('category_id')
+                            <p class="text-sm text-red-500">{{ $message }}</p>
+                        @enderror
+                    </div>
+                    {{-- gallery-slug --}}
+                    <div>
+                        <label for="" class="block text-sm font-medium"> slug</label>
+                        <input type="text" id="" name="slug" value="{{ old('slug') }}"
                             placeholder="Enter category slug"
                             class="w-full p-3 mt-2 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500">
-                        @error('cat_slug')
+                        @error('slug')
                             <p class="text-sm text-red-500">{{ $message }}</p>
                         @enderror
                     </div>
 
-                    {{-- Category-description --}}
+                    {{-- gallery-content --}}
                     <div>
-                        <label for="category-description" class="block text-sm font-medium">Category
-                            description</label>
-                        <input type="text" id="" name="cat_description"
-                            value="{{ old('cat_description') }}" placeholder="Enter category description"
+                        <label for="" class="block text-sm font-medium">content
+                            </label>
+                        <input type="text" id="" name="content"
+                            value="{{ old('content') }}" placeholder="Enter category description"
                             class="w-full p-3 mt-2 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500">
-                        @error('cat_description')
+                        @error('content')
                             <p class="text-sm text-red-500">{{ $message }}</p>
                         @enderror
                     </div>
-                    {{-- Category_image --}}
+                    {{-- gallery_img --}}
                     <div>
-                        <label for="category-image" class="block text-sm font-medium">Category image</label>
-                        <input type="file" id="" name="cat_image"  value="{{ old('cat_image') }}" 
+                        <label for="" class="block text-sm font-medium">Gallery image</label>
+                        <input type="file" id="" name="images[]"  
                             placeholder="Enter category image"
                             class="w-full p-3 mt-2 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500">
-                        @error('cat_image')
+                        {{-- @error('img')
                             <p class="text-sm text-red-500">{{ $message }}</p>
-                        @enderror
+                        @enderror --}}
                     </div>
                     <button type="submit"
                         class="w-full bg-indigo-600 text-white font-semibold py-3 rounded-lg hover:bg-indigo-700">Add
