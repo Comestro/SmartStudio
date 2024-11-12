@@ -8,8 +8,6 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css"
         rel="stylesheet">
-        @livewireStyles
-
     <style>
         .gallery {
             width: 85vw;
@@ -81,6 +79,7 @@
             }
         }
     </style>
+    @livewireStyles
 </head>
 
 <body class="bg-white min-h-screen">

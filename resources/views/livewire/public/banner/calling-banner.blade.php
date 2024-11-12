@@ -1,8 +1,5 @@
 <div>
 
-
-
-
     <img d="background-image" src="{{ $backgroundImage }}"
         alt="Fullscreen Image" class="object-cover w-full h-full">
 
