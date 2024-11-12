@@ -53,4 +53,11 @@ class GalleryController extends Controller
 
         return view("admin.gallery", $data);
     }
+    public function deleteGallery($id)
+    {
+        $gallery = Gallery::findOrFail($id);
+        $gallery->delete();
+    
+        return redirect()->route('gallery.manageGallery')->with('msg', 'Gallery deleted successfully!');
+    }
 }

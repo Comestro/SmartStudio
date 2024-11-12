@@ -66,7 +66,20 @@
                                 <a href="{{route('category')}}" class="text-[#eee] font-medium text-lg">Category</a>
                             </summary>
                         </details>
-        
+                        <details class="mt-2">
+                            <summary class="flex items-center gap-3 cursor-pointer hover:bg-gray-700 hover:border-r-8 border-yellow-500 p-2 rounded transition duration-300">
+                                <i class="bi bi-person-circle text-yellow-400 text-xl"></i>
+                                <span class="text-[#eee] font-medium text-lg">Gallery</span>
+                            </summary>
+                            <ul class="pl-8">
+                                <li class="flex items-center gap-3 hover:bg-gray-700 p-2 rounded transition duration-300">
+                                    <a href="{{route('gallery.insertGallery')}}" class="text-[#eee] font-medium text-md">Add Gallery</a>
+                                </li>
+                                <li class="flex items-center gap-3 hover:bg-gray-700 p-2 rounded transition duration-300">
+                                    <a href="{{route('gallery.manageGallery')}}" class="text-[#eee] font-medium text-md">Manage Gallery</a>
+                                </li>
+                            </ul>
+                        </details>
                         
                         <li class="flex items-center gap-3 hover:bg-gray-700 p-2 rounded transition duration-300 mt-2 hover:border-r-8 border-yellow-500">
                             <i class="bi bi-gear text-yellow-400 text-xl"></i>

@@ -1,36 +1,6 @@
 @extends('admin.adminBase')
 @section('content')
- <style>
-        .bar-chart {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-end;
-            height: 200px;
-            padding: 0 20px 0 20px;
-        }
-
-        .bar {
-            width: 10%;
-            background-color: #e3dd2b;
-            display: flex;
-            justify-content: center;
-            align-items: flex-end;
-            transition: background-color 0.3s;
-        }
-
-        .bar:hover {
-            background-color: #6e7818;
-        }
-
-        .bar span {
-            writing-mode: vertical-rl;
-            transform: rotate(270deg);
-            padding: 5px;
-            color: white;
-            font-size: 14px;
-        }
-        
-    </style>  
+ 
 <div class="w-[80%] h-auto bg-black">
   {{-- nav --}}
   <div class="w-full h-auto bg-[#2f363e] flex flex-col md:flex-row items-center p-4">
