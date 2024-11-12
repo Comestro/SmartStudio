@@ -77,6 +77,7 @@
                             <i class="bi bi-person-lines-fill text-yellow-400 text-xl"></i>
                             <a href="{{route('admin.contact.list')}}" class="text-[#eee] font-medium text-lg">Contact List</a>
                         </li>
+                       
                     </ul>
                 </div>
             </div>
