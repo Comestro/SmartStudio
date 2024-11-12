@@ -10,6 +10,8 @@
         rel="stylesheet">
         @livewireStyles
 
+        @livewireStyles
+
     <style>
         .gallery {
             width: 85vw;
@@ -200,6 +202,10 @@
                 </div>
             </div>
         </div>
+<<<<<<< HEAD
+
+=======
+>>>>>>> b65c0b96a18b37650cc4951342853be67b5a7f17
         @livewireScripts
 </body>
 
