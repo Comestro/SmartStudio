@@ -123,6 +123,10 @@
                             <img width="24" height="24" src="https://img.icons8.com/ios-filled/50/eeeeee/settings.png" alt="settings" />
                             <a href="{{route('admin.contact.list')}}" class="text-[#eee] font-medium text-lg">Contact List</a>
                         </li>
+                       <li class="flex items-center gap-3 hover:bg-gray-700 p-2 rounded transition duration-300 mt-2 hover:border-r-8 border-yellow-500">
+                            <img width="24" height="24" src="https://img.icons8.com/ios-filled/50/eeeeee/settings.png" alt="settings" />
+                            <a href="{{url('admin/banner/create')}}" class="text-[#eee] font-medium text-lg">Banner </a>
+                        </li>
                        
                     </ul>
                 </div>
