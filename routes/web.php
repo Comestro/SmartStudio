@@ -9,6 +9,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\contactController;
+use App\Http\Controllers\YoutubeVideoController;
 
 use function Pest\Laravel\post;
 
@@ -94,6 +95,7 @@ Route::prefix('admin')->group(function () {
         Route::post('/banner/{id}/toggle-status', [BannerController::class, 'toggleStatus'])->name('admin.banner.toggleStatus');
         Route::get('/delete/{id}', [BannerController::class, 'destroy'])->name('banner.delete');
 
+        Route::resource('youtube-videos', YoutubeVideoController::class);
 
 
     });
