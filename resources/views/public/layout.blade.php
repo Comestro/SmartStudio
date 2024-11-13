@@ -82,7 +82,7 @@
     @livewireStyles
 </head>
 
-<body class="bg-white min-h-screen">
+<body class="bg-black min-h-screen">
     <div class="h-180 flex flex-col md:flex-row">
         <aside class="flex-shrink-0 w-full md:w-1/4 bg-black text-white p-6 flex flex-col items-center">
             <img src="https://tse2.mm.bing.net/th?id=OIP.tEQ4HAiipGQ6oKYkdUGS8QHaHa&pid=Api&P=0&h=180" alt="Logo"
@@ -140,6 +140,11 @@
                         <i class="bi bi-caret-left-fill text-white text-2xl"></i>
                     </div>
                     <div class="flex justify-between items-center w-full">
+                        <a href="{{ route('budget.index') }}"
+                            class="text-white text-lg hover:text-yellow-500">Budget For Your Event</a>
+                        <i class="bi bi-caret-left-fill text-white text-2xl"></i>
+                    </div>
+                    <div class="flex justify-between items-center w-full">
                         <a href="{{ route('category.view') }}"
                             class="text-black text-lg bg-yellow-400 px-3 py-1 rounded">Book Now -></a>
                         <i class="bi bi-caret-left-fill text-white text-2xl"></i>
@@ -160,49 +165,51 @@
         </aside>
 
 
+<div class="flex h-screen w-full justify-between flex-col">
+    
+@section('content')
 
-        @section('content')
+@show
+<div>
+    <div class="flex flex-col md:flex-row bg-black mb-10 text-white p-8 gap-4 justify-between mt-4">
+    <div class="flex flex-col items-start md:w-1/4">
+        <img src="https://tse2.mm.bing.net/th?id=OIP.tEQ4HAiipGQ6oKYkdUGS8QHaHa&pid=Api&P=0&h=180"
+            alt="Logo" class="rounded-full w-24 h-24 object-cover mb-4">
+        <p class="text-white"> We provide exceptional photography services that capture your moments
+            beautifully.
+        </p>
+    </div>
 
-        @show
-        <div class="flex flex-col md:flex-row bg-black text-white p-8 gap-4 justify-between mt-4">
-            <div class="flex flex-col items-start md:w-1/4">
-                <img src="https://tse2.mm.bing.net/th?id=OIP.tEQ4HAiipGQ6oKYkdUGS8QHaHa&pid=Api&P=0&h=180"
-                    alt="Logo" class="rounded-full w-24 h-24 object-cover mb-4">
-                <p class="text-white"> We provide exceptional photography services that capture your moments
-                    beautifully.
-                </p>
-            </div>
 
-
-            <div class="flex flex-col items-center md:w-1/2">
-                <h1 class="text-white text-2xl mb-2">INSTA GALLERY</h1>
-                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2 mt-2">
-                    <img src="https://tse1.mm.bing.net/th?id=OIP.J0EyMPxp69oUBURsRtCqEwHaE7&pid=Api&P=0&h=180"
-                        alt="Image 1" class="w-24 h-24 object-cover rounded-md">
-                    <img src="https://tse2.mm.bing.net/th?id=OIP.n1Ft5hFRPdgmYJQO-Fz3HgHaEK&pid=Api&P=0&h=180"
-                        alt="Image 2" class="w-24 h-24 object-cover rounded-md">
-                    <img src="https://tse1.mm.bing.net/th?id=OIP.ZAzbO8SsQk5J40oI55OAIAHaE7&pid=Api&P=0&h=180"
-                        alt="Image 3" class="w-24 h-24 object-cover rounded-md">
-                    <img src="https://tse2.mm.bing.net/th?id=OIP.49hIyMLKW4_HMjUK_PBZlQHaFD&pid=Api&P=0&h=180"
-                        alt="Image 4" class="w-24 h-24 object-cover rounded-md">
-                </div>
-            </div>
-
-            <div class="flex flex-col items-start md:w-1/4">
-                <h1 class="text-yellow-600 text-2xl mb-2">CONTACT</h1>
-                <p>Phone: 9546784398</p>
-                <p>Email: smartstudio@gmail.com</p>
-                <div class="flex justify-center space-x-4 mt-4">
-                    <i class="bi bi-facebook text-2xl text-yellow-500"></i>
-                    <i class="bi bi-twitter text-2xl text-yellow-500"></i>
-                    <i class="bi bi-instagram text-2xl text-yellow-500"></i>
-                </div>
-            </div>
+    <div class="flex flex-col items-center md:w-1/2">
+        <h1 class="text-white text-2xl mb-2">INSTA GALLERY</h1>
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2 mt-2">
+            <img src="https://tse1.mm.bing.net/th?id=OIP.J0EyMPxp69oUBURsRtCqEwHaE7&pid=Api&P=0&h=180"
+                alt="Image 1" class="w-24 h-24 object-cover rounded-md">
+            <img src="https://tse2.mm.bing.net/th?id=OIP.n1Ft5hFRPdgmYJQO-Fz3HgHaEK&pid=Api&P=0&h=180"
+                alt="Image 2" class="w-24 h-24 object-cover rounded-md">
+            <img src="https://tse1.mm.bing.net/th?id=OIP.ZAzbO8SsQk5J40oI55OAIAHaE7&pid=Api&P=0&h=180"
+                alt="Image 3" class="w-24 h-24 object-cover rounded-md">
+            <img src="https://tse2.mm.bing.net/th?id=OIP.49hIyMLKW4_HMjUK_PBZlQHaFD&pid=Api&P=0&h=180"
+                alt="Image 4" class="w-24 h-24 object-cover rounded-md">
         </div>
-<<<<<<< HEAD
+    </div>
 
-=======
->>>>>>> b65c0b96a18b37650cc4951342853be67b5a7f17
+    <div class="flex flex-col items-start md:w-1/4">
+        <h1 class="text-yellow-600 text-2xl mb-2">CONTACT</h1>
+        <p>Phone: 9546784398</p>
+        <p>Email: smartstudio@gmail.com</p>
+        <div class="flex justify-center space-x-4 mt-4">
+            <i class="bi bi-facebook text-2xl text-yellow-500"></i>
+            <i class="bi bi-twitter text-2xl text-yellow-500"></i>
+            <i class="bi bi-instagram text-2xl text-yellow-500"></i>
+        </div>
+    </div>
+</div>
+</div>
+
+</div>
+
         @livewireScripts
 </body>
 
