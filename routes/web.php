@@ -37,6 +37,10 @@ Route::get('/contact', function () {
     return view('public.contact');
 })->name('contact');
 
+Route::get('/video', function () {
+    return view('public.video');
+})->name('video');
+
 Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
 
 

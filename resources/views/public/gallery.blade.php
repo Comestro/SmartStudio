@@ -2,7 +2,30 @@
 
 @section('content')
 </head>
+<style>
+      .gallery {
+            width: 85vw;
+            height: 60vmin;
+            display: flex;
+            gap: 10px;
+            margin: 0 auto;
+        }
 
+        .gallery img {
+            height: 100%;
+            flex: 1;
+            object-fit: cover;
+            overflow: hidden;
+            cursor: pointer;
+            border-radius: 10px;
+            transition: all 0.3s;
+        }
+
+        .gallery img:hover {
+            flex: 4;
+        }
+
+</style>
 <body class="bg-black roboto-medium">
     <div class="h-[80vh] bg-cover bg-center"
         style="background-image: url('https://th.bing.com/th/id/OIP.01e67CZXYANik5BUvlo0YgHaEJ?w=281&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7');">

@@ -86,7 +86,7 @@
           <textarea name="message" rows="5" placeholder="Your Message" required
                     class="w-full p-4 border border-gray-700 rounded-lg focus:outline-none focus:border-yellow-500"></textarea>
         </div>
-        <button type="submit" class="w-full bg-yellow-500 hover:bg-yellow-600 text-white py-3 rounded-lg font-semibold text-lg transition duration-300">
+        <button type="submit" class="w-full bg-gradient-to-r from-yellow-200 to-yellow-600 text-black py-3 rounded-lg font-semibold text-lg transition duration-300">
           Send Message
         </button>
       </form>
