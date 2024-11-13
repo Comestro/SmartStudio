@@ -76,13 +76,15 @@ Route::prefix('admin')->group(function () {
         // category
         Route::controller(CategoryController::class)->prefix('category')->group(function () {
             Route::match(['get', 'post'], '/', 'manageCategory')->name('category');
+            Route::get( '/editcategory/{id}', 'editCategory')->name('category.edit');
+            Route::put( '/editcategory/{id}', 'updateCategory')->name('category.update');
 
             Route::get('/delete/{id}', 'deleteCategory')->name('category.delete');
         });
          // gallery
          Route::controller(GalleryController::class)->prefix('gallery')->group(function(){
            
-            Route::match(["get","post"],"/insert","manageGallery")->name("gallery.insertGallery");
+            Route::match(["get","post"],"/insert","insertGallery")->name("gallery.insertGallery");
             Route::get("/managegallery","manageGallery")->name("gallery.manageGallery");
             Route::get('/delete/{id}', 'deleteGallery')->name('gallery.delete');
         });

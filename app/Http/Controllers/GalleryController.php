@@ -10,7 +10,7 @@ use Illuminate\Support\Str;
 
 class GalleryController extends Controller
 {
-    public function manageGallery(Request $request)
+    public function insertGallery(Request $request)
     {
         if ($request->isMethod('post')) {
             $request->validate([
@@ -52,6 +52,14 @@ class GalleryController extends Controller
         ];
 
         return view("admin.gallery", $data);
+    }
+    public function manageGallery(Request $request){
+        $data = [
+            'categories' => Category::all(),
+            'galleries' => Gallery::with('images')->get(),
+        ];
+
+        return view("admin.manageGallery", $data);
     }
     public function deleteGallery($id)
     {
