@@ -12,8 +12,7 @@ class YoutubeVideoController extends Controller
      */
     public function index()
     {
-        $data['videos']=youtubeVideo::all();
-        return view('admin.youtubeVideos.manageVideos',$data);
+
     }
 
     /**
@@ -41,7 +40,7 @@ class YoutubeVideoController extends Controller
     
             YoutubeVideo::create($request->all());
     
-            return redirect()->route('youtube-videos.index');
+            return redirect()->back();
             
         }
    
