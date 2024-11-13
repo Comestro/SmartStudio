@@ -94,6 +94,10 @@
                             <i class="bi bi-person-lines-fill text-yellow-400 text-xl"></i>
                             <a href="{{route('banner.create')}}" class="text-[#eee] font-medium text-lg">Banner</a>
                         </li>
+                        <li class="flex items-center gap-3 hover:bg-gray-700 p-2 rounded transition duration-300 mt-2 hover:border-r-8 border-yellow-500">
+                            <i class="bi bi-person-lines-fill text-yellow-400 text-xl"></i>
+                            <a href="{{ route('budget.show') }}" class="text-[#eee] font-medium text-lg">Budget Manager</a>
+                        </li>
                          <li class="flex items-center gap-3 hover:bg-gray-700 p-2 rounded transition duration-300 mt-2 hover:border-r-8 border-yellow-500">
                             <i class="bi bi-person-lines-fill text-yellow-400 text-xl"></i>
                             <a href="{{ route('youtube-videos.create') }}" class="text-[#eee] font-medium text-lg">youtubevideos</a>
