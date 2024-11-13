@@ -198,21 +198,21 @@
         </div>
     </div>
 
-    <div class="flex flex-col items-start md:w-1/4">
-        <h1 class="text-yellow-600 text-2xl mb-2">CONTACT</h1>
-        <p>Phone: 9546784398</p>
-        <p>Email: smartstudio@gmail.com</p>
-        <div class="flex justify-center space-x-4 mt-4">
-            <i class="bi bi-facebook text-2xl text-yellow-500"></i>
-            <i class="bi bi-twitter text-2xl text-yellow-500"></i>
-            <i class="bi bi-instagram text-2xl text-yellow-500"></i>
+            <div class="flex flex-col items-start md:w-1/4">
+                <h1 class="text-yellow-600 text-2xl mb-2">CONTACT</h1>
+                <p>Phone: 9546784398</p>
+                <p>Email: smartstudio@gmail.com</p>
+                <div class="flex justify-center space-x-4 mt-4">
+                    <i class="bi bi-facebook text-2xl text-yellow-500"></i>
+                    <i class="bi bi-twitter text-2xl text-yellow-500"></i>
+                    <i class="bi bi-instagram text-2xl text-yellow-500"></i>
+                </div>
+            </div>
         </div>
-    </div>
-</div>
-</div>
+<<<<<<< HEAD
 
-</div>
-
+=======
+>>>>>>> b65c0b96a18b37650cc4951342853be67b5a7f17
         @livewireScripts
 </body>
 
