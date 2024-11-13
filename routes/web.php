@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\BannerController;
+use App\Http\Controllers\BudgetController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\UserController;
@@ -81,16 +82,20 @@ Route::prefix('admin')->group(function () {
         // category
         Route::controller(CategoryController::class)->prefix('category')->group(function () {
             Route::match(['get', 'post'], '/', 'manageCategory')->name('category');
+            Route::get( '/editcategory/{id}', 'editCategory')->name('category.edit');
+            Route::put( '/editcategory/{id}', 'updateCategory')->name('category.update');
 
             Route::get('/delete/{id}', 'deleteCategory')->name('category.delete');
         });
          // gallery
          Route::controller(GalleryController::class)->prefix('gallery')->group(function(){
            
-            Route::match(["get","post"],"/insert","manageGallery")->name("gallery.insertGallery");
+            Route::match(["get","post"],"/insert","insertGallery")->name("gallery.insertGallery");
             Route::get("/managegallery","manageGallery")->name("gallery.manageGallery");
             Route::get('/delete/{id}', 'deleteGallery')->name('gallery.delete');
         });
+
+    
 
         // contact
         Route::get('/contact-list', [ContactController::class, 'ManageContact'])->name('admin.contact.list');
@@ -100,11 +105,12 @@ Route::prefix('admin')->group(function () {
         Route::get('/banners', [BannerController::class, 'index'])->name('admin.banners.index');
         Route::post('/banner/{id}/toggle-status', [BannerController::class, 'toggleStatus'])->name('admin.banner.toggleStatus');
         Route::get('/delete/{id}', [BannerController::class, 'destroy'])->name('banner.delete');
+ 
 
         Route::resource('youtube-videos', YoutubeVideoController::class);
 
 
     });
 });
-
+Route::get('/budget', [BudgetController::class, 'index'])->name('budget.index');
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
