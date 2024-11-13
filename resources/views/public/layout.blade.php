@@ -84,16 +84,16 @@
 
 <body class="bg-white min-h-screen">
     <div class="h-180 flex flex-col md:flex-row">
-        @include('public.sidebar')
+        @include('public.includes.sidebar')
 
 
         @section('content')
 
         @show
-
-        @include('public.footer')
-
     </div>
+        @include('public.includes.footer')
+
+    
 </body>
 @livewireScripts
 
