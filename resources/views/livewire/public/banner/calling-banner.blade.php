@@ -1,7 +1,10 @@
 <div>
 
+
+
+
     <img d="background-image" src="{{ $backgroundImage }}"
-        alt="Fullscreen Image" class="object-cover w-full h-full">
+        alt="Fullscreen Image" class="object-cover w-full h-450px">
 
     <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col text-center p-4">
         <h1 class="text-white text-5xl font-bold mb-2 mt-4 mr-5">
@@ -18,14 +21,7 @@
                 <img src="{{ asset('images/' . $item->b_image) }}" alt=""
                     class="rounded-full w-20 h-20 object-cover border-4 border-white" wire:click="updateBackgroundImage('{{ asset('images/' . $item->b_image) }}')">
             @endforeach
-            {{-- <img src="https://tse3.mm.bing.net/th?id=OIP.-EJgPfjS-OTfxc9DWMwmhgHaFX&pid=Api&P=0&h=180"
-            alt="Profile 3" class="rounded-full w-20 h-20 object-cover border-4 border-white">
-        <img src="https://tse4.mm.bing.net/th?id=OIP.xCkRjKlsBHgYoVEuUK1i3AHaFW&pid=Api&P=0&h=180"
-            alt="Profile 4" class="rounded-full w-20 h-20 object-cover border-4 border-white">
-        <img src="https://tse4.mm.bing.net/th?id=OIP.TnTfFbs8Nl4lgCLCUSzZ4wHaEh&pid=Api&P=0&h=180"
-            alt="Profile 5" class="rounded-full w-20 h-20 object-cover border-4 border-white">
-        <img src="https://tse2.mm.bing.net/th?id=OIP.1A-7GT9Kio_-Yaf1lqWXPAHaE8&pid=Api&P=0&h=180"
-            alt="Profile 6" class="rounded-full w-20 h-20 object-cover border-4 border-white"> --}}
+          
         </div>
     </div>
 </div>

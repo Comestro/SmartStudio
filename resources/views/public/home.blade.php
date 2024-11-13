@@ -274,13 +274,13 @@
     <div class="py-6"></div>
 
 
-    {{-- calender --}}
+    {{-- calender
     <div class="flex justify-center">
         <div class="bg-white shadow-lg rounded-lg overflow-hidden border border-gray-600">
             <iframe
                 src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=Asia%2FKolkata&showPrint=0&src=c2FyaXRhYWt1bWFyaTI0QGdtYWlsLmNvbQ&src=YWRkcmVzc2Jvb2sjY29udGFjdHNAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&src=ZW4uaW5kaWFuI2hvbGlkYXlAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&color=%23039BE5&color=%2333B679&color=%230B8043"
                 style="border:solid 1px #777" width="600" height="400" frameborder="0" scrolling="no"></iframe>
         </div>
-    </div>
+    </div> --}}
     <div class="py-6"></div>
 @endsection

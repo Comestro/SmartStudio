@@ -77,7 +77,7 @@
     }
   }
 
-  .animate-fadeIn {
+ .animate-fadeIn {
     animation: fadeIn 1.5s ease-in-out forwards;
   }
 
@@ -85,14 +85,14 @@
     animation: fadeIn 2s ease-in-out forwards;
   }
 
-  /* Gradient animation moving horizontally */
+ 
   .animate-gradientX {
     background-size: 200% 200%;
     animation: gradientX 3s ease infinite;
-  }
+  } 
 
-  /* Keyframes for animations */
-  @keyframes fadeIn {
+  
+ @keyframes fadeIn {
     from {
       opacity: 0;
       transform: translateY(10px);
@@ -101,7 +101,7 @@
       opacity: 1;
       transform: translateY(0);
     }
-  }
+  } 
 
   @keyframes gradientX {
     0% {
@@ -111,7 +111,7 @@
       background-position: 100% 50%;
     }
   }
-}
+
 </style>
 
 

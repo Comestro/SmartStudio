@@ -10,6 +10,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\contactController;
+use App\Http\Controllers\YoutubeVideoController;
 
 use function Pest\Laravel\post;
 
@@ -37,6 +38,10 @@ Route::get('/about', function () {
 Route::get('/contact', function () {
     return view('public.contact');
 })->name('contact');
+
+Route::get('/video', function () {
+    return view('public.video');
+})->name('video');
 
 Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
 
@@ -100,6 +105,7 @@ Route::prefix('admin')->group(function () {
         Route::get('/delete/{id}', [BannerController::class, 'destroy'])->name('banner.delete');
  
 
+        Route::resource('youtube-videos', YoutubeVideoController::class);
 
 
     });
