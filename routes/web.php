@@ -5,10 +5,12 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\BannerController;
+use App\Http\Controllers\BudgetController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\contactController;
+use App\Http\Controllers\YoutubeVideoController;
 
 use function Pest\Laravel\post;
 
@@ -36,6 +38,10 @@ Route::get('/about', function () {
 Route::get('/contact', function () {
     return view('public.contact');
 })->name('contact');
+
+Route::get('/video', function () {
+    return view('public.video');
+})->name('video');
 
 Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
 
@@ -89,6 +95,8 @@ Route::prefix('admin')->group(function () {
             Route::get('/delete/{id}', 'deleteGallery')->name('gallery.delete');
         });
 
+    
+
         // contact
         Route::get('/contact-list', [ContactController::class, 'ManageContact'])->name('admin.contact.list');
 
@@ -97,10 +105,12 @@ Route::prefix('admin')->group(function () {
         Route::get('/banners', [BannerController::class, 'index'])->name('admin.banners.index');
         Route::post('/banner/{id}/toggle-status', [BannerController::class, 'toggleStatus'])->name('admin.banner.toggleStatus');
         Route::get('/delete/{id}', [BannerController::class, 'destroy'])->name('banner.delete');
+ 
 
+        Route::resource('youtube-videos', YoutubeVideoController::class);
 
 
     });
 });
-
+Route::get('/budget', [BudgetController::class, 'index'])->name('budget.index');
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');

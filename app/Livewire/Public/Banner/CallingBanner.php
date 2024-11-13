@@ -24,7 +24,7 @@ class CallingBanner extends Component
     {
         $banner = Banner::where('status', 1)->first();
 
-        if (!$banner) {
+        if (!$banner){
             return 'https://img.freepik.com/premium-photo/beautiful-female-model-posing-studio-light-flashes_382934-4673.jpg';
         }
 

@@ -32,7 +32,7 @@ class BannerController extends Controller
         if ($request->isMethod('post')) {
             $request->validate([
                 'b_name' => 'required',
-                'b_image' => 'required|image|mimes:jpeg,png,jpg,svg',
+                'b_image' => 'required|image|mimes:jpeg,png,jpg,svg,avif',
                 'status' => 'required|string'
             ]);
 
