@@ -1,6 +1,10 @@
 <div>
+
+
+
+
     <img d="background-image" src="{{ $backgroundImage }}"
-        alt="Fullscreen Image" class="object-cover w-full h-full">
+        alt="Fullscreen Image" class="object-cover w-full h-450px">
 
     <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col text-center p-4">
         <h1 class="text-white text-5xl font-bold mb-2 mt-4 mr-5">

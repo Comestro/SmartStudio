@@ -2,8 +2,7 @@
 
 @section('content')
     <main class="relative w-full md:w-3/4 h-180">
-        <livewire:public.banner.calling-banner />
-
+    <livewire:public.banner.calling-banner/>
     </main>
 
     </div>

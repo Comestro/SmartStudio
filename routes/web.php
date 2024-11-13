@@ -38,6 +38,10 @@ Route::get('/contact', function () {
     return view('public.contact');
 })->name('contact');
 
+Route::get('/video', function () {
+    return view('public.video');
+})->name('video');
+
 Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
 
 
@@ -83,7 +87,9 @@ Route::prefix('admin')->group(function () {
          // gallery
          Route::controller(GalleryController::class)->prefix('gallery')->group(function(){
            
-            Route::match(["get","post"],"/insert","manageGallery")->name("gallery.manageGallery");
+            Route::match(["get","post"],"/insert","manageGallery")->name("gallery.insertGallery");
+            Route::get("/managegallery","manageGallery")->name("gallery.manageGallery");
+            Route::get('/delete/{id}', 'deleteGallery')->name('gallery.delete');
         });
 
         // contact
