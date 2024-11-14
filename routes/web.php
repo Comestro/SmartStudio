@@ -97,7 +97,7 @@ Route::prefix('admin')->group(function () {
             Route::get("/viewgallery/{id}","viewGallery")->name("gallery.viewGallery");
             Route::get( '/editgallery/{id}', 'editGallery')->name('gallery.edit');
             Route::put( '/editgallery/{id}', 'updateGallery')->name('gallery.update');
-            Route::get('/delete/{id}', 'deleteGallery')->name('gallery.delete');
+            Route::delete('/trash/{id}','trashGallery')->name('gallery.trash');
 
             Route::delete('/delete-image/{imageId}', 'deleteImage')->name('gallery.deleteImage');
         });

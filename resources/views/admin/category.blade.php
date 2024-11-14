@@ -122,7 +122,7 @@
                         <td class="px-4 md:px-6 py-3 flex justify-center gap-2">
                             <a href="{{route('category.edit', $item->id)}}" class="bg-blue-500 text-white px-3 py-1 rounded hover:bg-blue-600 transition duration-300">Edit</a>
                             <form action="{{ route('category.trash', $item->id) }}" method="POST"
-                               class="inline-block">
+                               class="inline-block"  onsubmit="return confirm('Are you sure you want to delete this category?');">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600 transition duration-300">Delete</button>

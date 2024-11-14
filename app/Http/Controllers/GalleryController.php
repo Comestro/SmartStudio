@@ -126,6 +126,14 @@ public function updateGallery(Request $request, $id)
     return redirect()->route('gallery.manageGallery')->with('msg', 'Gallery updated successfully.');
 }
 
+public function trashGallery($id){
+    $data =Gallery::findOrFail($id);
+    $data->delete();
+    return redirect()->back()->with('msg','moved to trash bin');
+
+
+}
+
 public function deleteImage($imageId)
     {
         $image = GalleryImage::findOrFail($imageId);
@@ -135,20 +143,20 @@ public function deleteImage($imageId)
         return redirect()->back()->with('msg', 'Image soft deleted successfully!');
     }
 
-    public function deleteGallery($id)
-    {
-        $gallery = Gallery::findOrFail($id);
+    // public function deleteGallery($id)
+    // {
+    //     $gallery = Gallery::findOrFail($id);
         
-        foreach ($gallery->images as $image) {
-            $imagePath = public_path('images') . '/' . $image->image_path;
-            if (File::exists($imagePath)) {
-                File::delete($imagePath);
-            }
-            $image->delete();
-        }
+    //     foreach ($gallery->images as $image) {
+    //         $imagePath = public_path('images') . '/' . $image->image_path;
+    //         if (File::exists($imagePath)) {
+    //             File::delete($imagePath);
+    //         }
+    //         $image->delete();
+    //     }
 
-        $gallery->delete();
+    //     $gallery->delete();
 
-        return redirect()->route('gallery.manageGallery')->with('msg', 'Gallery deleted successfully!');
-    }
+    //     return redirect()->route('gallery.manageGallery')->with('msg', 'Gallery deleted successfully!');
+    // }
 }
