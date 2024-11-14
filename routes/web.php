@@ -107,21 +107,23 @@ Route::prefix('admin')->group(function () {
         // contact
         Route::get('/contact-list', [ContactController::class, 'ManageContact'])->name('admin.contact.list');
 
-        Route::get('/banner/create', [BannerController::class, 'create'])->name('banner.create');
-        Route::post('/banner/store', [BannerController::class, 'store'])->name('banner.store');
-        Route::get('/banners', [BannerController::class, 'index'])->name('admin.banners.index');
-        Route::post('/banner/{id}/toggle-status', [BannerController::class, 'toggleStatus'])->name('admin.banner.toggleStatus');
-        Route::get('/delete/{id}', [BannerController::class, 'destroy'])->name('banner.delete');
-        
+        Route::controller(BannerController::class)->prefix('banner')->group(function(){
 
-        
-       
-        
-     
- 
+        Route::get('/create',  'create')->name('banner.create');
+        Route::post('/store',  'store')->name('banner.store');
+        Route::get('/banners',  'index')->name('admin.banners.index');
+        Route::post('/banner/{id}/toggle-status',  'toggleStatus')->name('admin.banner.toggleStatus');
+        // Route::get('/delete/{id}', [BannerController::class, 'destroy'])->name('banner.delete');
+        Route::delete('/trash/{id}','trashBanner')->name('banner.trash');
+
+    });
+
+    // youtubevideo
 
         Route::resource('youtube-videos', YoutubeVideoController::class);
         Route::post('/video/{id}/toggle-status', [YoutubeVideoController::class, 'toggleStatus'])->name('admin.video.toggleStatus');
+        Route::delete('/video/trash/{id}', [YoutubeVideoController::class,'trashYoutubeVideo'])->name('YoutubeVideo.trash');
+
 
 
 

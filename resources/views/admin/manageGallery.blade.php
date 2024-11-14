@@ -44,12 +44,12 @@
 
 
     {{-- Dashboard --}}
-
-
- 
-
-
-
+    @if(session('msg'))
+    <div class="mt-4 p-4 bg-green-100 text-green-700 rounded-md">
+        {{ session('msg') }}
+    </div>
+    @endif
+    
     <div class="flex justify-center items-center min-h-screen p-4 ">
         <div class="w-full max-w-5xl p-4">
     
