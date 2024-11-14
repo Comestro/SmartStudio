@@ -86,17 +86,33 @@ Route::prefix('admin')->group(function () {
         // category
         Route::controller(CategoryController::class)->prefix('category')->group(function () {
             Route::match(['get', 'post'], '/', 'manageCategory')->name('category');
-            Route::get( '/editcategory/{id}', 'editCategory')->name('category.edit');
-            Route::put( '/editcategory/{id}', 'updateCategory')->name('category.update');
+            Route::get('/editcategory/{id}', 'editCategory')->name('category.edit');
+            Route::put('/editcategory/{id}', 'updateCategory')->name('category.update');
 
             Route::get('/delete/{id}', 'deleteCategory')->name('category.delete');
+        });
+        // gallery
+        Route::controller(GalleryController::class)->prefix('gallery')->group(function () {
+
+            Route::match(["get", "post"], "/insert", "insertGallery")->name("gallery.insertGallery");
+            Route::get("/managegallery", "manageGallery")->name("gallery.manageGallery");
+            Route::get('/delete/{id}', 'deleteGallery')->name('gallery.delete');
+            Route::get( '/editcategory/{id}', 'editCategory')->name('category.edit');
+            Route::put( '/editcategory/{id}', 'updateCategory')->name('category.update');
+            Route::delete('/trash/{id}','trashCategory')->name('category.trash');
+           
         });
          // gallery
          Route::controller(GalleryController::class)->prefix('gallery')->group(function(){
            
             Route::match(["get","post"],"/insert","insertGallery")->name("gallery.insertGallery");
             Route::get("/managegallery","manageGallery")->name("gallery.manageGallery");
-            Route::get('/delete/{id}', 'deleteGallery')->name('gallery.delete');
+            Route::get("/viewgallery/{id}","viewGallery")->name("gallery.viewGallery");
+            Route::get( '/editgallery/{id}', 'editGallery')->name('gallery.edit');
+            Route::put( '/editgallery/{id}', 'updateGallery')->name('gallery.update');
+            Route::delete('/trash/{id}','trashGallery')->name('gallery.trash');
+
+            Route::delete('/delete-image/{imageId}', 'deleteImage')->name('gallery.deleteImage');
         });
 
 
@@ -109,16 +125,28 @@ Route::prefix('admin')->group(function () {
         Route::get('/banners', [BannerController::class, 'index'])->name('admin.banners.index');
         Route::post('/banner/{id}/toggle-status', [BannerController::class, 'toggleStatus'])->name('admin.banner.toggleStatus');
         Route::get('/delete/{id}', [BannerController::class, 'destroy'])->name('banner.delete');
-        
 
-        
-       
-        
-     
- 
+        Route::get('/users', [UserController::class, 'index'])->name('admin.user.index');
 
         Route::resource('youtube-videos', YoutubeVideoController::class);
         Route::post('/video/{id}/toggle-status', [YoutubeVideoController::class, 'toggleStatus'])->name('admin.video.toggleStatus');
+        Route::controller(BannerController::class)->prefix('banner')->group(function(){
+
+        Route::get('/create',  'create')->name('banner.create');
+        Route::post('/store',  'store')->name('banner.store');
+        Route::get('/banners',  'index')->name('admin.banners.index');
+        Route::post('/banner/{id}/toggle-status',  'toggleStatus')->name('admin.banner.toggleStatus');
+        // Route::get('/delete/{id}', [BannerController::class, 'destroy'])->name('banner.delete');
+        Route::delete('/trash/{id}','trashBanner')->name('banner.trash');
+
+    });
+
+    // youtubevideo
+
+        Route::resource('youtube-videos', YoutubeVideoController::class);
+        Route::post('/video/{id}/toggle-status', [YoutubeVideoController::class, 'toggleStatus'])->name('admin.video.toggleStatus');
+        Route::delete('/video/trash/{id}', [YoutubeVideoController::class,'trashYoutubeVideo'])->name('YoutubeVideo.trash');
+
 
 
 
