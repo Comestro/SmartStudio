@@ -86,8 +86,8 @@ Route::prefix('admin')->group(function () {
             Route::match(['get', 'post'], '/', 'manageCategory')->name('category');
             Route::get( '/editcategory/{id}', 'editCategory')->name('category.edit');
             Route::put( '/editcategory/{id}', 'updateCategory')->name('category.update');
-
-            Route::get('/delete/{id}', 'deleteCategory')->name('category.delete');
+            Route::delete('/trash/{id}','trashCategory')->name('category.trash');
+           
         });
          // gallery
          Route::controller(GalleryController::class)->prefix('gallery')->group(function(){

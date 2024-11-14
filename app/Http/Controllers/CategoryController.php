@@ -78,11 +78,10 @@ private function generateUniqueSlug($name)
     $count = Category::where('cat_slug', 'LIKE', "{$slug}%")->count();
     return $count ? "{$slug}-{$count}" : $slug;
 }
-    public function deleteCategory($id)
-    {
-        $category = Category::findOrFail($id);
-        $category->delete();
     
-        return redirect()->route('category')->with('msg', 'Category deleted successfully!');
-    }
+public function trashCategory($id){
+    $data = Category::findOrFail($id);
+    $data->delete();
+    return redirect()->back()->with('msg','Moved to trash bin');
+}
 }
