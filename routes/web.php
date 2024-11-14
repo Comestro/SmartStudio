@@ -16,6 +16,7 @@ use App\Models\Category;
 use function Pest\Laravel\post;
 use function Symfony\Component\String\b;
 
+
 Route::get('/', function () {
     return view('public.home');
 })->name('home');
@@ -89,19 +90,9 @@ Route::prefix('admin')->group(function () {
             Route::get('/editcategory/{id}', 'editCategory')->name('category.edit');
             Route::put('/editcategory/{id}', 'updateCategory')->name('category.update');
 
-            Route::get('/delete/{id}', 'deleteCategory')->name('category.delete');
-        });
-        // gallery
-        Route::controller(GalleryController::class)->prefix('gallery')->group(function () {
-
-            Route::match(["get", "post"], "/insert", "insertGallery")->name("gallery.insertGallery");
-            Route::get("/managegallery", "manageGallery")->name("gallery.manageGallery");
-            Route::get('/delete/{id}', 'deleteGallery')->name('gallery.delete');
-            Route::get( '/editcategory/{id}', 'editCategory')->name('category.edit');
-            Route::put( '/editcategory/{id}', 'updateCategory')->name('category.update');
             Route::delete('/trash/{id}','trashCategory')->name('category.trash');
-           
         });
+      
          // gallery
          Route::controller(GalleryController::class)->prefix('gallery')->group(function(){
            
