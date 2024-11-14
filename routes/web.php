@@ -86,16 +86,16 @@ Route::prefix('admin')->group(function () {
         // category
         Route::controller(CategoryController::class)->prefix('category')->group(function () {
             Route::match(['get', 'post'], '/', 'manageCategory')->name('category');
-            Route::get('/editcategory/{id}', 'editCategory')->name('category.edit');
-            Route::put('/editcategory/{id}', 'updateCategory')->name('category.update');
+            Route::get( '/editcategory/{id}', 'editCategory')->name('category.edit');
+            Route::put( '/editcategory/{id}', 'updateCategory')->name('category.update');
 
             Route::get('/delete/{id}', 'deleteCategory')->name('category.delete');
         });
-        // gallery
-        Route::controller(GalleryController::class)->prefix('gallery')->group(function () {
-
-            Route::match(["get", "post"], "/insert", "insertGallery")->name("gallery.insertGallery");
-            Route::get("/managegallery", "manageGallery")->name("gallery.manageGallery");
+         // gallery
+         Route::controller(GalleryController::class)->prefix('gallery')->group(function(){
+           
+            Route::match(["get","post"],"/insert","insertGallery")->name("gallery.insertGallery");
+            Route::get("/managegallery","manageGallery")->name("gallery.manageGallery");
             Route::get('/delete/{id}', 'deleteGallery')->name('gallery.delete');
         });
 
@@ -109,11 +109,19 @@ Route::prefix('admin')->group(function () {
         Route::get('/banners', [BannerController::class, 'index'])->name('admin.banners.index');
         Route::post('/banner/{id}/toggle-status', [BannerController::class, 'toggleStatus'])->name('admin.banner.toggleStatus');
         Route::get('/delete/{id}', [BannerController::class, 'destroy'])->name('banner.delete');
+        
 
-        Route::get('/users', [UserController::class, 'index'])->name('admin.user.index');
+        
+       
+        
+     
+ 
 
         Route::resource('youtube-videos', YoutubeVideoController::class);
         Route::post('/video/{id}/toggle-status', [YoutubeVideoController::class, 'toggleStatus'])->name('admin.video.toggleStatus');
+
+
+
     });
 });
 Route::get('/admin/budget', [BudgetController::class, 'BudgetView'])->name('budget.show');

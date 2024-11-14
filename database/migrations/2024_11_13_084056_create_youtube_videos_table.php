@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('title');
             $table->boolean('status')->default(0);
             $table->string('link');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

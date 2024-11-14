@@ -44,12 +44,12 @@
 
 
     {{-- Dashboard --}}
-
-
- 
-
-
-
+    @if(session('msg'))
+    <div class="mt-4 p-4 bg-green-100 text-green-700 rounded-md">
+        {{ session('msg') }}
+    </div>
+    @endif
+    
     <div class="flex justify-center items-center min-h-screen p-4 ">
         <div class="w-full max-w-5xl p-4">
     
@@ -76,16 +76,22 @@
                                     <td class="px-4 md:px-6 py-3 whitespace-nowrap text-gray-300">{{ $item->gallery_title }}</td>
                                     <td class="px-4 md:px-6 py-3 whitespace-nowrap text-gray-300">{{ $item->slug }}</td>
                                     <td class="px-4 md:px-6 py-3">
-                                        {{-- <img src="{{ asset('images/' . $item->cat_image) }}" alt="{{ $item->cat_name }}"
-                                            class="w-16 h-16 rounded-lg object-cover"> --}}
+                                        @if($item->images->first())
+                                <a href="{{ route('gallery.viewGallery', $item->id) }}">
+                                    <img src="{{ asset('images/' . $item->images->first()->image_path) }}" alt="{{ $item->gallery_title }}" class="w-16 h-16 object-cover rounded">
+                                </a>
+                            @else
+                                No Image
+                            @endif
                                     </td>
                                     <td class="px-4 md:px-6 py-3 whitespace-nowrap text-gray-300">{{ $item->content }}</td>
                                     <td class="px-4 md:px-6 py-3 whitespace-nowrap text-gray-300">{{ $item->category_id }}</td>
                                     <td class="px-4 md:px-6 py-3 flex justify-center gap-2">
-                                        <a href="#" class="bg-blue-500 text-white px-3 py-1 rounded-md hover:bg-blue-600 transition duration-300">Edit</a>
-                                        <form action="{{ route('gallery.delete', $item->id) }}" method="GET"
+                                        <a href="{{route('gallery.edit',$item->id)}}" class="bg-blue-500 text-white px-3 py-1 rounded-md hover:bg-blue-600 transition duration-300">Edit</a>
+                                        <form action="{{ route('gallery.trash', $item->id) }}" method="POST" class="inline-block"
                                             onsubmit="return confirm('Are you sure you want to delete this category?');">
                                             @csrf
+                                            @method('DELETE')
                                             <button type="submit" class="bg-red-500 text-white px-3 py-1 rounded-md hover:bg-red-600 transition duration-300">Delete</button>
                                         </form>
                                     </td>

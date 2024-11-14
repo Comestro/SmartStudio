@@ -86,12 +86,20 @@ class BannerController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy($id)
-    {
-        $banner=Banner::findOrFail($id);
-        $banner->delete();
+    // public function destroy($id)
+    // {
+    //     $banner=Banner::findOrFail($id);
+    //     $banner->delete();
 
-        return redirect()->back()->with('msg','banner deleted successfully');
+    //     return redirect()->back()->with('msg','banner deleted successfully');
 
+    // }
+
+    public function trashBanner($id){
+        $data =Banner::findOrFail($id);
+        $data->delete();
+        return redirect()->back()->with('msg','moved to trash bin');
+    
+    
     }
 }

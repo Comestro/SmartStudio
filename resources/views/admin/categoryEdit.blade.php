@@ -72,7 +72,7 @@
                     @enderror
                 </div>
                 {{-- Category Slug --}}
-                <div>
+                {{-- <div>
                     <label for="category-slug" class="block text-sm font-medium text-gray-300">Category Slug</label>
                     <input type="text" name="cat_slug" value="{{ $data['cat_slug'] }}"
                         placeholder="Enter category slug"
@@ -80,7 +80,7 @@
                     @error('cat_slug')
                         <p class="text-sm text-red-500">{{ $message }}</p>
                     @enderror
-                </div>
+                </div> --}}
                 {{-- Category Description --}}
                 <div>
                     <label for="category-description" class="block text-sm font-medium text-gray-300">Description</label>

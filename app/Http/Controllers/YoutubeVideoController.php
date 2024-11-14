@@ -20,7 +20,7 @@ class YoutubeVideoController extends Controller
      */
     public function create()
     {
-        $data['videos'] = YoutubeVideo::all();
+        $data['videos'] = youtubeVideo::all();
 
         return view('admin.youtubeVideos.create',$data);
     }
@@ -38,7 +38,7 @@ class YoutubeVideoController extends Controller
 
             ]);
     
-            YoutubeVideo::create($request->all());
+            youtubeVideo::create($request->all());
     
             return redirect()->back();
             
@@ -50,7 +50,7 @@ class YoutubeVideoController extends Controller
      */
     public function edit($id)
     {
-        $youtubeVideo = YoutubeVideo::findOrFail($id);
+        $youtubeVideo = youtubeVideo::findOrFail($id);
     
         return view('admin.videos.edit', compact('youtubeVideo'));
     }
@@ -58,7 +58,7 @@ class YoutubeVideoController extends Controller
     public function update(Request $request, $id)
     {
         // Find the YouTube video by id
-        $youtubeVideo = YoutubeVideo::findOrFail($id);
+        $youtubeVideo = youtubeVideo::findOrFail($id);
     
         // Validate and update the video details
         $request->validate([
@@ -76,21 +76,29 @@ class YoutubeVideoController extends Controller
         return redirect()->route('youtube-videos.index')->with('msg', 'Video updated successfully!');
     }
     
-    public function destroy($id)
-    {
-        // Find the YouTube video by id
-        $youtubeVideo = YoutubeVideo::findOrFail($id);
+    // public function destroy($id)
+    // {
+       
+    //     $youtubeVideo = youtubeVideo::findOrFail($id);
     
-        // Delete the video
-        $youtubeVideo->delete();
+        
+    //     $youtubeVideo->delete();
     
-        return redirect()->route('youtube-videos.index')->with('msg', 'Video deleted successfully!');
-    }    public function toggleStatus($id)
-    {
-        $video = youtubeVideo::findOrFail($id);
-        $video->status = !$video->status;
-        $video->save();
+    //     return redirect()->route('youtube-videos.index')->with('msg', 'Video deleted successfully!');
+    // }    public function toggleStatus($id)
+    // {
+    //     $video = youtubeVideo::findOrFail($id);
+    //     $video->status = !$video->status;
+    //     $video->save();
 
-        return redirect()->back()->with('msg', 'video status updated successfully.');
+    //     return redirect()->back()->with('msg', 'video status updated successfully.');
+    // }
+
+    public function trashYoutubeVideo($id){
+        $data =youtubeVideo::findOrFail($id);
+        $data->delete();
+        return redirect()->back()->with('msg','moved to trash bin');
+    
+    
     }
 }
