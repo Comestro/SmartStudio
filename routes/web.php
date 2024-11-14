@@ -116,6 +116,8 @@ Route::prefix('admin')->group(function () {
  
 
         Route::resource('youtube-videos', YoutubeVideoController::class);
+        Route::post('/video/{id}/toggle-status', [YoutubeVideoController::class, 'toggleStatus'])->name('admin.video.toggleStatus');
+
 
 
     });
