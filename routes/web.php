@@ -11,6 +11,7 @@ use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\contactController;
 use App\Http\Controllers\YoutubeVideoController;
+use App\Models\Category;
 
 use function Pest\Laravel\post;
 use function Symfony\Component\String\b;
@@ -77,27 +78,28 @@ Route::prefix('admin')->group(function () {
     Route::middleware(['auth'])->group(function () {
         // dashboard
         Route::get('/dashboard', function () {
-            return view('admin.dashboard');
+            $data['categoryImage']=Category::all();
+            return view('admin.dashboard',$data);
         })->name('dashboard');
 
-       
+
         // category
         Route::controller(CategoryController::class)->prefix('category')->group(function () {
             Route::match(['get', 'post'], '/', 'manageCategory')->name('category');
-            Route::get( '/editcategory/{id}', 'editCategory')->name('category.edit');
-            Route::put( '/editcategory/{id}', 'updateCategory')->name('category.update');
+            Route::get('/editcategory/{id}', 'editCategory')->name('category.edit');
+            Route::put('/editcategory/{id}', 'updateCategory')->name('category.update');
 
             Route::get('/delete/{id}', 'deleteCategory')->name('category.delete');
         });
-         // gallery
-         Route::controller(GalleryController::class)->prefix('gallery')->group(function(){
-           
-            Route::match(["get","post"],"/insert","insertGallery")->name("gallery.insertGallery");
-            Route::get("/managegallery","manageGallery")->name("gallery.manageGallery");
+        // gallery
+        Route::controller(GalleryController::class)->prefix('gallery')->group(function () {
+
+            Route::match(["get", "post"], "/insert", "insertGallery")->name("gallery.insertGallery");
+            Route::get("/managegallery", "manageGallery")->name("gallery.manageGallery");
             Route::get('/delete/{id}', 'deleteGallery')->name('gallery.delete');
         });
 
-    
+
 
         // contact
         Route::get('/contact-list', [ContactController::class, 'ManageContact'])->name('admin.contact.list');
@@ -107,25 +109,17 @@ Route::prefix('admin')->group(function () {
         Route::get('/banners', [BannerController::class, 'index'])->name('admin.banners.index');
         Route::post('/banner/{id}/toggle-status', [BannerController::class, 'toggleStatus'])->name('admin.banner.toggleStatus');
         Route::get('/delete/{id}', [BannerController::class, 'destroy'])->name('banner.delete');
-        
 
-        
-       
-        
-     
- 
+        Route::get('/users', [UserController::class, 'index'])->name('admin.user.index');
 
         Route::resource('youtube-videos', YoutubeVideoController::class);
         Route::post('/video/{id}/toggle-status', [YoutubeVideoController::class, 'toggleStatus'])->name('admin.video.toggleStatus');
-
-
-
     });
 });
-Route::get('/admin/budget',[BudgetController::class,'BudgetView'])->name('budget.show');
-Route::post('/admin/budget',[BudgetController::class,'CategoryPrice'])->name('budget.create');
+Route::get('/admin/budget', [BudgetController::class, 'BudgetView'])->name('budget.show');
+Route::post('/admin/budget', [BudgetController::class, 'CategoryPrice'])->name('budget.create');
 
 
 Route::get('/budget', [BudgetController::class, 'index'])->name('budget.index');
-Route::post('/budget',[BudgetController::class, 'BudgetCal'])->name('budget.cal');
+Route::post('/budget', [BudgetController::class, 'BudgetCal'])->name('budget.cal');
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
