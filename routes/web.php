@@ -125,4 +125,5 @@ Route::post('/admin/budget',[BudgetController::class,'CategoryPrice'])->name('bu
 
 
 Route::get('/budget', [BudgetController::class, 'index'])->name('budget.index');
+Route::post('/budget',[BudgetController::class, 'BudgetCal'])->name('budget.cal');
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
