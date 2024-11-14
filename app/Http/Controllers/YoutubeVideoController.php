@@ -12,8 +12,7 @@ class YoutubeVideoController extends Controller
      */
     public function index()
     {
-        $data['videos']=youtubeVideo::all();
-        return view('admin.youtubeVideos.manageVideos',$data);
+
     }
 
     /**
@@ -41,7 +40,7 @@ class YoutubeVideoController extends Controller
     
             YoutubeVideo::create($request->all());
     
-            return redirect()->route('youtube-videos.index');
+            return redirect()->back();
             
         }
    
@@ -49,32 +48,49 @@ class YoutubeVideoController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(youtubeVideo $youtubeVideo)
+    public function edit($id)
     {
-        //
+        $youtubeVideo = YoutubeVideo::findOrFail($id);
+    
+        return view('admin.videos.edit', compact('youtubeVideo'));
     }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(youtubeVideo $youtubeVideo)
+    
+    public function update(Request $request, $id)
     {
-        //
+        // Find the YouTube video by id
+        $youtubeVideo = YoutubeVideo::findOrFail($id);
+    
+        // Validate and update the video details
+        $request->validate([
+            'title' => 'required|string|max:255',
+            'link' => 'required|url',
+            'status' => 'required|boolean',
+        ]);
+    
+        // Update video details
+        $youtubeVideo->title = $request->title;
+        $youtubeVideo->link = $request->link;
+        $youtubeVideo->status = $request->status;
+        $youtubeVideo->save();
+    
+        return redirect()->route('youtube-videos.index')->with('msg', 'Video updated successfully!');
     }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, youtubeVideo $youtubeVideo)
+    
+    public function destroy($id)
     {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(youtubeVideo $youtubeVideo)
+        // Find the YouTube video by id
+        $youtubeVideo = YoutubeVideo::findOrFail($id);
+    
+        // Delete the video
+        $youtubeVideo->delete();
+    
+        return redirect()->route('youtube-videos.index')->with('msg', 'Video deleted successfully!');
+    }    public function toggleStatus($id)
     {
-        //
+        $video = youtubeVideo::findOrFail($id);
+        $video->status = !$video->status;
+        $video->save();
+
+        return redirect()->back()->with('msg', 'video status updated successfully.');
     }
 }

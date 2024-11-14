@@ -52,9 +52,14 @@
                             <a href="{{ $video->link }}" target="_blank" class="text-blue-500 hover:underline">{{ $video->link }}</a>
                         </td>
                         <td class="px-4 py-2 border-b border-gray-200 text-sm text-gray-600">
-                            <span class="{{ $video->status ? 'text-green-600' : 'text-red-600' }}">
-                                {{ $video->status ? 'Active' : 'Inactive' }}
-                            </span>
+                            <form action="{{ route('admin.video.toggleStatus', $video->id) }}" method="POST">
+                                @csrf
+                                <button type="submit" 
+                                    class="focus:outline-none {{ $video->status ? 'bg-green-500 hover:bg-green-600' : 'bg-red-500 hover:bg-red-600' }} text-white py-2 px-4 rounded-lg transition duration-300"
+                                >
+                                    {{ $video->status ? 'Active' : 'Inactive' }}
+                                </button>
+                            </form>
                         </td>
                     </tr>
                 @empty
