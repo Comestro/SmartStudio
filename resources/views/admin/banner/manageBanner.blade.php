@@ -44,8 +44,9 @@
                             <a href="#" class="inline-flex items-center bg-gradient-to-r from-indigo-500 to-indigo-700 text-white py-2 px-4 rounded-md hover:bg-gradient-to-l transition duration-300">
                                 Edit
                             </a>
-                            <form action="{{ route('banner.delete', $banner->id) }}" method="GET" onsubmit="return confirm('Are you sure you want to delete this category?');" class="inline-block ml-2">
+                            <form action="{{ route('banner.trash', $banner->id) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this category?');" class="inline-block ml-2">
                                 @csrf
+                                @method('DELETE')
                                 <button type="submit" class="inline-flex items-center bg-gradient-to-r from-red-500 to-red-700 text-white py-2 px-4 rounded-md hover:bg-gradient-to-l transition duration-300">
                                     Delete
                                 </button>

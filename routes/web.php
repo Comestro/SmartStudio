@@ -11,6 +11,7 @@ use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\contactController;
 use App\Http\Controllers\YoutubeVideoController;
+use App\Models\Category;
 
 use function Pest\Laravel\post;
 use function Symfony\Component\String\b;
@@ -77,10 +78,11 @@ Route::prefix('admin')->group(function () {
     Route::middleware(['auth'])->group(function () {
         // dashboard
         Route::get('/dashboard', function () {
-            return view('admin.dashboard');
+            $data['categoryImage']=Category::all();
+            return view('admin.dashboard',$data);
         })->name('dashboard');
 
-       
+
         // category
         Route::controller(CategoryController::class)->prefix('category')->group(function () {
             Route::match(['get', 'post'], '/', 'manageCategory')->name('category');
@@ -97,7 +99,7 @@ Route::prefix('admin')->group(function () {
             Route::get('/delete/{id}', 'deleteGallery')->name('gallery.delete');
         });
 
-    
+
 
         // contact
         Route::get('/contact-list', [ContactController::class, 'ManageContact'])->name('admin.contact.list');
@@ -116,6 +118,8 @@ Route::prefix('admin')->group(function () {
  
 
         Route::resource('youtube-videos', YoutubeVideoController::class);
+        Route::post('/video/{id}/toggle-status', [YoutubeVideoController::class, 'toggleStatus'])->name('admin.video.toggleStatus');
+
 
 
     });

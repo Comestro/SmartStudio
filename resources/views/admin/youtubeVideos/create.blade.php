@@ -42,6 +42,7 @@
                     <th class="px-4 py-2 border-b border-gray-200 text-left text-sm">Title</th>
                     <th class="px-4 py-2 border-b border-gray-200 text-left text-sm">Video Link</th>
                     <th class="px-4 py-2 border-b border-gray-200 text-left text-sm">Status</th>
+                    <th class="px-4 py-2 border-b border-gray-200 text-left text-sm">Action</th>
                 </tr>
             </thead>
             <tbody>
@@ -52,9 +53,26 @@
                             <a href="{{ $video->link }}" target="_blank" class="text-blue-500 hover:underline">{{ $video->link }}</a>
                         </td>
                         <td class="px-4 py-2 border-b border-gray-200 text-sm text-gray-600">
-                            <span class="{{ $video->status ? 'text-green-600' : 'text-red-600' }}">
-                                {{ $video->status ? 'Active' : 'Inactive' }}
-                            </span>
+                            <form action="{{ route('admin.video.toggleStatus', $video->id) }}" method="POST">
+                                @csrf
+                                <button type="submit" 
+                                    class="focus:outline-none {{ $video->status ? 'bg-green-500 hover:bg-green-600' : 'bg-red-500 hover:bg-red-600' }} text-white py-2 px-4 rounded-lg transition duration-300"
+                                >
+                                    {{ $video->status ? 'Active' : 'Inactive' }}
+                                </button>
+                            </form>
+                        </td>
+                        <td class="px-4 py-3 border-b border-gray-200 text-sm text-gray-600">
+                            <a href="#" class="inline-flex items-center bg-gradient-to-r from-indigo-500 to-indigo-700 text-white py-2 px-4 rounded-md hover:bg-gradient-to-l transition duration-300">
+                                Edit
+                            </a>
+                            <form action="{{ route('YoutubeVideo.trash', $video->id) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this category?');" class="inline-block ml-2">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="inline-flex items-center bg-gradient-to-r from-red-500 to-red-700 text-white py-2 px-4 rounded-md hover:bg-gradient-to-l transition duration-300">
+                                    Delete
+                                </button>
+                            </form>
                         </td>
                     </tr>
                 @empty

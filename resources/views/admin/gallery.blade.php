@@ -80,7 +80,7 @@
                     </div>
     
                     <!-- Slug Field -->
-                    <div>
+                    {{-- <div>
                         <label for="slug" class="block text-white text-sm font-medium">Slug</label>
                         <input type="text" id="slug" name="slug" value="{{ old('slug') }}"
                             placeholder="Enter image slug"
@@ -88,7 +88,7 @@
                         @error('slug')
                             <p class="text-sm text-red-500">{{ $message }}</p>
                         @enderror
-                    </div>
+                    </div> --}}
     
                     <!-- Content Field -->
                     <div>
