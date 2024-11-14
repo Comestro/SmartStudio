@@ -121,9 +121,8 @@ Route::prefix('admin')->group(function () {
     });
 });
 Route::get('/admin/budget',[BudgetController::class,'BudgetView'])->name('budget.show');
+Route::get('/admin/budget/{id}', [BudgetController::class, 'BudgetEdit'])->name('budget.edit');
+Route::post('/admin/budget/update', [BudgetController::class, 'BudgetUpdate'])->name('budget.update');
 Route::post('/admin/budget',[BudgetController::class,'CategoryPrice'])->name('budget.create');
-
-
-Route::get('/budget', [BudgetController::class, 'index'])->name('budget.index');
-Route::post('/budget',[BudgetController::class, 'BudgetCal'])->name('budget.cal');
+Route::match(["get","post"],'/budget', [BudgetController::class, 'index'])->name('budget.index');
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');

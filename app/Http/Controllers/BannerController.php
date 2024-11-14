@@ -10,8 +10,9 @@ class BannerController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
+       
         $data['banners'] = Banner::all();
         return view('admin.banner.manageBanner', $data);
     }

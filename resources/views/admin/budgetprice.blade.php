@@ -46,8 +46,8 @@
                         <td class="py-4 px-4 border-b border-gray-700 text-gray-300">{{ $cam->cam_category }}</td>
                         <td class="py-4 px-4 border-b border-gray-700 text-gray-300">₹{{ number_format($cam->cam_price, 2) }}</td>
                         <td class="py-4 px-4 border-b border-gray-700 text-center">
-                            <a href="#" class="text-blue-500 hover:underline mr-4">Edit</a>
-                            <a href="#" class="text-red-500 hover:underline">Delete</a>
+                            <a href="{{route('budget.edit',$cam->id)}}" class="text-blue-500 hover:underline mr-4">Edit</a>
+                            <a href="" class="text-red-500 hover:underline">Delete</a>
                         </td>
                     </tr>
                     @endforeach

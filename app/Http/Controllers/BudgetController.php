@@ -8,9 +8,14 @@ use Illuminate\Http\Request;
 
 class BudgetController extends Controller
 {
-    public function index(){
-        $data['category']=Category::all();
-        
+    public function index(Request $request){
+        $data['budget'] = false;
+        if($request->isMethod('post')){
+            $budgets = $this->BudgetCal($request);
+            $data['budget'] = $budgets;
+        }
+        $data['category']=Category::all();  
+    
         return view('public.budget',$data);
     }
 
@@ -18,6 +23,22 @@ class BudgetController extends Controller
         $data['camera']=CameraMan::all();
         $data['category']=Category::all();
         return view('admin.budgetprice',$data);
+    }
+    public function BudgetEdit(CameraMan $id){
+
+        $data['editId']=$id;
+        $data['category']=Category::all();
+
+        
+        return view('admin.editbudgetprice',$data);
+    }
+    public function updateBudget(Request $request, CameraMan $id){
+
+        $id->cam_category=$request->cam_category;
+        $id->cam_price=$request->cam_price;
+        $id->save(); 
+
+        return redirect()->route('budgetView')->with('msg', 'Category Price Updated Successfully');
     }
     public function CategoryPrice(Request $request){
         
@@ -27,6 +48,11 @@ class BudgetController extends Controller
         $cameraMan->save(); 
     }
     public function BudgetCal(Request $request){
+        $request->validate([
+            'evtcat' => 'required',
+            'evtmem' => 'required',
+            'evtcam' => 'required'  
+        ]);
         $eventType = $request->evtcat;
         $eventMember = $request->evtmem;
         $eventCameraman = $request->evtcam;
@@ -36,10 +62,6 @@ class BudgetController extends Controller
          
          $budget=($eventMember/5)*$totalCameraMan;
 
-         dd($budget);
-
-         
-        
-        
+         return $budget;
     }
 }
