@@ -129,4 +129,4 @@ Route::get('/admin/budget/{id}', [BudgetController::class, 'BudgetEdit'])->name(
 Route::post('/admin/budget/update', [BudgetController::class, 'BudgetUpdate'])->name('budget.update');
 Route::post('/admin/budget',[BudgetController::class,'CategoryPrice'])->name('budget.create');
 Route::match(["get","post"],'/budget', [BudgetController::class, 'index'])->name('budget.index');
-Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+Route::post('/logout', [LoginController::class, 'logout'])->name('logout'); 
