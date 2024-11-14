@@ -32,11 +32,12 @@ class BudgetController extends Controller
         
         return view('admin.editbudgetprice',$data);
     }
-    public function updateBudget(Request $request, CameraMan $id){
+    public function updateBudget(Request $request, $id){
+        $id=CameraMan::find($id);
 
-        $id->cam_category=$request->cam_category;
-        $id->cam_price=$request->cam_price;
-        $id->save(); 
+        // $id->cam_category=$request->cam_category;
+        // $id->cam_price=$request->cam_price;
+        // $id->save(); 
 
         return redirect()->route('budgetView')->with('msg', 'Category Price Updated Successfully');
     }
@@ -45,7 +46,10 @@ class BudgetController extends Controller
         $cameraMan = new CameraMan();
         $cameraMan->cam_category=$request->cam_category;
         $cameraMan->cam_price=$request->cam_price;
-        $cameraMan->save(); 
+        $cameraMan->save();
+        return redirect()->back(); 
+
+
     }
     public function BudgetCal(Request $request){
         $request->validate([

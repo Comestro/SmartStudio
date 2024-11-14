@@ -5,8 +5,9 @@
     <div class="w-full md:w-1/2 lg:w-1/3 mx-auto mb-8">
         <div class="bg-gray-800 rounded-lg shadow-md p-6">
             <h2 class="text-lg font-semibold text-center text-gray-300 mb-4">Edit Category Details</h2>
-            <form action="{{ route('budget.update') }}" method="post">
+            <form action="{{ route('budget.update',$editId->id) }}" method="post">
                 @csrf
+                @method('PUT')
                 <div class="mb-4">
                     <label for="cam_category" class="text-gray-400 block mb-2">Category for Budget</label>
                     <select name="cam_category" id="cam_category" class="w-full p-3 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500">
