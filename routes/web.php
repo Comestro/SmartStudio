@@ -92,7 +92,12 @@ Route::prefix('admin')->group(function () {
            
             Route::match(["get","post"],"/insert","insertGallery")->name("gallery.insertGallery");
             Route::get("/managegallery","manageGallery")->name("gallery.manageGallery");
+            Route::get("/viewgallery/{id}","viewGallery")->name("gallery.viewGallery");
+            Route::get( '/editgallery/{id}', 'editGallery')->name('gallery.edit');
+            Route::put( '/editgallery/{id}', 'updateGallery')->name('gallery.update');
             Route::get('/delete/{id}', 'deleteGallery')->name('gallery.delete');
+
+            Route::delete('/delete-image/{imageId}', 'deleteImage')->name('gallery.deleteImage');
         });
 
     

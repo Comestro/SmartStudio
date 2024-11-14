@@ -76,13 +76,18 @@
                                     <td class="px-4 md:px-6 py-3 whitespace-nowrap text-gray-300">{{ $item->gallery_title }}</td>
                                     <td class="px-4 md:px-6 py-3 whitespace-nowrap text-gray-300">{{ $item->slug }}</td>
                                     <td class="px-4 md:px-6 py-3">
-                                        {{-- <img src="{{ asset('images/' . $item->cat_image) }}" alt="{{ $item->cat_name }}"
-                                            class="w-16 h-16 rounded-lg object-cover"> --}}
+                                        @if($item->images->first())
+                                <a href="{{ route('gallery.viewGallery', $item->id) }}">
+                                    <img src="{{ asset('images/' . $item->images->first()->image_path) }}" alt="{{ $item->gallery_title }}" class="w-16 h-16 object-cover rounded">
+                                </a>
+                            @else
+                                No Image
+                            @endif
                                     </td>
                                     <td class="px-4 md:px-6 py-3 whitespace-nowrap text-gray-300">{{ $item->content }}</td>
                                     <td class="px-4 md:px-6 py-3 whitespace-nowrap text-gray-300">{{ $item->category_id }}</td>
                                     <td class="px-4 md:px-6 py-3 flex justify-center gap-2">
-                                        <a href="#" class="bg-blue-500 text-white px-3 py-1 rounded-md hover:bg-blue-600 transition duration-300">Edit</a>
+                                        <a href="{{route('gallery.edit',$item->id)}}" class="bg-blue-500 text-white px-3 py-1 rounded-md hover:bg-blue-600 transition duration-300">Edit</a>
                                         <form action="{{ route('gallery.delete', $item->id) }}" method="GET"
                                             onsubmit="return confirm('Are you sure you want to delete this category?');">
                                             @csrf
