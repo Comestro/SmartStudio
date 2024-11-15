@@ -24,7 +24,7 @@
                     <a href="{{ route('video') }}" class="text-lg hover:text-gray-300">Background Video</a>
                 </li>
                 <li class="flex items-center">
-                    <a href="#" class="text-lg hover:text-gray-300">Portfolio</a>
+                    <a href="{{route('portfolio')}}" class="text-lg hover:text-gray-300">Portfolio</a>
                 </li>
                 <li class="flex items-center">
                     <a href="#" class="text-lg hover:text-gray-300">Full Screen Slider</a>
@@ -58,10 +58,14 @@
                 <i class="bi bi-caret-left-fill text-white text-2xl"></i>
             </div>
             <div class="flex justify-between items-center w-full">
-                <a href="{{ route('category.view') }}"
-                    class="text-black text-lg bg-yellow-400 px-3 py-1 rounded">Book Now -></a>
-                <i class="bi bi-caret-left-fill text-white text-2xl"></i>
-            </div>
+    <a href="{{ route('category.view') }}"
+        class="text-black text-lg border border-yellow-400 text-yellow-400 bg-transparent bg-transparent px-3 py-1 rounded hover:bg-yellow-400 hover:text-white transition duration-300">
+        Book Now ->
+    </a>
+    <i class="bi bi-caret-left-fill text-white text-2xl"></i>
+</div>
+
+
         </div>
     </nav>
 
