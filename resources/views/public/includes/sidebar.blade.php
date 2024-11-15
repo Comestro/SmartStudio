@@ -5,10 +5,9 @@
     <nav class="flex-1 w-full text-center space-y-4">
         <div class="flex justify-between items-center w-full">
             <a href="#" class="text-lg text-yellow-400">Home</a>
-            <a href="{{ route('login') }}"
-                class="bg-yellow-500 text-gray-900 px-4 py-2 rounded-lg font-semibold hover:bg-yellow-600 transition duration-300">
-                Login
-            </a>
+            @if(Auth::check())
+            <span class="text-yellow-400 font-semibold"> {{ Auth::user()->name }}</span>
+            @endif
         </div>
 
 
