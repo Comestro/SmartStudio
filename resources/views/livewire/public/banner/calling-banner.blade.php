@@ -3,9 +3,31 @@
         alt="Fullscreen Image" class="object-cover w-full h-450px">
 
     <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col text-center p-4">
-        <h1 class="text-white text-5xl font-bold mb-2 mt-4 mr-5">
+        <!-- <h1 class="text-white text-5xl font-bold mb-2 mt-4 mr-5">
             WELCOME TO <span class="text-yellow-400">SMART STUDIO</span>
-        </h1>
+        </h1> -->
+        <!-- <div class="flex items-center justify-between mt-4">
+    <h1 class="text-white text-5xl font-bold mb-2 mr-5 ml-8">
+        WELCOME TO <span class="text-yellow-400">SMART STUDIO</span>
+    </h1>
+    <button type="" class="bg-yellow-400 text-white px-4 py-2 font-semibold rounded hover:bg-yellow-500 transition">
+        Logout
+    </button>
+</div> -->
+<div class="flex items-center justify-between mt-4">
+    <h1 class="text-white text-5xl font-bold mb-2 mr-5 ml-10">
+        WELCOME TO <span class="text-yellow-400">SMART STUDIO</span>
+    </h1>
+    <form method="POST" action="{{ route('logout') }}">
+        @csrf
+        <button type="submit" 
+            class="px-4 py-2 font-semibold rounded border border-yellow-400 text-yellow-400 bg-transparent hover:bg-yellow-400 hover:text-white transition">
+            Logout
+        </button>
+    </form>
+</div>
+
+
         <p class="text-white text-xl mt-2">
             This is a paragraph inside the fullscreen image. The content is centered both vertically and
             horizontally.

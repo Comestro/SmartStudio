@@ -9,14 +9,9 @@
             <span class="text-yellow-400 font-semibold"> {{ Auth::user()->name }}</span>
             @endif
         </div>
-
-
-
         <div class="relative">
 
             <div class="absolute top-0 left-0 h-full w-1 bg-yellow-200"></div>
-
-
             <ul class="pl-6 space-y-4 text-left">
                 <li class="flex items-center">
                     <a href="{{ route('gallery') }}" class="text-lg text-yellow-400 hover:text-gray-300">Gallery
