@@ -80,7 +80,7 @@
                     </div>
     
                     <!-- Slug Field -->
-                    <div>
+                    {{-- <div>
                         <label for="slug" class="block text-white text-sm font-medium">Slug</label>
                         <input type="text" id="slug" name="slug" value="{{ old('slug') }}"
                             placeholder="Enter image slug"
@@ -88,7 +88,7 @@
                         @error('slug')
                             <p class="text-sm text-red-500">{{ $message }}</p>
                         @enderror
-                    </div>
+                    </div> --}}
     
                     <!-- Content Field -->
                     <div>
@@ -108,7 +108,7 @@
                                 <svg class="w-8 h-8 mx-auto text-gray-400" fill="currentColor" viewBox="0 0 20 20">
                                     <path d="M16.88 9.73l-2.67-2.74V2H11.5L10 0H8L6.5 2H4v5L1.33 9.73a1 1 0 00.28 1.42l1.79 1.02a1 1 0 00.45.11h11.54a1 1 0 00.74-.33l1.79-1.02a1 1 0 00.28-1.42zM9.17 7.57a1.5 1.5 0 113 0 1.5 1.5 0 01-3 0zm1.83 11.34a4 4 0 01-4-4h2a2 2 0 004 0h2a4 4 0 01-4 4zm4-10.57a3 3 0 01-6 0 3 3 0 016 0z"></path>
                                 </svg>
-                                <input type="file" id="images" name="images[]" multiple >
+                                <input type="file" id="images" name="images[]" multiple>
                                 <p class="text-xs text-gray-500">Drag and drop files here</p>
                             </div>
                         </div>

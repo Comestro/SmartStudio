@@ -7,7 +7,7 @@
     <div class="w-full h-auto bg-[#2f363e] flex flex-col md:flex-row items-center p-4">
       <div class="w-full md:w-1/3 h-auto flex items-center justify-center mb-2 md:mb-0">
       </div>
-      <div class="w-full md:w-1/3 h-auto  p-2 flex items-center justify-center">
+        <div class="w-full md:w-1/3 h-auto  p-2 flex items-center justify-center">
           <div class="relative w-full">
               <input type="text" placeholder="Search..." class="w-full pl-4 pr-10 py-2 bg-white rounded-full focus:outline-none border border-yellow-400">
               <div class="absolute inset-y-0 right-0 flex items-center pr-3">
@@ -18,39 +18,30 @@
                   </button>
               </div>
           </div>
-      </div>
+        </div>
       
 
-      <div class="absolute right-4 top-4 w-full md:w-auto h-auto flex items-center gap-2">
+            <div class="absolute right-4 top-4 w-full md:w-auto h-auto flex items-center gap-2">
     
-    <div class="w-full md:w-24 h-10 rounded-lg flex items-center justify-center text-center">
-    <form action="{{ route('logout') }}" method="POST" class="w-full">
-    @csrf
-    <button type="submit" class="text-base font-semibold text-yellow-500 border border-yellow-400 px-2 py-2 rounded-lg flex items-center justify-center hover:bg-yellow-500 hover:text-black transition duration-300 ease-in-out">
-        <i class="bi bi-box-arrow-right mr-2"></i>
-        Logout
-    </button>
-</form>
+            <div class="w-full md:w-24 h-10 rounded-lg flex items-center justify-center text-center">
+            <form action="{{ route('logout') }}" method="POST" class="w-full">
+                @csrf
+                <button type="submit" class="text-base font-semibold text-yellow-500 border border-yellow-400 px-2 py-2 rounded-lg flex items-center justify-center hover:bg-yellow-500 hover:text-black transition duration-300 ease-in-out">
+                    <i class="bi bi-box-arrow-right mr-2"></i>
+                    Logout
+                </button>
+            </form>
 
     </div>
 
     <!-- Profile Image -->
-    <div class="w-12 h-12 rounded-full flex items-center justify-center">
-        <img src="https://pics.craiyon.com/2023-11-26/oMNPpACzTtO5OVERUZwh3Q.webp" class="rounded-full" alt="Profile Picture"/>
+        <div class="w-12 h-12 rounded-full flex items-center justify-center">
+            <img src="https://pics.craiyon.com/2023-11-26/oMNPpACzTtO5OVERUZwh3Q.webp" class="rounded-full" alt="Profile Picture"/>
+        </div>
     </div>
-</div>
-
   </div>
 
-
-    {{-- Dashboard --}}
-
-
- 
-
-
-
-    <div class="flex justify-center items-center p-6">
+  <div class="flex justify-center items-center p-6">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 w-full max-w-6xl">
 
         {{-- Category Form --}}
@@ -69,7 +60,7 @@
                     @enderror
                 </div>
                 {{-- Category Slug --}}
-                <div>
+                {{-- <div>
                     <label for="category-slug" class="block text-sm font-medium text-gray-300">Category Slug</label>
                     <input type="text" name="cat_slug" value="{{ old('cat_slug') }}"
                         placeholder="Enter category slug"
@@ -77,7 +68,7 @@
                     @error('cat_slug')
                         <p class="text-sm text-red-500">{{ $message }}</p>
                     @enderror
-                </div>
+                </div> --}}
                 {{-- Category Description --}}
                 <div>
                     <label for="category-description" class="block text-sm font-medium text-gray-300">Description</label>
@@ -129,10 +120,11 @@
                                 class="w-16 h-16 rounded-lg object-cover">
                         </td>
                         <td class="px-4 md:px-6 py-3 flex justify-center gap-2">
-                            <a class="bg-blue-500 text-white px-3 py-1 rounded hover:bg-blue-600 transition duration-300">Edit</a>
-                            <form action="{{ route('category.delete', $item->id) }}" method="GET"
-                                onsubmit="return confirm('Are you sure you want to delete this category?');">
+                            <a href="{{route('category.edit', $item->id)}}" class="bg-blue-500 text-white px-3 py-1 rounded hover:bg-blue-600 transition duration-300">Edit</a>
+                            <form action="{{ route('category.trash', $item->id) }}" method="POST"
+                               class="inline-block"  onsubmit="return confirm('Are you sure you want to delete this category?');">
                                 @csrf
+                                @method('DELETE')
                                 <button type="submit" class="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600 transition duration-300">Delete</button>
                             </form>
                         </td>

@@ -2,10 +2,9 @@
 
 @section('content')
     <main class="relative w-full md:w-3/4 h-180">
-    <livewire:public.banner.calling-banner/>
+        <livewire:public.banner.calling-banner />
     </main>
-
-    </div>
+</div>
     <div class="bg-white py-12">
         <div class="text-left px-6 md:px-36">
             <h1 class="text-2xl md:text-3xl font-bold text-gray-800 mb-4">
@@ -245,8 +244,8 @@
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8 px-8 py-10">
         <div
             class="flex flex-col items-center transform transition duration-300 hover:scale-105 hover:bg-gray-50 rounded-lg p-5 shadow-lg">
-            <img src="https://tse2.mm.bing.net/th?id=OIP.zasFRqA9FJbykHr8EuisGAHaE8&pid=Api&P=0&h=180"
-                alt="Professional Portraits" class="w-64 h-64 mb-4">
+            <img src="https://img.freepik.com/free-photo/young-beautiful-woman-portrait_23-2149263756.jpg?ga=GA1.1.1275289697.1728223870&semt=ais_hybrid"
+                alt="Professional Portraits" class=" h-64 mb-4">
             <h3 class="text-2xl font-semibold text-black mb-2">Elevate Your Portraits</h3>
             <p class="text-gray-600 text-center mb-4">Experience the art of portrait photography, crafted to capture your
                 essence and personality in every shot.</p>
@@ -254,7 +253,7 @@
         </div>
         <div
             class="flex flex-col items-center transform transition duration-300 hover:scale-105 hover:bg-gray-50 rounded-lg p-5 shadow-lg">
-            <img src="https://tse4.mm.bing.net/th?id=OIP.2LiiB7vAx1aGwD7brcEf-AHaE8&pid=Api&P=0&h=180"
+            <img src="https://img.freepik.com/free-photo/decorated-banquet-hall-with-flowers_8353-10058.jpg?ga=GA1.1.1275289697.1728223870&semt=ais_hybrid"
                 alt="Event Photography" class="w-64 h-64 mb-4">
             <h3 class="text-2xl font-semibold text-black mb-2">Mastering Photography Art</h3>
             <p class="text-gray-600 text-center mb-4">Capture your events with unparalleled expertise. Relive each
@@ -263,24 +262,16 @@
         </div>
         <div
             class="flex flex-col items-center transform transition duration-300 hover:scale-105 hover:bg-gray-50 rounded-lg p-5 shadow-lg">
-            <img src="https://tse1.mm.bing.net/th?id=OIP.-4-8BLVizbvY-gNrpGPsRAHaE3&pid=Api&P=0&h=180"
-                alt="Landscape & Nature" class="w-64 h-64 mb-4">
+            <img src="https://img.freepik.com/free-photo/immersive-experience-concept-collage_23-2149498342.jpg?ga=GA1.1.1275289697.1728223870&semt=ais_hybrid"
+                alt="Landscape & Nature" class=" h-64 mb-4">
             <h3 class="text-2xl font-semibold text-black mb-2">Capturing Moments</h3>
             <p class="text-gray-600 text-center mb-4">Explore nature’s beauty through stunning captures of landscapes and
                 outdoor scenes, designed to inspire and captivate.</p>
             <p class="text-gray-600 text-left w-full">26 May 2023</p>
         </div>
     </div>
-    <div class="py-6"></div>
+    <div class="py-10"></div>
 
 
-    {{-- calender --}}
-    <div class="flex justify-center">
-        <div class="bg-white shadow-lg rounded-lg overflow-hidden border border-gray-600">
-            <iframe
-                src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=Asia%2FKolkata&showPrint=0&src=c2FyaXRhYWt1bWFyaTI0QGdtYWlsLmNvbQ&src=YWRkcmVzc2Jvb2sjY29udGFjdHNAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&src=ZW4uaW5kaWFuI2hvbGlkYXlAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&color=%23039BE5&color=%2333B679&color=%230B8043"
-                style="border:solid 1px #777" width="600" height="400" frameborder="0" scrolling="no"></iframe>
-        </div>
-    </div>
-    <div class="py-6"></div>
+   
 @endsection

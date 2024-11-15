@@ -10,7 +10,6 @@
                 <a href="{{ route('admin.banners.index') }}" class="inline-flex items-center bg-gray-700 text-white px-6 py-3 rounded-md hover:bg-gray-800 shadow-md transition duration-200">
                 ← Banner List
             </a>
-
             </div>
         </div>
        

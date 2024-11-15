@@ -98,49 +98,58 @@
    
     <div class="bg-white p-6 rounded-lg hover:shadow-xl hover:scale-105 transition-all duration-300">
         <div class="flex items-center justify-between">
+            <?php
+            $totalCategories = App\Models\Category::count();
+            ?>
             <h2 class="text-lg font-bold text-gray-900">Total categories</h2>
             <span class="text-yellow-400 text-xl font-bold">+4%</span>
         </div>
-        <div class="text-4xl font-bold text-gray-900">85</div>
+        <div class="text-4xl font-bold text-gray-900">{{$totalCategories}}</div>
         <div class="mt-4">
             <div class="h-2 w-full bg-gray-700 rounded-full">
                 <div class="h-2 bg-yellow-400 rounded-full" style="width: 35%;"></div>
             </div>
         </div>
-        <p class="text-gray-900 mt-2">Lorem ipsum dolor sit amet...</p>
-        <button class="mt-4 px-4 py-2 bg-yellow-400 text-gray-900 rounded-lg hover:bg-yellow-500">View Details</button>
+        <p class="text-gray-900 mt-2">Capturing moments with creativity....</p>
+        <button class="mt-4 px-4 py-2 bg-yellow-400 text-gray-900 rounded-lg hover:bg-yellow-500"><a href="{{ route('category') }}"> View Details</a></button>
     </div>
     
   
     <div class="bg-white p-6 rounded-lg hover:shadow-xl hover:scale-105 transition-all duration-300">
         <div class="flex items-center justify-between">
+            <?php
+            $totalGallery = App\Models\Gallery::count();
+            ?>
             <h2 class="text-lg font-bold text-gray-900">Total Albums</h2>
             <span class="text-yellow-400 text-xl font-bold">+8%</span>
         </div>
-        <div class="text-4xl font-bold text-gray-900">850</div>
+        <div class="text-4xl font-bold text-gray-900">{{$totalGallery}}</div>
         <div class="mt-4">
             <div class="h-2 w-full bg-gray-700 rounded-full">
                 <div class="h-2 bg-yellow-400 rounded-full" style="width: 75%;"></div>
             </div>
         </div>
-        <p class="text-gray-900 mt-2">Lorem ipsum dolor sit amet...</p>
-        <button class="mt-4 px-4 py-2 bg-yellow-400 text-gray-900 rounded-lg hover:bg-yellow-500">View Details</button>
+        <p class="text-gray-900 mt-2">"Life, Light, Lens, Legacy"..</p>
+        <button class="mt-4 px-4 py-2 bg-yellow-400 text-gray-900 rounded-lg hover:bg-yellow-500"> <a href="{{route('gallery.manageGallery')}}">View Details</a></button>
     </div>
     
   
     <div class="bg-white p-6 rounded-lg hover:shadow-xl hover:scale-105 transition-all duration-300">
         <div class="flex items-center justify-between">
+            <?php
+            $totalUser = App\Models\User::count();
+            ?>
             <h2 class="text-lg font-bold text-gray-900">Total Clients</h2>
             <span class="text-yellow-400 text-xl font-bold">+10%</span>
         </div>
-        <div class="text-4xl font-bold text-gray-900">1,250</div>
+        <div class="text-4xl font-bold text-gray-900">{{$totalUser}}</div>
         <div class="mt-4">
             <div class="h-2 w-full bg-gray-900 rounded-full">
                 <div class="h-2 bg-yellow-400 rounded-full" style="width: 60%;"></div>
             </div>
         </div>
-        <p class="text-gray-900 mt-2">Lorem ipsum dolor sit amet...</p>
-        <button class="mt-4 px-4 py-2 bg-yellow-400 text-gray-900 rounded-lg hover:bg-yellow-500">View Details</button>
+        <p class="text-gray-900 mt-2">"Stories Seen, Moments Saved"..</p>
+        <button class="mt-4 px-4 py-2 bg-yellow-400 text-gray-900 rounded-lg hover:bg-yellow-500"> <a href="{{ route('admin.user.index') }}"> View Details</a></button>
     </div>
 </div>
 
@@ -167,30 +176,13 @@
   <!-- <h2 class="text-2xl font-semibold mb-6">Recent Photo Uploads</h2> -->
   <div class="mt-4 overflow-x-auto">
       <div class="flex space-x-6 min-w-full">
+          @foreach ($categoryImage as $item)
           <div class="group relative">
-              <img src="https://th.bing.com/th?id=OIP.PztowP3ljup0SM75tkDimQHaHa&w=250&h=250&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2" alt="Profile Image" class="w-48 h-48 object-cover rounded-lg shadow-lg transition-transform transform group-hover:scale-105">
-              <div class="absolute inset-0 bg-black bg-opacity-30 opacity-0 group-hover:opacity-100 transition-opacity rounded-lg"></div>
-          </div>
-          <div class="group relative">
-              <img src="https://th.bing.com/th/id/OIP.X4GQPxf-fjG2DMaopTUJswAAAA?w=208&h=313&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Bride Image" class="w-48 h-48 object-cover rounded-lg shadow-lg transition-transform transform group-hover:scale-105">
-              <div class="absolute inset-0 bg-black bg-opacity-30 opacity-0 group-hover:opacity-100 transition-opacity rounded-lg"></div>
-          </div>
-          <div class="group relative">
-              <img src="https://th.bing.com/th/id/OIP.w0ivEF7TEbjLUS-N2_g2QAHaEo?w=264&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Bride Image" class="w-48 h-48 object-cover rounded-lg shadow-lg transition-transform transform group-hover:scale-105">
-              <div class="absolute inset-0 bg-black bg-opacity-30 opacity-0 group-hover:opacity-100 transition-opacity rounded-lg"></div>
-          </div>
-          <div class="group relative">
-              <img src="https://th.bing.com/th/id/OIP.RwnvpzSdVxxg663QU3njvAHaLw?w=124&h=184&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Bride Image" class="w-48 h-48 object-cover rounded-lg shadow-lg transition-transform transform group-hover:scale-105">
-              <div class="absolute inset-0 bg-black bg-opacity-30 opacity-0 group-hover:opacity-100 transition-opacity rounded-lg"></div>
-          </div>
-          <div class="group relative">
-              <img src="https://th.bing.com/th/id/OIP.VOB_2CiLZ6FSNWDMMGdQKAHaLe?w=200&h=311&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Bride Image" class="w-48 h-48 object-cover rounded-lg shadow-lg transition-transform transform group-hover:scale-105">
-              <div class="absolute inset-0 bg-black bg-opacity-30 opacity-0 group-hover:opacity-100 transition-opacity rounded-lg"></div>
-          </div>
-          <div class="group relative">
-              <img src="https://th.bing.com/th/id/OIP.4pqwwOAbfPOlIyMTXu7Y6wHaLZ?w=201&h=310&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Bride Image" class="w-48 h-48 object-cover rounded-lg shadow-lg transition-transform transform group-hover:scale-105">
-              <div class="absolute inset-0 bg-black bg-opacity-30 opacity-0 group-hover:opacity-100 transition-opacity rounded-lg"></div>
-          </div>
+            <img src="{{ asset('images/' . $item->cat_image) }}" alt="Profile Image" class="w-48 h-48 object-cover rounded-lg shadow-lg transition-transform transform group-hover:scale-105">
+            <div class="absolute inset-0 bg-black bg-opacity-30 opacity-0 group-hover:opacity-100 transition-opacity rounded-lg"></div>
+        </div>
+          @endforeach
+          
       </div>
   </div>
 </div>

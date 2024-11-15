@@ -5,12 +5,17 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\BannerController;
+use App\Http\Controllers\BudgetController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\contactController;
+use App\Http\Controllers\YoutubeVideoController;
+use App\Models\Category;
 
 use function Pest\Laravel\post;
+use function Symfony\Component\String\b;
+
 
 Route::get('/', function () {
     return view('public.home');
@@ -74,22 +79,34 @@ Route::prefix('admin')->group(function () {
     Route::middleware(['auth'])->group(function () {
         // dashboard
         Route::get('/dashboard', function () {
-            return view('admin.dashboard');
+            $data['categoryImage']=Category::all();
+            return view('admin.dashboard',$data);
         })->name('dashboard');
-       
+
+
         // category
         Route::controller(CategoryController::class)->prefix('category')->group(function () {
             Route::match(['get', 'post'], '/', 'manageCategory')->name('category');
+            Route::get('/editcategory/{id}', 'editCategory')->name('category.edit');
+            Route::put('/editcategory/{id}', 'updateCategory')->name('category.update');
 
-            Route::get('/delete/{id}', 'deleteCategory')->name('category.delete');
+            Route::delete('/trash/{id}','trashCategory')->name('category.trash');
         });
+      
          // gallery
          Route::controller(GalleryController::class)->prefix('gallery')->group(function(){
            
-            Route::match(["get","post"],"/insert","manageGallery")->name("gallery.insertGallery");
+            Route::match(["get","post"],"/insert","insertGallery")->name("gallery.insertGallery");
             Route::get("/managegallery","manageGallery")->name("gallery.manageGallery");
-            Route::get('/delete/{id}', 'deleteGallery')->name('gallery.delete');
+            Route::get("/viewgallery/{id}","viewGallery")->name("gallery.viewGallery");
+            Route::get( '/editgallery/{id}', 'editGallery')->name('gallery.edit');
+            Route::put( '/editgallery/{id}', 'updateGallery')->name('gallery.update');
+            Route::delete('/trash/{id}','trashGallery')->name('gallery.trash');
+
+            Route::delete('/delete-image/{imageId}', 'deleteImage')->name('gallery.deleteImage');
         });
+
+
 
         // contact
         Route::get('/contact-list', [ContactController::class, 'ManageContact'])->name('admin.contact.list');
@@ -100,9 +117,35 @@ Route::prefix('admin')->group(function () {
         Route::post('/banner/{id}/toggle-status', [BannerController::class, 'toggleStatus'])->name('admin.banner.toggleStatus');
         Route::get('/delete/{id}', [BannerController::class, 'destroy'])->name('banner.delete');
 
+        Route::get('/users', [UserController::class, 'index'])->name('admin.user.index');
+
+        Route::resource('youtube-videos', YoutubeVideoController::class);
+        Route::post('/video/{id}/toggle-status', [YoutubeVideoController::class, 'toggleStatus'])->name('admin.video.toggleStatus');
+        Route::controller(BannerController::class)->prefix('banner')->group(function(){
+
+        Route::get('/create',  'create')->name('banner.create');
+        Route::post('/store',  'store')->name('banner.store');
+        Route::get('/banners',  'index')->name('admin.banners.index');
+        Route::post('/banner/{id}/toggle-status',  'toggleStatus')->name('admin.banner.toggleStatus');
+        // Route::get('/delete/{id}', [BannerController::class, 'destroy'])->name('banner.delete');
+        Route::delete('/trash/{id}','trashBanner')->name('banner.trash');
+
+    });
+
+    // youtubevideo
+
+        Route::resource('youtube-videos', YoutubeVideoController::class);
+        Route::post('/video/{id}/toggle-status', [YoutubeVideoController::class, 'toggleStatus'])->name('admin.video.toggleStatus');
+        Route::delete('/video/trash/{id}', [YoutubeVideoController::class,'trashYoutubeVideo'])->name('YoutubeVideo.trash');
+
+
 
 
     });
 });
-
-Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+Route::get('/admin/budget',[BudgetController::class,'BudgetView'])->name('budget.show');
+Route::get('/admin/budget/{id}', [BudgetController::class, 'BudgetEdit'])->name('budget.edit');
+Route::put('/admin/budget/{id}', [BudgetController::class, 'BudgetUpdate'])->name('budget.update');
+Route::post('/admin/budget',[BudgetController::class,'CategoryPrice'])->name('budget.create');
+Route::match(["get","post"],'/budget', [BudgetController::class, 'index'])->name('budget.index');
+Route::post('/logout', [LoginController::class, 'logout'])->name('logout'); 
