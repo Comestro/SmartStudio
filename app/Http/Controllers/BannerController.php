@@ -72,6 +72,8 @@ class BannerController extends Controller
      */
     public function edit(Banner $banner)
     {
+        
+     
         //
     }
 

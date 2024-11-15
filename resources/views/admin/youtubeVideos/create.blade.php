@@ -63,10 +63,10 @@
                             </form>
                         </td>
                         <td class="px-4 py-3 border-b border-gray-200 text-sm text-gray-600">
-                            <a href="#" class="inline-flex items-center bg-gradient-to-r from-indigo-500 to-indigo-700 text-white py-2 px-4 rounded-md hover:bg-gradient-to-l transition duration-300">
+                            <a href="{{route('youtube-videos.edit', $video->id)}}" class="inline-flex items-center bg-gradient-to-r from-indigo-500 to-indigo-700 text-white py-2 px-4 rounded-md hover:bg-gradient-to-l transition duration-300">
                                 Edit
                             </a>
-                            <form action="{{ route('YoutubeVideo.trash', $video->id) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this category?');" class="inline-block ml-2">
+                            <form action="{{ route('youtube-video.trash', $video->id) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this category?');" class="inline-block ml-2">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="inline-flex items-center bg-gradient-to-r from-red-500 to-red-700 text-white py-2 px-4 rounded-md hover:bg-gradient-to-l transition duration-300">

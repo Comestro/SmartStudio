@@ -107,6 +107,7 @@ Route::prefix('admin')->group(function () {
         // contact
         Route::get('/contact-list', [ContactController::class, 'ManageContact'])->name('admin.contact.list');
 
+        // banner
         Route::controller(BannerController::class)->prefix('banner')->group(function(){
 
         Route::get('/create',  'create')->name('banner.create');
@@ -122,10 +123,12 @@ Route::prefix('admin')->group(function () {
 
         Route::resource('youtube-videos', YoutubeVideoController::class);
         Route::post('/video/{id}/toggle-status', [YoutubeVideoController::class, 'toggleStatus'])->name('admin.video.toggleStatus');
-        Route::delete('/video/trash/{id}', [YoutubeVideoController::class,'trashYoutubeVideo'])->name('YoutubeVideo.trash');
+        Route::get( '/youtube-video/edit/{id}',[YoutubeVideoController::class, 'edit'])->name('youtube-video.edit');
+        Route::put( '/youtube-video/edit/{id}',[YoutubeVideoController::class, 'update'])->name('youtube-video.update');
+        Route::delete('/video/trash/{id}', [YoutubeVideoController::class,'trashYoutubeVideo'])->name('youtube-video.trash');
 
 
-
+        
 
     });
 });
