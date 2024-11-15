@@ -143,7 +143,7 @@ Route::prefix('admin')->group(function () {
 
     });
 });
-Route::delete('/trash/{id}',[BudgetController::class,'Destroy'])->name('budget.trash');
+Route::delete('admin/budget/trash/{id}',[BudgetController::class,'destroy'])->name('budget.trash');
 
 Route::get('/admin/budget',[BudgetController::class,'BudgetView'])->name('budget.show');
 Route::get('/admin/budget/{id}', [BudgetController::class, 'BudgetEdit'])->name('budget.edit');
