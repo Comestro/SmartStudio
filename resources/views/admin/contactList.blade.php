@@ -17,9 +17,6 @@
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-5xl">
         @foreach ($contacts as $contact)
             <div class="bg-gradient-to-t from-yellow-200 to-white p-6 rounded-lg shadow-lg flex flex-col items-center text-center transition-transform transform hover:scale-105 hover:shadow-2xl">
-                <div class="w-16 h-16 rounded-full bg-yellow-500 flex items-center justify-center text-2xl text-white font-bold">
-                    JD
-                </div>
                 <h3 class="mt-4 text-lg font-semibold text-gray-800">{{$contact->name}}</h3>
                 <p class="text-gray-600">{{$contact->email}}</p>
                 <p class="text-gray-600">{{$contact->message}}</p>
@@ -35,26 +32,7 @@
                 </div>
                 @endforeach
             </div>
-            <!-- <div class="bg-gradient-to-t from-yellow-200 to-white p-6 rounded-lg shadow-lg flex flex-col items-center text-center transition-transform transform hover:scale-105 hover:shadow-2xl">
-                <div class="w-16 h-16 rounded-full bg-yellow-500 flex items-center justify-center text-2xl text-white font-bold">
-                    AD
-                </div>
-                <h3 class="mt-4 text-lg font-semibold text-gray-800">Aditi Keshri</h3>
-                <p class="text-gray-600">aditikeshri@gmail.com</p>
-                <p class="text-gray-600">+1 234 567 890</p>
-                
-            
-                <div class="mt-4 flex space-x-4">
-                    <button class="text-blue-500 hover:text-blue-700">
-                        <i class="bi bi-pencil-square"></i>
-                    </button>
-                    <button class="text-red-500 hover:text-red-700">
-                        <i class="bi bi-trash"></i>
-                    </button>
-                </div>
-            </div> -->
-
-           
+    
         </div>
     </div>
 </div>
