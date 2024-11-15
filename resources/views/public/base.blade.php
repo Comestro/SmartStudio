@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     </head>
 
-<body class="bg-black roboto-medium">
+<body class="">
 
 
     <header class="bg-gray-900 text-white py-3 px-4 fixed top-0 w-full z-10 shadow-md">
@@ -46,7 +46,7 @@
       
   @show
 
-  <div class="flex flex-col md:flex-row bg-gray-900 text-white p-8 gap-4 justify-between mt-4">
+  <div class="flex flex-col md:flex-row bg-gray-900 text-white p-8 gap-4 justify-between">
     <div class="flex flex-col items-start md:w-1/4">
         <img src="https://tse2.mm.bing.net/th?id=OIP.tEQ4HAiipGQ6oKYkdUGS8QHaHa&pid=Api&P=0&h=180" alt="Logo"
             class="rounded-full w-24 h-24 object-cover mb-4">

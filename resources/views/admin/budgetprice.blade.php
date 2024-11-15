@@ -46,9 +46,16 @@
                         <td class="py-4 px-4 border-b border-gray-700 text-gray-300">{{ $cam->cam_category }}</td>
                         <td class="py-4 px-4 border-b border-gray-700 text-gray-300">₹{{ number_format($cam->cam_price, 2) }}</td>
                         <td class="py-4 px-4 border-b border-gray-700 text-center">
-                            <a href="#" class="text-blue-500 hover:underline mr-4">Edit</a>
-                            <a href="#" class="text-red-500 hover:underline">Delete</a>
+                            <a href="{{route('budget.edit',$cam->id)}}" class="text-blue-500 hover:underline mr-4">Edit</a>
+                           
+                            <form action="{{ route('budget.trash', $cam->id) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this budget?');" class="inline-block ml-2">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="text-red-500 hover:underline">Delete
+                                </button>
+                            </form>
                         </td>
+                        
                     </tr>
                     @endforeach
                 </tbody>

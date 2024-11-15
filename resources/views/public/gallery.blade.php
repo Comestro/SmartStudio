@@ -253,8 +253,7 @@
                 Get in Touch
             </button>
         </div>
-    </div>
-
+        </div>
 
 
     <section id="gallery" class="py-16">

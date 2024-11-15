@@ -9,7 +9,7 @@ class Gallery extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['gallery_title', 'slug', 'content', 'category_id'];
+    protected $guarded = [];
 
     // Define the relationship with Category
     public function category()
