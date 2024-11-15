@@ -52,7 +52,7 @@ class YoutubeVideoController extends Controller
     {
         $youtubeVideo = youtubeVideo::findOrFail($id);
     
-        return view('admin.videos.edit', compact('youtubeVideo'));
+        return view('admin.youtubeVideos.editVideo', compact('youtubeVideo'));
     }
     
     public function update(Request $request, $id)
@@ -73,7 +73,7 @@ class YoutubeVideoController extends Controller
         $youtubeVideo->status = $request->status;
         $youtubeVideo->save();
     
-        return redirect()->route('youtube-videos.index')->with('msg', 'Video updated successfully!');
+        return redirect()->route('youtube-videos.create')->with('msg', 'Video updated successfully!');
     }
     
     // public function destroy($id)
