@@ -87,6 +87,8 @@
                                     <td class="px-4 md:px-6 py-3 whitespace-nowrap text-gray-300">{{ $item->content }}</td>
                                     <td class="px-4 md:px-6 py-3 whitespace-nowrap text-gray-300">{{ $item->category_id }}</td>
                                     <td class="px-4 md:px-6 py-3 flex justify-center gap-2">
+                                        <button type="submit" class="bg-green-500 text-white px-3 py-1 rounded-md hover:bg-red-600 transition duration-300">View</button>
+
                                         <a href="{{route('gallery.edit',$item->id)}}" class="bg-blue-500 text-white px-3 py-1 rounded-md hover:bg-blue-600 transition duration-300">Edit</a>
                                         <form action="{{ route('gallery.trash', $item->id) }}" method="POST" class="inline-block"
                                             onsubmit="return confirm('Are you sure you want to delete this category?');">

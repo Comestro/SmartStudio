@@ -10,6 +10,6 @@ class Banner extends Model
 {
     /** @use HasFactory<\Database\Factories\BannerFactory> */
     use HasFactory, SoftDeletes;
-    protected $fillable = ['b_name','b_image','status'];
+    protected $guarded = [];
 
 }
