@@ -9,7 +9,7 @@ class Category extends Model
 {
     use HasFactory, SoftDeletes;
 
-    protected $fillable = ['cat_name', 'cat_slug', 'cat_description', 'cat_image'];
+    protected $guarded = [];
 
     // Define the relationship with Gallery
     public function galleries()

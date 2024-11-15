@@ -83,6 +83,10 @@
                  class="w-full p-4 border border-gray-700 rounded-lg focus:outline-none focus:border-yellow-500">
         </div>
         <div class="mb-6">
+          <input type="phone_no" name="phone_no" placeholder="Your phone_no" required
+                 class="w-full p-4 border border-gray-700 rounded-lg focus:outline-none focus:border-yellow-500">
+        </div>
+        <div class="mb-6">
           <textarea name="message" rows="5" placeholder="Your Message" required
                     class="w-full p-4 border border-gray-700 rounded-lg focus:outline-none focus:border-yellow-500"></textarea>
         </div>

@@ -11,7 +11,7 @@ class GalleryImage extends Model
 {
     use HasFactory,SoftDeletes;
 
-    protected $fillable = ['gallery_id', 'image_path'];
+    protected $guarded = [];
 
     // Define the relationship with Gallery
     public function gallery()

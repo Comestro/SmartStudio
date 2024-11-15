@@ -143,9 +143,11 @@ Route::prefix('admin')->group(function () {
 
     });
 });
+Route::delete('admin/budget/trash/{id}',[BudgetController::class,'destroy'])->name('budget.trash');
+
 Route::get('/admin/budget',[BudgetController::class,'BudgetView'])->name('budget.show');
 Route::get('/admin/budget/{id}', [BudgetController::class, 'BudgetEdit'])->name('budget.edit');
-Route::put('/admin/budget/{id}', [BudgetController::class, 'BudgetUpdate'])->name('budget.update');
+Route::put('/admin/budget/update/{id}', [BudgetController::class, 'updateBudget'])->name('budget.update');
 Route::post('/admin/budget',[BudgetController::class,'CategoryPrice'])->name('budget.create');
 Route::match(["get","post"],'/budget', [BudgetController::class, 'index'])->name('budget.index');
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout'); 

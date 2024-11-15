@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('cam_category');
             $table->string('cam_price');
+            $table->softDeletes();
             $table->timestamps();
 
         });

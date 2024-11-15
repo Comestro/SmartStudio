@@ -35,11 +35,11 @@ class BudgetController extends Controller
     public function updateBudget(Request $request, $id){
         $id=CameraMan::find($id);
 
-        // $id->cam_category=$request->cam_category;
-        // $id->cam_price=$request->cam_price;
-        // $id->save(); 
+        $id->cam_category=$request->cam_category;
+        $id->cam_price=$request->cam_price;
+        $id->save(); 
 
-        return redirect()->route('budgetView')->with('msg', 'Category Price Updated Successfully');
+        return redirect()->route('budget.show')->with('msg', 'Category Price Updated Successfully');
     }
     public function CategoryPrice(Request $request){
         
@@ -67,5 +67,10 @@ class BudgetController extends Controller
          $budget=($eventMember/5)*$totalCameraMan;
 
          return $budget;
+    }
+    public function destroy($id){
+        $data=CameraMan::findOrFail($id);
+        $data->delete();
+        return redirect()->back()->with('msg','delete budget succ');
     }
 }
