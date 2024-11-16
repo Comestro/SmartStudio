@@ -33,7 +33,7 @@ class BannerController extends Controller
         if ($request->isMethod('post')) {
             $request->validate([
                 'b_name' => 'required',
-                'b_image' => 'required|image|mimes:jpeg,png,jpg,svg,avif',
+                'b_image' => 'required|image|mimes:jpeg,png,jpg,svg,avif,webp',
                 'status' => 'required|string'
             ]);
 
@@ -71,32 +71,48 @@ class BannerController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Banner $banner)
-    {
-        
-     
-        //
-    }
+    public function edit($id)
+{
+    $banner = Banner::findOrFail($id);
+    return view('admin.banner.editBanner', compact('banner'));
+}
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Banner $banner)
+    public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'b_name' => 'required',
+            'b_image' => 'nullable|image|mimes:jpeg,png,jpg,svg,avif,webp|max:2048',
+            'status' => 'required|string',
+        ]);
+    
+        $banner = Banner::findOrFail($id);
+        $banner->b_name = $request->b_name;
+        $banner->status = $request->status;
+    
+        if ($request->hasFile('b_image')) {
+            // Delete the old image if it exists
+            if (file_exists(public_path('images/' . $banner->b_image))) {
+                unlink(public_path('images/' . $banner->b_image));
+            }
+    
+            // Upload the new image
+            $image = $request->file('b_image');
+            $imageName = time() . '.' . $image->getClientOriginalExtension();
+            $image->move(public_path('images'), $imageName);
+    
+            // Update the image name in the database
+            $banner->b_image = $imageName;
+        }
+    
+        $banner->save();
+    
+        return redirect()->route('admin.banners.index')->with('msg', 'Banner updated successfully.');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    // public function destroy($id)
-    // {
-    //     $banner=Banner::findOrFail($id);
-    //     $banner->delete();
-
-    //     return redirect()->back()->with('msg','banner deleted successfully');
-
-    // }
+   
 
     public function trashBanner($id){
         $data =Banner::findOrFail($id);
