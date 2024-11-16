@@ -1,54 +1,54 @@
 @extends('public.layout')
 
 @section('content')
-    <main class="relative w-full md:w-4/4 h-180">
+    <main class="relative w-full md:w-4/4 ">
         <livewire:public.banner.calling-banner />
     </main>
     <style>
-    .gallery-container {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 20px;
-        justify-content: center;
-    }
-
-    .gallery-item {
-        flex: 1; 
-        width: 30%;
-        height: 250px;
-        overflow: hidden;
-        border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        transition: transform 0.3s ease;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .gallery-item img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transition: all 0.3s ease;
-    }
-
-  
-    .gallery-item:hover {
-        flex: 4; 
-    }
-
-    @media (max-width: 768px) {
-        .gallery-item {
-            width: 45%;
+        .gallery-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
         }
-    }
 
-    @media (max-width: 480px) {
         .gallery-item {
+            flex: 1;
+            width: 30%;
+            height: 250px;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .gallery-item img {
             width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.3s ease;
         }
-    }
-</style>
+
+
+        .gallery-item:hover {
+            flex: 4;
+        }
+
+        @media (max-width: 768px) {
+            .gallery-item {
+                width: 45%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .gallery-item {
+                width: 100%;
+            }
+        }
+    </style>
     </div>
     <div class="bg-white py-12">
         <div class="text-left px-6 md:px-36">
@@ -62,14 +62,14 @@
     </div>
 
     <section id="gallery" class="py-20 bg-gray-200">
-    <div class="gallery-container px-10">
-        @foreach ($categories as $item)
-            <div class="gallery-item">
-                <img src="{{ asset('images/' . $item->cat_image) }}" alt="{{ $item->cat_name }}">
-            </div>
-        @endforeach
-    </div>
-</section>
+        <div class="gallery-container px-10">
+            @foreach ($categories->take(4) as $item)
+                <div class="gallery-item">
+                    <img src="{{ asset('images/' . $item->cat_image) }}" alt="{{ $item->cat_name }}">
+                </div>
+            @endforeach
+        </div>
+    </section>
 
 
     <div class="py-8"></div>
@@ -127,28 +127,25 @@
 
 
             <div class="flex flex-wrap justify-center gap-8">
-                <a href="#" class="text-lg text-gray-600 hover:text-yellow-500 transition">
+                <a href="/" class="text-lg text-gray-600 hover:text-yellow-500 transition">
                     All
                 </a>
-                @foreach ($galleries as $item)
-                    <div class="category-item">
-                        <a href="#" class="text-lg text-yellow-500 hover:text-gray-800 transition">
-                            {{ $item->gallery_title }}
-                        </a>
-                    </div>
-                @endforeach
-                <a href="#" class="text-lg text-gray-600 hover:text-yellow-500 transition">
-                    Studio
-                </a>
-                <a href="#" class="text-lg text-gray-600 hover:text-yellow-500 transition">
-                    Potraits
-                </a>
+                <form method="GET" action="{{ route('home') }}" class="flex flex-wrap justify-center gap-8">
+                    @foreach ($categories->take(4) as $item)
+                        <div class="category-item">
+                            <a href="{{ route('home') }}?category_slug={{ $item->cat_slug }}"
+                                class="text-lg text-yellow-500 hover:text-gray-800 transition {{ $item->cat_slug == $selectedCategorySlug ? 'font-bold' : '' }}">
+                                {{ $item->cat_name }}
+                            </a>
+                        </div>
+                    @endforeach
+                </form>
+                
             </div>
         </div>
     </div>
 
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 p-6">
-        <!-- First Section: Show 2 Images -->
         @foreach ($galleries->take(2) as $item)
             <div class="bg-black flex items-center justify-center h-64 sm:h-80 overflow-hidden group relative rounded-lg shadow-lg">
                 <img src="{{ asset('images/' . $item->images->first()->image_path) }}"
@@ -163,7 +160,6 @@
     
     <div class="flex justify-center">
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 p-4 max-w-5xl">
-            <!-- Second Section: Skip 2, Take Next 4 Images -->
             @foreach ($galleries->skip(2)->take(4) as $item)
                 <div>
                     <img src="{{ asset('images/' . $item->images->first()->image_path) }}" class="h-64 w-full object-cover"
@@ -175,7 +171,6 @@
     
     <div class="flex justify-center px-4">
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-screen-xl">
-            <!-- Third Section: Skip 6, Take Next 3 Images -->
             @foreach ($galleries->skip(6)->take(3) as $item)
                 <div>
                     <img src="{{ asset('images/' . $item->images->first()->image_path) }}" class="w-full h-64 object-cover"
@@ -184,7 +179,7 @@
             @endforeach
         </div>
     </div>
-    
+
     <div class="py-12"></div>
 
 
@@ -285,7 +280,8 @@
             <img src="https://img.freepik.com/free-photo/young-beautiful-woman-portrait_23-2149263756.jpg?ga=GA1.1.1275289697.1728223870&semt=ais_hybrid"
                 alt="Professional Portraits" class="w-64 h-64 mb-4">
             <h3 class="text-2xl font-semibold text-black mb-2">Elevate Your Portraits</h3>
-            <p class="text-gray-600 text-center mb-4">Experience the art of portrait photography, crafted to capture your
+            <p class="text-gray-600 text-center mb-4">Experience the art of portrait photography, crafted to capture
+                your
                 essence and personality in every shot.</p>
             <p class="text-gray-600 text-left w-full">26 May 2023</p>
         </div>
@@ -303,7 +299,8 @@
             <img src="https://img.freepik.com/free-photo/immersive-experience-concept-collage_23-2149498342.jpg?ga=GA1.1.1275289697.1728223870&semt=ais_hybrid"
                 alt="Landscape & Nature" class="w-64 h-64 mb-4">
             <h3 class="text-2xl font-semibold text-black mb-2">Capturing Moments</h3>
-            <p class="text-gray-600 text-center mb-4">Explore nature’s beauty through stunning captures of landscapes and
+            <p class="text-gray-600 text-center mb-4">Explore nature’s beauty through stunning captures of landscapes
+                and
                 outdoor scenes, designed to inspire and captivate.</p>
             <p class="text-gray-600 text-left w-full">26 May 2023</p>
         </div>

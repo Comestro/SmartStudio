@@ -15,6 +15,7 @@ use App\Http\Controllers\contactController;
 use App\Http\Controllers\dashboardController;
 use App\Http\Controllers\YoutubeVideoController;
 use App\Models\Category;
+use Illuminate\Http\Request;
 
 use App\Models\youtubeVideo;
 
@@ -83,16 +84,41 @@ Route::get('/', function () {
     return view('/public.home', $categories);
 })->name('home');
 
-Route::get('/', function () {
+
+Route::get('/', function (Request $request) {
     $categories = Category::all();
-    $galleries = Gallery::with(['images', 'category'])->get();
 
-    // $filterGallery = GalleryImage::whereNotNull('image_path')
-    //     ->where('image_path', '!=', '')
-    //     ->get();
+    $selectedCategorySlug = $request->input('category_slug');
 
-    return view('public.home', compact('categories', 'galleries'));
+    $galleriesQuery = Gallery::with(['images', 'category'])
+        ->whereHas('images', function ($query) {
+            $query->whereNotNull('image_path')
+                ->where('image_path', '!=', '');
+        });
+
+    if ($selectedCategorySlug) {
+        
+        $category = Category::where('cat_slug', $selectedCategorySlug)->first();
+
+        
+        if ($category) {
+            $galleriesQuery->where('category_id', $category->id);
+        }
+    }
+
+    
+    $galleries = $galleriesQuery->paginate(12);
+
+    return view('public.home', [
+        'categories' => $categories,
+        'galleries' => $galleries,
+        'selectedCategorySlug' => $selectedCategorySlug, 
+    ]);
+
 })->name('home');
+
+
+
 
 
 // admin category
@@ -100,7 +126,7 @@ Route::prefix('admin')->middleware(['auth', 'admin'])->group(function () {
 
     // dashboard
     // Route::get('/dashboard', function () {
-       
+
     // })->name('dashboard');
     Route::get('/dashboard', [dashboardController::class, 'index'])->name('dashboard');
 
@@ -140,7 +166,7 @@ Route::prefix('admin')->middleware(['auth', 'admin'])->group(function () {
     Route::post('/banner/{id}/toggle-status', [BannerController::class, 'toggleStatus'])->name('admin.banner.toggleStatus');
     Route::get('/banner/edit/{id}', [BannerController::class, 'edit'])->name('banner.edit');
     Route::put('/banner/edit/{id}', [BannerController::class, 'update'])->name('banner.update');
-        Route::get('/delete/{id}', [BannerController::class, 'destroy'])->name('banner.delete');
+    Route::get('/delete/{id}', [BannerController::class, 'destroy'])->name('banner.delete');
 
     Route::get('/users', [UserController::class, 'index'])->name('admin.user.index');
 
