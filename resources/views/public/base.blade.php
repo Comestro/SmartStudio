@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     </head>
 
-<body class="">
+<body class=" bg-black roboto-medium">
 
 
     <header class="bg-gray-900 text-white py-3 px-4 fixed top-0 w-full z-10 shadow-md">

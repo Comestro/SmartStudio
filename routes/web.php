@@ -72,7 +72,7 @@ Route::post('/booking/{category}', [BookingController::class, 'store'])->name('c
 Route::get('admin/checkschedule', [BookingController::class, 'showBooking'])->name('booking.show');
 Route::get('/', function () {
     $categories['categories'] = Category::all();
-    return view('public.home',$categories);
+    return view('public.home',$categories)->name('home');
 });
 
 
@@ -124,6 +124,12 @@ Route::prefix('admin')->middleware(['auth', 'admin'])->group(function () {
         Route::get('/banner/edit/{id}', [BannerController::class, 'edit'])->name('banner.edit');
     Route::put('/banner/edit/{id}', [BannerController::class, 'update'])->name('banner.update');
         Route::get('/delete/{id}', [BannerController::class, 'destroy'])->name('banner.delete');
+    // // banner
+    // Route::get('/banner/create', [BannerController::class, 'create'])->name('banner.create');
+    // Route::post('/banner/store', [BannerController::class, 'store'])->name('banner.store');
+    // Route::get('/banners', [BannerController::class, 'index'])->name('admin.banners.index');
+    // Route::post('/banner/{id}/toggle-status', [BannerController::class, 'toggleStatus'])->name('admin.banner.toggleStatus');
+    // Route::get('/delete/{id}', [BannerController::class, 'destroy'])->name('banner.delete');
 
     Route::get('/users', [UserController::class, 'index'])->name('admin.user.index');
 
