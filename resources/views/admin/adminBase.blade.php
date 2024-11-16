@@ -50,7 +50,7 @@
 </head>
 <body class="bg-gray-900 text-gray-200">
     <div class="flex">
-        <div id="sidebar" class="w-64 h-screen bg-black hidden md:block">
+        <div id="sidebar" class="w-80 h-auto bg-[#2f363e] hidden md:block">
             @include('admin.includes.sidebar')  {{-- Include your sidebar here --}}
         </div>
         <div class="flex-grow">

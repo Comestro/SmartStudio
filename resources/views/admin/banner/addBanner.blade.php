@@ -1,7 +1,7 @@
 @extends('admin.adminBase')
 
 @section('content')
-<div class="w-[80%] h-auto">
+<div class="w-full h-auto">
     <div class="container mx-auto p-8">
 
         <div class="w-full mb-6">
