@@ -9,15 +9,6 @@
     <h1 class="text-white text-3xl md:text-5xl font-bold mb-2 mr-5 ml-0 md:ml-10 text-center md:text-left">
         WELCOME TO <span class="text-yellow-400">SMART STUDIO</span>
     </h1>
-
-   
-    <form method="POST" action="{{ route('logout') }}" class="w-full md:w-auto mt-4 md:mt-0">
-        @csrf
-        <button type="submit" 
-            class="w-full md:w-auto px-4 py-2 font-semibold rounded border border-yellow-400 text-yellow-400 bg-transparent hover:bg-yellow-400 hover:text-white transition">
-            Logout
-        </button>
-    </form>
 </div>
 <div class="flex flex-col md:flex-row items-center justify-center mt-4 px-6 md:px-10 ml-12">
 <p class="text-white text-lg md:text-xl  text-center md:text-left">

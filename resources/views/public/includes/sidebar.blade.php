@@ -1,7 +1,7 @@
 <div class="relative h-[120] ">
 
     <!-- Toggle Button -->
-    <button id="menuToggle" class="absolute top-4 left-4 bg-yellow-500 text-white p-2 rounded z-50">
+    <button id="menuToggle" class="absolute top-4 left-4 border border-yellow-400 text-yellow-400 bg-transparent hover:bg-yellow-400 hover:text-white transition p-2 rounded z-50">
         <i class="bi bi-list text-2xl"></i>
     </button>
 
@@ -11,8 +11,14 @@
         <img src="https://tse2.mm.bing.net/th?id=OIP.tEQ4HAiipGQ6oKYkdUGS8QHaHa&pid=Api&P=0&h=180" 
              alt="Logo"
              class="rounded-full w-24 h-24 object-cover mb-6">
+             <div class="flex justify-between items-center w-full">
+            <a href="#" class="text-lg text-yellow-400">Home</a>
+            @if(Auth::check())
+            <span class="text-yellow-400 font-semibold"> {{ Auth::user()->name }}</span>
+            @endif
+        </div>
         <nav class="flex-1 w-full text-center space-y-4">
-            <ul class="pl-6 space-y-4 text-left">
+            <ul class="pl-6 space-y-4 text-left mt-4">
                 <li><a href="{{ route('gallery') }}" class="text-lg text-yellow-400 hover:text-gray-300">Gallery Albums</a></li>
                 <li><a href="#" class="text-lg hover:text-gray-300">Background Images</a></li>
                 <li><a href="{{ route('video') }}" class="text-lg hover:text-gray-300">Background Video</a></li>
@@ -20,6 +26,14 @@
                 <li><a href="#" class="text-lg hover:text-gray-300">Full Screen Slider</a></li>
             </ul>
             <hr class="border-t border-white mt-6 w-full">
+                      
+    <form method="POST" action="{{ route('logout') }}" class="w-full md:w-auto mt-4 md:mt-0">
+        @csrf
+        <button type="submit" 
+            class="w-full md:w-auto px-4 py-2 font-semibold rounded border border-yellow-400 text-yellow-400 bg-transparent hover:bg-yellow-400 hover:text-white transition">
+            Logout
+        </button>
+    </form>
         <div class="space-y-2 mt-4">
             <div class="flex justify-between items-center w-full">
                 <a href="{{ route('about') }}" class="text-white text-lg hover:text-yellow-500">About</a>
@@ -43,6 +57,7 @@
                     For Your Event</a>
                 <i class="bi bi-caret-left-fill text-white text-2xl"></i>
             </div>
+  
             <div class="flex justify-between items-center w-full">
     <a href="{{ route('category.view') }}"
         class="text-black text-lg border border-yellow-400 text-yellow-400 bg-transparent bg-transparent px-3 py-1 rounded hover:bg-yellow-400 hover:text-white transition duration-300">
