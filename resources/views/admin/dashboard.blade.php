@@ -10,7 +10,7 @@
             scrollbar-width: none;
         }
     </style>
-    <div class="w-[80%] h-auto bg-black">
+    <div class="w-full h-auto ">
         {{-- nav --}}
 
 
@@ -203,13 +203,13 @@
 
 
 
-        <div class="mt-8 bg-black p-4 px-8 rounded-lg shadow-md text-gray-100">
+        <div class="mt-8  p-4 px-8 rounded-lg shadow-md text-gray-100">
             <h2 class="text-xl font-bold  pb-2 text-yellow-400">Recent Photos <i
                     class="bi bi-arrow-right-circle-fill text-2xl ml-2"></i></h2>
             <div class="mt-4 overflow-x-auto">
-                <table class="min-w-full text-center bg-gray-700 rounded-lg overflow-hidden shadow-lg">
+                <table class="min-w-full text-center bg-gray-900 rounded-lg overflow-hidden shadow-lg">
                     <thead>
-                        <tr class="bg-gray-900 text-gray-300">
+                        <tr class="bg-gray-600 text-gray-300">
                             <th class="py-3 px-5 border-b border-gray-600">Photo ID</th>
                             <th class="py-3 px-5 border-b border-gray-600">Gallery</th>
                             <th class="py-3 px-5 border-b border-gray-600">Event</th>

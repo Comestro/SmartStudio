@@ -1,4 +1,10 @@
 <div class="w-full h-full pl-10 mt-2">
+    <div class="w-full h-16 flex items-center justify-center">
+        <p class="text-3xl text-yellow-400 font-bold">SMART STUDIO</p>
+    </div>
+    <div class="w-full h-10 mt-6 text-base flex items-center pl-10 text-gray-500 font-semibold">
+        <p>Main Menu</p>
+    </div>
     <ul>
         <li class="flex items-center gap-3 hover:bg-gray-700 p-2 rounded transition duration-300 hover:border-r-8 border-yellow-500">
             <i class="bi bi-house-door text-yellow-400 text-xl"></i>

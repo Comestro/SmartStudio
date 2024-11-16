@@ -1,8 +1,8 @@
 @extends('admin.adminBase')
 
 @section('content')
-<div class="w-[80%] h-auto">
-    <div class="flex flex-col items-center min-h-screen bg-gradient-to-b from-gray-800 to-gray-900 p-8">
+<div class="w-full h-auto">
+    <div class="flex flex-col items-center min-h-screen  p-8">
        
         <div class="w-full max-w-5xl mb-6">
             <div class="flex justify-between items-center bg-gradient-to-r from-yellow-100 to-yellow-500 text-white p-4 rounded-lg shadow-lg">
@@ -24,9 +24,9 @@
                     <button class="text-blue-500 hover:text-blue-700">
                         <i class="bi bi-pencil-square"></i>
                     </button>
-                    <button class="text-red-500 hover:text-red-700">
+                    {{-- <button class="text-red-500 hover:text-red-700">
                         <i class="bi bi-trash"></i>
-                    </button>
+                    </button> --}}
                 </div>
                 @endforeach
             </div>
