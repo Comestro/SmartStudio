@@ -1,4 +1,4 @@
-<div class="w-full h-auto pl-10 mt-2">
+<div class="w-full h-screen pl-10 mt-2">
     <div class="w-full h-16 flex items-center justify-center">
         <p class="text-2xl text-yellow-400 font-bold">SMART STUDIO</p>
     </div>

@@ -4,11 +4,21 @@
 @section('title', 'Category Management')
 
 @section('content')
+<style>
+     .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+
+
+        .scrollbar-hide {
+            scrollbar-width: none;
+        }
+</style>
 <div class="flex justify-center items-center p-6">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 w-full max-w-6xl">
 
         {{-- Category Form --}}
-        <div class="bg-gray-900 p-6 md:p-10 rounded-lg shadow-lg">
+        <div class="bg-gray-900  shadow-lg">
             <h2 class="text-2xl md:text-3xl font-bold text-yellow-400 mb-4 md:mb-6">Add New Category</h2>
             <form action="{{ route('category') }}" method="POST" enctype="multipart/form-data" class="space-y-4 md:space-y-5">
                 @csrf
@@ -46,9 +56,9 @@
         </div>
 
         {{-- Category Table --}}
-        <div class="bg-gray-900 p-6 md:p-10 rounded-lg shadow-lg">
+        <div class="rounded-lg shadow-lg ">
             <h2 class="text-2xl md:text-3xl font-bold text-yellow-400 mb-4 md:mb-6">Manage Categories</h2>
-            <div class="overflow-x-auto">
+            <div class="overflow-x-auto scrollbar-hide">
                 <table class="min-w-full bg-gray-800 rounded-lg">
                     <thead>
                         <tr class="bg-gray-700 text-white">
