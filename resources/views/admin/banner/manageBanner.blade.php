@@ -1,7 +1,7 @@
 @extends('admin.adminBase')
 
 @section('content')
-<div class="w-[80%] h-auto">
+<div class="w-full h-auto">
     <div class="container mx-auto p-6">
         <div class="w-full mb-6">
             <div class="flex justify-between items-center bg-gradient-to-r from-yellow-100 to-yellow-500 text-white p-3 rounded-lg shadow-lg">
