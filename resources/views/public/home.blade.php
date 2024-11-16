@@ -17,19 +17,13 @@
     </div>
 
     <section id="gallery" class="py-10 bg-gray-200">
+        @foreach ($categories as $item)
         <div class="gallery">
-            <img src="https://img.freepik.com/premium-photo/bride-poses-photo-front-flowers_896434-8.jpg?ga=GA1.1.1275289697.1728223870&semt=ais_siglip"
-                alt="Gallery Image 1">
-
+            <img src="{{ asset('images/' . $item->cat_image) }}" alt="{{ $item->cat_name }}">
             <img src="https://th.bing.com/th?id=OIP.FYHfXqNUP411-1ilLmzdpAHaEo&w=316&h=197&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2"
-                alt="Gallery Image 2">
-
-            <img src="https://img.freepik.com/free-photo/beautiful-blonde-woman-blue-light_23-2149478944.jpg?ga=GA1.1.1275289697.1728223870&semt=ais_siglip"
-                alt="Gallery Image 3">
-
-            <img src="https://img.freepik.com/free-photo/portrait-beautiful-albino-woman-with-grapes_23-2150520256.jpg?ga=GA1.1.1275289697.1728223870&semt=ais_siglip"
-                alt="Gallery Image 4">
+                alt="Gallery Image 2">           
         </div>
+        @endforeach
     </section>
 
 
