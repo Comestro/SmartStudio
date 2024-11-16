@@ -38,12 +38,12 @@
             </ul>
         </details>
         
-        <details class="mt-2">
+        {{-- <details class="mt-2">
             <summary class="flex items-center gap-3 cursor-pointer hover:bg-gray-700 hover:border-r-8 border-yellow-500 p-2 rounded transition duration-300">
                 <i class="bi bi-box text-yellow-400 text-xl"></i>
                 <a href="{{route('category')}}" class="text-[#eee] font-medium text-lg">Category</a>
             </summary>
-        </details>
+        </details> --}}
         <details class="mt-2">
             <summary class="flex items-center gap-3 cursor-pointer hover:bg-gray-700 hover:border-r-8 border-yellow-500 p-2 rounded transition duration-300">
                 <i class="bi bi-person-circle text-yellow-400 text-xl"></i>

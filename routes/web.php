@@ -10,8 +10,10 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\contactController;
+use App\Http\Controllers\dashboardController;
 use App\Http\Controllers\YoutubeVideoController;
 use App\Models\Category;
+use App\Models\Gallery;
 use App\Models\youtubeVideo;
 
 use function Pest\Laravel\post;
@@ -84,10 +86,11 @@ Route::get('/', function () {
 Route::prefix('admin')->middleware(['auth', 'admin'])->group(function () {
 
     // dashboard
-    Route::get('/dashboard', function () {
-        $data['categoryImage'] = Category::all();
-        return view('admin.dashboard', $data);
-    })->name('dashboard');
+    // Route::get('/dashboard', function () {
+       
+    // })->name('dashboard');
+    Route::get('/dashboard', [dashboardController::class, 'index'])->name('dashboard');
+
 
 
     // category
