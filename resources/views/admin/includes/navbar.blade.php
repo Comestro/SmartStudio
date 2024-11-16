@@ -1,9 +1,10 @@
 <div class="w-full h-auto bg-[#2f363e] flex flex-col md:flex-row items-center p-4">
     <div class="w-full md:w-1/3 h-auto flex items-center justify-center mb-2 md:mb-0">
     </div>
-    <div class="w-full md:w-1/3 h-auto  p-2 flex items-center justify-center">
+    <div class="w-full md:w-1/3 h-auto p-8 flex items-center justify-center">
         <div class="relative w-full">
-            <input type="text" placeholder="Search..."
+            
+            {{-- <input type="text" placeholder="Search..."
                 class="w-full pl-4 pr-10 py-2 bg-white rounded-full focus:outline-none border border-yellow-400">
             <div class="absolute inset-y-0 right-0 flex items-center pr-3">
                 <button class="p-2 rounded-full text-black">
@@ -13,7 +14,7 @@
                             clip-rule="evenodd" />
                     </svg>
                 </button>
-            </div>
+            </div> --}}
         </div>
     </div>
     <div class="absolute right-4 top-4 w-full md:w-auto h-auto flex items-center gap-2">

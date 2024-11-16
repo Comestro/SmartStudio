@@ -1,6 +1,6 @@
-<div class="w-full h-full pl-10 mt-2">
+<div class="w-full h-auto pl-10 mt-2">
     <div class="w-full h-16 flex items-center justify-center">
-        <p class="text-3xl text-yellow-400 font-bold">SMART STUDIO</p>
+        <p class="text-2xl text-yellow-400 font-bold">SMART STUDIO</p>
     </div>
     <div class="w-full h-10 mt-6 text-base flex items-center pl-10 text-gray-500 font-semibold">
         <p>Main Menu</p>
@@ -75,17 +75,17 @@
             <a href="{{route('admin.contact.list')}}" class="text-[#eee] font-medium text-lg">Contact List</a>
         </li>
         <li class="flex items-center gap-3 hover:bg-gray-700 p-2 rounded transition duration-300 mt-2 hover:border-r-8 border-yellow-500">
-        <i class="bi bi-flag-fill text-yellow-400 text-xl"></i>
-            <a href="{{route('banner.create')}}" class="text-[#eee] font-medium text-lg">Banner</a>
-        </li>
+            <i class="bi bi-flag-fill text-yellow-400 text-xl"></i>
+                <a href="{{route('banner.create')}}" class="text-[#eee] font-medium text-lg">Banner</a>
+            </li>
         <li class="flex items-center gap-3 hover:bg-gray-700 p-2 rounded transition duration-300 mt-2 hover:border-r-8 border-yellow-500">
         <i class="bi bi-person-rolodex text-yellow-400 text-xl"></i>
             <a href="{{ route('budget.show') }}" class="text-[#eee] font-medium text-lg">Budget Manager</a>
         </li>
-         <li class="flex items-center gap-3 hover:bg-gray-700 p-2 rounded transition duration-300 mt-2 hover:border-r-8 border-yellow-500">
-         <i class="bi bi-youtube text-yellow-400 text-xl"></i>
-            <a href="{{ route('youtube-videos.create') }}" class="text-[#eee] font-medium text-lg">youtubevideos</a>
-        </li>
+        <li class="flex items-center gap-3 hover:bg-gray-700 p-2 rounded transition duration-300 mt-2 hover:border-r-8 border-yellow-500">
+            <i class="bi bi-youtube text-yellow-400 text-xl"></i>
+               <a href="{{ route('youtube-videos.create') }}" class="text-[#eee] font-medium text-lg">youtubevideos</a>
+           </li>
         </li> 
         {{-- <li class="flex items-center gap-3 hover:bg-gray-700 p-2 rounded transition duration-300 mt-2 hover:border-r-8 border-yellow-500">
         <i class="bi bi-flag text-yellow-400 text-xl"></i> 
