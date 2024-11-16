@@ -34,6 +34,7 @@ class YoutubeVideoController extends Controller
         {
             $request->validate([
                 'title' => 'required|string|max:255',
+                'description' => 'required|string|max:255',
                 'link' => 'required|url',
                 'status' => 'required|boolean', 
 
@@ -64,12 +65,14 @@ class YoutubeVideoController extends Controller
         // Validate and update the video details
         $request->validate([
             'title' => 'required|string|max:255',
+            'description' => 'required|string|max:255',
             'link' => 'required|url',
             'status' => 'required|boolean',
         ]);
     
         // Update video details
         $youtubeVideo->title = $request->title;
+        $youtubeVideo->description = $request->description;
         $youtubeVideo->link = $request->link;
         $youtubeVideo->status = $request->status;
         $youtubeVideo->save();

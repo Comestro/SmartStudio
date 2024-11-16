@@ -148,8 +148,8 @@
                 <div class="flex flex-col items-center transform transition duration-300 hover:scale-105 hover:bg-gray-50 rounded-lg p-5 shadow-lg">
                     <iframe width="300" height="200" src="{{ str_replace('watch?v=', 'embed/', $item->link) }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                     <h3 class="text-2xl font-semibold text-black mb-2">{{$item->title}}</h3>
-                    <p class="text-gray-600 text-center mb-4">Experience the art of portrait photography, crafted to capture your essence and personality in every shot.</p>
-                    <p class="text-gray-600 text-left w-full">26 May 2023</p>
+                    <p class="text-gray-600 text-center mb-4">{{$item->description}}</p>
+                    <p class="text-gray-600 text-left w-full">{{ $item->created_at->format('d M Y, h:i A') }}</p>
                 </div>
                 @endforeach
                 {{-- <div class="flex flex-col items-center transform transition duration-300 hover:scale-105 hover:bg-gray-50 rounded-lg p-5 shadow-lg">
