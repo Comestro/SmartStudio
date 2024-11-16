@@ -41,7 +41,7 @@
                             </form>
                         </td>
                         <td class="px-4 py-3 border-b border-gray-200 text-sm text-gray-600">
-                            <a href="#" class="inline-flex items-center bg-gradient-to-r from-indigo-500 to-indigo-700 text-white py-2 px-4 rounded-md hover:bg-gradient-to-l transition duration-300">
+                            <a href="{{route('banner.edit', $banner->id)}}" class="inline-flex items-center bg-gradient-to-r from-indigo-500 to-indigo-700 text-white py-2 px-4 rounded-md hover:bg-gradient-to-l transition duration-300">
                                 Edit
                             </a>
                             <form action="{{ route('banner.trash', $banner->id) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this category?');" class="inline-block ml-2">
