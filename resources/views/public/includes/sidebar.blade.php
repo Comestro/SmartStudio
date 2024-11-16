@@ -7,7 +7,7 @@
 
     <!-- Sidebar -->
     <aside id="sidebar"
-        class="absolute top-0 left-0 h-full w-[400px] bg-black text-white p-6 flex flex-col items-center transform -translate-x-full transition-transform duration-300 z-40">
+        class="absolute top-0 left-0 h-full w-64 bg-black text-white p-6 flex flex-col items-center transform -translate-x-full transition-transform duration-300 z-40">
         <img src="https://tse2.mm.bing.net/th?id=OIP.tEQ4HAiipGQ6oKYkdUGS8QHaHa&pid=Api&P=0&h=180"
             alt="Logo"
             class="rounded-full w-24 h-24 object-cover mb-6">
@@ -27,24 +27,26 @@
             </ul>
             <hr class="border-t border-white mt-6 w-full">
 
-            @guest
-            <form method="POST" action="{{ route('login') }}" class="w-full md:w-auto mt-4 md:mt-0">
-                @csrf
-                <button type="submit"
-                    class="w-full md:w-auto px-4 py-2 font-semibold rounded border border-yellow-400 text-yellow-400 bg-transparent hover:bg-yellow-400 hover:text-white transition">
-                    Login
-                </button>
-            </form>
-            @endguest
-            @auth
-            <form method="POST" action="{{ route('logout') }}" class="w-full md:w-auto mt-4 md:mt-0">
+          @auth
+          <form method="POST" action="{{ route('logout') }}" class="w-full md:w-auto mt-4 md:mt-0">
                 @csrf
                 <button type="submit"
                     class="w-full md:w-auto px-4 py-2 font-semibold rounded border border-yellow-400 text-yellow-400 bg-transparent hover:bg-yellow-400 hover:text-white transition">
                     Logout
                 </button>
             </form>
-            @endauth
+          @endauth
+
+          @guest
+          <form method="get" action="{{ route('login') }}" class="w-full md:w-auto mt-4 md:mt-0">
+                @csrf
+                <button type="submit"
+                    class="w-full md:w-auto px-4 py-2 font-semibold rounded border border-yellow-400 text-yellow-400 bg-transparent hover:bg-yellow-400 hover:text-white transition">
+                    login
+                </button>
+            </form>
+          @endauth
+        
             <div class="space-y-2 mt-4">
                 <div class="flex justify-between items-center w-full">
                     <a href="{{ route('about') }}" class="text-white text-lg hover:text-yellow-500">About</a>
