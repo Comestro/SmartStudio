@@ -12,7 +12,8 @@ class YoutubeVideoController extends Controller
      */
     public function index()
     {
-
+        $data['videos']=youtubeVideo::all();
+        return view('public.video', $data);
     }
 
     /**
@@ -33,6 +34,7 @@ class YoutubeVideoController extends Controller
         {
             $request->validate([
                 'title' => 'required|string|max:255',
+                'description' => 'required|string|max:255',
                 'link' => 'required|url',
                 'status' => 'required|boolean', 
 
@@ -63,12 +65,14 @@ class YoutubeVideoController extends Controller
         // Validate and update the video details
         $request->validate([
             'title' => 'required|string|max:255',
+            'description' => 'required|string|max:255',
             'link' => 'required|url',
             'status' => 'required|boolean',
         ]);
     
         // Update video details
         $youtubeVideo->title = $request->title;
+        $youtubeVideo->description = $request->description;
         $youtubeVideo->link = $request->link;
         $youtubeVideo->status = $request->status;
         $youtubeVideo->save();
@@ -85,14 +89,15 @@ class YoutubeVideoController extends Controller
     //     $youtubeVideo->delete();
     
     //     return redirect()->route('youtube-videos.index')->with('msg', 'Video deleted successfully!');
-    // }    public function toggleStatus($id)
-    // {
-    //     $video = youtubeVideo::findOrFail($id);
-    //     $video->status = !$video->status;
-    //     $video->save();
+    // }  
+      public function toggleStatus($id)
+    {
+        $video = youtubeVideo::findOrFail($id);
+        $video->status = !$video->status;
+        $video->save();
 
-    //     return redirect()->back()->with('msg', 'video status updated successfully.');
-    // }
+        return redirect()->back()->with('msg', 'video status updated successfully.');
+    }
 
     public function trashYoutubeVideo($id){
         $data =youtubeVideo::findOrFail($id);
@@ -100,5 +105,10 @@ class YoutubeVideoController extends Controller
         return redirect()->back()->with('msg','moved to trash bin');
     
     
+    }
+    public function callingVideo(){
+        $data['videos'] = youtubeVideo::all();
+        // dd($data);
+        return view('public.video', $data);
     }
 }

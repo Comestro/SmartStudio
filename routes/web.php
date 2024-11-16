@@ -12,6 +12,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\contactController;
 use App\Http\Controllers\YoutubeVideoController;
 use App\Models\Category;
+use App\Models\youtubeVideo;
 
 use function Pest\Laravel\post;
 use function Symfony\Component\String\b;
@@ -42,12 +43,15 @@ Route::get('/contact', function () {
     return view('public.contact');
 })->name('contact');
 
-Route::get('/video', function () {
-    return view('public.video');
-})->name('video');
+// Route::get('/video', function () {
+//     $data['videos']=youtubeVideo::all();
+//     return view('public.video', $data);
+// })->name('video');
+
+
+Route::get('/video', [YoutubeVideoController::class, 'callingVideo'])->name('video');
 
 Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
-
 
 Route::get('/create-users', [UserController::class, 'createUsers']);
 
@@ -66,8 +70,10 @@ Route::get('/booking/{category}', function ($category) {
 
 Route::post('/booking/{category}', [BookingController::class, 'store'])->name('category.store');
 Route::get('admin/checkschedule', [BookingController::class, 'showBooking'])->name('booking.show');
-
-
+Route::get('/', function () {
+    $categories['categories'] = Category::all();
+    return view('public.home',$categories);
+});
 
 
 
@@ -110,12 +116,23 @@ Route::prefix('admin')->middleware(['auth', 'admin'])->group(function () {
     // contact
     Route::get('/contact-list', [ContactController::class, 'ManageContact'])->name('admin.contact.list');
 
+<<<<<<< HEAD
+        // banner
+        Route::get('/banner/create', [BannerController::class, 'create'])->name('banner.create');
+        Route::post('/banner/store', [BannerController::class, 'store'])->name('banner.store');
+        Route::get('/banners', [BannerController::class, 'index'])->name('admin.banners.index');
+        Route::post('/banner/{id}/toggle-status', [BannerController::class, 'toggleStatus'])->name('admin.banner.toggleStatus');
+        Route::get('/banner/edit/{id}', [BannerController::class, 'edit'])->name('banner.edit');
+    Route::put('/banner/edit/{id}', [BannerController::class, 'update'])->name('banner.update');
+        Route::get('/delete/{id}', [BannerController::class, 'destroy'])->name('banner.delete');
+=======
     // banner
     Route::get('/banner/create', [BannerController::class, 'create'])->name('banner.create');
     Route::post('/banner/store', [BannerController::class, 'store'])->name('banner.store');
     Route::get('/banners', [BannerController::class, 'index'])->name('admin.banners.index');
     Route::post('/banner/{id}/toggle-status', [BannerController::class, 'toggleStatus'])->name('admin.banner.toggleStatus');
     Route::get('/delete/{id}', [BannerController::class, 'destroy'])->name('banner.delete');
+>>>>>>> 0b2ae1522afcb64e82096a97d2fb664c725c239d
 
     Route::get('/users', [UserController::class, 'index'])->name('admin.user.index');
 

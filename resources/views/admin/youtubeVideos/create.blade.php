@@ -7,9 +7,15 @@
 
     <form action="{{ route('youtube-videos.store') }}" method="POST" class="max-w-md mx-auto bg-white p-6 rounded-lg shadow-lg mb-6">
         @csrf
+        
         <div class="mb-4">
             <label for="title" class="block text-yellow-400 font-semibold mb-2">Title:</label>
             <input type="text" name="title" id="title" required
+                   class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400">
+        </div>
+        <div class="mb-4">
+            <label for="description" class="block text-yellow-400 font-semibold mb-2">Description:</label>
+            <input type="text" name="description" id="description" required
                    class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400">
         </div>
         <div class="mb-4">
