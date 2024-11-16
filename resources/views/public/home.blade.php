@@ -1,7 +1,7 @@
 @extends('public.layout')
 
 @section('content')
-    <main class="relative w-full md:w-3/4 h-180">
+    <main class="relative w-full md:w-4/4 h-180">
         <livewire:public.banner.calling-banner />
     </main>
     </div>
@@ -19,7 +19,7 @@
     <section id="gallery" class="py-10 bg-gray-200">
         @foreach ($categories as $item)
             <div class="gallery">
-                <img src="{{ asset('images/' . $item->cat_image) }}" alt="{{ $item->cat_name }}">                
+                <img src="{{ asset('images/' . $item->cat_image) }}" alt="{{ $item->cat_name }}">
             </div>
         @endforeach
     </section>
@@ -38,32 +38,7 @@
                 alt="long-arrow-right" />
         </button>
     </div>
-
-    <div class="py-8"></div>
-
-
-                                    <div class="md:w-1/2 px-8 md:px-12 text-left space-y-6">
-                                        <h2 class="text-3xl md:text-5xl font-bold uppercase text-white">Who We <span class="text-yellow-500">Are?</span>
-                                        </h2>
-                                        <p class="text-md md:text-lg text-gray-400">
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque convallis,
-                                            augue ut imperdiet ultricies, leo mauris rhoncus. Pellentesque convallis.
-                                        </p>
-
-                                        <a href="#"
-                                            class="inline-flex items-center text-yellow-500 border border-yellow-400 px-6 py-3 rounded-lg hover:bg-yellow-500 hover:text-black transition duration-300 ease-in-out">
-                                            View All Services
-                                            <i class="bi bi-arrow-right-circle-fill text-2xl ml-2"></i>
-                                        </a>
-
-                                    </div>
-
-
-                                    <div class="md:w-1/2 h-full flex justify-center items-center">
-                                        <img src="https://img.freepik.com/premium-photo/neonlit-woman-portriat_862994-2959.jpg?ga=GA1.1.1275289697.1728223870&semt=ais_siglip"
-                                            alt="Illustration Image" class="w-full h-full object-cover rounded-lg border border-white shadow-lg" />
-                                    </div>
-                                </section>  -->
+    </section>
 
     <section class="flex flex-col-reverse md:flex-row h-auto md:h-screen items-center justify-between bg-black mt-10">
 
@@ -108,10 +83,10 @@
                 <a href="#" class="text-lg text-gray-600 hover:text-yellow-500 transition">
                     All
                 </a>
-                @foreach ($categories as $item)
+                @foreach ($galleries as $item)
                     <div class="category-item">
-                        <a href="{{ $item->id }}" class="text-lg text-yellow-500 hover:text-gray-800 transition">
-                            {{ $item->cat_name }}
+                        <a href="#" class="text-lg text-yellow-500 hover:text-gray-800 transition">
+                            {{ $item->gallery_title }}
                         </a>
                     </div>
                 @endforeach
@@ -126,111 +101,84 @@
     </div>
 
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 p-6">
-
-        <div
-            class="bg-black flex items-center justify-center h-64 sm:h-80 overflow-hidden group relative rounded-lg shadow-lg">
-            <img src="https://th.bing.com/th/id/OIP.XJl0C0wQ6h-YWKTW72_o7AHaEK?w=326&h=183&c=7&r=0&o=5&dpr=1.3&pid=1.7"
-                class="w-full h-full object-cover transform transition duration-500 group-hover:scale-110 rounded-lg"
-                alt="Models pose">
-            <div
-                class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 transition-opacity duration-500 group-hover:opacity-100">
-                <p class="text-white text-lg sm:text-xl font-semibold">Models Pose</p>
+        <!-- First Section: Show 2 Images -->
+        @foreach ($galleries->take(2) as $item)
+            <div class="bg-black flex items-center justify-center h-64 sm:h-80 overflow-hidden group relative rounded-lg shadow-lg">
+                <img src="{{ asset('images/' . $item->images->first()->image_path) }}"
+                    class="w-full h-full object-cover transform transition duration-500 group-hover:scale-110 rounded-lg"
+                    alt="{{ $item->gallery_title ?? 'Gallery image' }}" loading="lazy">
+                <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 transition-opacity duration-500 group-hover:opacity-100">
+                    <p class="text-white text-lg sm:text-xl font-semibold">{{ $item->gallery_title ?? 'Models Pose' }}</p>
+                </div>
             </div>
-        </div>
-
-
-        <div
-            class="bg-black flex items-center justify-center h-64 sm:h-80 overflow-hidden group relative rounded-lg shadow-lg">
-            <img src="https://tse2.mm.bing.net/th?id=OIP.ZMsqpo3_Yo8e7m56hzXd-QHaEo&pid=Api&P=0&h=180"
-                class="w-full h-full object-cover transform transition duration-500 group-hover:scale-110 rounded-lg"
-                alt="Modern Pose">
-            <div
-                class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 transition-opacity duration-500 group-hover:opacity-100">
-                <p class="text-white text-lg sm:text-xl font-semibold">Modern Pose</p>
-            </div>
-        </div>
+        @endforeach
     </div>
-
+    
     <div class="flex justify-center">
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 p-4 max-w-5xl">
-            <div>
-                <img src="https://th.bing.com/th/id/OIP.FsKJMJ5OXmRhODA_kHR8pwHaLH?w=120&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7"
-                    class="h-64 w-full object-cover " alt="Image 1">
-            </div>
-            <div>
-                <img src="https://th.bing.com/th/id/OIP.MapmSqEQgoUb7p1RFUSkyQHaE7?w=252&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7"
-                    class="h-64 w-full object-cover" alt="Image 2">
-            </div>
-            <div>
-                <img src="https://th.bing.com/th/id/OIP.4kuSvAJOnbygGbY-ZlPLPwAAAA?w=115&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7"
-                    class="h-64 w-full object-cover" alt="Image 3">
-            </div>
-            <div>
-                <img src="https://th.bing.com/th/id/OIP.-5aryuaqCHhXSeu_dvIhOwHaES?w=323&h=187&c=7&r=0&o=5&dpr=1.3&pid=1.7"
-                    class="h-64 w-full object-cover" alt="Image 4">
-            </div>
+            <!-- Second Section: Skip 2, Take Next 4 Images -->
+            @foreach ($galleries->skip(2)->take(4) as $item)
+                <div>
+                    <img src="{{ asset('images/' . $item->images->first()->image_path) }}" class="h-64 w-full object-cover"
+                        alt="Image 1">
+                </div>
+            @endforeach
         </div>
     </div>
-
-
-
+    
     <div class="flex justify-center px-4">
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-screen-xl">
-            <div>
-                <img src="https://img.freepik.com/premium-photo/young-family-with-children-decorates-house-holiday-new-years-eve-waiting-new-year_494741-40092.jpg?ga=GA1.1.1275289697.1728223870&semt=ais_siglip"
-                    class="w-full h-64 object-cover" alt="Image 1">
-            </div>
-            <div>
-                <img src="https://img.freepik.com/free-photo/bride-groom-taste-red-wedding-cake-standing-before-altar-night_8353-7092.jpg?ga=GA1.1.1275289697.1728223870&semt=ais_siglip"
-                    class="w-full h-64 object-cover" alt="Image 2">
-            </div>
-            <div>
-                <img src="https://img.freepik.com/free-photo/little-girl-comes-bride-groom-with-wedding-rings-ceremony_8353-7086.jpg?ga=GA1.1.1275289697.1728223870&semt=ais_siglip"
-                    class="w-full h-64 object-cover" alt="Image 3">
-            </div>
+            <!-- Third Section: Skip 6, Take Next 3 Images -->
+            @foreach ($galleries->skip(6)->take(3) as $item)
+                <div>
+                    <img src="{{ asset('images/' . $item->images->first()->image_path) }}" class="w-full h-64 object-cover"
+                        alt="Image 1">
+                </div>
+            @endforeach
         </div>
     </div>
+    
     <div class="py-12"></div>
 
 
-                                    style="background-image: url('https://tse2.mm.bing.net/th?id=OIP.jt6i4yeTO_zMnivpc9nqXQHaEJ&pid=Api&P=0&h=180');">
+    {{-- style="background-image: url('https://tse2.mm.bing.net/th?id=OIP.jt6i4yeTO_zMnivpc9nqXQHaEJ&pid=Api&P=0&h=180');"> --}}
 
 
-                                    <div class="mb-6">
-                                        <i class="bi bi-music-note-beamed text-7xl text-white"></i>
-                                    </div>
+    <div class="mb-6">
+        <i class="bi bi-music-note-beamed text-7xl text-white"></i>
+    </div>
 
 
-                                    <div class="flex gap-4 mb-6">
-                                        <a href="#" class="text-yellow-400 hover:text-gray-800 transition">
-                                            <i class="bi bi-star-fill text-2xl"></i>
-                                        </a>
-                                        <a href="#" class="text-yellow-400 hover:text-gray-800 transition">
-                                            <i class="bi bi-star-fill text-2xl"></i>
-                                        </a>
-                                        <a href="#" class="text-yellow-400 hover:text-gray-800 transition">
-                                            <i class="bi bi-star-fill text-2xl"></i>
-                                        </a>
-                                        <a href="#" class="text-yellow-400 hover:text-gray-800 transition">
-                                            <i class="bi bi-star-fill text-2xl"></i>
-                                        </a>
-                                        <a href="#" class="text-yellow-400 hover:text-gray-800 transition">
-                                            <i class="bi bi-star-fill text-2xl"></i>
-                                        </a>
-                                    </div>
+    {{-- <div class="flex gap-4 mb-6">
+        <a href="#" class="text-yellow-400 hover:text-gray-800 transition">
+            <i class="bi bi-star-fill text-2xl"></i>
+        </a>
+        <a href="#" class="text-yellow-400 hover:text-gray-800 transition">
+            <i class="bi bi-star-fill text-2xl"></i>
+        </a>
+        <a href="#" class="text-yellow-400 hover:text-gray-800 transition">
+            <i class="bi bi-star-fill text-2xl"></i>
+        </a>
+        <a href="#" class="text-yellow-400 hover:text-gray-800 transition">
+            <i class="bi bi-star-fill text-2xl"></i>
+        </a>
+        <a href="#" class="text-yellow-400 hover:text-gray-800 transition">
+            <i class="bi bi-star-fill text-2xl"></i>
+        </a>
+    </div> --}}
 
 
-                                    <div class="text-white w-11/12 md:w-8/12">
-                                        <p class="text-base md:text-xl font-bold">
-                                            Experience the best photography in town.<br>
-                                            Learn why capturing moments with your camera is essential today—not just for personal and professional
-                                            growth, but for society as a whole.
-                                        </p>
-                                    </div>
+    <div class="text-white w-11/12 md:w-8/12">
+        <p class="text-base md:text-xl font-bold">
+            Experience the best photography in town.<br>
+            Learn why capturing moments with your camera is essential today—not just for personal and professional
+            growth, but for society as a whole.
+        </p>
+    </div>
 
 
-                                    <h1 class="text-2xl text-yellow-500 mt-4">SADIQUE HUSSAIN</h1>
-                                </div> -->
+    {{-- <h1 class="text-2xl text-yellow-500 mt-4">SADIQUE HUSSAIN</h1> --}}
+    </div>
     <div class="w-full h-auto bg-cover bg-center relative mt-5 flex flex-col justify-center items-center text-center py-6 md:py-10"
         style="background-image: url('https://tse2.mm.bing.net/th?id=OIP.jt6i4yeTO_zMnivpc9nqXQHaEJ&pid=Api&P=0&h=180');">
         <div class="mb-4">
