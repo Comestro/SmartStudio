@@ -14,6 +14,11 @@
                    class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400">
         </div>
         <div class="mb-4">
+            <label for="title" class="block text-yellow-400 font-semibold mb-2">description:</label>
+            <input type="text" name="description" value="{{ $youtubeVideo['description'] }}" id="description" required
+                   class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400">
+        </div>
+        <div class="mb-4">
             <label for="link" class="block text-yellow-400 font-semibold mb-2">Video Link:</label>
             <input type="url" name="link" value="{{ $youtubeVideo['link'] }}" id="link" required
                    class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400">
