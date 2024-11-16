@@ -25,7 +25,7 @@
             opacity: 1;
         }
 
-        .text-overlay {
+        /* .text-overlay {
             position: absolute;
             bottom: 0;
             width: 100%;
@@ -33,7 +33,7 @@
             color: white;
             padding: 1rem;
             text-align: center;
-        }
+        } */
 
         .view-more-btn {
             position: absolute;
@@ -58,10 +58,10 @@
             scrollbar-width: none;
         }
 
-        body {
+        /* body {
             background: url('./images/background.png') repeat;
             animation: moveBackground 30s linear infinite;
-        }
+        } */
 
         @keyframes moveBackground {
             0% {
@@ -81,11 +81,11 @@
             animation: fadeIn 2s ease-in-out forwards;
         }
 
-        /* Gradient animation moving horizontally */
-        .animate-gradientX {
+         /* Gradient animation moving horizontally */ */
+         .animate-gradientX {
             background-size: 200% 200%;
             animation: gradientX 3s ease infinite;
-        }
+        } 
 
         /* Keyframes for animations */
         @keyframes fadeIn {
@@ -114,71 +114,28 @@
 
     <body class="">
 
-        <!-- <div class="absolute top-0 left-0 right-0 w-full h-20 px-4 z-10 ">
-        <div class="h-full mx-auto py-1 px-6 font-titleFont flex items-center justify-between">
-         
-            <div class="flex items-center">
-                <img src="./images/letter-s.png" alt="S" class="w-10 h-10">
-            </div>
-
-            <nav class="hidden lg:flex lg:pr-32 w-full justify-end">
-                <ul class="flex items-center gap-8 text-[#fff]">
-                    <li>
-                        <a href="#Home" class="font-bold flex items-center gap-1 relative text-[#fff] hover:text-[#ffd700] hover:after:w-full after:absolute after:bg-[#ffd700] after:h-[4.5px] after:w-0 after:left-0 after:bottom-[-8px] after:duration-500 after:rounded-full">
-                            <img width="24" height="24" src="https://img.icons8.com/ios-glyphs/30/FFFFFF/home.png" alt="home"/>Home
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#About" class="font-bold flex items-center gap-1 relative text-[#fff] hover:text-[#ffd700] hover:after:w-full after:absolute after:bg-[#ffd700] after:h-[4.5px] after:w-0 after:left-0 after:bottom-[-8px] after:duration-500 after:rounded-full">
-                            <img width="24" height="24" src="https://img.icons8.com/forma-thin-filled/24/FFFFFF/person-male.png" alt="person-male"/>About
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#Service" class="font-bold flex items-center gap-1 relative text-[#fff] hover:text-[#ffd700] hover:after:w-full after:absolute after:bg-[#ffd700] after:h-[4.5px] after:w-0 after:left-0 after:bottom-[-8px] after:duration-500 after:rounded-full">
-                          <img width="24" height="24" src="https://img.icons8.com/ios-glyphs/30/FFFFFF/conference-call--v1.png" alt="conference-call--v1"/>Service
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#Work" class="font-bold flex items-center gap-1 relative text-[#fff] hover:text-[#ffd700] hover:after:w-full after:absolute after:bg-[#ffd700] after:h-[4.5px] after:w-0 after:left-0 after:bottom-[-8px] after:duration-500 after:rounded-full">
-                          <img width="24" height="24" src="https://img.icons8.com/external-ddara-fill-ddara/64/FFFFFF/external-cameraman-professions-ddara-fill-ddara.png" alt="external-cameraman-professions-ddara-fill-ddara"/>Work
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#Contact" class="font-bold flex items-center gap-1 relative text-[#fff] hover:text-[#ffd700] hover:after:w-full after:absolute after:bg-[#ffd700] after:h-[4.5px] after:w-0 after:left-0 after:bottom-[-8px] after:duration-500 after:rounded-full">
-                          <img width="24" height="24" src="https://img.icons8.com/ios-glyphs/30/FFFFFF/ringer-volume.png" alt="ringer-volume"/>Contact
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-    </div> -->
-
-
-
-
-
+     
 
         {{-- background image --}}
-         <div class="w-full h-screen bg-cover bg-no-repeat relative flex items-center justify-center"
-            style="background-image: url('./images/studio-bg.jpg');" id="Home">
+           <div class="w-full h-screen bg-cover bg-no-repeat relative flex items-center justify-center"
+            style="background-image: url('https://img.freepik.com/premium-photo/beautiful-fe…model-posing-studio-light-flashes_382934-4673.jpg');" id="Home">
             <div class="absolute inset-0 bg-black opacity-60"></div>
-            <div class="relative z-10 text-center text-white px-4 animate-fadeIn">
-                <h1
-                    class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight mb-4 bg-gradient-to-r from-white via-yellow-200 to-yellow-500 text-transparent bg-clip-text animate-gradientX drop-shadow-xl shadow-[#ffd700] duration-700 ease-in-out">
-                    Capturing Moments
-                </h1>
-                <p class="text-sm sm:text-lg md:text-xl text-gray-300 max-w-md mx-auto italic animate-fadeInSlow">
-                    “Turning life’s precious moments into timeless memories”
-                </p>
-            </div>
+             <div class="absolute inset-0 flex flex-col items-center justify-center text-center animate-fadeIn">
+            <h1 class="text-4xl md:text-5xl font-bold  bg-gradient-to-r from-white via-yellow-200 to-yellow-500  text-transparent bg-clip-text animate-gradientX drop-shadow-xl shadow-[#ffd700] duration-700 ease-in-out">
+            Capturning Moments </h1>
+            <p class="text-lg md:text-xl mt-4 px-4 text-white">
+            “Turning life’s precious moments into timeless memories”
+            </p>
+            
+        </div>
 
 
         </div> 
-
+ 
+         
         
 
-
-
+   
 
 
         {{-- about --}}

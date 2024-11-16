@@ -26,7 +26,7 @@
         }
 
 </style>
-<body class="bg-black roboto-medium">
+
     <div class="h-[80vh] bg-cover bg-center"
         style="background-image: url('https://th.bing.com/th/id/OIP.01e67CZXYANik5BUvlo0YgHaEJ?w=281&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7');">
         <div class="absolute inset-0 flex flex-col items-center justify-center text-center">
