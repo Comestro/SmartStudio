@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\BookingController;
 use App\Models\Gallery;
-use App\Models\GalleryImage;
+
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\Auth\LoginController;
@@ -15,7 +15,7 @@ use App\Http\Controllers\contactController;
 use App\Http\Controllers\dashboardController;
 use App\Http\Controllers\YoutubeVideoController;
 use App\Models\Category;
-use App\Models\Gallery;
+
 use App\Models\youtubeVideo;
 
 use function Pest\Laravel\post;
