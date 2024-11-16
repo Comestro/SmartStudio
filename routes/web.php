@@ -116,7 +116,6 @@ Route::prefix('admin')->middleware(['auth', 'admin'])->group(function () {
     // contact
     Route::get('/contact-list', [ContactController::class, 'ManageContact'])->name('admin.contact.list');
 
-<<<<<<< HEAD
         // banner
         Route::get('/banner/create', [BannerController::class, 'create'])->name('banner.create');
         Route::post('/banner/store', [BannerController::class, 'store'])->name('banner.store');
@@ -125,14 +124,6 @@ Route::prefix('admin')->middleware(['auth', 'admin'])->group(function () {
         Route::get('/banner/edit/{id}', [BannerController::class, 'edit'])->name('banner.edit');
     Route::put('/banner/edit/{id}', [BannerController::class, 'update'])->name('banner.update');
         Route::get('/delete/{id}', [BannerController::class, 'destroy'])->name('banner.delete');
-=======
-    // banner
-    Route::get('/banner/create', [BannerController::class, 'create'])->name('banner.create');
-    Route::post('/banner/store', [BannerController::class, 'store'])->name('banner.store');
-    Route::get('/banners', [BannerController::class, 'index'])->name('admin.banners.index');
-    Route::post('/banner/{id}/toggle-status', [BannerController::class, 'toggleStatus'])->name('admin.banner.toggleStatus');
-    Route::get('/delete/{id}', [BannerController::class, 'destroy'])->name('banner.delete');
->>>>>>> 0b2ae1522afcb64e82096a97d2fb664c725c239d
 
     Route::get('/users', [UserController::class, 'index'])->name('admin.user.index');
 
