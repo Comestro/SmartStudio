@@ -5,19 +5,13 @@
     <nav class="flex-1 w-full text-center space-y-4">
         <div class="flex justify-between items-center w-full">
             <a href="#" class="text-lg text-yellow-400">Home</a>
-            <a href="{{ route('login') }}"
-                class="bg-yellow-500 text-gray-900 px-4 py-2 rounded-lg font-semibold hover:bg-yellow-600 transition duration-300">
-                Login
-            </a>
+            @if(Auth::check())
+            <span class="text-yellow-400 font-semibold"> {{ Auth::user()->name }}</span>
+            @endif
         </div>
-
-
-
         <div class="relative">
 
             <div class="absolute top-0 left-0 h-full w-1 bg-yellow-200"></div>
-
-
             <ul class="pl-6 space-y-4 text-left">
                 <li class="flex items-center">
                     <a href="{{ route('gallery') }}" class="text-lg text-yellow-400 hover:text-gray-300">Gallery
@@ -30,7 +24,7 @@
                     <a href="{{ route('video') }}" class="text-lg hover:text-gray-300">Background Video</a>
                 </li>
                 <li class="flex items-center">
-                    <a href="#" class="text-lg hover:text-gray-300">Portfolio</a>
+                    <a href="{{route('portfolio')}}" class="text-lg hover:text-gray-300">Portfolio</a>
                 </li>
                 <li class="flex items-center">
                     <a href="#" class="text-lg hover:text-gray-300">Full Screen Slider</a>
@@ -64,10 +58,14 @@
                 <i class="bi bi-caret-left-fill text-white text-2xl"></i>
             </div>
             <div class="flex justify-between items-center w-full">
-                <a href="{{ route('category.view') }}"
-                    class="text-black text-lg bg-yellow-400 px-3 py-1 rounded">Book Now -></a>
-                <i class="bi bi-caret-left-fill text-white text-2xl"></i>
-            </div>
+    <a href="{{ route('category.view') }}"
+        class="text-black text-lg border border-yellow-400 text-yellow-400 bg-transparent bg-transparent px-3 py-1 rounded hover:bg-yellow-400 hover:text-white transition duration-300">
+        Book Now ->
+    </a>
+    <i class="bi bi-caret-left-fill text-white text-2xl"></i>
+</div>
+
+
         </div>
     </nav>
 

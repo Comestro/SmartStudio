@@ -17,22 +17,13 @@
     </div>
 
     <section id="gallery" class="py-10 bg-gray-200">
+        @foreach ($categories as $item)
         <div class="gallery">
-
-            {{-- <img src="https://th.bing.com/th/id/OIP.FsKJMJ5OXmRhODA_kHR8pwHaLH?w=120&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" 
-                    alt="Gallery Image 1"> --}}
-            <img src="https://img.freepik.com/premium-photo/bride-poses-photo-front-flowers_896434-8.jpg?ga=GA1.1.1275289697.1728223870&semt=ais_siglip"
-                alt="Gallery Image 1">
-
+            <img src="{{ asset('images/' . $item->cat_image) }}" alt="{{ $item->cat_name }}">
             <img src="https://th.bing.com/th?id=OIP.FYHfXqNUP411-1ilLmzdpAHaEo&w=316&h=197&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2"
-                alt="Gallery Image 2">
-
-            <img src="https://img.freepik.com/free-photo/beautiful-blonde-woman-blue-light_23-2149478944.jpg?ga=GA1.1.1275289697.1728223870&semt=ais_siglip"
-                alt="Gallery Image 3">
-
-            <img src="https://img.freepik.com/free-photo/portrait-beautiful-albino-woman-with-grapes_23-2150520256.jpg?ga=GA1.1.1275289697.1728223870&semt=ais_siglip"
-                alt="Gallery Image 4">
+                alt="Gallery Image 2">           
         </div>
+        @endforeach
     </section>
 
 
@@ -52,7 +43,7 @@
 
     <div class="py-8"></div>
 
-    <section class="flex flex-col md:flex-row h-screen items-center justify-between bg-black mt-10">
+      <!-- <section class="flex flex-col md:flex-row h-screen items-center justify-between bg-black mt-10">
 
         <div class="md:w-1/2 px-8 md:px-12 text-left space-y-6">
             <h2 class="text-3xl md:text-5xl font-bold uppercase text-white">Who We <span class="text-yellow-500">Are?</span>
@@ -75,7 +66,34 @@
             <img src="https://img.freepik.com/premium-photo/neonlit-woman-portriat_862994-2959.jpg?ga=GA1.1.1275289697.1728223870&semt=ais_siglip"
                 alt="Illustration Image" class="w-full h-full object-cover rounded-lg border border-white shadow-lg" />
         </div>
-    </section>
+    </section>  -->
+   
+     <section class="flex flex-col-reverse md:flex-row h-auto md:h-screen items-center justify-between bg-black mt-10">
+
+   
+    <div class="md:w-1/2 w-full px-6 md:px-12 text-left space-y-6">
+        <h2 class="text-3xl md:text-5xl font-bold uppercase text-white">
+            Who We <span class="text-yellow-500">Are?</span>
+        </h2>
+        <p class="text-md md:text-lg text-gray-400">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque convallis,
+            augue ut imperdiet ultricies, leo mauris rhoncus. Pellentesque convallis.
+        </p>
+        <a href="#"
+            class="inline-flex items-center justify-center text-yellow-500 border border-yellow-400 px-4 py-2 md:px-6 md:py-3 rounded-lg hover:bg-yellow-500 hover:text-black transition duration-300 ease-in-out w-full md:w-auto">
+            View All Services
+            <i class="bi bi-arrow-right-circle-fill text-2xl ml-2"></i>
+        </a>
+    </div>
+
+   
+    <div class="md:w-1/2 w-full h-64 md:h-full flex justify-center items-center">
+        <img src="https://img.freepik.com/premium-photo/neonlit-woman-portriat_862994-2959.jpg?ga=GA1.1.1275289697.1728223870&semt=ais_siglip"
+            alt="Illustration Image" class="w-full h-full object-cover rounded-lg border border-white shadow-lg" />
+    </div>
+</section>  
+
+
 
 
     <div class="bg-white py-16">
@@ -122,7 +140,7 @@
     </div> -->
 
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 p-6">
+    <!-- <div class="grid grid-cols-1 sm:grid-cols-2 p-6">
         <div class="bg-black flex items-center justify-center h-80 mx-8 overflow-hidden group relative">
             <img src="https://th.bing.com/th/id/OIP.XJl0C0wQ6h-YWKTW72_o7AHaEK?w=326&h=183&c=7&r=0&o=5&dpr=1.3&pid=1.7"
                 class="w-full max-w-lg h-full object-cover rounded-md shadow-lg transform transition duration-500 group-hover:scale-110"
@@ -143,8 +161,31 @@
                 <p class="text-white text-xl font-semibold">Modern Pose</p>
             </div>
         </div>
+    </div> -->
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 p-6">
+  
+    <div class="bg-black flex items-center justify-center h-64 sm:h-80 overflow-hidden group relative rounded-lg shadow-lg">
+        <img src="https://th.bing.com/th/id/OIP.XJl0C0wQ6h-YWKTW72_o7AHaEK?w=326&h=183&c=7&r=0&o=5&dpr=1.3&pid=1.7"
+            class="w-full h-full object-cover transform transition duration-500 group-hover:scale-110 rounded-lg"
+            alt="Models pose">
+        <div
+            class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 transition-opacity duration-500 group-hover:opacity-100">
+            <p class="text-white text-lg sm:text-xl font-semibold">Models Pose</p>
+        </div>
     </div>
 
+   
+    <div class="bg-black flex items-center justify-center h-64 sm:h-80 overflow-hidden group relative rounded-lg shadow-lg">
+        <img src="https://tse2.mm.bing.net/th?id=OIP.ZMsqpo3_Yo8e7m56hzXd-QHaEo&pid=Api&P=0&h=180"
+            class="w-full h-full object-cover transform transition duration-500 group-hover:scale-110 rounded-lg"
+            alt="Modern Pose">
+        <div
+            class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 transition-opacity duration-500 group-hover:opacity-100">
+            <p class="text-white text-lg sm:text-xl font-semibold">Modern Pose</p>
+        </div>
+    </div>
+</div>
 
     <div class="flex justify-center">
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 p-4 max-w-5xl">
@@ -187,7 +228,7 @@
     </div>
     <div class="py-12"></div>
 
-    <div class="h-[80vh] md:h-[60vh] bg-cover bg-center relative mt-5 flex flex-col justify-center items-center text-center"
+    <!-- <div class="h-[80vh] md:h-[60vh] bg-cover bg-center relative mt-5 flex flex-col justify-center items-center text-center"
         style="background-image: url('https://tse2.mm.bing.net/th?id=OIP.jt6i4yeTO_zMnivpc9nqXQHaEJ&pid=Api&P=0&h=180');">
 
 
@@ -225,7 +266,44 @@
 
 
         <h1 class="text-2xl text-yellow-500 mt-4">SADIQUE HUSSAIN</h1>
+    </div> -->
+    <div class="w-full h-auto bg-cover bg-center relative mt-5 flex flex-col justify-center items-center text-center py-6 md:py-10"
+    style="background-image: url('https://tse2.mm.bing.net/th?id=OIP.jt6i4yeTO_zMnivpc9nqXQHaEJ&pid=Api&P=0&h=180');">
+    <div class="mb-4">
+        <i class="bi bi-music-note-beamed text-4xl md:text-6xl text-white"></i>
     </div>
+    <div class="flex gap-2 md:gap-3 mb-4">
+        <a href="#" class="text-yellow-400 hover:text-gray-800 transition">
+            <i class="bi bi-star-fill text-lg md:text-xl"></i>
+        </a>
+        <a href="#" class="text-yellow-400 hover:text-gray-800 transition">
+            <i class="bi bi-star-fill text-lg md:text-xl"></i>
+        </a>
+        <a href="#" class="text-yellow-400 hover:text-gray-800 transition">
+            <i class="bi bi-star-fill text-lg md:text-xl"></i>
+        </a>
+        <a href="#" class="text-yellow-400 hover:text-gray-800 transition">
+            <i class="bi bi-star-fill text-lg md:text-xl"></i>
+        </a>
+        <a href="#" class="text-yellow-400 hover:text-gray-800 transition">
+            <i class="bi bi-star-fill text-lg md:text-xl"></i>
+        </a>
+    </div>
+
+   
+    <div class="text-white w-11/12 md:w-8/12 px-4">
+        <p class="text-sm md:text-base lg:text-lg font-medium leading-relaxed">
+            Experience the best photography in town.<br>
+            Capturing moments with your camera is essential—not just for personal growth, but for creating lasting memories.
+        </p>
+    </div>
+
+   
+    <h1 class="text-lg md:text-xl text-yellow-500 mt-3 font-semibold">
+        SADIQUE HUSSAIN
+    </h1>
+</div>
+
 
     <div class="py-12"></div>
 
@@ -245,7 +323,7 @@
         <div
             class="flex flex-col items-center transform transition duration-300 hover:scale-105 hover:bg-gray-50 rounded-lg p-5 shadow-lg">
             <img src="https://img.freepik.com/free-photo/young-beautiful-woman-portrait_23-2149263756.jpg?ga=GA1.1.1275289697.1728223870&semt=ais_hybrid"
-                alt="Professional Portraits" class=" h-64 mb-4">
+                alt="Professional Portraits" class="w-64 h-64 mb-4">
             <h3 class="text-2xl font-semibold text-black mb-2">Elevate Your Portraits</h3>
             <p class="text-gray-600 text-center mb-4">Experience the art of portrait photography, crafted to capture your
                 essence and personality in every shot.</p>
@@ -263,7 +341,7 @@
         <div
             class="flex flex-col items-center transform transition duration-300 hover:scale-105 hover:bg-gray-50 rounded-lg p-5 shadow-lg">
             <img src="https://img.freepik.com/free-photo/immersive-experience-concept-collage_23-2149498342.jpg?ga=GA1.1.1275289697.1728223870&semt=ais_hybrid"
-                alt="Landscape & Nature" class=" h-64 mb-4">
+                alt="Landscape & Nature" class="w-64 h-64 mb-4">
             <h3 class="text-2xl font-semibold text-black mb-2">Capturing Moments</h3>
             <p class="text-gray-600 text-center mb-4">Explore nature’s beauty through stunning captures of landscapes and
                 outdoor scenes, designed to inspire and captivate.</p>

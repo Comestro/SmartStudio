@@ -112,7 +112,7 @@
     </style>
 
 
-    <body class="bg-black roboto-medium">
+    <body class="">
 
         <!-- <div class="absolute top-0 left-0 right-0 w-full h-20 px-4 z-10 ">
         <div class="h-full mx-auto py-1 px-6 font-titleFont flex items-center justify-between">
@@ -159,7 +159,7 @@
 
 
         {{-- background image --}}
-        <div class="w-full h-screen bg-cover bg-no-repeat relative flex items-center justify-center"
+         <div class="w-full h-screen bg-cover bg-no-repeat relative flex items-center justify-center"
             style="background-image: url('./images/studio-bg.jpg');" id="Home">
             <div class="absolute inset-0 bg-black opacity-60"></div>
             <div class="relative z-10 text-center text-white px-4 animate-fadeIn">
@@ -173,7 +173,10 @@
             </div>
 
 
-        </div>
+        </div> 
+
+        
+
 
 
 
