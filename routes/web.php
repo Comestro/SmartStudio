@@ -70,13 +70,14 @@ Route::get('/booking/{category}', function ($category) {
 
 Route::post('/booking/{category}', [BookingController::class, 'store'])->name('category.store');
 Route::get('admin/checkschedule', [BookingController::class, 'showBooking'])->name('booking.show');
+
 Route::get('/', function () {
     $categories['categories'] = Category::all();
-    return view('public.home',$categories);
-});
-
-
-
+    $categories['Filtercategories'] = Category::whereNotNull('cat_image')
+        ->where('cat_image', '!=', '')
+        ->get();
+    return view('/public.home',$categories);
+})->name('home');
 
 
 // admin category
