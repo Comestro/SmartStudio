@@ -12,6 +12,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\contactController;
 use App\Http\Controllers\YoutubeVideoController;
 use App\Models\Category;
+use App\Models\youtubeVideo;
 
 use function Pest\Laravel\post;
 use function Symfony\Component\String\b;
@@ -42,12 +43,15 @@ Route::get('/contact', function () {
     return view('public.contact');
 })->name('contact');
 
-Route::get('/video', function () {
-    return view('public.video');
-})->name('video');
+// Route::get('/video', function () {
+//     $data['videos']=youtubeVideo::all();
+//     return view('public.video', $data);
+// })->name('video');
+
+
+Route::get('/video', [YoutubeVideoController::class, 'callingVideo'])->name('video');
 
 Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
-
 
 Route::get('/create-users', [UserController::class, 'createUsers']);
 
