@@ -1,7 +1,7 @@
 @extends('public.layout')
 
 @section('content')
-    <main class="relative w-full md:w-3/4 h-180">
+    <main class="relative w-full md:w-4/4 h-180">
         <livewire:public.banner.calling-banner />
     </main>
     </div>

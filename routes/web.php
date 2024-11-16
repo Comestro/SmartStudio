@@ -140,13 +140,7 @@ Route::prefix('admin')->middleware(['auth', 'admin'])->group(function () {
     Route::post('/banner/{id}/toggle-status', [BannerController::class, 'toggleStatus'])->name('admin.banner.toggleStatus');
     Route::get('/banner/edit/{id}', [BannerController::class, 'edit'])->name('banner.edit');
     Route::put('/banner/edit/{id}', [BannerController::class, 'update'])->name('banner.update');
-    Route::get('/delete/{id}', [BannerController::class, 'destroy'])->name('banner.delete');
-    // // banner
-    // Route::get('/banner/create', [BannerController::class, 'create'])->name('banner.create');
-    // Route::post('/banner/store', [BannerController::class, 'store'])->name('banner.store');
-    // Route::get('/banners', [BannerController::class, 'index'])->name('admin.banners.index');
-    // Route::post('/banner/{id}/toggle-status', [BannerController::class, 'toggleStatus'])->name('admin.banner.toggleStatus');
-    // Route::get('/delete/{id}', [BannerController::class, 'destroy'])->name('banner.delete');
+        Route::get('/delete/{id}', [BannerController::class, 'destroy'])->name('banner.delete');
 
     Route::get('/users', [UserController::class, 'index'])->name('admin.user.index');
 
