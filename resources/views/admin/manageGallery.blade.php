@@ -13,7 +13,7 @@
     @endif
     
     <div class="flex justify-center items-center min-h-screen">
-        <div class="w-full max-w-5xl p-4 ">
+        <div class="w-full max-w-5xl  ">
     
             <!-- Category Card Container -->
             <div class=" rounded-lg shadow-lg">
