@@ -66,6 +66,7 @@
                                 @endif
                             </div>
                             <div class="p-4">
+                                
                                 <h3 class="text-lg font-semibold text-yellow-400">{{ $item->gallery_title }}</h3>
                                 <div class="flex items-center mt-2">
                                     <i class="bi bi-tag text-yellow-500 mr-2"></i>

@@ -1,28 +1,28 @@
 @extends('admin.adminBase')
 @section('content')
-<style>
-.scrollbar-hide::-webkit-scrollbar {
-    display: none;
-}
+    <style>
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
 
 
-.scrollbar-hide {
-    scrollbar-width: none;
-}
-</style>
+        .scrollbar-hide {
+            scrollbar-width: none;
+        }
+    </style>
     <div class="w-[80%] h-auto bg-black">
         {{-- nav --}}
-       
-        
+
+
 
 
         {{-- Dashboard --}}
         <div class="p-6  flex-1">
             <h1 class="text-2xl font-bold text-yellow-500">Dashboard <i
-                     class="bi bi-arrow-right-circle-fill text-2xl ml-2"></i></h1>
+                    class="bi bi-arrow-right-circle-fill text-2xl ml-2"></i></h1>
 
 
-           
+
 
             <div class="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 mt-4 gap-6">
 
@@ -87,7 +87,7 @@
             </div>
 
 
-          
+
 
             <div class="p-6 flex-1 mt-5 ">
                 <h1 class="text-2xl font-bold text-yellow-500">Recent Category Uploads <i
@@ -115,7 +115,7 @@
 
 
 
-       
+
         <div class="p-6 flex-1 mt-5 ">
             <h1 class="text-2xl font-bold text-yellow-500 ">Graph <i
                     class="bi bi-arrow-right-circle-fill text-2xl ml-2"></i></h1>
@@ -201,41 +201,57 @@
 
 
 
-    
 
-    <div class="mt-8 bg-black p-4 px-8 rounded-lg shadow-md text-gray-100">
-        <h2 class="text-xl font-bold  pb-2 text-yellow-400">Recent Photos <i
-                class="bi bi-arrow-right-circle-fill text-2xl ml-2"></i></h2>
-        <div class="mt-4 overflow-x-auto">
-            <table class="min-w-full text-center bg-gray-700 rounded-lg overflow-hidden shadow-lg">
-                <thead>
-                    <tr class="bg-gray-900 text-gray-300">
-                        <th class="py-3 px-5 border-b border-gray-600">Photo ID</th>
-                        <th class="py-3 px-5 border-b border-gray-600">Title</th>
-                        <th class="py-3 px-5 border-b border-gray-600">Date Uploaded</th>
-                        <th class="py-3 px-5 border-b border-gray-600">Actions</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr class="bg-gray-800 hover:bg-gray-700 transition duration-200 ease-in-out">
-                        <td class="py-3 px-5 border-b border-gray-600">1</td>
-                        <td class="py-3 px-5 border-b border-gray-600">Wedding</td>
-                        <td class="py-3 px-5 border-b border-gray-600">01/11/2024</td>
-                        <td class="py-3 px-5 border-b border-gray-600">
-                            <div class="flex justify-center space-x-2">
-                                <button
-                                    class="bg-yellow-400 hover:bg-yellow-500 text-white px-3 py-1 rounded-md">View</button>
-                                <button
-                                    class="bg-green-600 hover:bg-green-500 text-white px-3 py-1 rounded-md">Edit</button>
-                                <button class="bg-red-600 hover:bg-red-500 text-white px-3 py-1 rounded-md">Delete</button>
-                            </div>
-                        </td>
-                    </tr>
+
+        <div class="mt-8 bg-black p-4 px-8 rounded-lg shadow-md text-gray-100">
+            <h2 class="text-xl font-bold  pb-2 text-yellow-400">Recent Photos <i
+                    class="bi bi-arrow-right-circle-fill text-2xl ml-2"></i></h2>
+            <div class="mt-4 overflow-x-auto">
+                <table class="min-w-full text-center bg-gray-700 rounded-lg overflow-hidden shadow-lg">
+                    <thead>
+                        <tr class="bg-gray-900 text-gray-300">
+                            <th class="py-3 px-5 border-b border-gray-600">Photo ID</th>
+                            <th class="py-3 px-5 border-b border-gray-600">Gallery</th>
+                            <th class="py-3 px-5 border-b border-gray-600">Event</th>
+                            <th class="py-3 px-5 border-b border-gray-600">Image</th>
+                            <th class="py-3 px-5 border-b border-gray-600">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach ($galleries as $item)
+                            <tr class="bg-gray-800 hover:bg-gray-700 transition duration-200 ease-in-out">
+                                <td class="py-3 px-5 border-b border-gray-600">{{ $item->id }}</td>
+                                <td class="py-3 px-5 border-b border-gray-600">{{ $item->gallery_title }}</td>
+                                <td class="py-3 px-5 border-b border-gray-600">{{ $item->category->cat_name }}</td>
+                                <td class="py-3 px-5 border-b border-gray-600">
+                                    @if ($item->images->first())
+                                        <a href="{{ route('gallery.viewGallery', $item->id) }}">
+                                            <img src="{{ asset('images/' . $item->images->first()->image_path) }}"
+                                                alt="{{ $item->gallery_title }}" class="w-full h-24 object-cover">
+                                        </a>
+                                    @else
+                                        <div class="w-full h-48 bg-gray-700 flex items-center justify-center text-white">No
+                                            Image</div>
+                                    @endif
+                                </td>
+                                <td class="py-3 px-5 border-b border-gray-600">
+                                    <div class="flex justify-center space-x-2">
+                                        <button
+                                            class="bg-yellow-400 hover:bg-yellow-500 text-white px-3 py-1 rounded-md"><a
+                                                href="{{ route('gallery.viewGallery', $item->id) }}">View</a></button>
+
+                                    </div>
+                                </td>
+                            </tr>
+                            
+                        @endforeach
+                       
+                    </tbody>
                    
-                </tbody>
-            </table>
+                </table>
+                {{ $galleries->links() }}
+            </div>
         </div>
-    </div>
 
 
 

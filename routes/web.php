@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\BookingController;
+use App\Models\Gallery;
+use App\Models\GalleryImage;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\Auth\LoginController;
@@ -10,8 +12,10 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\contactController;
+use App\Http\Controllers\dashboardController;
 use App\Http\Controllers\YoutubeVideoController;
 use App\Models\Category;
+use App\Models\Gallery;
 use App\Models\youtubeVideo;
 
 use function Pest\Laravel\post;
@@ -76,7 +80,18 @@ Route::get('/', function () {
     $categories['Filtercategories'] = Category::whereNotNull('cat_image')
         ->where('cat_image', '!=', '')
         ->get();
-    return view('/public.home',$categories);
+    return view('/public.home', $categories);
+})->name('home');
+
+Route::get('/', function () {
+    $categories = Category::all();
+    $galleries = Gallery::with(['images', 'category'])->get();
+
+    // $filterGallery = GalleryImage::whereNotNull('image_path')
+    //     ->where('image_path', '!=', '')
+    //     ->get();
+
+    return view('public.home', compact('categories', 'galleries'));
 })->name('home');
 
 
@@ -84,10 +99,11 @@ Route::get('/', function () {
 Route::prefix('admin')->middleware(['auth', 'admin'])->group(function () {
 
     // dashboard
-    Route::get('/dashboard', function () {
-        $data['categoryImage'] = Category::all();
-        return view('admin.dashboard', $data);
-    })->name('dashboard');
+    // Route::get('/dashboard', function () {
+       
+    // })->name('dashboard');
+    Route::get('/dashboard', [dashboardController::class, 'index'])->name('dashboard');
+
 
 
     // category
@@ -117,12 +133,12 @@ Route::prefix('admin')->middleware(['auth', 'admin'])->group(function () {
     // contact
     Route::get('/contact-list', [ContactController::class, 'ManageContact'])->name('admin.contact.list');
 
-        // banner
-        Route::get('/banner/create', [BannerController::class, 'create'])->name('banner.create');
-        Route::post('/banner/store', [BannerController::class, 'store'])->name('banner.store');
-        Route::get('/banners', [BannerController::class, 'index'])->name('admin.banners.index');
-        Route::post('/banner/{id}/toggle-status', [BannerController::class, 'toggleStatus'])->name('admin.banner.toggleStatus');
-        Route::get('/banner/edit/{id}', [BannerController::class, 'edit'])->name('banner.edit');
+    // banner
+    Route::get('/banner/create', [BannerController::class, 'create'])->name('banner.create');
+    Route::post('/banner/store', [BannerController::class, 'store'])->name('banner.store');
+    Route::get('/banners', [BannerController::class, 'index'])->name('admin.banners.index');
+    Route::post('/banner/{id}/toggle-status', [BannerController::class, 'toggleStatus'])->name('admin.banner.toggleStatus');
+    Route::get('/banner/edit/{id}', [BannerController::class, 'edit'])->name('banner.edit');
     Route::put('/banner/edit/{id}', [BannerController::class, 'update'])->name('banner.update');
         Route::get('/delete/{id}', [BannerController::class, 'destroy'])->name('banner.delete');
 
