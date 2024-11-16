@@ -63,7 +63,7 @@
 
     <section id="gallery" class="py-20 bg-gray-200">
     <div class="gallery-container px-10">
-        @foreach ($categories as $item)
+        @foreach ($categories->take(4) as $item)
             <div class="gallery-item">
                 <img src="{{ asset('images/' . $item->cat_image) }}" alt="{{ $item->cat_name }}">
             </div>
@@ -130,7 +130,7 @@
                 <a href="#" class="text-lg text-gray-600 hover:text-yellow-500 transition">
                     All
                 </a>
-                @foreach ($galleries as $item)
+                @foreach ($galleries->take(4) as $item)
                     <div class="category-item">
                         <a href="#" class="text-lg text-yellow-500 hover:text-gray-800 transition">
                             {{ $item->gallery_title }}
