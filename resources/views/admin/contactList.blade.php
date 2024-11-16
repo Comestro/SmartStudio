@@ -24,9 +24,9 @@
                     <button class="text-blue-500 hover:text-blue-700">
                         <i class="bi bi-pencil-square"></i>
                     </button>
-                    <button class="text-red-500 hover:text-red-700">
+                    {{-- <button class="text-red-500 hover:text-red-700">
                         <i class="bi bi-trash"></i>
-                    </button>
+                    </button> --}}
                 </div>
                 @endforeach
             </div>
