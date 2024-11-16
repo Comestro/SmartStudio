@@ -80,3 +80,10 @@
         <i class="bi bi-instagram text-2xl text-yellow-500"></i>
     </div>
 </aside>
+<section id="gallery" class="py-10 bg-gray-200">
+        @foreach ($categories as $item)
+            <div class="gallery">
+                <img src="{{ asset('images/' . $item->cat_image) }}" alt="{{ $item->cat_name }}">
+            </div>
+        @endforeach
+    </section>

@@ -4,6 +4,51 @@
     <main class="relative w-full md:w-4/4 h-180">
         <livewire:public.banner.calling-banner />
     </main>
+    <style>
+    .gallery-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+    }
+
+    .gallery-item {
+        flex: 1; 
+        width: 30%;
+        height: 250px;
+        overflow: hidden;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .gallery-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: all 0.3s ease;
+    }
+
+  
+    .gallery-item:hover {
+        flex: 4; 
+    }
+
+    @media (max-width: 768px) {
+        .gallery-item {
+            width: 45%;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .gallery-item {
+            width: 100%;
+        }
+    }
+</style>
     </div>
     <div class="bg-white py-12">
         <div class="text-left px-6 md:px-36">
@@ -16,13 +61,15 @@
         </div>
     </div>
 
-    <section id="gallery" class="py-10 bg-gray-200">
+    <section id="gallery" class="py-20 bg-gray-200">
+    <div class="gallery-container px-10">
         @foreach ($categories as $item)
-            <div class="gallery">
+            <div class="gallery-item">
                 <img src="{{ asset('images/' . $item->cat_image) }}" alt="{{ $item->cat_name }}">
             </div>
         @endforeach
-    </section>
+    </div>
+</section>
 
 
     <div class="py-8"></div>
