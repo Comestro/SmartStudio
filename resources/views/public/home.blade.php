@@ -19,9 +19,7 @@
     <section id="gallery" class="py-10 bg-gray-200">
         @foreach ($categories as $item)
             <div class="gallery">
-                <img src="{{ asset('images/' . $item->cat_image) }}" alt="{{ $item->cat_name }}">
-                <img src="https://th.bing.com/th?id=OIP.FYHfXqNUP411-1ilLmzdpAHaEo&w=316&h=197&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2"
-                    alt="Gallery Image 2">
+                <img src="{{ asset('images/' . $item->cat_image) }}" alt="{{ $item->cat_name }}">                
             </div>
         @endforeach
     </section>
@@ -43,7 +41,6 @@
 
     <div class="py-8"></div>
 
-    <!-- <section class="flex flex-col md:flex-row h-screen items-center justify-between bg-black mt-10">
 
                                     <div class="md:w-1/2 px-8 md:px-12 text-left space-y-6">
                                         <h2 class="text-3xl md:text-5xl font-bold uppercase text-white">Who We <span class="text-yellow-500">Are?</span>
@@ -195,7 +192,7 @@
     </div>
     <div class="py-12"></div>
 
-    <!-- <div class="h-[80vh] md:h-[60vh] bg-cover bg-center relative mt-5 flex flex-col justify-center items-center text-center"
+
                                     style="background-image: url('https://tse2.mm.bing.net/th?id=OIP.jt6i4yeTO_zMnivpc9nqXQHaEJ&pid=Api&P=0&h=180');">
 
 
