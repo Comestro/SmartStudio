@@ -7,7 +7,7 @@
 
     <!-- Sidebar -->
     <aside id="sidebar"
-        class="absolute top-0 left-0 h-full w-64 bg-black text-white p-6 flex flex-col items-center transform -translate-x-full transition-transform duration-300 z-40">
+        class="absolute top-0 left-0 h-full w-[400px] bg-black text-white p-6 flex flex-col items-center transform -translate-x-full transition-transform duration-300 z-40">
         <img src="https://tse2.mm.bing.net/th?id=OIP.tEQ4HAiipGQ6oKYkdUGS8QHaHa&pid=Api&P=0&h=180"
             alt="Logo"
             class="rounded-full w-24 h-24 object-cover mb-6">
