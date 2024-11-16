@@ -45,7 +45,7 @@
                     login
                 </button>
             </form>
-          @endauth
+          @endguest
         
             <div class="space-y-2 mt-4">
                 <div class="flex justify-between items-center w-full">
