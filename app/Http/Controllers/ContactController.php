@@ -23,4 +23,5 @@ class ContactController extends Controller
         $data['contacts'] = Contact::all();
         return view('admin.contactList', $data);
     }
+    
 }
