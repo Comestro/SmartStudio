@@ -31,6 +31,7 @@
                         </td>
                         <td class="py-3 px-6 text-center">
                            <div class="flex gap-3">
+                           
                            <a class="bg-green-500 hover:bg-green-700 text-white py-1 px-3 rounded text-xs" href="{{route('admin.contact.view',$contact->id)}}">View Message</a>
                             <form action="">
                                 <button class="bg-red-500 hover:bg-red-700 text-white py-1 px-3 rounded text-xs">
