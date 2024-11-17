@@ -10,6 +10,7 @@ class BookingController extends Controller
 {
     public function  index(){
         $data['bookcat']=Category::all();
+        $data['bookings']=Booking::pluck('date');
         return view('public.bookingcategory',$data);
     }
 
