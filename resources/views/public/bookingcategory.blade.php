@@ -30,7 +30,7 @@
             </div>
         </div>
 
-        <div class="bg-gray-100 min-h-screen flex items-center justify-center">
+        <div class=" min-h-screen flex items-center justify-center">
 
             <div class="container mx-auto bg-white p-6 rounded-lg shadow-lg">
                 <h1 class="text-3xl font-bold text-center mb-6">Booking Calendar</h1>
