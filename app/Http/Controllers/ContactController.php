@@ -23,5 +23,8 @@ class ContactController extends Controller
         $data['contacts'] = Contact::all();
         return view('admin.contactList', $data);
     }
-    
+    public  function viewContact($id){
+        $data['contact'] = Contact::find($id);
+        return view('admin.viewcontact',$data);
+    }
 }
