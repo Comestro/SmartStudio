@@ -28,10 +28,10 @@
         <nav class="flex-1 space-y-4">
     <ul class="space-y-3">
         <li><a href="{{ route('gallery') }}" class="text-lg text-yellow-400 hover:text-gray-300">Gallery Albums</a></li>
-        <li><a href="#" class="text-lg hover:text-gray-300">Background Images</a></li>
+        {{-- <li><a href="#" class="text-lg hover:text-gray-300">Background Images</a></li> --}}
         <li><a href="{{ route('video') }}" class="text-lg hover:text-gray-300">Background Video</a></li>
         <li><a href="{{ route('portfolio') }}" class="text-lg hover:text-gray-300">Portfolio</a></li>
-        <li><a href="#" class="text-lg hover:text-gray-300">Full Screen Slider</a></li>
+        {{-- <li><a href="#" class="text-lg hover:text-gray-300">Full Screen Slider</a></li> --}}
     </ul>
 
     <!-- Logout Button -->
