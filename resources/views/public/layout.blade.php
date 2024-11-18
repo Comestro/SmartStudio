@@ -13,7 +13,7 @@
 </head>
 
 <body class="bg-white min-h-screen">
- <div class="h-180 flex flex-col md:flex-row ">
+ <div class=" flex flex-col md:flex-row ">
         @include('public.includes.sidebar')
 
 

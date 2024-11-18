@@ -107,7 +107,12 @@ class YoutubeVideoController extends Controller
     
     }
     public function callingVideo(){
-        $data['videos'] = youtubeVideo::all();
+        $data = [
+            'videos' => youtubeVideo::where('status', 1)->get(),
+            'videoLatest' => youtubeVideo::where('status', 1)->latest()->limit(6)->get(),
+
+
+        ];
         // dd($data);
         return view('public.video', $data);
     }

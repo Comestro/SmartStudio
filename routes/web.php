@@ -12,7 +12,8 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\contactController;
-use App\Http\Controllers\dashboardController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\PortfolioController;
 use App\Http\Controllers\YoutubeVideoController;
 use App\Models\Category;
 use Illuminate\Http\Request;
@@ -23,18 +24,16 @@ use function Pest\Laravel\post;
 use function Symfony\Component\String\b;
 
 
-Route::get('/', function () {
-    return view('public.home');
-})->name('home');
+// Route::get('/', function () {
+//     return view('public.home');
+// })->name('home');
 
-Route::get('/portfolio', function () {
-    return view('public.portfolio');
-})->name('portfolio');
+// Route::get('/portfolio', function () {
+//     return view('public.portfolio');
+// })->name('portfolio');
 
-// Route::get('/gallery', function () {
 
-//     return view('public.gallery');
-// })->name('gallery');
+Route::get('/portfolio', [PortfolioController::class, 'index'])->name('portfolio');
 Route::get('/gallery', [GalleryController::class, 'galleryCalling'])->name('gallery');
 
 
@@ -101,24 +100,23 @@ Route::get('/', function (Request $request) {
         });
 
     if ($selectedCategorySlug) {
-        
+
         $category = Category::where('cat_slug', $selectedCategorySlug)->first();
 
-        
+
         if ($category) {
             $galleriesQuery->where('category_id', $category->id);
         }
     }
 
-    
+
     $galleries = $galleriesQuery->paginate(12);
 
     return view('public.home', [
         'categories' => $categories,
         'galleries' => $galleries,
-        'selectedCategorySlug' => $selectedCategorySlug, 
+        'selectedCategorySlug' => $selectedCategorySlug,
     ]);
-
 })->name('home');
 
 
@@ -132,7 +130,7 @@ Route::prefix('admin')->middleware(['auth', 'admin'])->group(function () {
     // Route::get('/dashboard', function () {
 
     // })->name('dashboard');
-    Route::get('/', [dashboardController::class, 'index'])->name('dashboard');
+    Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
 
 
 
@@ -185,7 +183,6 @@ Route::prefix('admin')->middleware(['auth', 'admin'])->group(function () {
         Route::post('/banner/{id}/toggle-status', 'toggleStatus')->name('admin.banner.toggleStatus');
         // Route::get('/delete/{id}', [BannerController::class, 'destroy'])->name('banner.delete');
         Route::delete('/trash/{id}', 'trashBanner')->name('banner.trash');
-
     });
 
     // youtubevideo
@@ -195,7 +192,6 @@ Route::prefix('admin')->middleware(['auth', 'admin'])->group(function () {
     Route::get('/youtube-video/edit/{id}', [YoutubeVideoController::class, 'edit'])->name('youtube-video.edit');
     Route::put('/youtube-video/edit/{id}', [YoutubeVideoController::class, 'update'])->name('youtube-video.update');
     Route::delete('/video/trash/{id}', [YoutubeVideoController::class, 'trashYoutubeVideo'])->name('youtube-video.trash');
-
 });
 
 Route::delete('admin/budget/trash/{id}', [BudgetController::class, 'destroy'])->name('budget.trash');

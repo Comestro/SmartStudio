@@ -3,21 +3,29 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
-use App\Models\Gallery;
+use App\Models\GalleryImage;
 use Illuminate\Http\Request;
 
-class DashboardController extends Controller
+class PortfolioController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
-    { $data = [
-        'categoryImage' => Category::all(),
-        'galleries' => Gallery::with('images', 'category')->limit(4)->paginate(2),
-    ];
-    return view('admin.dashboard', $data);
-    }
+{
+    $categories = Category::all();
+
+    $galleryImages = GalleryImage::with('gallery')
+        ->orderBy('created_at', 'desc')
+        ->limit(8)
+        ->get();
+
+    return view('public.portfolio', [
+        'categories' => $categories,
+        'galleryImages' => $galleryImages,
+    ]);
+}
+
 
     /**
      * Show the form for creating a new resource.
@@ -65,14 +73,5 @@ class DashboardController extends Controller
     public function destroy(string $id)
     {
         //
-    }
-    public function manageGallery(Request $request)
-    {
-        $data = [
-            'categories' => Category::all(),
-            'galleries' => Gallery::with('images', 'category')->get(),
-        ];
-
-        return view("admin.dashboard", $data);
     }
 }

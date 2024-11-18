@@ -26,14 +26,14 @@
         }
 
         /* .text-overlay {
-            position: absolute;
-            bottom: 0;
-            width: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            color: white;
-            padding: 1rem;
-            text-align: center;
-        } */
+                position: absolute;
+                bottom: 0;
+                width: 100%;
+                background-color: rgba(0, 0, 0, 0.5);
+                color: white;
+                padding: 1rem;
+                text-align: center;
+            } */
 
         .view-more-btn {
             position: absolute;
@@ -59,9 +59,9 @@
         }
 
         /* body {
-            background: url('./images/background.png') repeat;
-            animation: moveBackground 30s linear infinite;
-        } */
+                background: url('./images/background.png') repeat;
+                animation: moveBackground 30s linear infinite;
+            } */
 
         @keyframes moveBackground {
             0% {
@@ -81,11 +81,11 @@
             animation: fadeIn 2s ease-in-out forwards;
         }
 
-         /* Gradient animation moving horizontally */ */
-         .animate-gradientX {
+        /* Gradient animation moving horizontally */
+        */ .animate-gradientX {
             background-size: 200% 200%;
             animation: gradientX 3s ease infinite;
-        } 
+        }
 
         /* Keyframes for animations */
         @keyframes fadeIn {
@@ -114,34 +114,29 @@
 
     <body class="">
 
-     
+
 
         {{-- background image --}}
-           <div class="w-full h-screen bg-cover bg-no-repeat relative flex items-center justify-center"
-            style="background-image: url('https://img.freepik.com/premium-photo/beautiful-fe…model-posing-studio-light-flashes_382934-4673.jpg');" id="Home">
+        <div class="w-full h-screen bg-cover bg-no-repeat relative flex items-center justify-center"
+            style="background-image: url('https://img.freepik.com/premium-photo/beautiful-fe…model-posing-studio-light-flashes_382934-4673.jpg');"
+            id="Home">
             <div class="absolute inset-0 bg-black opacity-60"></div>
-             <div class="absolute inset-0 flex flex-col items-center justify-center text-center animate-fadeIn">
-            <h1 class="text-4xl md:text-5xl font-bold  bg-gradient-to-r from-white via-yellow-200 to-yellow-500  text-transparent bg-clip-text animate-gradientX drop-shadow-xl shadow-[#ffd700] duration-700 ease-in-out">
-            Capturning Moments </h1>
-            <p class="text-lg md:text-xl mt-4 px-4 text-white">
-            “Turning life’s precious moments into timeless memories”
-            </p>
-            
+            <div class="absolute inset-0 flex flex-col items-center justify-center text-center animate-fadeIn">
+                <h1
+                    class="text-4xl md:text-5xl font-bold  bg-gradient-to-r from-white via-yellow-200 to-yellow-500  text-transparent bg-clip-text animate-gradientX drop-shadow-xl shadow-[#ffd700] duration-700 ease-in-out">
+                    Capturning Moments </h1>
+                <p class="text-lg md:text-xl mt-4 px-4 text-white">
+                    “Turning life’s precious moments into timeless memories”
+                </p>
+
+            </div>
+
+
         </div>
-
-
-        </div> 
- 
-         
-        
-
-   
-
 
         {{-- about --}}
 
-        <div class=" shadow-lg rounded-lg overflow-hidden w-full mb-10 mt-10 mx-auto lg:flex lg:items-center"
-            id="About">
+        <div class=" shadow-lg rounded-lg overflow-hidden w-full mb-10 mt-10 mx-auto lg:flex lg:items-center" id="About">
 
             <div class="p-8 lg:w-1/2">
                 <h3 class="text-yellow-400 uppercase tracking-widest text-xl border-b-2 border-yellow-300 pb-2">About Me
@@ -177,55 +172,18 @@
 
         <div class="carousel w-full overflow-x-scroll flex snap-x snap-mandatory gap-2 scrollbar-hide">
 
-            <div tabindex="0"
-                class="carousel-item snap-center h-80 sm:h-96 bg-cover bg-center relative focus:outline-none lg:min-w-[33.33%] md:min-w-[50%] min-w-full">
-                <img src="./images/wedding.webp" alt="">
-                <div class="text-overlay">
-                    <h2 class="text-lg font-bold uppercase">Wedding</h2>
-                    <p class="uppercase">Royalty / Wedding</p>
+            @foreach ($categories as $item)
+                <div tabindex="0"
+                    class="carousel-item snap-center h-80 sm:h-96 bg-cover bg-center relative focus:outline-none lg:min-w-[33.33%] md:min-w-[50%] min-w-full">
+                    <img src="{{ asset('images/' . $item->cat_image) }}" alt="">
+                    <div class="text-overlay">
+                        <h2 class="text-lg font-bold uppercase">Wedding</h2>
+                        <p class="uppercase">Royalty / Wedding</p>
+                    </div>
+                    <button class="view-more-btn">View More</button>
                 </div>
-                <button class="view-more-btn">View More</button>
-            </div>
+            @endforeach
 
-            <div tabindex="0"
-                class="carousel-item snap-center h-80 sm:h-96 bg-cover bg-center relative focus:outline-none lg:min-w-[33.33%] md:min-w-[50%] min-w-full">
-                <img src="./images/studio-bg.jpg" alt="">
-                <div class="text-overlay">
-                    <h2 class="text-lg font-bold">Models</h2>
-                    <p class="uppercase">BEAUTY / FASHION</p>
-                </div>
-                <button class="view-more-btn">View More</button>
-            </div>
-
-            <div tabindex="0"
-                class="carousel-item snap-center h-80 sm:h-96 bg-cover bg-center relative focus:outline-none lg:min-w-[33.33%] md:min-w-[50%] min-w-full">
-                <img src="./images/aesthetic.webp" alt="">
-                <div class="text-overlay">
-                    <h2 class="text-lg font-bold">Nature</h2>
-                    <p class="uppercase">Nature / Travel</p>
-                </div>
-                <button class="view-more-btn">View More</button>
-            </div>
-
-            <div tabindex="0"
-                class="carousel-item snap-center h-80 sm:h-96 bg-cover bg-center relative focus:outline-none lg:min-w-[33.33%] md:min-w-[50%] min-w-full">
-                <img src="./images/studio-bg.jpg" alt="">
-                <div class="text-overlay">
-                    <h2 class="text-lg font-bold">NEW AGE FASHION</h2>
-                    <p class="uppercase">INNOVATION / STYLE</p>
-                </div>
-                <button class="view-more-btn">View More</button>
-            </div>
-
-            <div tabindex="0"
-                class="carousel-item snap-center h-80 sm:h-96 bg-cover bg-center relative focus:outline-none lg:min-w-[33.33%] md:min-w-[50%] min-w-full">
-                <img src="./images/studio-bg.jpg" alt="">
-                <div class="text-overlay">
-                    <h2 class="text-lg font-bold">NEW AGE FASHION</h2>
-                    <p class="uppercase">INNOVATION / STYLE</p>
-                </div>
-                <button class="view-more-btn">View More</button>
-            </div>
         </div>
 
         {{-- latest work --}}
@@ -235,35 +193,43 @@
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
-            <div class="lg:col-span-2">
-                <img src="./images/aesthetic-2.jpg" alt=""
-                    class="w-full h-full object-cover rounded-lg shadow-lg">
-            </div>
-            <div class="lg:col-span-2 row-span-2">
-                <img src="./images/wedding.webp" alt="" class="w-full h-full object-cover rounded-lg shadow-lg">
-            </div>
-            <div class="hidden lg:grid grid-rows-2 gap-4">
-                <div class="h-52">
-                    <img src="./images/studio-bg.jpg" alt=""
-                        class="w-full h-full object-cover rounded-lg shadow-lg">
+            @if($galleryImages->count() > 0)
+                <div class="lg:col-span-2">
+                    <img src="{{ asset('images/' . $galleryImages->first()->image_path) }}" 
+                         alt="{{ $galleryImages->first()->gallery->gallery_title ?? 'Gallery Image' }}" 
+                         class="w-full h-full object-cover rounded-lg shadow-lg">
                 </div>
-                <div class="h-52">
-                    <img src="./images/studio-bg.jpg" alt=""
-                        class="w-full h-full object-cover rounded-lg shadow-lg">
+            @endif
+        
+            @if($galleryImages->skip(1)->first())
+                <div class="lg:col-span-2 row-span-2">
+                    <img src="{{ asset('images/' . $galleryImages->skip(1)->first()->image_path) }}" 
+                         alt="{{ $galleryImages->skip(1)->first()->gallery->gallery_title ?? 'Gallery Image' }}" 
+                         class="w-full h-full object-cover rounded-lg shadow-lg">
                 </div>
-            </div>
-            <div class="lg:col-span-1">
-                <img src="./images/jar.jpg" alt="" class="w-full h-40 object-cover rounded-lg shadow-lg">
-            </div>
-            <div class="lg:col-span-1">
-                <img src="./images/aesthetic.webp" alt="" class="w-full h-40 object-cover rounded-lg shadow-lg">
-            </div>
-            <div class="lg:col-span-1">
-                <img src="./images/aesthetic.webp" alt="" class="w-full h-40 object-cover rounded-lg shadow-lg">
-            </div>
-
-
+            @endif
+        
+            @if($galleryImages->skip(2)->count() >= 2)
+                <div class="hidden lg:grid grid-rows-2 gap-4">
+                    @foreach($galleryImages->skip(2)->take(2) as $image)
+                        <div class="h-52">
+                            <img src="{{ asset('images/' . $image->image_path) }}" 
+                                 alt="{{ $image->gallery->gallery_title ?? 'Gallery Image' }}" 
+                                 class="w-full h-full object-cover rounded-lg shadow-lg">
+                        </div>
+                    @endforeach
+                </div>
+            @endif
+        
+            @foreach($galleryImages->skip(4)->take(3) as $image)
+                <div class="lg:col-span-1">
+                    <img src="{{ asset('images/' . $image->image_path) }}" 
+                         alt="{{ $image->gallery->gallery_title ?? 'Gallery Image' }}" 
+                         class="w-full h-40 object-cover rounded-lg shadow-lg">
+                </div>
+            @endforeach
         </div>
+        
 
 
         {{-- contact --}}

@@ -149,7 +149,6 @@ class GalleryController extends Controller
             'galleryFirst'=>Gallery::with('images')->inRandomOrder()->first(),
             'galleryLast' => Gallery::with('images')->latest()->first(),
 
-
         ];
         
         
