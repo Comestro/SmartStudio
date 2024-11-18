@@ -14,8 +14,8 @@
 
          .gallery-item {
             flex: 1;
-            width: 30%;
-            height: 250px;
+            width: 80%;
+            height: 400px;
             overflow: hidden;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -247,8 +247,8 @@
 
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div
-            class="flex flex-col items-center transform transition duration-300 rounded-lg p-5 shadow-lg">
+         <div
+            class="flex flex-col items-center transform transition duration-300 hover:scale-105 hover:bg-gray-50 rounded-lg p-5 shadow-lg">
             <img src="https://img.freepik.com/free-photo/young-beautiful-woman-portrait_23-2149263756.jpg?ga=GA1.1.1275289697.1728223870&semt=ais_hybrid"
                 alt="Professional Portraits" class="w-80 h-64 mb-4">
             <h3 class="text-2xl font-semibold text-black mb-2">Elevate Your Portraits</h3>

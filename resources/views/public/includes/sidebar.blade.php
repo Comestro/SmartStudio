@@ -8,7 +8,7 @@
 
 
     <aside id="sidebar"
-        class="absolute top-0 left-0  w-[350px] bg-black text-white p-6 transform -translate-x-full transition-transform duration-300 z-40 shadow-lg">
+        class="absolute top-0 left-0  w-[400px] bg-black text-white p-6 transform -translate-x-full transition-transform duration-300 z-40 shadow-lg">
 
         <div class="flex flex-col items-center mb-6">
             <a href="{{route('home')}}"><img src="https://tse2.mm.bing.net/th?id=OIP.tEQ4HAiipGQ6oKYkdUGS8QHaHa&pid=Api&P=0&h=180"
