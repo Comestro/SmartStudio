@@ -23,7 +23,7 @@
         <div class="overflow-x-auto w-full rounded-lg scrollbar-hide">
             <table class="min-w-full bg-gray-800 rounded-lg ">
                 <thead>
-                    <tr class="bg-gray-700 text-white uppercase text-sm leading-normal">
+                    <tr class="bg-yellow-300 text-black uppercase text-sm leading-normal">
                         <th class="px-4 md:px-6 py-3 text-left font-semibold">ID</th>
                         <th class="px-4 md:px-6 py-3 text-left font-semibold">Name</th>
                         <th class="px-4 md:px-6 py-3 text-left font-semibold">Status</th>

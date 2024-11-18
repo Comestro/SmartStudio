@@ -49,17 +49,17 @@
                                     <p class="text-gray-300">Category: {{ $item->category->cat_name }}</p>
                                 </div>
                                 <div class="mt-4 flex justify-between items-center">
-                                    <a href="{{ route('gallery.viewGallery', $item->id) }}" class="bg-green-500 text-white px-3 py-1 rounded-md hover:bg-green-600 transition duration-300 flex items-center">
+                                    <a href="{{ route('gallery.viewGallery', $item->id) }}" class="bg-gradient-to-r from-green-400 to-green-600 hover:bg-gradient-to-l text-white px-3 py-1 rounded-md  transition duration-300 flex items-center">
                                         <i class="bi bi-eye mr-1"></i> View
                                     </a>
-                                    <a href="{{ route('gallery.edit', $item->id) }}" class="bg-blue-500 text-white px-3 py-1 rounded-md hover:bg-blue-600 transition duration-300 flex items-center">
+                                    <a href="{{ route('gallery.edit', $item->id) }}" class="bg-gradient-to-r from-indigo-400 to-indigo-600 hover:bg-gradient-to-l text-white px-3 py-1 rounded-md  transition duration-300 flex items-center">
                                         <i class="bi bi-pencil mr-1"></i> Edit
                                     </a>
                                     <form action="{{ route('gallery.trash', $item->id) }}" method="POST" class="inline-block"
                                         onsubmit="return confirm('Are you sure you want to delete this category?');">
                                         @csrf
                                         @method('DELETE')
-                                        <button type="submit" class="bg-red-500 text-white px-3 py-1 rounded-md hover:bg-red-600 transition duration-300 flex items-center">
+                                        <button type="submit" class="bg-gradient-to-r from-red-400 to-red-600 hover:bg-gradient-to-l text-white px-3 py-1 rounded-md  transition duration-300 flex items-center">
                                             <i class="bi bi-trash mr-1"></i> Delete
                                         </button>
                                     </form>

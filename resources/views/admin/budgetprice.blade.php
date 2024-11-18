@@ -14,6 +14,7 @@
             scrollbar-width: none;
         }
 </style>
+
 <div class="flex justify-center items-center p-6">
     @if(session('msg'))
     <div class="mt-4 p-4 bg-green-100 text-green-700 rounded-md">
@@ -23,7 +24,7 @@
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 w-full max-w-6xl">
 
         {{-- You-tube Video Insert Form --}}
-        <div class="bg-gray-900  shadow-lg">
+        <div class="bg-gray-700 p-5 rounded-lg shadow-lg">
             <h2 class="text-2xl md:text-3xl font-bold text-yellow-400 mb-4 md:mb-6">Add Budget Category</h2>
             <form action="{{  route('budget.create') }}" method="POST"  class="space-y-4 md:space-y-5">
                 @csrf
@@ -49,12 +50,12 @@
         </div>
 
         {{--  Table --}}
-        <div class=" ">
+        <div class="bg-gray-700 rounded-lg shadow-lg p-4  ">
             <h2 class="text-2xl md:text-3xl font-bold text-yellow-400 mb-4 md:mb-6">Manage Videos</h2>
             <div class="overflow-x-auto scrollbar-hide rounded-lg">
                 <table class="min-w-full bg-gray-800 rounded-lg shadow-lg">
                     <thead>
-                        <tr class="bg-gray-700 text-white">
+                        <tr class="bg-yellow-300 text-black">
                             <th class="px-4 md:px-6 py-3 text-left font-semibold tracking-wider">ID</th>
                             <th class="px-4 md:px-6 py-3 text-left font-semibold tracking-wider">Category</th>
                             <th class="px-4 md:px-6 py-3 text-left font-semibold tracking-wider">Price</th>

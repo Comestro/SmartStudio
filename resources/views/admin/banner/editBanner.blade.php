@@ -7,9 +7,9 @@
         {{ session('msg') }}
     </div>
 @endif
-    <div class="container mx-auto p-4">
+    <div class="container mx-auto p-6">
 
-        <div class="w-full ">
+        <div class="w-full mb-2 ">
             <div class="flex justify-between items-center ">
                 <h2 class="lg:text-3xl font-bold text-yellow-500">Banner Edit Page</h2>
                 {{-- <a href="{{ route('admin.banners.index') }}" class="inline-flex items-center bg-gradient-to-t from-yellow-400 via-yellow-300 to-yellow-200 text-black px-6 py-3 rounded-md hover:bg-gray-800 shadow-md transition duration-200 lg:text-">
@@ -17,7 +17,7 @@
             </a> --}}
             </div>
         </div>
-        <div class="bg-gray-900 lg:p-8 p-3 rounded shadow-lg">
+        <div class="bg-gray-700 lg:px-6 p-3 rounded-lg shadow-lg ">
             <form action="{{ route('banner.update',$banner->id) }}" method="POST" enctype="multipart/form-data" class="space-y-10">
                 @csrf
                 @method('PUT')
@@ -52,7 +52,7 @@
                     @enderror
                 </div>
 
-                <button type="submit" class="w-full  bg-gradient-to-r from-yellow-400 via-yellow-300 to-yellow-200  text-black font-semibold py-3 rounded-md hover:bg-yellow-700 shadow-md mt-6">
+                <button type="submit" class="w-full   bg-gradient-to-r from-yellow-400 via-yellow-300 to-yellow-200  text-black font-semibold py-3 rounded-md hover:bg-yellow-700 shadow-md mt-6">
                     Update Banner
                 </button>
             </form>
