@@ -89,52 +89,6 @@
             </ul>
         </nav>
 
-<<<<<<< HEAD
- 
-    <div class="mt-4">
-        <form method="POST" action="{{ route('logout') }}">
-            @csrf
-            <button type="submit" 
-                class="w-full px-4 py-2 text-yellow-400 border border-yellow-400 rounded hover:bg-yellow-400 hover:text-white transition">
-                Logout
-            </button>
-        </form>
-    </div>
-     
-    <hr class="border-t border-white mt-6">
-    
-   
-    <ul class="space-y-3 mt-4">
-        <li class="flex justify-between items-center">
-            <a href="{{ route('about') }}" class="text-lg hover:text-yellow-500">About</a>
-            <i class="bi bi-caret-left-fill text-2xl"></i>
-        </li>
-        <li class="flex justify-between items-center">
-            <a href="{{ route('service') }}" class="text-lg hover:text-yellow-500">Services</a>
-            <i class="bi bi-caret-left-fill text-2xl"></i>
-        </li>
-        <li class="flex justify-between items-center">
-            <a href="{{ route('contact') }}" class="text-lg hover:text-yellow-500">Contact</a>
-            <i class="bi bi-caret-left-fill text-2xl"></i>
-        </li>
-        <li class="flex justify-between items-center">
-            <a href="{{ route('portfolio') }}" class="text-lg hover:text-yellow-500">Portfolio</a>
-            <i class="bi bi-caret-left-fill text-2xl"></i>
-        </li>
-        <li class="flex justify-between items-center">
-            <a href="{{ route('budget.index') }}" class="text-lg hover:text-yellow-500">Budget For Your Event</a>
-            <i class="bi bi-caret-left-fill text-2xl"></i>
-        </li>
-        <li>
-            <a href="{{ route('category.view') }}" 
-               class="block text-center text-yellow-400 border border-yellow-400 px-4 py-2 rounded hover:bg-yellow-400 hover:text-white transition">
-                Book Now
-            </a>
-        </li>
-    </ul>
-</nav>
-=======
->>>>>>> 83da3f044c7daf396ffee9dc1382957bf766bcd3
 
 
         <div class="flex flex-col items-center mt-6">
