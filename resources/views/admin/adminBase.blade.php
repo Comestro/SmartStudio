@@ -52,10 +52,13 @@
 </head>
 <body class="bg-gray-900 text-gray-200">
     <div class="flex">
-        <div id="sidebar" class="w-80 h-auto bg-[#2f363e]  ">
+        <div id="sidebar" >
             
-            @include('admin.includes.sidebar')  {{-- Include your sidebar here --}}
+            @include('admin.includes.sidebar')
+            @include('admin.includes.sidebardesktop')
+             {{-- Include your sidebar here --}}
         </div>
+      
         <div class="flex-grow">
             @include('admin.includes.navbar')  {{-- Include the navbar here --}}
             <div class="w-full p-4">

@@ -27,7 +27,7 @@
                         <td class="py-3 px-6 text-left whitespace-nowrap">{{$contact->id}}</td>
                         <td class="py-3 px-6 text-left">{{$contact->name}}</td>
                         <td class="py-3 px-6 text-center">
-                            <span class="bg-green-500 text-white py-1 px-3 rounded-full text-xs">{{$contact->is_readed ? "Unread": "Read"}}</span>
+                            <span class="bg-green-500 text-white py-1 px-3 rounded-full text-xs">{{$contact->is_read? "Readed": "Unreaded"}}</span>
                         </td>
                         <td class="py-3 px-6 text-center">
                            <div class="flex gap-3">
