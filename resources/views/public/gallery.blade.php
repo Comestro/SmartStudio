@@ -1,9 +1,9 @@
 @extends('public.base')
 
 @section('content')
-</head>
-<style>
-      .gallery {
+    </head>
+    <style>
+        .gallery {
             width: 85vw;
             height: 60vmin;
             display: flex;
@@ -24,8 +24,7 @@
         .gallery img:hover {
             flex: 4;
         }
-
-</style>
+    </style>
 
     <div class="h-[80vh] bg-cover bg-center"
         style="background-image: url('https://th.bing.com/th/id/OIP.01e67CZXYANik5BUvlo0YgHaEJ?w=281&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7');">
@@ -48,24 +47,33 @@
 
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
 
-                <div class="relative group">
-                    <img src="https://img.freepik.com/premium-photo/quottranquil-riverside-ponderingquot_1168612-161335.jpg?ga=GA1.1.1275289697.1728223870&semt=ais_siglip"
-                        alt="Gallery Image 1"
-                        class="w-full h-72 object-cover rounded-lg shadow-lg transition duration-300 group-hover:scale-105">
-                    <div class="absolute inset-0 flex items-center justify-center">
-                        <span
-                            class="text-white text-lg font-bold transition-opacity duration-300 group-hover:opacity-0">
-                            Beautiful Scenery
-                        </span>
-                    </div>
-                    <div
-                        class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
-                        <span class="text-white text-lg font-bold">Stunning View</span>
-                    </div>
-                </div>
+                @foreach ($galleries as $item)
+                    <div class="relative group">
+                        @if ($item->images->first())
+                            <a href="{{ route('gallery.viewGallery', $item->id) }}">
+                                <img src="{{ asset('images/' . $item->images->first()->image_path) }}"
+                                    alt="{{ $item->gallery_title }}" class="w-full h-48 object-cover">
+                            </a>
+                        @else
+                            <div class="w-full h-48 bg-gray-700 flex items-center justify-center text-white">No Image</div>
+                        @endif
 
 
-                <div class="relative group">
+
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <span
+                                class="text-white text-lg font-bold transition-opacity duration-300 group-hover:opacity-0">
+                                {{ $item->gallery_title }}
+                            </span>
+                        </div>
+                        <div
+                            class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+                            <span class="text-white text-lg font-bold">{{ $item->category->cat_name }}</span>
+                        </div>
+                    </div>
+                @endforeach
+
+                {{-- <div class="relative group">
                     <img src="https://tse4.mm.bing.net/th?id=OIP.ZHEaEn6yqgb76ySxdb3S6gHaE-&pid=Api&P=0&h=180"
                         alt="Gallery Image 2"
                         class="w-full h-72 object-cover rounded-lg shadow-lg transition duration-300 group-hover:scale-105">
@@ -113,10 +121,10 @@
                         class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
                         <span class="text-white text-lg font-bold">Ocean Breeze</span>
                     </div>
-                </div>
+                </div> --}}
 
 
-                <div class="relative group">
+                {{-- <div class="relative group">
                     <img src="https://img.freepik.com/premium-photo/close-up-red-flowering-plant_1048944-23926359.jpg?ga=GA1.1.1275289697.1728223870&semt=ais_siglip"
                         alt="Gallery Image 5"
                         class="w-full h-72 object-cover rounded-lg shadow-lg transition duration-300 group-hover:scale-105">
@@ -147,7 +155,7 @@
                         class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
                         <span class="text-white text-lg font-bold">Monument of Love</span>
                     </div>
-                </div>
+                </div> --}}
             </div>
         </div>
     </section>
@@ -155,8 +163,8 @@
         <div class="container mx-auto px-6 lg:px-12 flex flex-col lg:flex-row items-center gap-12">
 
             <div class="lg:w-1/2">
-                <img src="https://img.freepik.com/free-photo/pathway-leading-saint-peter-s-basilica-night-time_413556-113.jpg?ga=GA1.1.1275289697.1728223870&semt=ais_siglip" alt="Main Image"
-                    class="w-full h-auto rounded-lg shadow-lg" />
+                <img src="https://img.freepik.com/free-photo/pathway-leading-saint-peter-s-basilica-night-time_413556-113.jpg?ga=GA1.1.1275289697.1728223870&semt=ais_siglip"
+                    alt="Main Image" class="w-full h-auto rounded-lg shadow-lg" />
             </div>
 
             <div class="lg:w-1/2">
@@ -176,12 +184,15 @@
 
         <div class="container mx-auto mt-8 relative">
             <div class="grid grid-cols-4 gap-4">
-                <div class="relative group">
-                    <img src="https://th.bing.com/th/id/OIP.MYBXwqjBG1K3zIggNQN53QHaEK?w=334&h=187&c=7&r=0"
-                        alt="Gallery Image 1" class="w-full h-24 object-cover rounded-lg shadow-md" />
-                </div>
+                @foreach ($categories as $item)
+                    <div class="relative group">
+                        <img src="{{ asset('images/' . $item->cat_image) }}" alt="Gallery Image 1"
+                            class="w-full h-24 object-cover rounded-lg shadow-md" />
+                    </div>
+                @endforeach
 
-                <div class="relative group">
+
+                {{-- <div class="relative group">
                     <img src="https://tse1.mm.bing.net/th?id=OIP.BtNI9puHmT5TFEec4PKB4AHaE6&pid=Api&P=0&h=180"
                         alt="Gallery Image 2" class="w-full h-24 object-cover rounded-lg shadow-md" />
                 </div>
@@ -194,7 +205,7 @@
                 <div class="relative group">
                     <img src="https://tse1.mm.bing.net/th?id=OIP.vA1AyyXVZGakpvyE2s8c6AHaEo&pid=Api&P=0&h=180"
                         alt="Gallery Image 4" class="w-full h-24 object-cover rounded-lg shadow-md" />
-                </div>
+                </div> --}}
             </div>
 
 
@@ -221,21 +232,22 @@
 
     <section id="gallery" class="py-16">
         <div class="container mx-auto px-6 lg:px-12">
-            <h2 class="text-3xl font-bold text-yellow-500 text-center mb-8">MODELS IMAGES</h2>
+            
+            <h2 class="text-3xl font-bold text-yellow-500 text-center mb-8">{{$galleryFirst->gallery->gallery_title}}</h2>
 
             <div class="gallery">
 
-                <img src="https://img.freepik.com/free-photo/happy-attractive-woman-smiling_23-2147651996.jpg?ga=GA1.1.1275289697.1728223870&semt=ais_siglip"
+                <img src="{{asset('images/' . $galleryFirst->image_path)}}"
                     alt="Gallery Image 1">
 
-                <img src="https://img.freepik.com/free-photo/cheerful-woman-dress-near-wall_23-2148016840.jpg?ga=GA1.1.1275289697.1728223870&semt=ais_siglip"
+                {{-- <img src="https://img.freepik.com/free-photo/cheerful-woman-dress-near-wall_23-2148016840.jpg?ga=GA1.1.1275289697.1728223870&semt=ais_siglip"
                     alt="Gallery Image 2">
 
                 <img src="https://img.freepik.com/free-photo/beautiful-woman-studio_1157-17142.jpg?ga=GA1.1.1275289697.1728223870&semt=ais_siglip"
                     alt="Gallery Image 3">
 
                 <img src="https://img.freepik.com/premium-photo/portrait-beautiful-young-woman-standing-by-plants_1048944-3906329.jpg?ga=GA1.1.1275289697.1728223870&semt=ais_siglip"
-                    alt="Gallery Image 4">
+                    alt="Gallery Image 4"> --}}
             </div>
         </div>
     </section>
@@ -253,7 +265,7 @@
                 Get in Touch
             </button>
         </div>
-        </div>
+    </div>
 
 
     <section id="gallery" class="py-16">
@@ -276,5 +288,4 @@
             </div>
         </div>
     </section>
-
 @endsection

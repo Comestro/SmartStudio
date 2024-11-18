@@ -22,7 +22,7 @@ class GalleryController extends Controller
                 'category_id' => 'required|exists:categories,id',
             ]);
 
-            
+
             $gallery = new Gallery();
             $gallery->gallery_title = $request->gallery_title;
             $gallery->slug = $this->generateUniqueSlug($request->gallery_title);
@@ -34,7 +34,7 @@ class GalleryController extends Controller
             foreach ($imageFiles as $image) {
                 $imageName = time() . '_' . uniqid() . '.' . $image->getClientOriginalExtension();
                 if ($image->move(public_path('images'), $imageName)) {
-                   
+
                     $galleryImage = new GalleryImage();
                     $galleryImage->gallery_id = $gallery->id;
                     $galleryImage->image_path = $imageName;
@@ -69,7 +69,7 @@ class GalleryController extends Controller
         return $count ? "{$slug}-{$count}" : $slug;
     }
 
-public function manageGallery(Request $request)
+    public function manageGallery(Request $request)
     {
         $data = [
             'categories' => Category::all(),
@@ -80,61 +80,60 @@ public function manageGallery(Request $request)
     }
 
     public function editGallery($id)
-{
-    $gallery = Gallery::with('images', 'category')->findOrFail($id);
-    $categories = Category::all(); 
-    return view('admin.editGallery', compact('gallery', 'categories'));
-}
-
-public function updateGallery(Request $request, $id)
-{
-
-    $validated = $request->validate([
-        'gallery_title' => 'required|string|max:255',
-        'content' => 'nullable|string',
-        'category_id' => 'required|exists:categories,id',
-        'images' => 'nullable|array',
-        'images.*' => 'nullable|image|mimes:jpeg,png,jpg,svg,webp|max:2048',
-    ]);
-    $gallery = Gallery::findOrFail($id);
-
-    $gallery->gallery_title = $request->gallery_title;
-    $gallery->content = $request->content;
-    $gallery->category_id = $request->category_id;
-
-    if ($gallery->gallery_title != $request->gallery_title) {
-        $gallery->slug = $this->generateUniqueSlug($request->gallery_title);
+    {
+        $gallery = Gallery::with('images', 'category')->findOrFail($id);
+        $categories = Category::all();
+        return view('admin.editGallery', compact('gallery', 'categories'));
     }
 
-    $gallery->save();
+    public function updateGallery(Request $request, $id)
+    {
 
-    if ($request->hasFile('images')) {
-        $imageFiles = $request->file('images');
-        foreach ($imageFiles as $image) {
-            $imageName = time() . '_' . uniqid() . '.' . $image->getClientOriginalExtension();
-            if ($image->move(public_path('images'), $imageName)) {                
-                $galleryImage = new GalleryImage();
-                $galleryImage->gallery_id = $gallery->id;
-                $galleryImage->image_path = $imageName;
-                $galleryImage->save();
-            } else {
-                return redirect()->back()->with('error', 'Failed to upload image.');
+        $validated = $request->validate([
+            'gallery_title' => 'required|string|max:255',
+            'content' => 'nullable|string',
+            'category_id' => 'required|exists:categories,id',
+            'images' => 'nullable|array',
+            'images.*' => 'nullable|image|mimes:jpeg,png,jpg,svg,webp|max:2048',
+        ]);
+        $gallery = Gallery::findOrFail($id);
+
+        $gallery->gallery_title = $request->gallery_title;
+        $gallery->content = $request->content;
+        $gallery->category_id = $request->category_id;
+
+        if ($gallery->gallery_title != $request->gallery_title) {
+            $gallery->slug = $this->generateUniqueSlug($request->gallery_title);
+        }
+
+        $gallery->save();
+
+        if ($request->hasFile('images')) {
+            $imageFiles = $request->file('images');
+            foreach ($imageFiles as $image) {
+                $imageName = time() . '_' . uniqid() . '.' . $image->getClientOriginalExtension();
+                if ($image->move(public_path('images'), $imageName)) {
+                    $galleryImage = new GalleryImage();
+                    $galleryImage->gallery_id = $gallery->id;
+                    $galleryImage->image_path = $imageName;
+                    $galleryImage->save();
+                } else {
+                    return redirect()->back()->with('error', 'Failed to upload image.');
+                }
             }
         }
+
+        return redirect()->route('gallery.manageGallery')->with('msg', 'Gallery updated successfully.');
     }
 
-    return redirect()->route('gallery.manageGallery')->with('msg', 'Gallery updated successfully.');
-}
+    public function trashGallery($id)
+    {
+        $data = Gallery::findOrFail($id);
+        $data->delete();
+        return redirect()->back()->with('msg', 'moved to trash bin');
+    }
 
-public function trashGallery($id){
-    $data =Gallery::findOrFail($id);
-    $data->delete();
-    return redirect()->back()->with('msg','moved to trash bin');
-
-
-}
-
-public function deleteImage($imageId)
+    public function deleteImage($imageId)
     {
         $image = GalleryImage::findOrFail($imageId);
 
@@ -142,21 +141,16 @@ public function deleteImage($imageId)
 
         return redirect()->back()->with('msg', 'Image soft deleted successfully!');
     }
+    public function galleryCalling()
+    {
+        $data = [
+            'categories' => Category::all(),
+            'galleries' => Gallery::with('images', 'category')->inRandomOrder()->limit(5)->get(),
 
-    // public function deleteGallery($id)
-    // {
-    //     $gallery = Gallery::findOrFail($id);
-        
-    //     foreach ($gallery->images as $image) {
-    //         $imagePath = public_path('images') . '/' . $image->image_path;
-    //         if (File::exists($imagePath)) {
-    //             File::delete($imagePath);
-    //         }
-    //         $image->delete();
-    //     }
-
-    //     $gallery->delete();
-
-    //     return redirect()->route('gallery.manageGallery')->with('msg', 'Gallery deleted successfully!');
-    // }
+        ];
+        $galleryFirst=GalleryImage::inRandomOrder()->limit(1)->first();
+        // dd($galleryFirst);
+        $data['galleryFirst']=$galleryFirst;
+        return view("public.gallery", $data);
+    }
 }

@@ -31,9 +31,12 @@ Route::get('/portfolio', function () {
     return view('public.portfolio');
 })->name('portfolio');
 
-Route::get('/gallery', function () {
-    return view('public.gallery');
-})->name('gallery');
+// Route::get('/gallery', function () {
+
+//     return view('public.gallery');
+// })->name('gallery');
+Route::get('/gallery', [GalleryController::class, 'galleryCalling'])->name('gallery');
+
 
 
 Route::get('/service', function () {
@@ -128,7 +131,7 @@ Route::prefix('admin')->middleware(['auth', 'admin'])->group(function () {
     // Route::get('/dashboard', function () {
 
     // })->name('dashboard');
-    Route::get('/dashboard', [dashboardController::class, 'index'])->name('dashboard');
+    Route::get('/', [dashboardController::class, 'index'])->name('dashboard');
 
 
 
