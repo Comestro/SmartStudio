@@ -39,7 +39,7 @@ class BannerController extends Controller
 
             $image = $request->file('b_image');
             $imageName = time() . '.' . $image->getClientOriginalExtension();
-            $image->move(public_path('images'), $imageName);
+            $image->move(public_path('images/banner'), $imageName);
 
             $banner = new Banner();
             $banner->b_name = $request->b_name;
