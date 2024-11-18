@@ -75,8 +75,8 @@
 
             <img src="https://tse3.mm.bing.net/th?id=OIP.3q3KkIYCwkoXEXdh3KC3SgHaE8&pid=Api&P=0&h=180"
                 alt="Profile Picture" class="rounded-full w-24 h-24 object-cover mt-6">
+                <a href="{{ route('home') }}"><p class="text-center text-lg px-4 mt-4">Welcome To "Smart Studio"</p></a>
 
-            <p class="text-center text-lg px-4 mt-4">Welcome To "Smart Studio"</p>
 
             <div class="flex justify-center space-x-6 mt-4">
                 <i class="bi bi-facebook text-2xl text-yellow-500"></i>
