@@ -80,7 +80,7 @@
     
                     <!-- Submit Button -->
                     <button type="submit"
-                        class="w-full py-2 sm:py-3 text-white font-semibold bg-yellow-500 rounded-lg hover:bg-yellow-700 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-offset-2">
+                        class="w-full py-2 sm:py-3  bg-gradient-to-r from-yellow-400 via-yellow-300 to-yellow-200 text-black font-semibold  rounded-lg hover:bg-yellow-400 transition duration-300">
                         Add Image
                     </button>
                 </form>

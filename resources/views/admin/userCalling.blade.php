@@ -16,10 +16,10 @@
    
     <div class="container mx-auto px-4 ">
         <h2 class="text-2xl md:text-3xl font-bold text-yellow-400 mb-4 md:mb-6">User List</h2>
-        <div class="overflow-x-auto scrollbar-hide">
-        <table class="min-w-full bg-gray-800 rounded-lg border border-gray-200">
+        <div class="overflow-x-auto scrollbar-hide rounded-lg">
+        <table class="min-w-full bg-gray-800 rounded-lg ">
             <thead>
-                <tr class="bg-gray-700 text-white">
+                <tr class="bg-yellow-400 text-black ">
                     <th class="px-4 md:px-6 py-3 text-left font-semibold">ID</th>
                     <th class="px-4 md:px-6 py-3 text-left font-semibold">Name</th>
                     <th class="px-4 md:px-6 py-3 text-left font-semibold">Email</th>
