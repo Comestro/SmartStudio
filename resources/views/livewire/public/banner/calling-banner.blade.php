@@ -4,9 +4,8 @@
 
     <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col text-center p-4">
 <div class="flex flex-col md:flex-row items-center justify-center mt-4 px-6 md:px-10">
-    <h1 class="text-white text-3xl md:text-5xl font-bold mb-2 md:mb-0 text-center md:text-left">
-        WELCOME TO <span class="text-yellow-400">SMART STUDIO</span>
-    </h1>
+    <a href="" class="text-white text-3xl md:text-5xl font-bold mb-2 md:mb-0 text-center md:text-left">WELCOME TO <span class="text-yellow-400">SMART STUDIO</span></a>
+    
 </div>
 <div class="flex flex-col md:flex-row items-center justify-center mt-4 px-6 md:px-10">
     <p class="text-white text-lg md:text-xl text-center md:text-left">

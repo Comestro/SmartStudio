@@ -320,7 +320,7 @@
 
     </div>
 </div>
-<div class="py-10"></div>
+
 <a href="https://api.whatsapp.com/send?phone=+919472641988&text={{ urlencode('Hello, 
 
 I am interested in booking a photography session with your studio. Could you please let me know the availability for the following details:
@@ -334,7 +334,7 @@ Looking forward to your response.
 
 Thank you!') }}"
     target="_blank"
-    class="fixed md:bottom-10 bottom-20 right-2 md:right-10 z-20 group">
+    class="fixed md:bottom-10  bottom-20 right-2 md:right-10 z-20 group">
     <div class="flex items-center bg-green-500 rounded-full p-2 shadow-lg text-white hover:bg-green-600 transition-all duration-300">
         <div class="flex items-center justify-center w-12 h-12 bg-green-500 rounded-full group-hover:w-auto group-hover:px-4 transition-all duration-500">
             <i class="bi bi-whatsapp text-2xl"></i>
