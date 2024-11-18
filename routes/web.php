@@ -31,9 +31,12 @@ Route::get('/portfolio', function () {
     return view('public.portfolio');
 })->name('portfolio');
 
-Route::get('/gallery', function () {
-    return view('public.gallery');
-})->name('gallery');
+// Route::get('/gallery', function () {
+
+//     return view('public.gallery');
+// })->name('gallery');
+Route::get('/gallery', [GalleryController::class, 'galleryCalling'])->name('gallery');
+
 
 
 Route::get('/service', function () {
@@ -47,6 +50,7 @@ Route::get('/about', function () {
 Route::get('/contact', function () {
     return view('public.contact');
 })->name('contact');
+
 
 // Route::get('/video', function () {
 //     $data['videos']=youtubeVideo::all();
@@ -128,7 +132,7 @@ Route::prefix('admin')->middleware(['auth', 'admin'])->group(function () {
     // Route::get('/dashboard', function () {
 
     // })->name('dashboard');
-    Route::get('/dashboard', [dashboardController::class, 'index'])->name('dashboard');
+    Route::get('/', [dashboardController::class, 'index'])->name('dashboard');
 
 
 
@@ -158,6 +162,7 @@ Route::prefix('admin')->middleware(['auth', 'admin'])->group(function () {
 
     // contact
     Route::get('/contact-list', [ContactController::class, 'ManageContact'])->name('admin.contact.list');
+    Route::get('/contact-list/{id}', [ContactController::class, 'viewContact'])->name('admin.contact.view');
 
     // banner
     Route::get('/banner/create', [BannerController::class, 'create'])->name('banner.create');

@@ -8,8 +8,8 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <!-- Gallery Title and Back Link -->
         <div class="flex justify-between items-center mb-6">
-            <h1 class="text-3xl font-extrabold text-gray-900">{{ $item->gallery_title }}</h1>
-            <a href="{{ route('gallery.manageGallery') }}" class="text-blue-500 hover:text-blue-700 text-lg">Back to Manage Gallery</a>
+            <h1 class="text-3xl font-bold  text-yellow-500">{{ $item->gallery_title }}</h1>
+            <a href="{{ route('gallery.manageGallery') }}" class="text-yellow-500 hover:text-yellow-700 border-b-2 border-yellow-300 text-lg"><i class="bi bi-box-arrow-in-left"></i> Back to Manage Gallery</a>
         </div>
     
         <!-- Gallery Images Section -->

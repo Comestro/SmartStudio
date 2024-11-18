@@ -23,4 +23,10 @@ class ContactController extends Controller
         $data['contacts'] = Contact::all();
         return view('admin.contactList', $data);
     }
+    public  function viewContact($id){
+        $contact =Contact::where('id', $id)->update(['is_read'=>1]);
+    
+        $data['contact'] = Contact::find($id);
+        return view('admin.viewcontact',$data);
+    }
 }

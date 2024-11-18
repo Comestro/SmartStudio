@@ -1,4 +1,4 @@
-<div class="w-full h-auto pl-10 mt-2">
+<div class="w-full h-screen pl-10 mt-2">
     <div class="w-full h-16 flex items-center justify-center">
         <p class="text-2xl text-yellow-400 font-bold">SMART STUDIO</p>
     </div>
@@ -78,17 +78,19 @@
             <i class="bi bi-gear text-yellow-400 text-xl"></i>
             <a href="" class="text-[#eee] font-medium text-lg">Settings</a>
         </li>
-        <?php
+        @php
+        
         $totalContact = App\Models\Contact::where('is_read', 0)->count();
-        ?>
+        
+        @endphp
         <li
             class="flex items-center gap-3 hover:bg-gray-700 p-2 rounded transition duration-300 mt-2 hover:border-r-8 border-yellow-500">
             <i class="bi bi-person-lines-fill text-yellow-400 text-xl"></i>
            
             <a href="{{ route('admin.contact.list') }}" class="text-[#eee] font-medium text-lg">Contact List</a>
             <span
-            class="flex items-center justify-center w-8 h-8 text-white bg-green-500 rounded-full">
-            {{ $totalContact }}
+            class="{{$totalContact?'flex items-center justify-center w-8 h-8 text-white bg-green-500 rounded-full':''}}">
+            {{ $totalContact?$totalContact:''}}
         </span>
         </li>
 

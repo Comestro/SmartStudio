@@ -1,7 +1,7 @@
 @extends('admin.adminBase')
 
 @section('content')
-<div class="w-full h-auto ">
+<div class="w-full h-auto m-0 p-0 ">
     {{-- nav --}}
    
 
@@ -12,12 +12,15 @@
     </div>
     @endif
     
-    <div class="flex justify-center items-center min-h-screen">
+    <div class="flex justify-center items-center ">
+
         <div class="w-full max-w-5xl  ">
-    
+           
             <!-- Category Card Container -->
-            <div class=" rounded-lg shadow-lg">
+            <div class="  ">
                 <h2 class="text-2xl md:text-3xl font-bold text-yellow-400 mb-4 md:mb-6 text-center">Manage Gallery Images</h2>
+                
+            
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                     @foreach ($galleries as $item)
                         <div class="bg-gray-800 rounded-lg shadow-lg overflow-hidden">
