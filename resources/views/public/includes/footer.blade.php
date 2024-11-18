@@ -28,7 +28,7 @@
         <!-- Contact Information Section -->
         <div class="flex flex-col items-center md:items-start md:w-1/3">
             <h1 class="text-yellow-600 text-xl font-semibold mb-4">CONTACT</h1>
-            <p class="text-sm">Phone: 9546784398</p>
+            <p class="text-sm">Phone: +91 9546784398</p>
             <p class="text-sm">Email: smartstudio@gmail.com</p>
             <div class="flex justify-center md:justify-start space-x-4 mt-4">
                 <i class="bi bi-facebook text-2xl text-yellow-500"></i>

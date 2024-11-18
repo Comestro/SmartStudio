@@ -63,7 +63,7 @@
       </div>
     </div>
 
-    <div class="mt-16 max-w-3xl mx-auto text-center">
+    {{-- <div class="mt-16 max-w-3xl mx-auto text-center">
       <h2 class="text-3xl font-bold text-yellow-500 mb-4">Send Us a Message</h2>
       <p class="text-white mb-8">We'd love to hear from you. Fill out the form below to reach out to us!</p>
       <form action="{{ route('contact.store') }}" method="post" class="bg-gray-200 text-black p-8 rounded-lg shadow-lg">
@@ -94,7 +94,43 @@
           Send Message
         </button>
       </form>
-    </div>
+    </div> --}}
+    <div class="p-8 w-full md:w-1/2" id="Work">
+      <h3 class="text-yellow-400 uppercase tracking-widest text-xl border-b-2 border-yellow-300 pb-2">Contact</h3>
+      <h1 class="text-4xl font-bold text-white mt-4">Contact With Me</h1>
+  </div>
+
+  <div class="flex flex-col items-center justify-center py-16 px-4" id="">
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10 w-full max-w-7xl">
+          <div>
+              <img src="./images/studio-bg.jpg" class="border-b-8 border-l-8 border-yellow-500 shadow-lg"
+                  alt="">
+          </div>
+          <form class="space-y-6" action="{{ route('contact.store') }}" method="post">
+            @csrf
+            @if(session('success'))
+            <div class="bg-green-100 text-green-700 border border-green-400 p-4 rounded mb-4">
+                {{ session('success') }}
+            </div>
+        @endif
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <input type="text" name="name" placeholder="Your Name" required
+                      class="w-full p-4 rounded-lg bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-yellow-500">
+                  <input type="email" name="email" placeholder="Your Email" required
+                      class="w-full p-4 rounded-lg bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-yellow-500">
+                  <input type="text" name="phone_no" placeholder="Your phone_no" required
+                      class="w-full p-4 rounded-lg bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-yellow-500">
+                 
+              </div>
+              <textarea placeholder="Write your message here" name="message" rows="5"  required
+                  class="w-full p-4 rounded-lg bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-yellow-500"></textarea>
+              <button type="submit"
+                  class="w-full py-4 bg-gradient-to-r from-yellow-500 to-white font-semibold rounded-lg text-black">Submit
+                  Now</button>
+          </form>
+      </div>
+  </div>
   </section>
   
  
