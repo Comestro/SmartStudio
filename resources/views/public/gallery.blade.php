@@ -1,31 +1,54 @@
 @extends('public.base')
 
 @section('content')
-    </head>
-    <style>
-        .gallery {
-            width: 85vw;
-            height: 60vmin;
-            display: flex;
-            gap: 10px;
-            margin: 0 auto;
-        }
+<style>
+    .gallery-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+    }
 
-        .gallery img {
-            height: 100%;
-            flex: 1;
-            object-fit: cover;
-            overflow: hidden;
-            cursor: pointer;
-            border-radius: 10px;
-            transition: all 0.3s;
-        }
+    .gallery-item {
+        flex: 1 1 calc(33.33% - 20px); 
+        max-width: calc(33.33% - 20px);
+        height: 400px;
+        overflow: hidden;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 
-        .gallery img:hover {
-            flex: 4;
-        }
-    </style>
+    .gallery-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: all 0.3s ease;
+    }
 
+    .gallery-item:hover {
+        flex:4;
+    }
+
+    @media (max-width: 768px) {
+        .gallery-item {
+            flex: 1 1 calc(50% - 20px); 
+            max-width: calc(50% - 20px);
+        }
+    }
+
+    @media (max-width: 480px) {
+        .gallery-item {
+            flex: 1 1 100%; 
+            max-width: 100%;
+        }
+    }
+</style>
+
+   
     <div class="h-[80vh] bg-cover bg-center"
         style="background-image: url('https://th.bing.com/th/id/OIP.01e67CZXYANik5BUvlo0YgHaEJ?w=281&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7');">
         <div class="absolute inset-0 flex flex-col items-center justify-center text-center">
@@ -52,7 +75,7 @@
                         @if ($item->images->first())
                             <a href="{{ route('gallery.viewGallery', $item->id) }}">
                                 <img src="{{ asset('images/' . $item->images->first()->image_path) }}"
-                                    alt="{{ $item->gallery_title }}" class="w-full h-48 object-cover">
+                                    alt="{{ $item->gallery_title }}" class="w-full h-64 object-cover">
                             </a>
                         @else
                             <div class="w-full h-48 bg-gray-700 flex items-center justify-center text-white">No Image</div>
@@ -71,7 +94,8 @@
                             <span class="text-white text-lg font-bold">{{ $item->category->cat_name }}</span>
                         </div>
                     </div>
-                @endforeach
+                    @endforeach
+             
 
                 {{-- <div class="relative group">
                     <img src="https://tse4.mm.bing.net/th?id=OIP.ZHEaEn6yqgb76ySxdb3S6gHaE-&pid=Api&P=0&h=180"
@@ -158,6 +182,7 @@
                 </div> --}}
             </div>
         </div>
+    
     </section>
     <section id="content-section" class="py-16">
         <div class="container mx-auto px-6 lg:px-12 flex flex-col lg:flex-row items-center gap-12">
@@ -187,7 +212,7 @@
                 @foreach ($categories as $item)
                     <div class="relative group">
                         <img src="{{ asset('images/' . $item->cat_image) }}" alt="Gallery Image 1"
-                            class="w-full h-24 object-cover rounded-lg shadow-md" />
+                            class="w-full h-64 object-cover rounded-lg shadow-md" />
                     </div>
                 @endforeach
 
@@ -228,26 +253,23 @@
     </section>
 
 
-
-
     <section id="gallery" class="py-16">
-        <div class="container mx-auto px-6 lg:px-12">
+    <div class="container mx-auto px-6 lg:px-12">
 
-            @if ($galleryFirst)
-                <h2 class="text-3xl font-bold text-yellow-500 text-center mb-8">{{ $galleryFirst->gallery_title }}</h2>
+        @if ($galleryFirst)
+            <h2 class="text-3xl font-bold text-yellow-500 text-center mb-8">{{ $galleryFirst->gallery_title }}</h2>
+            <div class="gallery-container">
                 @foreach ($galleryFirst->images as $image)
-                    <div class="gallery">
-
-                        <img src="{{ asset('images/' . $image->image_path) }}" alt="Gallery Image 1">
-
-
+                <div class="gallery-item">
+                    <img src="{{ asset('images/' . $image->image_path) }}" alt="Gallery Image">
                     </div>
                 @endforeach
-            @endif
+            </div>
+        @endif
 
+    </div>
+</section>
 
-        </div>
-    </section>
     <div class="h-[80vh] bg-cover bg-center flex items-center justify-center text-white px-4"
         style="background-image: url('https://th.bing.com/th/id/OIP.NZ4lkEUp3MGsz0TRDxdPmgHaEl?w=311&h=193&c=7&r=0&o=5&dpr=1.3&pid=1.7');">
 
@@ -266,18 +288,19 @@
 
 
     <section id="gallery" class="py-16">
-        <div class="container mx-auto px-6 lg:px-12">
-            @if ($galleryLast)
-            <h2 class="text-3xl font-bold text-yellow-500 text-center mb-8">{{ $galleryLast->gallery_title }}</h2>
+    <div class="container mx-auto px-6 lg:px-12">
+        @if ($galleryLast)
+        <h2 class="text-3xl font-bold text-yellow-500 text-center mb-8">{{ $galleryLast->gallery_title }}</h2>
+        <div class="gallery-container">
             @foreach ($galleryLast->images as $image)
-                <div class="gallery">
-
-                    <img src="{{ asset('images/' . $image->image_path) }}" alt="Gallery Image 1">
-
-
-                </div>
+            <div class="gallery-item">
+                <img src="{{ asset('images/' . $image->image_path) }}" alt="Gallery Image">
+            </div>
             @endforeach
-        @endif
         </div>
-    </section>
+        @endif
+    </div>
+</section>
+
+
 @endsection

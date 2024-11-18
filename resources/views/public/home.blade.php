@@ -179,10 +179,7 @@
             @endforeach
         </div>
     </div>
-    <a href="{{route('portfolio')}}" class="bg-black text-yellow-500 px-6 py-2  hover:bg-yellow-600 transition duration-300">
-        View All Portfolio
-    </a>
-
+  
     <div class="py-12"></div>
 
 
