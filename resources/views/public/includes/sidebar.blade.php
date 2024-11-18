@@ -11,14 +11,14 @@
         class="absolute top-0 left-0  w-[350px] bg-black text-white p-6 transform -translate-x-full transition-transform duration-300 z-40 shadow-lg">
 
         <div class="flex flex-col items-center mb-6">
-            <img src="https://tse2.mm.bing.net/th?id=OIP.tEQ4HAiipGQ6oKYkdUGS8QHaHa&pid=Api&P=0&h=180"
+            <a href="{{route('home')}}"><img src="https://tse2.mm.bing.net/th?id=OIP.tEQ4HAiipGQ6oKYkdUGS8QHaHa&pid=Api&P=0&h=180"
                 alt="Logo"
-                class="rounded-full w-24 h-24 object-cover mb-4">
+                class="rounded-full w-24 h-24 object-cover mb-4"></a>
 
         </div>
 
         <div class="flex justify-between items-center w-full mb-4">
-            <a href="#" class="text-lg text-yellow-400">Home</a>
+            <a href="{{route('home')}}" class="text-lg text-yellow-400">Home</a>
             @if(Auth::check())
             <span class="text-yellow-400 font-semibold">{{ Auth::user()->name }}</span>
             @endif
@@ -89,49 +89,6 @@
             </ul>
         </nav>
 
- 
-    <div class="mt-4">
-        <form method="POST" action="{{ route('logout') }}">
-            @csrf
-            <button type="submit" 
-                class="w-full px-4 py-2 text-yellow-400 border border-yellow-400 rounded hover:bg-yellow-400 hover:text-white transition">
-                Logout
-            </button>
-        </form>
-    </div>
-     
-    <hr class="border-t border-white mt-6">
-    
-   
-    <ul class="space-y-3 mt-4">
-        <li class="flex justify-between items-center">
-            <a href="{{ route('about') }}" class="text-lg hover:text-yellow-500">About</a>
-            <i class="bi bi-caret-left-fill text-2xl"></i>
-        </li>
-        <li class="flex justify-between items-center">
-            <a href="{{ route('service') }}" class="text-lg hover:text-yellow-500">Services</a>
-            <i class="bi bi-caret-left-fill text-2xl"></i>
-        </li>
-        <li class="flex justify-between items-center">
-            <a href="{{ route('contact') }}" class="text-lg hover:text-yellow-500">Contact</a>
-            <i class="bi bi-caret-left-fill text-2xl"></i>
-        </li>
-        <li class="flex justify-between items-center">
-            <a href="{{ route('portfolio') }}" class="text-lg hover:text-yellow-500">Portfolio</a>
-            <i class="bi bi-caret-left-fill text-2xl"></i>
-        </li>
-        <li class="flex justify-between items-center">
-            <a href="{{ route('budget.index') }}" class="text-lg hover:text-yellow-500">Budget For Your Event</a>
-            <i class="bi bi-caret-left-fill text-2xl"></i>
-        </li>
-        <li>
-            <a href="{{ route('category.view') }}" 
-               class="block text-center text-yellow-400 border border-yellow-400 px-4 py-2 rounded hover:bg-yellow-400 hover:text-white transition">
-                Book Now
-            </a>
-        </li>
-    </ul>
-</nav>
 
 
         <div class="flex flex-col items-center mt-6">

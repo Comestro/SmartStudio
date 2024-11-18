@@ -20,7 +20,7 @@ public function manageCategory(Request $request)
 
         $image = $request->file('cat_image');
         $imageName = time().'.'.$image->getClientOriginalExtension();
-        $image->move(public_path('images'), $imageName);
+        $image->move(public_path('images/category'), $imageName);
 
         $category = new Category();
         $category->cat_name = $request->cat_name;

@@ -131,12 +131,6 @@
 
 
         </div> 
- 
-         
-        
-
-   
-
 
         {{-- about --}}
 
@@ -177,55 +171,19 @@
 
         <div class="carousel w-full overflow-x-scroll flex snap-x snap-mandatory gap-2 scrollbar-hide">
 
-            <div tabindex="0"
-                class="carousel-item snap-center h-80 sm:h-96 bg-cover bg-center relative focus:outline-none lg:min-w-[33.33%] md:min-w-[50%] min-w-full">
-                <img src="./images/wedding.webp" alt="">
-                <div class="text-overlay">
-                    <h2 class="text-lg font-bold uppercase">Wedding</h2>
-                    <p class="uppercase">Royalty / Wedding</p>
-                </div>
-                <button class="view-more-btn">View More</button>
-            </div>
+          @foreach ($categories as $item)
+          <div tabindex="0"
+          class="carousel-item snap-center h-80 sm:h-96 bg-cover bg-center relative focus:outline-none lg:min-w-[33.33%] md:min-w-[50%] min-w-full">
+          <img src="{{asset('images/' . $item->cat_image)}}" alt="">
+          <div class="text-overlay">
+              <h2 class="text-lg font-bold uppercase">Wedding</h2>
+              <p class="uppercase">Royalty / Wedding</p>
+          </div>
+          <button class="view-more-btn">View More</button>
+      </div>
 
-            <div tabindex="0"
-                class="carousel-item snap-center h-80 sm:h-96 bg-cover bg-center relative focus:outline-none lg:min-w-[33.33%] md:min-w-[50%] min-w-full">
-                <img src="./images/studio-bg.jpg" alt="">
-                <div class="text-overlay">
-                    <h2 class="text-lg font-bold">Models</h2>
-                    <p class="uppercase">BEAUTY / FASHION</p>
-                </div>
-                <button class="view-more-btn">View More</button>
-            </div>
-
-            <div tabindex="0"
-                class="carousel-item snap-center h-80 sm:h-96 bg-cover bg-center relative focus:outline-none lg:min-w-[33.33%] md:min-w-[50%] min-w-full">
-                <img src="./images/aesthetic.webp" alt="">
-                <div class="text-overlay">
-                    <h2 class="text-lg font-bold">Nature</h2>
-                    <p class="uppercase">Nature / Travel</p>
-                </div>
-                <button class="view-more-btn">View More</button>
-            </div>
-
-            <div tabindex="0"
-                class="carousel-item snap-center h-80 sm:h-96 bg-cover bg-center relative focus:outline-none lg:min-w-[33.33%] md:min-w-[50%] min-w-full">
-                <img src="./images/studio-bg.jpg" alt="">
-                <div class="text-overlay">
-                    <h2 class="text-lg font-bold">NEW AGE FASHION</h2>
-                    <p class="uppercase">INNOVATION / STYLE</p>
-                </div>
-                <button class="view-more-btn">View More</button>
-            </div>
-
-            <div tabindex="0"
-                class="carousel-item snap-center h-80 sm:h-96 bg-cover bg-center relative focus:outline-none lg:min-w-[33.33%] md:min-w-[50%] min-w-full">
-                <img src="./images/studio-bg.jpg" alt="">
-                <div class="text-overlay">
-                    <h2 class="text-lg font-bold">NEW AGE FASHION</h2>
-                    <p class="uppercase">INNOVATION / STYLE</p>
-                </div>
-                <button class="view-more-btn">View More</button>
-            </div>
+          @endforeach
+            
         </div>
 
         {{-- latest work --}}
@@ -268,7 +226,7 @@
 
         {{-- contact --}}
 
-        <div class="p-8 w-full md:w-1/2" id="Work">
+        {{-- <div class="p-8 w-full md:w-1/2" id="Work">
             <h3 class="text-yellow-400 uppercase tracking-widest text-xl border-b-2 border-yellow-300 pb-2">Contact</h3>
             <h1 class="text-4xl font-bold text-white mt-4">Contact With Me</h1>
         </div>
@@ -298,5 +256,5 @@
                         Now</button>
                 </form>
             </div>
-        </div>
+        </div> --}}
     @endsection

@@ -12,7 +12,8 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\contactController;
-use App\Http\Controllers\dashboardController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\PortfolioController;
 use App\Http\Controllers\YoutubeVideoController;
 use App\Models\Category;
 use Illuminate\Http\Request;
@@ -27,14 +28,12 @@ Route::get('/', function () {
     return view('public.home');
 })->name('home');
 
-Route::get('/portfolio', function () {
-    return view('public.portfolio');
-})->name('portfolio');
+// Route::get('/portfolio', function () {
+//     return view('public.portfolio');
+// })->name('portfolio');
 
-// Route::get('/gallery', function () {
 
-//     return view('public.gallery');
-// })->name('gallery');
+Route::get('/portfolio', [PortfolioController::class, 'index'])->name('portfolio');
 Route::get('/gallery', [GalleryController::class, 'galleryCalling'])->name('gallery');
 
 
@@ -132,7 +131,7 @@ Route::prefix('admin')->middleware(['auth', 'admin'])->group(function () {
     // Route::get('/dashboard', function () {
 
     // })->name('dashboard');
-    Route::get('/', [dashboardController::class, 'index'])->name('dashboard');
+    Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
 
 
 

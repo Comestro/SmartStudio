@@ -112,7 +112,7 @@ class GalleryController extends Controller
             $imageFiles = $request->file('images');
             foreach ($imageFiles as $image) {
                 $imageName = time() . '_' . uniqid() . '.' . $image->getClientOriginalExtension();
-                if ($image->move(public_path('images'), $imageName)) {
+                if ($image->move(public_path('images/gallery'), $imageName)) {
                     $galleryImage = new GalleryImage();
                     $galleryImage->gallery_id = $gallery->id;
                     $galleryImage->image_path = $imageName;
@@ -148,7 +148,6 @@ class GalleryController extends Controller
             'galleries' => Gallery::with('images', 'category')->inRandomOrder()->limit(5)->get(),
             'galleryFirst'=>Gallery::with('images')->inRandomOrder()->first(),
             'galleryLast' => Gallery::with('images')->latest()->first(),
-
 
         ];
         
