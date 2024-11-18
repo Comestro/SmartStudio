@@ -34,7 +34,7 @@
         <li><a href="#" class="text-lg hover:text-gray-300">Full Screen Slider</a></li>
     </ul>
 
-    <!-- Logout Button -->
+ 
     <div class="mt-4">
         <form method="POST" action="{{ route('logout') }}">
             @csrf
@@ -47,7 +47,7 @@
      
     <hr class="border-t border-white mt-6">
     
-    <!-- Other Links -->
+   
     <ul class="space-y-3 mt-4">
         <li class="flex justify-between items-center">
             <a href="{{ route('about') }}" class="text-lg hover:text-yellow-500">About</a>
