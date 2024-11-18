@@ -77,9 +77,9 @@
 
 
     <div class="text-center mt-5 flex item-center justify-center gap-1">
-        <button class="bg-black text-yellow-500 px-6 py-2  hover:bg-yellow-600 transition duration-300">
+        <a href="{{route('gallery')}}" class="bg-black text-yellow-500 px-6 py-2  hover:bg-yellow-600 transition duration-300">
             View All Services
-        </button>
+        </a>
         <button class="bg-black text-yellow-500 px-3 py-1  hover:bg-yellow-600 transition duration-300">
             <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/FAB005/long-arrow-right.png"
                 alt="long-arrow-right" />
@@ -179,6 +179,9 @@
             @endforeach
         </div>
     </div>
+    <a href="{{route('portfolio')}}" class="bg-black text-yellow-500 px-6 py-2  hover:bg-yellow-600 transition duration-300">
+        View All Portfolio
+    </a>
 
     <div class="py-12"></div>
 

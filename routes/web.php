@@ -24,9 +24,9 @@ use function Pest\Laravel\post;
 use function Symfony\Component\String\b;
 
 
-Route::get('/', function () {
-    return view('public.home');
-})->name('home');
+// Route::get('/', function () {
+//     return view('public.home');
+// })->name('home');
 
 // Route::get('/portfolio', function () {
 //     return view('public.portfolio');
@@ -100,24 +100,23 @@ Route::get('/', function (Request $request) {
         });
 
     if ($selectedCategorySlug) {
-        
+
         $category = Category::where('cat_slug', $selectedCategorySlug)->first();
 
-        
+
         if ($category) {
             $galleriesQuery->where('category_id', $category->id);
         }
     }
 
-    
+
     $galleries = $galleriesQuery->paginate(12);
 
     return view('public.home', [
         'categories' => $categories,
         'galleries' => $galleries,
-        'selectedCategorySlug' => $selectedCategorySlug, 
+        'selectedCategorySlug' => $selectedCategorySlug,
     ]);
-
 })->name('home');
 
 
@@ -184,7 +183,6 @@ Route::prefix('admin')->middleware(['auth', 'admin'])->group(function () {
         Route::post('/banner/{id}/toggle-status', 'toggleStatus')->name('admin.banner.toggleStatus');
         // Route::get('/delete/{id}', [BannerController::class, 'destroy'])->name('banner.delete');
         Route::delete('/trash/{id}', 'trashBanner')->name('banner.trash');
-
     });
 
     // youtubevideo
@@ -194,7 +192,6 @@ Route::prefix('admin')->middleware(['auth', 'admin'])->group(function () {
     Route::get('/youtube-video/edit/{id}', [YoutubeVideoController::class, 'edit'])->name('youtube-video.edit');
     Route::put('/youtube-video/edit/{id}', [YoutubeVideoController::class, 'update'])->name('youtube-video.update');
     Route::delete('/video/trash/{id}', [YoutubeVideoController::class, 'trashYoutubeVideo'])->name('youtube-video.trash');
-
 });
 
 Route::delete('admin/budget/trash/{id}', [BudgetController::class, 'destroy'])->name('budget.trash');

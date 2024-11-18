@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\GalleryImage;
 use Illuminate\Http\Request;
 
 class PortfolioController extends Controller
@@ -11,10 +12,20 @@ class PortfolioController extends Controller
      * Display a listing of the resource.
      */
     public function index()
-    {
-        $data['categories']=Category::all();
-        return view('public.portfolio',$data);
-    }
+{
+    $categories = Category::all();
+
+    $galleryImages = GalleryImage::with('gallery')
+        ->orderBy('created_at', 'desc')
+        ->limit(8)
+        ->get();
+
+    return view('public.portfolio', [
+        'categories' => $categories,
+        'galleryImages' => $galleryImages,
+    ]);
+}
+
 
     /**
      * Show the form for creating a new resource.
