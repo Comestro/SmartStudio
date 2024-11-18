@@ -268,7 +268,7 @@
 
         {{-- contact --}}
 
-        <div class="p-8 w-full md:w-1/2" id="Work">
+        {{-- <div class="p-8 w-full md:w-1/2" id="Work">
             <h3 class="text-yellow-400 uppercase tracking-widest text-xl border-b-2 border-yellow-300 pb-2">Contact</h3>
             <h1 class="text-4xl font-bold text-white mt-4">Contact With Me</h1>
         </div>
@@ -298,5 +298,5 @@
                         Now</button>
                 </form>
             </div>
-        </div>
+        </div> --}}
     @endsection
