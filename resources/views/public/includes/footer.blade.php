@@ -3,8 +3,8 @@
     <div class="flex flex-col md:flex-row justify-between flex-grow">
       
         <div class="flex flex-col items-center md:items-start md:w-1/3">
-            <img src="https://tse2.mm.bing.net/th?id=OIP.tEQ4HAiipGQ6oKYkdUGS8QHaHa&pid=Api&P=0&h=180"
-                alt="Logo" class="rounded-full w-28 h-28 object-cover mb-4">
+            <a href="{{route('home')}}"><img src="https://tse2.mm.bing.net/th?id=OIP.tEQ4HAiipGQ6oKYkdUGS8QHaHa&pid=Api&P=0&h=180"
+                alt="Logo" class="rounded-full w-28 h-28 object-cover mb-4"></a>
             <p class="text-center md:text-left text-sm">
                 We provide exceptional photography services that capture your moments beautifully.
             </p>
