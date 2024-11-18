@@ -158,7 +158,7 @@
 
     <div class="bg-white py-16">
 
-        <div class="text-center px-6 md:px-36">
+        <!-- <div class="text-center px-6 md:px-36">
             <h1 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
                 PHOTOGRAPHY BY US <span class="text-yellow-500">PORTFOLIO</span>
             </h1>
@@ -183,7 +183,7 @@
                 </form>
 
             </div>
-        </div>
+        </div> -->
     </div>
 
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 p-6">

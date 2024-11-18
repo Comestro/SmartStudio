@@ -2,7 +2,17 @@
 
 
      <!-- Mobile component -->
- <div id="drawer-example" class="fixed top-0 left-0 z-40 h-full p-4 overflow-y-auto transition-transform -translate-x-full  w-80 bg-black dark:bg-gray-800" tabindex="-1" aria-labelledby="drawer-label">
+     <style>
+        .scrollbar-hide::-webkit-scrollbar {
+               display: none;
+           }
+    
+    
+           .scrollbar-hide {
+               scrollbar-width: none;
+           }
+    </style>
+ <div id="drawer-example" class="fixed top-0 left-0 z-40 h-full p-4 overflow-y-auto scrollbar-hide transition-transform -translate-x-full  w-80 bg-black dark:bg-gray-800" tabindex="-1" aria-labelledby="drawer-label">
    
     <button type="button" data-drawer-hide="drawer-example" aria-controls="drawer-example" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 absolute top-2.5 end-2.5 flex items-center justify-center dark:hover:bg-gray-600 dark:hover:text-white" >
        <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
@@ -97,10 +107,23 @@
             </span>
             </li>
     
-            <li class="flex items-center gap-3 hover:bg-gray-700 p-2 rounded transition duration-300 mt-2 hover:border-r-8 border-yellow-500">
-                <i class="bi bi-flag-fill text-yellow-400 text-xl"></i>
-                    <a href="{{route('banner.create')}}" class="text-[#eee] font-medium text-lg">Banner</a>
-                </li>
+            <details class="mt-2">
+                <summary
+                    class="flex items-center gap-3 cursor-pointer hover:bg-gray-700 hover:border-r-8 border-yellow-500 p-2 rounded transition duration-300">
+                    <i class="bi bi-flag-fill text-yellow-400 text-xl"></i>
+                    <span class="text-[#eee] font-medium text-lg">Banner</span>
+                </summary>
+                <ul class="pl-8">
+                    <li class="flex items-center gap-3 hover:bg-gray-700 p-2 rounded transition duration-300 mt-2 hover:border-r-8 border-yellow-500">
+                        
+                            <a href="{{route('banner.create')}}" class="text-[#eee] font-medium text-lg"> Add Banner</a>
+                        </li>
+                        <li class="flex items-center gap-3 hover:bg-gray-700 p-2 rounded transition duration-300 mt-2 hover:border-r-8 border-yellow-500">
+                            
+                                <a href="{{route('admin.banners.index')}}" class="text-[#eee] font-medium text-lg"> Manage Banner</a>
+                            </li>
+                </ul>
+            </details>
             <li class="flex items-center gap-3 hover:bg-gray-700 p-2 rounded transition duration-300 mt-2 hover:border-r-8 border-yellow-500">
             <i class="bi bi-person-rolodex text-yellow-400 text-xl"></i>
                 <a href="{{ route('budget.show') }}" class="text-[#eee] font-medium text-lg">Budget Manager</a>
@@ -110,7 +133,17 @@
                    <a href="{{ route('youtube-videos.create') }}" class="text-[#eee] font-medium text-lg">youtubevideos</a>
                </li>
             </li> 
-        
+            <div class="w-full mt-4 h-10 rounded-lg flex px-2 text-center">
+                <form action="{{ route('logout') }}" method="POST" class="w-full">
+                    @csrf
+                    <button type="submit"
+                        class="text-base font-semibold text-yellow-500 border border-yellow-400 px-12 py-2 rounded-lg flex items-center justify-center hover:bg-yellow-500 hover:text-white transition duration-300 ease-in-out">
+                        <i class="bi bi-box-arrow-right mr-2"></i>
+                        Logout
+                    </button>
+                </form>
+    
+            </div>
     
     
     
