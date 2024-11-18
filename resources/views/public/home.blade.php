@@ -1,18 +1,47 @@
 @extends('public.layout')
 
 @section('content')
+    <header class="bg-gray-900 text-white py-3 px-4 fixed top-0 w-full z-10 shadow-md">
+        <div class="container mx-auto flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <img src="https://th.bing.com/th?id=OIP.XfloBSB32f50RImZskOHFwHaHa&w=250&h=250" alt="Logo"
+                    class="w-12 h-12 rounded-full">
+                <span class="text-xl font-bold">Smart Studio</span>
+            </div>
+
+            <nav class="hidden md:flex space-x-6">
+                <a href="{{ route('home') }}" class="text-yellow-500">Home</a>
+                <a href="{{ route('about') }}" class="hover:text-yellow-500">About</a>
+                <a href="{{ route('gallery') }}" class="hover:text-yellow-500">Gallery</a>
+                <a href="{{ route('portfolio') }}" class="hover:text-yellow-500">Portfolio</a>
+                <a href="{{ route('contact') }}" class="hover:text-yellow-500">Contact</a>
+            </nav>
+
+            <div class="flex space-x-4">
+                <a href="https://facebook.com" target="_blank" class="hover:text-blue-600">
+                    <i class="bi bi-facebook text-xl"></i>
+                </a>
+                <a href="https://instagram.com" target="_blank" class="hover:text-pink-500">
+                    <i class="bi bi-instagram text-xl"></i>
+                </a>
+                <a href="https://twitter.com" target="_blank" class="hover:text-blue-400">
+                    <i class="bi bi-twitter text-xl"></i>
+                </a>
+            </div>
+        </div>
+    </header>
     <main class="relative w-full md:w-4/4 ">
         <livewire:public.banner.calling-banner />
     </main>
     <style>
-         .gallery-container {
+        .gallery-container {
             display: flex;
             flex-wrap: wrap;
             gap: 20px;
             justify-content: center;
-        } 
+        }
 
-         .gallery-item {
+        .gallery-item {
             flex: 1;
             width: 80%;
             height: 400px;
@@ -23,7 +52,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-        } 
+        }
 
         .gallery-item img {
             width: 100%;
@@ -39,14 +68,25 @@
 
         @media (max-width: 768px) {
             .gallery-item {
-               width: 40%;
+                width: 40%;
             }
         }
 
         @media (max-width: 480px) {
             .gallery-item {
-               width: 100%;
+                width: 100%;
             }
+        }
+
+        header {
+            transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+            transform: translateY(-100%);
+            opacity: 0;
+        }
+
+        header.visible {
+            transform: translateY(0);
+            opacity: 1;
         }
     </style>
     </div>
@@ -77,7 +117,8 @@
 
 
     <div class="text-center mt-5 flex item-center justify-center gap-1">
-        <a href="{{route('gallery')}}" class="bg-black text-yellow-500 px-6 py-2  hover:bg-yellow-600 transition duration-300">
+        <a href="{{ route('gallery') }}"
+            class="bg-black text-yellow-500 px-6 py-2  hover:bg-yellow-600 transition duration-300">
             View All Services
         </a>
         <button class="bg-black text-yellow-500 px-3 py-1  hover:bg-yellow-600 transition duration-300">
@@ -140,24 +181,26 @@
                         </div>
                     @endforeach
                 </form>
-                
+
             </div>
         </div>
     </div>
 
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 p-6">
         @foreach ($galleries->take(2) as $item)
-            <div class="bg-black flex items-center justify-center h-64 sm:h-80 overflow-hidden group relative rounded-lg shadow-lg">
+            <div
+                class="bg-black flex items-center justify-center h-64 sm:h-80 overflow-hidden group relative rounded-lg shadow-lg">
                 <img src="{{ asset('images/' . $item->images->first()->image_path) }}"
                     class="w-full h-full object-cover transform transition duration-500 group-hover:scale-110 rounded-lg"
                     alt="{{ $item->gallery_title ?? 'Gallery image' }}" loading="lazy">
-                <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 transition-opacity duration-500 group-hover:opacity-100">
+                <div
+                    class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 transition-opacity duration-500 group-hover:opacity-100">
                     <p class="text-white text-lg sm:text-xl font-semibold">{{ $item->gallery_title ?? 'Models Pose' }}</p>
                 </div>
             </div>
         @endforeach
     </div>
-    
+
     <div class="flex justify-center">
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 p-4 max-w-5xl">
             @foreach ($galleries->skip(2)->take(4) as $item)
@@ -168,7 +211,7 @@
             @endforeach
         </div>
     </div>
-    
+
     <div class="flex justify-center px-4">
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-screen-xl">
             @foreach ($galleries->skip(6)->take(3) as $item)
@@ -179,7 +222,7 @@
             @endforeach
         </div>
     </div>
-  
+
     <div class="py-12"></div>
 
 
@@ -191,7 +234,7 @@
     </div>
 
 
-  
+
     </div>
     <div class="w-full h-auto bg-cover bg-center relative mt-5 flex flex-col justify-center items-center text-center py-6 md:py-10"
         style="background-image: url('https://tse2.mm.bing.net/th?id=OIP.jt6i4yeTO_zMnivpc9nqXQHaEJ&pid=Api&P=0&h=180');">
@@ -247,7 +290,7 @@
 
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-         <div
+        <div
             class="flex flex-col items-center transform transition duration-300 hover:scale-105 hover:bg-gray-50 rounded-lg p-5 shadow-lg">
             <img src="https://img.freepik.com/free-photo/young-beautiful-woman-portrait_23-2149263756.jpg?ga=GA1.1.1275289697.1728223870&semt=ais_hybrid"
                 alt="Professional Portraits" class="w-80 h-64 mb-4">
@@ -255,7 +298,7 @@
             <p class="text-gray-600 text-center mb-4">Experience the art of portrait photography, crafted to capture
                 your
                 essence and personality in every shot.</p>
-            
+
         </div>
         <div
             class="flex flex-col items-center transform transition duration-300 hover:scale-105 hover:bg-gray-50 rounded-lg p-5 shadow-lg">
@@ -264,7 +307,7 @@
             <h3 class="text-2xl font-semibold text-black mb-2">Mastering Photography Art</h3>
             <p class="text-gray-600 text-center mb-4">Capture your events with unparalleled expertise. Relive each
                 memorable moment with our professional event coverage.</p>
-           
+
         </div>
         <div
             class="flex flex-col items-center transform transition duration-300 hover:scale-105 hover:bg-gray-50 rounded-lg p-5 shadow-lg">
@@ -274,8 +317,32 @@
             <p class="text-gray-600 text-center mb-4">Explore nature’s beauty through stunning captures of landscapes
                 and
                 outdoor scenes, designed to inspire and captivate.</p>
-        
+
         </div>
     </div>
     <div class="py-10"></div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const header = document.querySelector("header");
+            const banner = document.querySelector("main");
+
+            const observer = new IntersectionObserver(
+                ([entry]) => {
+                    if (entry.isIntersecting) {
+                        // Banner is in view, hide the header
+                        header.classList.remove("visible");
+                    } else {
+                        // Banner is out of view, show the header
+                        header.classList.add("visible");
+                    }
+                }, {
+                    root: null,
+                    threshold: 0
+                } // Observes visibility threshold
+            );
+
+            observer.observe(banner);
+        });
+    </script>
 @endsection
