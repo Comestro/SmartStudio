@@ -39,13 +39,13 @@
 
         @media (max-width: 768px) {
             .gallery-item {
-                width: 45%;
+               width: 40%;
             }
         }
 
         @media (max-width: 480px) {
             .gallery-item {
-                width: 100%;
+               width: 100%;
             }
         }
     </style>
