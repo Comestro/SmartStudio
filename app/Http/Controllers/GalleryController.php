@@ -146,11 +146,15 @@ class GalleryController extends Controller
         $data = [
             'categories' => Category::all(),
             'galleries' => Gallery::with('images', 'category')->inRandomOrder()->limit(5)->get(),
+            'galleryFirst'=>Gallery::with('images')->inRandomOrder()->first(),
+            'galleryLast' => Gallery::with('images')->latest()->first(),
+
 
         ];
-        $galleryFirst=GalleryImage::inRandomOrder()->limit(1)->first();
-        // dd($galleryFirst);
-        $data['galleryFirst']=$galleryFirst;
+        
+        
         return view("public.gallery", $data);
     }
+
+
 }
