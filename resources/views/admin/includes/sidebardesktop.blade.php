@@ -1,4 +1,4 @@
-<div class="w-80 h-screen hidden md:block pl-10 mt-2">
+<div class="w-80 h-screen bg-[#2f363e] hidden lg:block pl-10">
         <div class="w-full h-16 flex items-center justify-center">
             <p class="text-2xl text-yellow-400 font-bold">SMART STUDIO</p>
         </div>
@@ -20,7 +20,7 @@
                 </summary>
                 <ul class="pl-8">
                     <li class="flex items-center gap-3 hover:bg-gray-700 p-2 rounded transition duration-300">
-                        <a href="{{ route('category') }}" class="text-yellow-400 font-medium text-md">Add Event/manage
+                        <a href="{{ route('category') }}" class="text-white font-medium text-md">Add Event/manage
                             list</a>
                     </li>
 
@@ -84,10 +84,23 @@
                 </span>
             </li>
 
-            <li class="flex items-center gap-3 hover:bg-gray-700 p-2 rounded transition duration-300 mt-2 hover:border-r-8 border-yellow-500">
-                <i class="bi bi-flag-fill text-yellow-400 text-xl"></i>
-                <a href="{{route('banner.create')}}" class="text-[#eee] font-medium text-lg">Banner</a>
-            </li>
+            <details class="mt-2">
+                <summary
+                    class="flex items-center gap-3 cursor-pointer hover:bg-gray-700 hover:border-r-8 border-yellow-500 p-2 rounded transition duration-300">
+                    <i class="bi bi-flag-fill text-yellow-400 text-xl"></i>
+                    <span class="text-[#eee] font-medium text-lg">Banner</span>
+                </summary>
+                <ul class="pl-8">
+                    <li class="flex items-center gap-3 hover:bg-gray-700 p-2 rounded transition duration-300 mt-2 hover:border-r-8 border-yellow-500">
+                        
+                            <a href="{{route('banner.create')}}" class="text-[#eee] font-medium text-lg"> Add Banner</a>
+                        </li>
+                        <li class="flex items-center gap-3 hover:bg-gray-700 p-2 rounded transition duration-300 mt-2 hover:border-r-8 border-yellow-500">
+                            
+                                <a href="{{route('admin.banners.index')}}" class="text-[#eee] font-medium text-lg"> Manage Banner</a>
+                            </li>
+                </ul>
+            </details>
             <li class="flex items-center gap-3 hover:bg-gray-700 p-2 rounded transition duration-300 mt-2 hover:border-r-8 border-yellow-500">
                 <i class="bi bi-person-rolodex text-yellow-400 text-xl"></i>
                 <a href="{{ route('budget.show') }}" class="text-[#eee] font-medium text-lg">Budget Manager</a>
@@ -96,10 +109,20 @@
                 <i class="bi bi-youtube text-yellow-400 text-xl"></i>
                 <a href="{{ route('youtube-videos.create') }}" class="text-[#eee] font-medium text-lg">youtubevideos</a>
             </li>
-            </li>
+           
+            
+            <div class="w-full mt-2 h-10 rounded-lg flex px-2 text-center">
+                <form action="{{ route('logout') }}" method="POST" class="w-full">
+                    @csrf
+                    <button type="submit"
+                        class="text-base font-semibold text-yellow-500 border border-yellow-400 px-12 py-2 rounded-lg flex items-center justify-center hover:bg-yellow-500 hover:text-white transition duration-300 ease-in-out">
+                        <i class="bi bi-box-arrow-right mr-2"></i>
+                        Logout
+                    </button>
+                </form>
+    
+            </div>
 
-
-
-
+       
         </ul>
     </div>
