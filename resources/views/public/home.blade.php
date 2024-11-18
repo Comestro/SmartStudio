@@ -6,7 +6,7 @@
             <div class="flex items-center space-x-3">
                 <img src="https://th.bing.com/th?id=OIP.XfloBSB32f50RImZskOHFwHaHa&w=250&h=250" alt="Logo"
                     class="w-12 h-12 rounded-full">
-                <span class="text-xl font-bold">Smart Studio</span>
+                <a href="{{ route('home') }}"  class="text-xl font-bold">Smart studio</a>
             </div>
 
             <nav class="hidden md:flex space-x-6">
