@@ -5,14 +5,14 @@
         <livewire:public.banner.calling-banner />
     </main>
     <style>
-        .gallery-container {
+         .gallery-container {
             display: flex;
             flex-wrap: wrap;
             gap: 20px;
             justify-content: center;
-        }
+        } 
 
-        .gallery-item {
+         .gallery-item {
             flex: 1;
             width: 30%;
             height: 250px;
@@ -23,7 +23,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-        }
+        } 
 
         .gallery-item img {
             width: 100%;
@@ -246,35 +246,35 @@
     </div>
 
 
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 px-8 py-10">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         <div
             class="flex flex-col items-center transform transition duration-300 hover:scale-105 hover:bg-gray-50 rounded-lg p-5 shadow-lg">
             <img src="https://img.freepik.com/free-photo/young-beautiful-woman-portrait_23-2149263756.jpg?ga=GA1.1.1275289697.1728223870&semt=ais_hybrid"
-                alt="Professional Portraits" class="w-64 h-64 mb-4">
+                alt="Professional Portraits" class="w-80 h-64 mb-4">
             <h3 class="text-2xl font-semibold text-black mb-2">Elevate Your Portraits</h3>
             <p class="text-gray-600 text-center mb-4">Experience the art of portrait photography, crafted to capture
                 your
                 essence and personality in every shot.</p>
-            <p class="text-gray-600 text-left w-full">26 May 2023</p>
+            
         </div>
         <div
             class="flex flex-col items-center transform transition duration-300 hover:scale-105 hover:bg-gray-50 rounded-lg p-5 shadow-lg">
             <img src="https://img.freepik.com/free-photo/decorated-banquet-hall-with-flowers_8353-10058.jpg?ga=GA1.1.1275289697.1728223870&semt=ais_hybrid"
-                alt="Event Photography" class="w-64 h-64 mb-4">
+                alt="Event Photography" class="w-80 h-64 mb-4">
             <h3 class="text-2xl font-semibold text-black mb-2">Mastering Photography Art</h3>
             <p class="text-gray-600 text-center mb-4">Capture your events with unparalleled expertise. Relive each
                 memorable moment with our professional event coverage.</p>
-            <p class="text-gray-600 text-left w-full">26 May 2023</p>
+           
         </div>
         <div
             class="flex flex-col items-center transform transition duration-300 hover:scale-105 hover:bg-gray-50 rounded-lg p-5 shadow-lg">
             <img src="https://img.freepik.com/free-photo/immersive-experience-concept-collage_23-2149498342.jpg?ga=GA1.1.1275289697.1728223870&semt=ais_hybrid"
-                alt="Landscape & Nature" class="w-64 h-64 mb-4">
+                alt="Landscape & Nature" class="w-80 h-64 mb-4">
             <h3 class="text-2xl font-semibold text-black mb-2">Capturing Moments</h3>
             <p class="text-gray-600 text-center mb-4">Explore nature’s beauty through stunning captures of landscapes
                 and
                 outdoor scenes, designed to inspire and captivate.</p>
-            <p class="text-gray-600 text-left w-full">26 May 2023</p>
+        
         </div>
     </div>
     <div class="py-10"></div>
