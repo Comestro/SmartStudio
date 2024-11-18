@@ -11,14 +11,14 @@
         class="absolute top-0 left-0 h-full w-[400px] bg-black text-white p-6 transform -translate-x-full transition-transform duration-300 z-40 shadow-lg">
 
         <div class="flex flex-col items-center mb-6">
-            <img src="https://tse2.mm.bing.net/th?id=OIP.tEQ4HAiipGQ6oKYkdUGS8QHaHa&pid=Api&P=0&h=180"
+            <a href="{{route('home')}}"><img src="https://tse2.mm.bing.net/th?id=OIP.tEQ4HAiipGQ6oKYkdUGS8QHaHa&pid=Api&P=0&h=180"
                 alt="Logo"
-                class="rounded-full w-24 h-24 object-cover mb-4">
+                class="rounded-full w-24 h-24 object-cover mb-4"></a>
 
         </div>
 
         <div class="flex justify-between items-center w-full mb-4">
-            <a href="#" class="text-lg text-yellow-400">Home</a>
+            <a href="{{route('home')}}" class="text-lg text-yellow-400">Home</a>
             @if(Auth::check())
             <span class="text-yellow-400 font-semibold">{{ Auth::user()->name }}</span>
             @endif

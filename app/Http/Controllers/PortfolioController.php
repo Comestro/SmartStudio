@@ -3,20 +3,17 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
-use App\Models\Gallery;
 use Illuminate\Http\Request;
 
-class DashboardController extends Controller
+class PortfolioController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
-    { $data = [
-        'categoryImage' => Category::all(),
-        'galleries' => Gallery::with('images', 'category')->limit(4)->paginate(2),
-    ];
-    return view('admin.dashboard', $data);
+    {
+        $data['categories']=Category::all();
+        return view('public.portfolio',$data);
     }
 
     /**
@@ -65,14 +62,5 @@ class DashboardController extends Controller
     public function destroy(string $id)
     {
         //
-    }
-    public function manageGallery(Request $request)
-    {
-        $data = [
-            'categories' => Category::all(),
-            'galleries' => Gallery::with('images', 'category')->get(),
-        ];
-
-        return view("admin.dashboard", $data);
     }
 }
