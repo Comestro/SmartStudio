@@ -2,30 +2,40 @@
 
 
 @section('content')
-<div class="w-[80%] h-auto bg-[#24292d]">
+<style>
+    .scrollbar-hide::-webkit-scrollbar {
+           display: none;
+       }
+
+
+       .scrollbar-hide {
+           scrollbar-width: none;
+       }
+</style>
+<div class="w-full h-auto  ">
    
-    <div class="container mx-auto px-4">
-        <h2 class="text-2xl font-bold mb-6">User List</h2>
-        
-        <table class="min-w-full bg-white border border-gray-200">
+    <div class="container mx-auto px-4 ">
+        <h2 class="text-2xl md:text-3xl font-bold text-yellow-400 mb-4 md:mb-6">User List</h2>
+        <div class="overflow-x-auto scrollbar-hide">
+        <table class="min-w-full bg-gray-800 rounded-lg border border-gray-200">
             <thead>
-                <tr>
-                    <th class="py-2 px-4 border-b text-left text-sm font-medium text-gray-700">ID</th>
-                    <th class="py-2 px-4 border-b text-left text-sm font-medium text-gray-700">Name</th>
-                    <th class="py-2 px-4 border-b text-left text-sm font-medium text-gray-700">Email</th>
-                    <th class="py-2 px-4 border-b text-left text-sm font-medium text-gray-700">Phone Number</th>
-                    <th class="py-2 px-4 border-b text-left text-sm font-medium text-gray-700">Admin Status</th>
+                <tr class="bg-gray-700 text-white">
+                    <th class="px-4 md:px-6 py-3 text-left font-semibold">ID</th>
+                    <th class="px-4 md:px-6 py-3 text-left font-semibold">Name</th>
+                    <th class="px-4 md:px-6 py-3 text-left font-semibold">Email</th>
+                    <th class="px-4 md:px-6 py-3 text-left font-semibold">Phone Number</th>
+                    <th class="px-4 md:px-6 py-3 text-left font-semibold">Admin Status</th>
                     {{-- <th class="py-2 px-4 border-b text-left text-sm font-medium text-gray-700">Actions</th> --}}
                 </tr>
             </thead>
             <tbody>
                 @foreach($users as $user)
-                    <tr class="hover:bg-gray-100">
-                        <td class="py-2 px-4 border-b text-sm text-gray-600">{{ $user->id }}</td>
-                        <td class="py-2 px-4 border-b text-sm text-gray-600">{{ $user->name }}</td>
-                        <td class="py-2 px-4 border-b text-sm text-gray-600">{{ $user->email }}</td>
-                        <td class="py-2 px-4 border-b text-sm text-gray-600">{{ $user->phone_no ?? 'null' }}</td>
-                        <td class="py-2 px-4 border-b text-sm text-gray-600">
+                    <tr  class="border-t border-white hover:bg-gray-700 transition duration-300">
+                        <td class="px-4 md:px-6 py-3 whitespace-nowrap">{{ $user->id }}</td>
+                        <td class="px-4 md:px-6 py-3 whitespace-nowrap">{{ $user->name }}</td>
+                        <td class="px-4 md:px-6 py-3 whitespace-nowrap">{{ $user->email }}</td>
+                        <td class="px-4 md:px-6 py-3 whitespace-nowrap">{{ $user->phone_no ?? 'null' }}</td>
+                        <td class="px-4 md:px-6 py-3 whitespace-nowrap">
                             {{ $user->isadmin ? 'Admin' : 'User' }}
                         </td>
                         {{-- <td class="py-2 px-4 border-b text-sm">
@@ -40,6 +50,7 @@
                 @endforeach
             </tbody>
         </table>
+        </div>
     </div>
 
 </div>

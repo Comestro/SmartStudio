@@ -1,40 +1,50 @@
 @extends('admin.adminBase')
 
 @section('content')
+<style>
+    .scrollbar-hide::-webkit-scrollbar {
+           display: none;
+       }
+
+
+       .scrollbar-hide {
+           scrollbar-width: none;
+       }
+</style>
 <div class="w-full h-auto">
     <div class="flex flex-col items-center min-h-screen  p-8">
 
         <div class="w-full max-w-5xl mb-6">
-            <div class="flex justify-between items-center bg-gradient-to-r from-yellow-100 to-yellow-500 text-white p-4 rounded-lg shadow-lg">
-                <h2 class="text-2xl font-semibold text-black">Contact List</h2>
+            <div class="flex justify-between items-center">
+                <h2 class="text-2xl md:text-3xl font-bold text-yellow-400  ">Contact List</h2>
             </div>
         </div>
 
-        <div class="overflow-x-auto w-full">
-            <table class="min-w-full bg-white shadow-md rounded-lg overflow-hidden">
+        <div class="overflow-x-auto w-full rounded-lg scrollbar-hide">
+            <table class="min-w-full bg-gray-800 rounded-lg ">
                 <thead>
-                    <tr class="bg-indigo-600 text-white uppercase text-sm leading-normal">
-                        <th class="py-3 px-6 text-left">ID</th>
-                        <th class="py-3 px-6 text-left">Name</th>
-                        <th class="py-3 px-6 text-center">Status</th>
-                        <th class="py-3 px-6 text-center">Actions</th>
+                    <tr class="bg-gray-700 text-white uppercase text-sm leading-normal">
+                        <th class="px-4 md:px-6 py-3 text-left font-semibold">ID</th>
+                        <th class="px-4 md:px-6 py-3 text-left font-semibold">Name</th>
+                        <th class="px-4 md:px-6 py-3 text-left font-semibold">Status</th>
+                        <th class="px-4 md:px-6 py-3 text-left font-semibold">Actions</th>
                     </tr>
                 </thead>
-                <tbody class="text-gray-600 text-sm font-light">
+                <tbody class="">
                     <!-- Row 1 -->
                     @foreach ($contacts as $contact)
-                    <tr class="border-b border-gray-200 hover:bg-gray-100">
-                        <td class="py-3 px-6 text-left whitespace-nowrap">{{$contact->id}}</td>
-                        <td class="py-3 px-6 text-left">{{$contact->name}}</td>
-                        <td class="py-3 px-6 text-center">
-                            <span class="bg-green-500 text-white py-1 px-3 rounded-full text-xs">{{$contact->is_read? "Readed": "Unreaded"}}</span>
+                    <tr class="border-t border-white hover:bg-gray-700 transition duration-300">
+                        <td class="px-4 md:px-6 py-3 whitespace-nowrap">{{$contact->id}}</td>
+                        <td class="px-4 md:px-6 py-3 whitespace-nowrap">{{$contact->name}}</td>
+                        <td class="px-4 md:px-6 py-3 whitespace-nowrap">
+                            <span class="bg-gradient-to-r from-green-400 to-green-600 text-white px-3 py-1 rounded hover:bg-gradient-to-l  transition duration-300">{{$contact->is_read? "Readed": "Unreaded"}}</span>
                         </td>
                         <td class="py-3 px-6 text-center">
                            <div class="flex gap-3">
                            
-                           <a class="bg-green-500 hover:bg-green-700 text-white py-1 px-3 rounded text-xs" href="{{route('admin.contact.view',$contact->id)}}">View Message</a>
+                           <a class="bg-gradient-to-r from-indigo-500 to-indigo-700 text-white px-3 py-1 rounded hover:bg-gradient-to-l  transition duration-300" href="{{route('admin.contact.view',$contact->id)}}">View Message</a>
                             <form action="">
-                                <button class="bg-red-500 hover:bg-red-700 text-white py-1 px-3 rounded text-xs">
+                                <button class="bg-gradient-to-r from-red-500 to-red-700 text-white px-3 py-1 rounded hover:bg-gradient-to-l  transition duration-300">
                                     Delete
                                 </button>
                             </form>
