@@ -24,7 +24,7 @@
 
 
 
-            <div class="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 mt-4 gap-6">
+            <div class="grid grid-cols md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 mt-4 gap-6">
 
                 <div class="bg-white p-6 rounded-lg hover:shadow-xl hover:scale-105 transition-all duration-300">
                     <div class="flex items-center justify-between">
