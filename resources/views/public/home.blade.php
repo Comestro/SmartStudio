@@ -191,35 +191,7 @@
     </div>
 
 
-    {{-- <div class="flex gap-4 mb-6">
-        <a href="#" class="text-yellow-400 hover:text-gray-800 transition">
-            <i class="bi bi-star-fill text-2xl"></i>
-        </a>
-        <a href="#" class="text-yellow-400 hover:text-gray-800 transition">
-            <i class="bi bi-star-fill text-2xl"></i>
-        </a>
-        <a href="#" class="text-yellow-400 hover:text-gray-800 transition">
-            <i class="bi bi-star-fill text-2xl"></i>
-        </a>
-        <a href="#" class="text-yellow-400 hover:text-gray-800 transition">
-            <i class="bi bi-star-fill text-2xl"></i>
-        </a>
-        <a href="#" class="text-yellow-400 hover:text-gray-800 transition">
-            <i class="bi bi-star-fill text-2xl"></i>
-        </a>
-    </div> --}}
-
-
-    <div class="text-white w-11/12 md:w-8/12">
-        <p class="text-base md:text-xl font-bold">
-            Experience the best photography in town.<br>
-            Learn why capturing moments with your camera is essential today—not just for personal and professional
-            growth, but for society as a whole.
-        </p>
-    </div>
-
-
-    {{-- <h1 class="text-2xl text-yellow-500 mt-4">SADIQUE HUSSAIN</h1> --}}
+  
     </div>
     <div class="w-full h-auto bg-cover bg-center relative mt-5 flex flex-col justify-center items-center text-center py-6 md:py-10"
         style="background-image: url('https://tse2.mm.bing.net/th?id=OIP.jt6i4yeTO_zMnivpc9nqXQHaEJ&pid=Api&P=0&h=180');">
