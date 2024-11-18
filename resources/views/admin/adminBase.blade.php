@@ -44,13 +44,16 @@
     <title>@yield('title', 'Admin Dashboard')</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css"  rel="stylesheet" />
+
     <link href="/css/app.css" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
 <script src="/js/app.js" defer></script>
 </head>
 <body class="bg-gray-900 text-gray-200">
     <div class="flex">
-        <div id="sidebar" class="w-80 h-auto bg-[#2f363e] hidden md:block">
+        <div id="sidebar" class="w-80 h-auto bg-[#2f363e]  ">
+            
             @include('admin.includes.sidebar')  {{-- Include your sidebar here --}}
         </div>
         <div class="flex-grow">
@@ -61,10 +64,8 @@
         </div>
     </div>
    
+<script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
 </body>
-
-</body>
-
 </html>
 
 
