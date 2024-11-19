@@ -28,6 +28,7 @@
                         <th class="px-4 md:px-6 py-3 text-left font-semibold">title</th>
                         <th class="px-4 md:px-6 py-3 text-left font-semibold">status</th>
                         <th class="px-4 md:px-6 py-3 text-left font-semibold">price</th>
+                        <th class="px-4 md:px-6 py-3 text-left font-semibold">Image</th>
                         <th class="px-4 md:px-6 py-3 text-left font-semibold">Action</th>
                     </tr>
                 </thead>
@@ -37,6 +38,8 @@
                     <tr class="border-t border-white hover:bg-gray-700 transition duration-300">
                         <td class="px-4 md:px-6 py-3 whitespace-nowrap">{{$item->id}}</td>
                         <td class="px-4 md:px-6 py-3 whitespace-nowrap">{{$item->title}}</td>
+                        <img src="{{ asset('images/ad/' .}$item->image} class="w-full h-48 object-cover">
+
                         <td class="px-4 md:px-6 py-3 whitespace-nowrap">
                             @if ($item->is_read)
                             <span class="bg-gradient-to-r from-red-400 to-red-600 text-white px-3 py-1 rounded hover:bg-gradient-to-l  transition duration-300">Inactive</span>
@@ -50,13 +53,14 @@
                            <div class="flex gap-3">
                            
                            
-                            <form action="">
+                            <form action="{{route('managead.destroy',$item->id)}}" method="post">
+                                @csrf
+                            @method('DELETE')
                                 <button class="bg-gradient-to-r from-red-500 to-red-700 text-white px-3 py-1 rounded hover:bg-gradient-to-l  transition duration-300">
                                     Delete
                                 </button>
                             </form>
                             <a href="{{route('managead.edit',$item->id)}}" class="bg-gradient-to-r from-blue-500 to-blue-700 text-white px-3 py-1 rounded hover:bg-gradient-to-l  transition duration-300" >Edit</a>
-
                            </div>
                         </td>
                     </tr>

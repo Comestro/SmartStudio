@@ -17,7 +17,7 @@
             @foreach($item->images as $image)
                 <div class="group relative">
                     <!-- Image -->
-                    <img src="{{ asset('images/' . $image->image_path) }}" alt="Gallery Image" class="w-full h-64 object-cover rounded-lg shadow-lg transition-all duration-300 transform group-hover:scale-105">
+                    <img src="{{ asset('images/gallery/' . $image->image_path) }}" alt="Gallery Image" class="w-full h-64 object-cover rounded-lg shadow-lg transition-all duration-300 transform group-hover:scale-105">
     
                     <!-- Hover Effect (Image Description) -->
                     <div class="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 flex justify-center items-center rounded-lg text-white text-lg font-semibold transition-opacity duration-300">
