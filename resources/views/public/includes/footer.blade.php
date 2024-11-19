@@ -32,7 +32,9 @@
             <p class="text-sm">Email: smartstudio@gmail.com</p>
             <div class="flex justify-center md:justify-start space-x-4 mt-4">
                 <i class="bi bi-facebook text-2xl text-yellow-500"></i>
-                <i class="bi bi-twitter text-2xl text-yellow-500"></i>
+                <a href="https://api.whatsapp.com/send?phone=+91-9472641988&text=Welcome To Smart Studio PURNEA, BIHAR" 
+                target="_blank"> <i class="bi bi-whatsapp text-2xl text-yellow-500"></i></a>
+               
                 <i class="bi bi-instagram text-2xl text-yellow-500"></i>
             </div>
         </div>

@@ -18,7 +18,7 @@
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 w-full max-w-6xl">
 
         {{-- Category Form --}}
-        <div class="bg-gray-900  shadow-lg">
+        <div class="bg-gray-700 p-5 rounded-lg shadow-lg">
             <h2 class="text-2xl md:text-3xl font-bold text-yellow-400 mb-4 md:mb-6">Add New Category</h2>
             <form action="{{ route('category') }}" method="POST" enctype="multipart/form-data" class="space-y-4 md:space-y-5">
                 @csrf
@@ -49,19 +49,19 @@
                     @enderror
                 </div>
                 <button type="submit"
-                    class="w-full bg-yellow-400 text-black font-semibold py-3 rounded-lg hover:bg-yellow-400 transition duration-300">
+                    class="w-full bg-gradient-to-r from-yellow-400 via-yellow-300 to-yellow-200 text-black font-semibold py-3 rounded-lg hover:bg-yellow-400 transition duration-300">
                     Add Category
                 </button>
             </form>
         </div>
 
         {{-- Category Table --}}
-        <div class="rounded-lg shadow-lg ">
+        <div class=" bg-gray-700 rounded-lg shadow-lg p-4 ">
             <h2 class="text-2xl md:text-3xl font-bold text-yellow-400 mb-4 md:mb-6">Manage Categories</h2>
-            <div class="overflow-x-auto scrollbar-hide">
+            <div class="overflow-x-auto scrollbar-hide rounded-lg">
                 <table class="min-w-full bg-gray-800 rounded-lg">
                     <thead>
-                        <tr class="bg-gray-700 text-white">
+                        <tr class="bg-yellow-300 text-black">
                             <th class="px-4 md:px-6 py-3 text-left font-semibold">ID</th>
                             <th class="px-4 md:px-6 py-3 text-left font-semibold">Name</th>
                             <th class="px-4 md:px-6 py-3 text-left font-semibold">Slug</th>
@@ -71,7 +71,7 @@
                     </thead>
                     <tbody>
                         @foreach ($categories as $item)
-                            <tr class="border-t border-white hover:bg-gray-700 transition duration-300">
+                            <tr class="border-t border-white hover:bg-gray-900 transition duration-300">
                                 <td class="px-4 md:px-6 py-3 whitespace-nowrap">{{ $item->id }}</td>
                                 <td class="px-4 md:px-6 py-3 whitespace-nowrap">{{ $item->cat_name }}</td>
                                 <td class="px-4 md:px-6 py-3 whitespace-nowrap">{{ $item->cat_slug }}</td>
@@ -80,12 +80,12 @@
                                         class="w-16 h-16 rounded-lg object-cover">
                                 </td>
                                 <td class="px-4 md:px-6 py-3 flex justify-center gap-2">
-                                    <a href="{{ route('category.edit', $item->id) }}" class="bg-blue-500 text-white px-3 py-1 rounded hover:bg-blue-600 transition duration-300">Edit</a>
+                                    <a href="{{ route('category.edit', $item->id) }}" class="bg-gradient-to-r from-indigo-500 to-indigo-700 text-white px-3 py-1 rounded hover:bg-gradient-to-l  transition duration-300">Edit</a>
                                     <form action="{{ route('category.trash', $item->id) }}" method="POST"
                                         class="inline-block" onsubmit="return confirm('Are you sure you want to delete this category?');">
                                         @csrf
                                         @method('DELETE')
-                                        <button type="submit" class="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600 transition duration-300">Delete</button>
+                                        <button type="submit" class="bg-gradient-to-r from-red-500 to-red-700 text-white px-3 py-1 rounded hover:bg-gradient-to-l  transition duration-300">Delete</button>
                                     </form>
                                 </td>
                             </tr>

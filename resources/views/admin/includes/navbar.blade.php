@@ -17,9 +17,16 @@
             </div> --}}
         </div>
     </div>
-    <div class="absolute right-4 top-4 w-full md:w-auto h-auto flex items-center gap-2">
-
-        <div class="w-full md:w-24 h-10 rounded-lg flex items-center justify-center text-center">
+    <div class="absolute right-4 top-4 w-full md:w-auto h-auto flex items-center p-8 gap-2">
+        <div class="text-center text-yellow-500  lg:hidden ">
+            <button class="" type="button" data-drawer-target="drawer-example" data-drawer-show="drawer-example" aria-controls="drawer-example">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                  </svg>
+                  
+            </button>
+         </div>
+        {{-- <div class="w-full md:w-24 h-10 rounded-lg flex items-center justify-center text-center">
             <form action="{{ route('logout') }}" method="POST" class="w-full">
                 @csrf
                 <button type="submit"
@@ -29,21 +36,14 @@
                 </button>
             </form>
 
-        </div>
+        </div> --}}
 
         <!-- Profile Image -->
         {{-- <div class="w-12 h-12 rounded-full flex items-center justify-center">
             <img src="https://pics.craiyon.com/2023-11-26/oMNPpACzTtO5OVERUZwh3Q.webp" class="rounded-full"
                 alt="Profile Picture" />
         </div> --}}
-        <div class="text-center lg:hidden ">
-            <button class="" type="button" data-drawer-target="drawer-example" data-drawer-show="drawer-example" aria-controls="drawer-example">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-                  </svg>
-                  
-            </button>
-         </div>
+        
     </div>
 
 </div>
