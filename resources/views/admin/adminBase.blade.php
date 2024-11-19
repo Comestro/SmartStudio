@@ -52,15 +52,15 @@
 </head>
 <body class="bg-gray-900 text-gray-200">
     <div class="flex w-full">
-        <div id="sidebar" class="lg:block  lg:w-1/5 pr-14 h-screen " >
+        <div id="sidebar" class="lg:block  lg:w-1/5 lg:pr-14 h-screen " >
             
             @include('admin.includes.sidebar')
             @include('admin.includes.sidebardesktop')
              {{-- Include your sidebar here --}}
         </div>
       
-        <div class="flex-grow lg:ml-1/5 xl:ml-1/6">
-            @include('admin.includes.navbar') 
+        <div class="flex-grow ">
+            {{-- @include('admin.includes.navbar')  --}}
             <div class="w-full p-4">
                 @yield('content')
             </div>

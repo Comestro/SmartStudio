@@ -32,15 +32,6 @@
                     @enderror
                 </div>
                 <div>
-                    <label for="category-description" class="block text-sm font-medium text-gray-300">Description</label>
-                    <input type="text" name="cat_description" value="{{ old('cat_description') }}"
-                        placeholder="Enter category description"
-                        class="w-full p-3 mt-2 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500">
-                    @error('cat_description')
-                        <p class="text-sm text-red-500">{{ $message }}</p>
-                    @enderror
-                </div>
-                <div>
                     <label for="category-image" class="block text-sm font-medium text-gray-300">Image</label>
                     <input type="file" name="cat_image" value="{{ old('cat_image') }}"
                         class="w-full p-3 mt-2 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500">
@@ -48,6 +39,16 @@
                         <p class="text-sm text-red-500">{{ $message }}</p>
                     @enderror
                 </div>
+                <div>
+                    <label for="category-description" class="block text-sm font-medium text-gray-300">Description</label>
+                    <textarea type="text" name="cat_description" value="{{ old('cat_description') }}" rows="3"
+                        placeholder="Enter category description"
+                        class="w-full p-3 mt-2 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"></textarea>
+                    @error('cat_description')
+                        <p class="text-sm text-red-500">{{ $message }}</p>
+                    @enderror
+                </div>
+                
                 <button type="submit"
                     class="w-full bg-gradient-to-r from-yellow-400 via-yellow-300 to-yellow-200 text-black font-semibold py-3 rounded-lg hover:bg-yellow-400 transition duration-300">
                     Add Category
