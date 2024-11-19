@@ -1,3 +1,4 @@
+@section('title','SmartStudio|home')
 @extends('public.layout')
 
 @section('content')
@@ -145,7 +146,7 @@
             Who We <span class="text-yellow-500">Are?</span>
         </h2>
         <p class="text-md md:text-lg text-gray-400 ">
-        SmartStudio: Where every moment is captured with creativity and precision. We specialize in transforming your cherished memories into timeless works of art. Experience photography that tells your unique story with style and elegance.
+             SmartStudio: Where every moment is captured with creativity and precision. We specialize in transforming your cherished memories into timeless works of art. Experience photography that tells your unique story with style and elegance.
         </p>
         <a href="{{route('portfolio')}}"
             class="inline-flex items-center justify-center text-yellow-500 border border-yellow-400 px-4 py-2 md:px-6 md:py-3 rounded-lg hover:bg-yellow-500 hover:text-black transition duration-300 ease-in-out w-full md:w-auto ">
@@ -164,9 +165,9 @@
 
 
 
-<div class="bg-white py-16">
+<!-- <div class="bg-white py">
 
-    <!-- <div class="text-center px-6 md:px-36">
+     <div class="text-center px-6 md:px-36">
             <h1 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
                 PHOTOGRAPHY BY US <span class="text-yellow-500">PORTFOLIO</span>
             </h1>
@@ -192,7 +193,7 @@
 
             </div>
         </div> -->
-</div>
+<!-- </div> --> 
 
 <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 p-6">
     @foreach ($galleries->take(2) as $item)
@@ -208,7 +209,6 @@
     </div>
     @endforeach
 </div>
-
 <div class="flex justify-center">
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 p-4 max-w-5xl">
         @foreach ($galleries->skip(2)->take(4) as $item)

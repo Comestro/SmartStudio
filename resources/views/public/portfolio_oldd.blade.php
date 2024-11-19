@@ -1,3 +1,4 @@
+@yield('title', 'Portfolio')
 @extends('public.base')
 
 @section('content')
