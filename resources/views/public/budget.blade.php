@@ -1,6 +1,8 @@
 @extends('public.layout')
 @section('content')
-<div class="flex items-center justify-center w-full h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
+ <div class="flex items-center justify-center w-full h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
+
+
     <div class="bg-gray-800 shadow-2xl rounded-lg p-8 max-w-md w-full border border-gray-700">
         <h2 class="text-3xl font-semibold text-center mb-8 text-gray-100">Event Budget Calculator</h2>
 
@@ -51,6 +53,7 @@
 
     </div>
 </div>
+
 
 
 @endsection
