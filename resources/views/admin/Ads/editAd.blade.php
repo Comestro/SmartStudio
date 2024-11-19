@@ -16,8 +16,9 @@
         
 
         <div class="bg-gray-800 lg:p-7 p-3 rounded shadow-lg">
-            <form action="" method="POST" enctype="multipart/form-data" class="space-y-10">
+            <form action="{{route('managead.update',$items->id)}}" method="post" enctype="multipart/form-data" class="space-y-10">
                 @csrf
+                @method('PUT')
 
 
                 <div>
@@ -47,8 +48,9 @@
                 </div>
                 <div>
                     <label for="image" class="block text-yellow-400 text-xl  font-medium mb-2">Ad Image</label>
-                    <input type="file" id="image" name="image" required
+                    <input type="file" id="image" name="image" 
                         class="w-full px-4 py-2 border border-gray-300 text-black bg-white rounded-md shadow-sm focus:ring focus:ring-yellow-400 focus:outline-none">
+                        <img src="{{ asset('public/images/'. $items->image) }}" class="w-32 h-32" alt="">
                     @error('image')
                     <span class="text-red-500 text-sm">{{ $message }}</span>
                     @enderror

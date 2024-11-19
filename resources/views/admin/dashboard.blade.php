@@ -101,7 +101,7 @@
                     <div class="flex space-x-6 min-w-full overflow-x-auto overflow-y-hidden scrollbar-hide ">
                         @foreach ($categoryImage as $item)
                             <div class="group relative flex-shrink-0">
-                                <img src="{{ asset('images/' . $item->cat_image) }}" alt="Profile Image"
+                                <img src="{{ asset('images/category/' . $item->cat_image) }}" alt="Profile Image"
                                     class="w-48 h-48 object-cover rounded-lg shadow-lg transition-transform transform group-hover:scale-105">
                                 <div
                                     class="absolute inset-0 bg-black bg-opacity-30 opacity-0 group-hover:opacity-100 transition-opacity rounded-lg">
@@ -226,7 +226,7 @@
                                 <td class="py-3 px-5 border-b border-gray-600">
                                     @if ($item->images->first())
                                         <a href="{{ route('gallery.viewGallery', $item->id) }}">
-                                            <img src="{{ asset('images/' . $item->images->first()->image_path) }}"
+                                            <img src="{{ asset('images/gallery/' . $item->images->first()->image_path) }}"
                                                 alt="{{ $item->gallery_title }}" class="w-full h-24 object-cover">
                                         </a>
                                     @else

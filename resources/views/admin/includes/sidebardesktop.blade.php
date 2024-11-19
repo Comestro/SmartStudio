@@ -1,4 +1,4 @@
-<div class="w-80 h-screen bg-[#2f363e] hidden lg:block pl-10">
+<div class="lg:w-48 xl:w-64 bg-[#2f363e] hidden lg:block pl-4 h-auto fixed ">
         <div class="w-full h-16 flex items-center justify-center">
             <p class="text-2xl text-yellow-400 font-bold">SMART STUDIO</p>
         </div>

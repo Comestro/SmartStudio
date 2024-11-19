@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>smartstudio SignUp</title>
+    <title>Smart Studio SignUp</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
 <body class="  bg-gradient-to-r from-yellow-500 via-yellow-300 to-black flex items-center justify-center min-h-screen">
     <div class="bg-white shadow-lg rounded-lg overflow-hidden max-w-4xl w-full flex flex-col md:flex-row">
         <div class="md:w-1/2 relative">
-            <img src="./images/user_profile.png" alt="" class="w-full h-full object-cover">
+            <img src="./images/static/user_profile.png" alt="" class="w-full h-full object-cover">
             <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-center text-white text-center p-4">
                 <h2 class="text-4xl font-bold">Smart Studio</h2>
                 <p class="mt-2 text-lg uppercase">Click for the shoot</p>
@@ -45,7 +45,7 @@
                 
                
                 <div class="flex justify-between mt-8">
-                    <button type="button" class="px-6 py-2 bg-gray-400 text-white rounded-md hover:bg-gray-500">Cancel</button>
+                   <a href="{{route('home')}}"> <button type="button" class="px-6 py-2 bg-gray-400 text-white rounded-md hover:bg-gray-500">Cancel</button></a>
                     <button type="submit" class="px-6 py-2 bg-yellow-500 text-white rounded-md hover:bg-yellow-600">Confirm</button>
                 </div>
             </form>
