@@ -21,9 +21,10 @@
             <a href="{{route('home')}}" class="text-lg text-yellow-400">Home</a>
             @if(Auth::check())
             <span class="text-yellow-400 font-semibold">{{ Auth::user()->name }}</span>
-            @endif
+            @endif 
+            
         </div>
-
+        
 
         <nav class="flex-1 space-y-4">
             <ul class="space-y-3">

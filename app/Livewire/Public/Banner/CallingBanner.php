@@ -28,7 +28,7 @@ class CallingBanner extends Component
             return 'https://img.freepik.com/premium-photo/beautiful-female-model-posing-studio-light-flashes_382934-4673.jpg';
         }
 
-        return asset('images/' . $banner->b_image);
+        return asset('images/banner/' . $banner->b_image);
     }
     public function render()
     {
