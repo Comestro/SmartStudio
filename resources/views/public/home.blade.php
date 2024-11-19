@@ -1,3 +1,4 @@
+@section('title','SmartStudio|home')
 @extends('public.layout')
 
 @section('content')
@@ -108,7 +109,6 @@
         </p>
     </div>
 </div>
-
 <section id="gallery" class="py-20 bg-gray-200">
     <div class="gallery-container px-10">
         @foreach ($categories->take(4) as $item)
@@ -141,16 +141,15 @@
 <section class="flex flex-col-reverse md:flex-row h-auto md:h-screen items-center justify-between bg-black mt-10">
 
 
-    <div class="md:w-1/2 w-full px-6 md:px-12 text-left space-y-6">
+    <div class="md:w-1/2 w-full px-6 md:px-12 text-left space-y-6 py-10">
         <h2 class="text-3xl md:text-5xl font-bold uppercase text-white">
             Who We <span class="text-yellow-500">Are?</span>
         </h2>
-        <p class="text-md md:text-lg text-gray-400">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque convallis,
-            augue ut imperdiet ultricies, leo mauris rhoncus. Pellentesque convallis.
+        <p class="text-md md:text-lg text-gray-400 ">
+             SmartStudio: Where every moment is captured with creativity and precision. We specialize in transforming your cherished memories into timeless works of art. Experience photography that tells your unique story with style and elegance.
         </p>
-        <a href="#"
-            class="inline-flex items-center justify-center text-yellow-500 border border-yellow-400 px-4 py-2 md:px-6 md:py-3 rounded-lg hover:bg-yellow-500 hover:text-black transition duration-300 ease-in-out w-full md:w-auto">
+        <a href="{{route('portfolio')}}"
+            class="inline-flex items-center justify-center text-yellow-500 border border-yellow-400 px-4 py-2 md:px-6 md:py-3 rounded-lg hover:bg-yellow-500 hover:text-black transition duration-300 ease-in-out w-full md:w-auto ">
             View All Services
             <i class="bi bi-arrow-right-circle-fill text-2xl ml-2"></i>
         </a>
@@ -166,9 +165,9 @@
 
 
 
-<div class="bg-white py-16">
+<!-- <div class="bg-white py">
 
-    <!-- <div class="text-center px-6 md:px-36">
+     <div class="text-center px-6 md:px-36">
             <h1 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
                 PHOTOGRAPHY BY US <span class="text-yellow-500">PORTFOLIO</span>
             </h1>
@@ -194,7 +193,7 @@
 
             </div>
         </div> -->
-</div>
+<!-- </div> --> 
 
 <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 p-6">
     @foreach ($galleries->take(2) as $item)
@@ -210,7 +209,6 @@
     </div>
     @endforeach
 </div>
-
 <div class="flex justify-center">
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 p-4 max-w-5xl">
         @foreach ($galleries->skip(2)->take(4) as $item)
@@ -299,49 +297,42 @@
 </div>
 
 
-<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-    <div
-        class="flex flex-col items-center transform transition duration-300 hover:scale-105 hover:bg-gray-50 rounded-lg p-5 shadow-lg">
-        <img src="https://img.freepik.com/free-photo/young-beautiful-woman-portrait_23-2149263756.jpg?ga=GA1.1.1275289697.1728223870&semt=ais_hybrid"
-            alt="Professional Portraits" class="w-80 h-64 mb-4">
-        <h3 class="text-2xl font-semibold text-black mb-2">Elevate Your Portraits</h3>
-        <p class="text-gray-600 text-center mb-4">Experience the art of portrait photography, crafted to capture
-            your
-            essence and personality in every shot.</p>
-
-    </div>
-    <div
-        class="flex flex-col items-center transform transition duration-300 hover:scale-105 hover:bg-gray-50 rounded-lg p-5 shadow-lg">
-        <img src="https://img.freepik.com/free-photo/decorated-banquet-hall-with-flowers_8353-10058.jpg?ga=GA1.1.1275289697.1728223870&semt=ais_hybrid"
-            alt="Event Photography" class="w-80 h-64 mb-4">
-        <h3 class="text-2xl font-semibold text-black mb-2">Mastering Photography Art</h3>
-        <p class="text-gray-600 text-center mb-4">Capture your events with unparalleled expertise. Relive each
-            memorable moment with our professional event coverage.</p>
-
-    </div>
-    <div
-        class="flex flex-col items-center transform transition duration-300 hover:scale-105 hover:bg-gray-50 rounded-lg p-5 shadow-lg">
-        <img src="https://img.freepik.com/free-photo/immersive-experience-concept-collage_23-2149498342.jpg?ga=GA1.1.1275289697.1728223870&semt=ais_hybrid"
-            alt="Landscape & Nature" class="w-80 h-64 mb-4">
-        <h3 class="text-2xl font-semibold text-black mb-2">Capturing Moments</h3>
-        <p class="text-gray-600 text-center mb-4">Explore nature’s beauty through stunning captures of landscapes
-            and
-            outdoor scenes, designed to inspire and captivate.</p>
-
+<div class="p-4 sm:p-8 bg-gray-100">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Card 1 -->
+        <div
+            class="flex flex-col items-center transform transition duration-300 hover:scale-105 hover:bg-gray-50 rounded-lg p-5 shadow-lg">
+            <img src="https://images.unsplash.com/photo-1523712999610-f77fbcfc3843?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="Professional Portraits" class="w-full h-64 object-cover object-top rounded mb-4">
+            <h3 class="text-xl sm:text-2xl font-semibold text-black mb-2 text-center">Elevate Your Portraits</h3>
+            <p class="text-gray-600 text-center mb-4">Experience the art of portrait photography, crafted to capture
+                your essence and personality in every shot.</p>
+        </div>
+        <!-- Card 2 -->
+        <div
+            class="flex flex-col items-center transform transition duration-300 hover:scale-105 hover:bg-gray-50 rounded-lg p-5 shadow-lg">
+            <img src="https://img.freepik.com/free-photo/decorated-banquet-hall-with-flowers_8353-10058.jpg?ga=GA1.1.1275289697.1728223870&semt=ais_hybrid"
+                alt="Event Photography" class="w-full h-64 object-cover rounded mb-4">
+            <h3 class="text-xl sm:text-2xl font-semibold text-black mb-2 text-center">Mastering Photography Art</h3>
+            <p class="text-gray-600 text-center mb-4">Capture your events with unparalleled expertise. Relive each
+                memorable moment with our professional event coverage.</p>
+        </div>
+        <!-- Card 3 -->
+        <div
+            class="flex flex-col items-center transform transition duration-300 hover:scale-105 hover:bg-gray-50 rounded-lg p-5 shadow-lg">
+            <img src="https://img.freepik.com/free-photo/immersive-experience-concept-collage_23-2149498342.jpg?ga=GA1.1.1275289697.1728223870&semt=ais_hybrid"
+                alt="Landscape & Nature" class="w-full h-64 object-cover rounded mb-4">
+            <h3 class="text-xl sm:text-2xl font-semibold text-black mb-2 text-center">Capturing Moments</h3>
+            <p class="text-gray-600 text-center mb-4">Explore nature’s beauty through stunning captures of landscapes
+                and outdoor scenes, designed to inspire and captivate.</p>
+        </div>
     </div>
 </div>
 
-<a href="https://api.whatsapp.com/send?phone=+919472641988&text={{ urlencode('Hello, 
 
-I am interested in booking a photography session with your studio. Could you please let me know the availability for the following details:
-
-- Event Type: [e.g., Wedding, Portrait, Product Shoot]
-- Date: [Insert Date]
-- Time: [Insert Time]
-- Location: [Insert Location]
-
+<a href="https://api.whatsapp.com/send?phone=+919472641988&text={{ urlencode('Hello,
+I am interested in booking a photography session with your studio. Could you please let me know the availability.
 Looking forward to your response.
-
 Thank you!') }}"
     target="_blank"
     class="fixed md:bottom-10  bottom-20 right-2 md:right-10 z-20 group">
@@ -356,20 +347,24 @@ Thank you!') }}"
 </a>
 
 <!-- Popup Container -->
-<div id="popup" class="hidden fixed inset-0 flex items-center justify-center bg-black bg-opacity-0 z-50">
-    <div class="relative bg-white rounded-lg opacity-40 shadow-lg p-6 w-96" style="opacity: 1;">
-        <!-- Cancel Button -->
-        <button id="cancel-popup" class="absolute top-2 right-2 text-gray-500 hover:text-gray-800">
-            &times;
-        </button>
+<!-- <div id="popup" class="hidden fixed inset-0 flex items-center justify-center bg-black bg-opacity-0 z-50">
+    <div class="flex justify-between items-center">
+        <div class="relative bg-white rounded-lg opacity-40 shadow-lg p-6 w-96" style="opacity: 1;">
+            <!-- Cancel Button -->
+            <div class="flex justify-between items-center ">
+                <h2 class="text-xl font-bold ">Welcome to Smart studio</h2>
+                <button id="close-popup" class=" px-4 py-2 mb-2 rounded">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                    </svg>
 
-        <h2 class="text-xl font-bold mb-4">Welcome to Our Site!</h2>
-        <p class="mb-4">We're glad to have you here. Explore our features and offerings.</p>
-        <button id="close-popup" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
-            Close
-        </button>
+            </div>
+            </button>
+            <p class="mb-4">We're glad to have you here. Explore our features and offerings.</p>
+
+        </div>
     </div>
-</div>
+</div> 
 
 
 

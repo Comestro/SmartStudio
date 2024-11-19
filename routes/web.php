@@ -2,7 +2,6 @@
 
 use App\Http\Controllers\AdController;
 use App\Http\Controllers\BookingController;
-use App\Models\AdInformation;
 use App\Models\Gallery;
 
 use Illuminate\Support\Facades\Route;
@@ -88,8 +87,6 @@ Route::post('/booking/{category}', [BookingController::class, 'store'])->name('c
 Route::get('admin/checkschedule', [BookingController::class, 'showBooking'])->name('booking.show');
 
 Route::get('/', function () {
-    $categories['ad']=AdInformation::where('status',1)->first();
-    
     $categories['categories'] = Category::all();
     $categories['Filtercategories'] = Category::whereNotNull('cat_image')
         ->where('cat_image', '!=', '')
