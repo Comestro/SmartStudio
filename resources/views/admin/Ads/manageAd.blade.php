@@ -38,9 +38,6 @@
                     <tr class="border-t border-white hover:bg-gray-700 transition duration-300">
                         <td class="px-4 md:px-6 py-3 whitespace-nowrap">{{$item->id}}</td>
                         <td class="px-4 md:px-6 py-3 whitespace-nowrap">{{$item->title}}</td>
-
-                        
-                        
                         <td class="px-4 md:px-6 py-3 whitespace-nowrap">
                             @if ($item->is_read)
                             <span class="bg-gradient-to-r from-red-400 to-red-600 text-white px-3 py-1 rounded hover:bg-gradient-to-l  transition duration-300">Inactive</span>
