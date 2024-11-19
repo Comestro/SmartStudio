@@ -19,7 +19,7 @@
             {{-- <img src="https://th.bing.com/th?q=Menu+Icon+On+Black+Background&w=120&h=120&c=1&rs=1&qlt=90&cb=1&dpr=1.3&pid=InlineBlock&mkt=en-IN&cc=IN&setlang=en&adlt=moderate&t=1&mw=247"
             alt="Profile 1" class="rounded-full w-16 h-16 object-cover border-4 border-white"> --}}
             @foreach ($banners as $item)
-                <img src="{{ asset('images/' . $item->b_image) }}" alt=""
+                <img src="{{ asset('images/banner' . $item->b_image) }}" alt=""
                     class="rounded-full w-20 h-20 object-cover border-4 border-white" wire:click="updateBackgroundImage('{{ asset('images/' . $item->b_image) }}')">
             @endforeach
           

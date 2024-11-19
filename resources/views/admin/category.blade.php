@@ -76,7 +76,7 @@
                                 <td class="px-4 md:px-6 py-3 whitespace-nowrap">{{ $item->cat_name }}</td>
                                 <td class="px-4 md:px-6 py-3 whitespace-nowrap">{{ $item->cat_slug }}</td>
                                 <td class="px-4 md:px-6 py-3">
-                                    <img src="{{ asset('images/' . $item->cat_image) }}" alt="{{ $item->cat_name }}"
+                                    <img src="{{ asset('images/category/' . $item->cat_image) }}" alt="{{ $item->cat_name }}"
                                         class="w-16 h-16 rounded-lg object-cover">
                                 </td>
                                 <td class="px-4 md:px-6 py-3 flex justify-center gap-2">
