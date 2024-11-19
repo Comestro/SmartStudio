@@ -26,8 +26,25 @@
 
                 </ul>
             </details>
-
             <details class="mt-2">
+                <summary
+                    class="flex items-center gap-3 cursor-pointer hover:bg-gray-700 hover:border-r-8 border-yellow-500 p-2 rounded transition duration-300">
+                    <i class="bi bi-flag-fill text-yellow-400 text-xl"></i>
+                    <span class="text-[#eee] font-medium text-lg">Banner</span>
+                </summary>
+                <ul class="pl-8">
+                    <li class="flex items-center gap-3 hover:bg-gray-700 p-2 rounded transition duration-300 mt-2 hover:border-r-8 border-yellow-500">
+                        
+                            <a href="{{route('banner.create')}}" class="text-[#eee] font-medium text-lg"> Add Banner</a>
+                        </li>
+                        <li class="flex items-center gap-3 hover:bg-gray-700 p-2 rounded transition duration-300 mt-2 hover:border-r-8 border-yellow-500">
+                            
+                                <a href="{{route('admin.banners.index')}}" class="text-[#eee] font-medium text-lg"> Manage Banner</a>
+                            </li>
+                </ul>
+            </details>
+
+            {{-- <details class="mt-2">
                 <summary
                     class="flex items-center gap-3 cursor-pointer hover:bg-gray-700 hover:border-r-8 border-yellow-500 p-2 rounded transition duration-300">
                     <i class="bi bi-person-circle text-yellow-400 text-xl"></i>
@@ -42,7 +59,11 @@
                             Customers</a>
                     </li>
                 </ul>
-            </details>
+            </details> --}}
+            <li class="flex items-center gap-3 hover:bg-gray-700 p-2 rounded transition duration-300 mt-2 hover:border-r-8 border-yellow-500">
+                <i class="bi bi-person-circle text-yellow-400 text-xl"></i>
+                <a href="{{ route('admin.user.index') }}" class="text-[#eee] font-medium text-lg">Customer</a>
+            </li>
 
 
             <details class="mt-2">
@@ -80,23 +101,7 @@
                 </span>
             </li>
 
-            <details class="mt-2">
-                <summary
-                    class="flex items-center gap-3 cursor-pointer hover:bg-gray-700 hover:border-r-8 border-yellow-500 p-2 rounded transition duration-300">
-                    <i class="bi bi-flag-fill text-yellow-400 text-xl"></i>
-                    <span class="text-[#eee] font-medium text-lg">Banner</span>
-                </summary>
-                <ul class="pl-8">
-                    <li class="flex items-center gap-3 hover:bg-gray-700 p-2 rounded transition duration-300 mt-2 hover:border-r-8 border-yellow-500">
-                        
-                            <a href="{{route('banner.create')}}" class="text-[#eee] font-medium text-lg"> Add Banner</a>
-                        </li>
-                        <li class="flex items-center gap-3 hover:bg-gray-700 p-2 rounded transition duration-300 mt-2 hover:border-r-8 border-yellow-500">
-                            
-                                <a href="{{route('admin.banners.index')}}" class="text-[#eee] font-medium text-lg"> Manage Banner</a>
-                            </li>
-                </ul>
-            </details>
+            
             <li class="flex items-center gap-3 hover:bg-gray-700 p-2 rounded transition duration-300 mt-2 hover:border-r-8 border-yellow-500">
                 <i class="bi bi-person-rolodex text-yellow-400 text-xl"></i>
                 <a href="{{ route('budget.show') }}" class="text-[#eee] font-medium text-lg">Budget Manager</a>
