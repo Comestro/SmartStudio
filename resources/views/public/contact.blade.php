@@ -1,4 +1,4 @@
-
+@section('title','contact')
  
   @extends('public.base')
 

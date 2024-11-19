@@ -1,3 +1,4 @@
+@section('title','About')
 
   @extends('public.base')
 

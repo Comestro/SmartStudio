@@ -1,3 +1,4 @@
+@section('title','Gallery')
 @extends('public.base')
 
 @section('content')

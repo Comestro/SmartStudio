@@ -1,3 +1,4 @@
+@section('title','SmartStudio|home')
 @extends('public.layout')
 
 @section('content')
