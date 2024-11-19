@@ -47,7 +47,52 @@
         }
     }
 </style>
+<style>
+     .carousel-item {
+      position: relative;
+      min-width: 33.33%; 
+      transition: transform 0.3s ease;
+    }
+    .carousel-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .carousel-item:focus-within .view-more-btn {
+      opacity: 1;
+    }
+    
+    .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
 
+
+        .scrollbar-hide {
+            scrollbar-width: none;
+        }
+        @keyframes movement {
+      0% {
+        transform: translateX(0);
+      }
+
+      50% {
+        transform: translateX(50px);
+      }
+
+      100% {
+        transform: translateX(0);
+      }
+    }
+    </style>
+<style>
+    .carousel-item {
+      overflow: hidden;
+    }
+
+    .carousel-item img {
+      animation: movement 5s infinite;
+    }
+  </style>
    
     <div class="h-[80vh] bg-cover bg-center"
         style="background-image: url('https://th.bing.com/th/id/OIP.01e67CZXYANik5BUvlo0YgHaEJ?w=281&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7');">
@@ -68,13 +113,13 @@
         <div class="container mx-auto px-6 lg:px-12">
             <h2 class="text-3xl font-bold text-yellow-500 text-center mb-8">Our Gallery</h2>
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-
+            <!-- <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"> -->
+            <div class="carousel w-full overflow-x-scroll flex snap-x snap-mandatory gap-2 scrollbar-hide">
                 @foreach ($galleries as $item)
-                    <div class="relative group">
+                    <div class="relative group carousel-item">
                         @if ($item->images->first())
                             <a href="{{ route('gallery.viewGallery', $item->id) }}">
-                                <img src="{{ asset('images/' . $item->images->first()->image_path) }}"
+                                <img src="{{ asset('images/gallery/' . $item->images->first()->image_path) }}"
                                     alt="{{ $item->gallery_title }}" class="w-full h-64 object-cover">
                             </a>
                         @else
@@ -95,91 +140,7 @@
                         </div>
                     </div>
                     @endforeach
-             
-
-                {{-- <div class="relative group">
-                    <img src="https://tse4.mm.bing.net/th?id=OIP.ZHEaEn6yqgb76ySxdb3S6gHaE-&pid=Api&P=0&h=180"
-                        alt="Gallery Image 2"
-                        class="w-full h-72 object-cover rounded-lg shadow-lg transition duration-300 group-hover:scale-105">
-                    <div class="absolute inset-0 flex items-center justify-center">
-                        <span
-                            class="text-white text-lg font-bold transition-opacity duration-300 group-hover:opacity-0">
-                            Natures
-                        </span>
-                    </div>
-                    <div
-                        class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
-                        <span class="text-white text-lg font-bold">Serenity</span>
-                    </div>
-                </div>
-
-
-                <div class="relative group">
-                    <img src="https://tse1.mm.bing.net/th?id=OIP.BtNI9puHmT5TFEec4PKB4AHaE6&pid=Api&P=0&h=180"
-                        alt="Gallery Image 3"
-                        class="w-full h-72 object-cover rounded-lg shadow-lg transition duration-300 group-hover:scale-105">
-                    <div class="absolute inset-0 flex items-center justify-center">
-                        <span
-                            class="text-white text-lg font-bold transition-opacity duration-300 group-hover:opacity-0">
-                            Sunset Bliss
-                        </span>
-                    </div>
-                    <div
-                        class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
-                        <span class="text-white text-lg font-bold">Golden Hour</span>
-                    </div>
-                </div>
-
-
-                <div class="relative group">
-                    <img src="https://img.freepik.com/free-photo/vertical-distant-shot-person-holding-umbrella-walking-footbridge-near-lighthouse_181624-2393.jpg?ga=GA1.1.1275289697.1728223870&semt=ais_siglip"
-                        alt="Gallery Image 4"
-                        class="w-full h-72 object-cover rounded-lg shadow-lg transition duration-300 group-hover:scale-105">
-                    <div class="absolute inset-0 flex items-center justify-center">
-                        <span
-                            class="text-white text-lg font-bold transition-opacity duration-300 group-hover:opacity-0">
-                            Beach Images
-                        </span>
-                    </div>
-                    <div
-                        class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
-                        <span class="text-white text-lg font-bold">Ocean Breeze</span>
-                    </div>
-                </div> --}}
-
-
-                {{-- <div class="relative group">
-                    <img src="https://img.freepik.com/premium-photo/close-up-red-flowering-plant_1048944-23926359.jpg?ga=GA1.1.1275289697.1728223870&semt=ais_siglip"
-                        alt="Gallery Image 5"
-                        class="w-full h-72 object-cover rounded-lg shadow-lg transition duration-300 group-hover:scale-105">
-                    <div class="absolute inset-0 flex items-center justify-center">
-                        <span
-                            class="text-white text-lg font-bold transition-opacity duration-300 group-hover:opacity-0">
-                            Flowers Images
-                        </span>
-                    </div>
-                    <div
-                        class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
-                        <span class="text-white text-lg font-bold">Blossom Beauty</span>
-                    </div>
-                </div>
-
-
-                <div class="relative group">
-                    <img src="https://img.freepik.com/free-photo/majestic-mausoleum-ancient-god-spiritual-journey-generated-by-ai_188544-11114.jpg?ga=GA1.1.1275289697.1728223870&semt=ais_siglip"
-                        alt="Gallery Image 6"
-                        class="w-full h-72 object-cover rounded-lg shadow-lg transition duration-300 group-hover:scale-105">
-                    <div class="absolute inset-0 flex items-center justify-center">
-                        <span
-                            class="text-white text-lg font-bold transition-opacity duration-300 group-hover:opacity-0">
-                            Taj Mahal
-                        </span>
-                    </div>
-                    <div
-                        class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
-                        <span class="text-white text-lg font-bold">Monument of Love</span>
-                    </div>
-                </div> --}}
+</div>
             </div>
         </div>
     
@@ -211,7 +172,7 @@
             <div class="grid grid-cols-4 gap-4">
                 @foreach ($categories as $item)
                     <div class="relative group">
-                        <img src="{{ asset('images/' . $item->cat_image) }}" alt="Gallery Image 1"
+                        <img src="{{ asset('images/category/' . $item->cat_image) }}" alt="Gallery Image 1"
                             class="w-full h-64 object-cover rounded-lg shadow-md" />
                     </div>
                 @endforeach
@@ -261,7 +222,7 @@
             <div class="gallery-container">
                 @foreach ($galleryFirst->images as $image)
                 <div class="gallery-item">
-                    <img src="{{ asset('images/' . $image->image_path) }}" alt="Gallery Image">
+                    <img src="{{ asset('images/gallery/' . $image->image_path) }}" alt="Gallery Image">
                     </div>
                 @endforeach
             </div>
@@ -294,7 +255,7 @@
         <div class="gallery-container">
             @foreach ($galleryLast->images as $image)
             <div class="gallery-item">
-                <img src="{{ asset('images/' . $image->image_path) }}" alt="Gallery Image">
+                <img src="{{ asset('images/gallery/' . $image->image_path) }}" alt="Gallery Image">
             </div>
             @endforeach
         </div>

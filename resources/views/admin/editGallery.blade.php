@@ -56,7 +56,7 @@
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
             @foreach($gallery->images as $image)
                 <div class="relative group">
-                    <img src="{{ asset('images/' . $image->image_path) }}" alt="Gallery Image" class="w-full h-64 object-cover rounded-lg shadow-lg">
+                    <img src="{{ asset('images/gallery/' . $image->image_path) }}" alt="Gallery Image" class="w-full h-64 object-cover rounded-lg shadow-lg">
                     
                     <form action="{{ route('gallery.deleteImage', $image->id) }}" method="POST" class="absolute top-2 right-2">
                         @csrf

@@ -14,7 +14,7 @@ class DashboardController extends Controller
     public function index()
     { $data = [
         'categoryImage' => Category::all(),
-        'galleries' => Gallery::with('images', 'category')->limit(4)->paginate(2),
+        'galleries' => Gallery::with('images', 'category')->limit(4)->paginate(5),
     ];
     return view('admin.dashboard', $data);
     }
@@ -66,13 +66,13 @@ class DashboardController extends Controller
     {
         //
     }
-    public function manageGallery(Request $request)
-    {
-        $data = [
-            'categories' => Category::all(),
-            'galleries' => Gallery::with('images', 'category')->get(),
-        ];
+    // public function manageGallery(Request $request)
+    // {
+    //     $data = [
+    //         'categories' => Category::all(),
+    //         'galleries' => Gallery::with('images', 'category')->get(),
+    //     ];
 
-        return view("admin.dashboard", $data);
-    }
+    //     return view("admin.dashboard", $data);
+    // }
 }
