@@ -226,7 +226,7 @@
                                 <td class="py-3 px-5 border-b border-gray-600">
                                     @if ($item->images->first())
                                         <a href="{{ route('gallery.viewGallery', $item->id) }}">
-                                            <img src="{{ asset('images/' . $item->images->first()->image_path) }}"
+                                            <img src="{{ asset('images/gallery/' . $item->images->first()->image_path) }}"
                                                 alt="{{ $item->gallery_title }}" class="w-full h-24 object-cover">
                                         </a>
                                     @else
