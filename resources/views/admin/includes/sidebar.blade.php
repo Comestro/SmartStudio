@@ -25,7 +25,7 @@
         <div class="w-full h-16 flex items-center justify-center">
             <p class="text-2xl text-yellow-400 font-bold">SMART STUDIO</p>
         </div>
-        <div class="w-full h-10 mt-6 text-base flex items-center pl-10 text-gray-500 font-semibold">
+        <div class="w-full h-10  text-base flex items-center pl-10 text-gray-500 font-semibold">
             <p>Main Menu</p>
         </div>
         <ul>
@@ -49,8 +49,25 @@
 
                 </ul>
             </details>
-
             <details class="mt-2">
+                <summary
+                    class="flex items-center gap-3 cursor-pointer hover:bg-gray-700 hover:border-r-8 border-yellow-500 p-2 rounded transition duration-300">
+                    <i class="bi bi-flag-fill text-yellow-400 text-xl"></i>
+                    <span class="text-[#eee] font-medium text-lg">Banner</span>
+                </summary>
+                <ul class="pl-8">
+                    <li class="flex items-center gap-3 hover:bg-gray-700 p-2 rounded transition duration-300 mt-2 hover:border-r-8 border-yellow-500">
+
+                        <a href="{{route('banner.create')}}" class="text-[#eee] font-medium text-lg"> Add Banner</a>
+                    </li>
+                    <li class="flex items-center gap-3 hover:bg-gray-700 p-2 rounded transition duration-300 mt-2 hover:border-r-8 border-yellow-500">
+
+                        <a href="{{route('admin.banners.index')}}" class="text-[#eee] font-medium text-lg"> Manage Banner</a>
+                    </li>
+                </ul>
+            </details>
+
+            {{-- <details class="mt-2">
                 <summary
                     class="flex items-center gap-3 cursor-pointer hover:bg-gray-700 hover:border-r-8 border-yellow-500 p-2 rounded transition duration-300">
                     <i class="bi bi-person-circle text-yellow-400 text-xl"></i>
@@ -65,8 +82,11 @@
                             Customers</a>
                     </li>
                 </ul>
-            </details>
-
+            </details> --}}
+            <li class="flex items-center gap-3 hover:bg-gray-700 p-2 rounded transition duration-300 mt-2 hover:border-r-8 border-yellow-500">
+                <i class="bi bi-person-circle text-yellow-400 text-xl"></i>
+                <a href="{{ route('admin.user.index') }}" class="text-[#eee] font-medium text-lg">Customer</a>
+            </li>
 
             <details class="mt-2">
                 <summary
@@ -86,11 +106,7 @@
                 </ul>
             </details>
 
-            <li
-                class="flex items-center gap-3 hover:bg-gray-700 p-2 rounded transition duration-300 mt-2 hover:border-r-8 border-yellow-500">
-                <i class="bi bi-gear text-yellow-400 text-xl"></i>
-                <a href="" class="text-[#eee] font-medium text-lg">Settings</a>
-            </li>
+           
             @php
 
             $totalContact = App\Models\Contact::where('is_read', 0)->count();
@@ -133,6 +149,15 @@
                 <a href="{{ route('youtube-videos.create') }}" class="text-[#eee] font-medium text-lg">youtubevideos</a>
             </li>
             </li>
+            <li class="flex items-center gap-3 hover:bg-gray-700 p-2 rounded transition duration-300 mt-2 hover:border-r-8 border-yellow-500">
+                <i class="bi bi-badge-ad-fill text-yellow-400 text-xl "></i>
+                <a href="{{ route('managead.index') }}" class="text-[#eee] font-medium text-lg">Manage Your Ad</a>
+            </li>
+            <li
+            class="flex items-center gap-3 hover:bg-gray-700 p-2 rounded transition duration-300 mt-2 hover:border-r-8 border-yellow-500">
+            <i class="bi bi-gear text-yellow-400 text-xl"></i>
+            <a href="" class="text-[#eee] font-medium text-lg">Settings</a>
+        </li>
             <div class="w-full mt-4 h-10 rounded-lg flex px-2 text-center">
                 <form action="{{ route('logout') }}" method="POST" class="w-full">
                     @csrf
