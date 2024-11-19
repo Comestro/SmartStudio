@@ -10,7 +10,7 @@ class AdController extends Controller
     public function index()
     {
         $data['items'] = AdInformation::all();
-        return view('admin.Ads.manageAd',$data);
+        return view('admin.Ads.manageAd', $data);
     }
 
     public function create()
@@ -28,11 +28,11 @@ class AdController extends Controller
             'price' => 'required|numeric',
         ]);
 
-        $imagePath=$request->file('image');
+        $imagePath = $request->file('image');
         $imageName = time() . '.' . $imagePath->getClientOriginalExtension();
         $imagePath->move(public_path('images/ads'), $imageName);
 
-       
+
 
         AdInformation::create([
             'image' => $imageName,
@@ -53,9 +53,9 @@ class AdController extends Controller
     // }
 
     public function edit($item)
-{
+    {
         $data['items'] = AdInformation::find($item);
-        return view('admin.Ads.editAd',$data);
+        return view('admin.Ads.editAd', $data);
     }
 
     public function update(Request $request,  $item)
@@ -67,19 +67,23 @@ class AdController extends Controller
             'status' => 'required',
             'price' => 'required|numeric',
         ]);
-        $items= AdInformation::find($item);
+        $items = AdInformation::find($item);
 
         if ($request->hasFile('image')) {
-            $imagePath = $request->file('image')->store('images', 'public');
-            $items->update(['image' => $imagePath]);
+            $imagePath = $request->file('image');
+            $imageName = time() . '.' . $imagePath->getClientOriginalExtension();
+            $imagePath->move(public_path('images/ads'), $imageName);
+            $items->update(['image' => $imageName]);
         }
 
 
-        $items->update(['title'=>$request->title,
-        'description'=>$request->description,
-        'status'=>$request->status,
-        'price'=>$request->price,
-        ]
+        $items->update(
+            [
+                'title' => $request->title,
+                'description' => $request->description,
+                'status' => $request->status,
+                'price' => $request->price,
+            ]
         );
 
         return redirect()->route('managead.index')->with('success', 'Item updated successfully.');
@@ -87,7 +91,7 @@ class AdController extends Controller
 
     public function destroy($item)
     {
-        $data['items']=AdInformation::find($item);
+        $data['items'] = AdInformation::find($item);
         $data['items']->delete();
         return redirect()->route('managead.index')->with('success', 'Item deleted successfully.');
     }
