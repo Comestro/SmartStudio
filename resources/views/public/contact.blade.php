@@ -1,4 +1,4 @@
-
+@section('title','contact')
  
   @extends('public.base')
 
@@ -22,7 +22,7 @@
       <p class="text-base md:text-lg mb-6">
         Explore the beauty captured through the lens. Dive into a world of moments and memories preserved forever.
       </p>
-      <button class="bg-yellow-500 hover:bg-blue-600 text-white px-6 py-2 rounded-lg text-lg transition-all duration-300">
+      <button class="bg-yellow-600 hover:bg-yellow-500 text-white px-6 py-2 rounded-lg text-lg transition-all duration-300">
         Contact Us
       </button>
     </div>

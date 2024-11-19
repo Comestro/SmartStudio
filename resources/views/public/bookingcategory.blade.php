@@ -14,15 +14,12 @@
                 @foreach ($bookcat as $cat)
                     <a href="{{ route('category.name', $cat->cat_name) }}"
                         class="bg-gradient-to-b from-gray-600 to-gray-800 shadow-lg rounded-lg p-4 transform hover:scale-105 transition-transform duration-300">
-                        <img src="{{ asset('images/' . $cat->cat_image) }}" alt="Category Image"
+                        <img src="{{ asset('images/category/' . $cat->cat_image) }}" alt="Category Image"
                             class="w-full h-40 object-cover rounded-md mb-4">
                         <h3 class="text-lg text-center text-yellow-400 font-semibold mb-3 capitalize">
                             {{ $cat->cat_name }}
                         </h3>
-                        <button
-                            class="bg-yellow-500 text-gray-900 font-semibold px-4 py-2 rounded-lg w-full hover:bg-yellow-600 transition duration-300">
-                            View More
-                        </button>
+                       
                     </a>
                 @endforeach
             </div>

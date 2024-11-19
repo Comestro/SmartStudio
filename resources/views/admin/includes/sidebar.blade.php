@@ -12,6 +12,14 @@
         scrollbar-width: none;
     }
 </style>
+<div class="text-center text-yellow-500 p-5  lg:hidden ">
+    <button class="" type="button" data-drawer-target="drawer-example" data-drawer-show="drawer-example" aria-controls="drawer-example">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+          </svg>
+          
+    </button>
+ </div>
 <div id="drawer-example" class="fixed top-0 left-0 z-40 h-full p-4 overflow-y-auto scrollbar-hide transition-transform -translate-x-full  w-80 bg-black dark:bg-gray-800" tabindex="-1" aria-labelledby="drawer-label">
 
     <button type="button" data-drawer-hide="drawer-example" aria-controls="drawer-example" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 absolute top-2.5 end-2.5 flex items-center justify-center dark:hover:bg-gray-600 dark:hover:text-white">
@@ -25,7 +33,7 @@
         <div class="w-full h-16 flex items-center justify-center">
             <p class="text-2xl text-yellow-400 font-bold">SMART STUDIO</p>
         </div>
-        <div class="w-full h-10 mt-6 text-base flex items-center pl-10 text-gray-500 font-semibold">
+        <div class="w-full h-10  text-base flex items-center pl-10 text-gray-500 font-semibold">
             <p>Main Menu</p>
         </div>
         <ul>
@@ -43,14 +51,31 @@
                 </summary>
                 <ul class="pl-8">
                     <li class="flex items-center gap-3 hover:bg-gray-700 p-2 rounded transition duration-300">
-                        <a href="{{ route('category') }}" class="text-yellow-400 font-medium text-md">Add Event/manage
+                        <a href="{{ route('category') }}" class="text-white font-medium text-md">Add Event/manage
                             list</a>
                     </li>
 
                 </ul>
             </details>
-
             <details class="mt-2">
+                <summary
+                    class="flex items-center gap-3 cursor-pointer hover:bg-gray-700 hover:border-r-8 border-yellow-500 p-2 rounded transition duration-300">
+                    <i class="bi bi-flag-fill text-yellow-400 text-xl"></i>
+                    <span class="text-[#eee] font-medium text-lg">Banner</span>
+                </summary>
+                <ul class="pl-8">
+                    <li class="flex items-center gap-3 hover:bg-gray-700 p-2 rounded transition duration-300 mt-2 hover:border-r-8 border-yellow-500">
+
+                        <a href="{{route('banner.create')}}" class="text-[#eee] font-medium text-lg"> Add Banner</a>
+                    </li>
+                    <li class="flex items-center gap-3 hover:bg-gray-700 p-2 rounded transition duration-300 mt-2 hover:border-r-8 border-yellow-500">
+
+                        <a href="{{route('admin.banners.index')}}" class="text-[#eee] font-medium text-lg"> Manage Banner</a>
+                    </li>
+                </ul>
+            </details>
+
+            {{-- <details class="mt-2">
                 <summary
                     class="flex items-center gap-3 cursor-pointer hover:bg-gray-700 hover:border-r-8 border-yellow-500 p-2 rounded transition duration-300">
                     <i class="bi bi-person-circle text-yellow-400 text-xl"></i>
@@ -65,13 +90,16 @@
                             Customers</a>
                     </li>
                 </ul>
-            </details>
-
+            </details> --}}
+            <li class="flex items-center gap-3 hover:bg-gray-700 p-2 rounded transition duration-300 mt-2 hover:border-r-8 border-yellow-500">
+                <i class="bi bi-person-circle text-yellow-400 text-xl"></i>
+                <a href="{{ route('admin.user.index') }}" class="text-[#eee] font-medium text-lg">Customer</a>
+            </li>
 
             <details class="mt-2">
                 <summary
                     class="flex items-center gap-3 cursor-pointer hover:bg-gray-700 hover:border-r-8 border-yellow-500 p-2 rounded transition duration-300">
-                    <i class="bi bi-person-circle text-yellow-400 text-xl"></i>
+                    <i class="bi bi-images text-yellow-400 text-xl"></i>
                     <span class="text-[#eee] font-medium text-lg">Gallery</span>
                 </summary>
                 <ul class="pl-8">
@@ -86,11 +114,7 @@
                 </ul>
             </details>
 
-            <li
-                class="flex items-center gap-3 hover:bg-gray-700 p-2 rounded transition duration-300 mt-2 hover:border-r-8 border-yellow-500">
-                <i class="bi bi-gear text-yellow-400 text-xl"></i>
-                <a href="" class="text-[#eee] font-medium text-lg">Settings</a>
-            </li>
+           
             @php
 
             $totalContact = App\Models\Contact::where('is_read', 0)->count();
@@ -133,6 +157,15 @@
                 <a href="{{ route('youtube-videos.create') }}" class="text-[#eee] font-medium text-lg">youtubevideos</a>
             </li>
             </li>
+            <li class="flex items-center gap-3 hover:bg-gray-700 p-2 rounded transition duration-300 mt-2 hover:border-r-8 border-yellow-500">
+                <i class="bi bi-badge-ad-fill text-yellow-400 text-xl "></i>
+                <a href="{{ route('managead.index') }}" class="text-[#eee] font-medium text-lg">Manage Your Ad</a>
+            </li>
+            <li
+            class="flex items-center gap-3 hover:bg-gray-700 p-2 rounded transition duration-300 mt-2 hover:border-r-8 border-yellow-500">
+            <i class="bi bi-gear text-yellow-400 text-xl"></i>
+            <a href="" class="text-[#eee] font-medium text-lg">Settings</a>
+        </li>
             <div class="w-full mt-4 h-10 rounded-lg flex px-2 text-center">
                 <form action="{{ route('logout') }}" method="POST" class="w-full">
                     @csrf

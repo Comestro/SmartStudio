@@ -1,16 +1,16 @@
 @extends('admin.adminBase')
 
 @section('content')
-<div class="w-full h-full">
-    <div class="container mx-auto p-6">
-        <div class="w-full mb-4">
-            <div class="flex flex-col sm:flex-row justify-between items-center">
-                <h2 class="text-2xl sm:text-4xl font-bold text-yellow-500">Manage Banner Page</h2>
-                {{-- <a href="" class="inline-flex items-center bg-gray-700 text-white px-6 py-3 rounded-md hover:bg-gray-800 shadow-md transition duration-200">
-                    ← Back to Banner 
-                </a> --}}
-            </div>
+<div class="container w-full ">
+
+    <div class="w-full ">
+        <div class="flex justify-between items-center   mb-4 ">
+            <h2 class="lg:text-4xl font-bold text-yellow-500">Manage Banner </h2>
+            <a href="{{ route('banner.create') }}" class="inline-flex items-center bg-gradient-to-t from-yellow-400 via-yellow-300 to-yellow-200 text-black px-6 py-3 rounded-md hover:bg-gray-800 shadow-md transition duration-200 lg:text-">
+            + Add Banner
+        </a>
         </div>
+    </div>
         <div class="w-full overflow-x-auto bg-gray-800 rounded-lg shadow-lg p-6">
             <div class="min-w-full xl:max-w-5xl mx-auto">
                 <table class="min-w-full border border-gray-200">

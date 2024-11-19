@@ -38,11 +38,11 @@
                                 <h3 class="text-lg font-semibold text-yellow-400">{{ $item->gallery_title }}</h3>
                                 <div class="flex items-center mt-2">
                                     <i class="bi bi-tag text-yellow-500 mr-2"></i>
-                                    <p class="text-gray-300">Slug: {{ $item->slug }}</p>
+                                    <p class="text-gray-300 ">Slug: {{ $item->slug }}</p>
                                 </div>
                                 <div class="flex items-center mt-2">
                                     <i class="bi bi-file-text text-yellow-500 mr-2"></i>
-                                    <p class="text-gray-300">Content: {{ $item->content }}</p>
+                                    <p class="text-gray-300 truncate">Content: {{ $item->content }}</p>
                                 </div>
                                 <div class="flex items-center mt-2">
                                     <i class="bi bi-folder text-yellow-500 mr-2"></i>

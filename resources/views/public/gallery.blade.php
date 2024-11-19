@@ -1,3 +1,4 @@
+@section('title','Gallery')
 @extends('public.base')
 
 @section('content')
@@ -48,51 +49,42 @@
     }
 </style>
 <style>
-     .carousel-item {
-      position: relative;
-      min-width: 33.33%; 
-      transition: transform 0.3s ease;
+    .carousel {
+        position: relative;
+        width: 100%;
     }
-    .carousel-item img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+
+    .carousel-track {
+        display: flex;
+        animation: auto-scroll 10s linear infinite;
     }
-    .carousel-item:focus-within .view-more-btn {
-      opacity: 1;
-    }
-    
-    .scrollbar-hide::-webkit-scrollbar {
-            display: none;
-        }
 
-
-        .scrollbar-hide {
-            scrollbar-width: none;
-        }
-        @keyframes movement {
-      0% {
-        transform: translateX(0);
-      }
-
-      50% {
-        transform: translateX(50px);
-      }
-
-      100% {
-        transform: translateX(0);
-      }
-    }
-    </style>
-<style>
     .carousel-item {
-      overflow: hidden;
+        flex-shrink: 0;
+        width: calc(100% / 3);
     }
 
-    .carousel-item img {
-      animation: movement 5s infinite;
+    @media (max-width: 1024px) {
+        .carousel-item {
+            width: calc(100% / 2); 
+        }
     }
-  </style>
+
+    @media (max-width: 640px) {
+        .carousel-item {
+            width: 100%;
+        }
+    }
+
+    @keyframes auto-scroll {
+        0% {
+            transform: translateX(0%);
+        }
+        100% {
+            transform: translateX(-100%);
+        }
+    }
+</style>
    
     <div class="h-[80vh] bg-cover bg-center"
         style="background-image: url('https://th.bing.com/th/id/OIP.01e67CZXYANik5BUvlo0YgHaEJ?w=281&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7');">
@@ -112,15 +104,14 @@
     <section id="gallery" class="py-16">
         <div class="container mx-auto px-6 lg:px-12">
             <h2 class="text-3xl font-bold text-yellow-500 text-center mb-8">Our Gallery</h2>
-
-            <!-- <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"> -->
-            <div class="carousel w-full overflow-x-scroll flex snap-x snap-mandatory gap-2 scrollbar-hide">
+            <div class="carousel w-full overflow-hidden flex gap-2 relative">
+            <div class="carousel-track flex transition-transform duration-700 ease-linear">
                 @foreach ($galleries as $item)
-                    <div class="relative group carousel-item">
+                    <div class=" carousel-item flex-shrink-0 w-1/3 sm:w-1/2 md:w-1/3 lg:w-1/4 relative group">
                         @if ($item->images->first())
                             <a href="{{ route('gallery.viewGallery', $item->id) }}">
                                 <img src="{{ asset('images/gallery/' . $item->images->first()->image_path) }}"
-                                    alt="{{ $item->gallery_title }}" class="w-full h-64 object-cover">
+                                    alt="{{ $item->gallery_title }}" class="w-full h-72 object-cover">
                             </a>
                         @else
                             <div class="w-full h-48 bg-gray-700 flex items-center justify-center text-white">No Image</div>
@@ -140,7 +131,7 @@
                         </div>
                     </div>
                     @endforeach
-</div>
+             </div>
             </div>
         </div>
     

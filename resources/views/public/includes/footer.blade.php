@@ -1,6 +1,6 @@
-<div class="flex flex-col bg-black text-white p-8 gap-6 justify-between mt-4 ">
+<div class="flex flex-col bg-black text-white p-8 gap-6 justify-between mt-4 mb-12 ">
   
-    <div class="flex flex-col md:flex-row justify-between flex-grow">
+    <div class="flex flex-col md:flex-row justify-between flex-grow ">
       
         <div class="flex flex-col items-center md:items-start md:w-1/3">
             <a href="{{route('home')}}"><img src="https://tse2.mm.bing.net/th?id=OIP.tEQ4HAiipGQ6oKYkdUGS8QHaHa&pid=Api&P=0&h=180"
@@ -27,7 +27,7 @@
 
         <!-- Contact Information Section -->
         <div class="flex flex-col items-center md:items-start md:w-1/3">
-            <h1 class="text-yellow-600 text-xl font-semibold mb-4">CONTACT</h1>
+            <h1 class="text-yellow-600 text-xl font-semibold mb-2">CONTACT</h1>
             <p class="text-sm">Phone: +91 9546784398</p>
             <p class="text-sm">Email: smartstudio@gmail.com</p>
             <div class="flex justify-center md:justify-start space-x-4 mt-4">
