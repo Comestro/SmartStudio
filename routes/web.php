@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdController;
 use App\Http\Controllers\BookingController;
 use App\Models\Gallery;
 
@@ -173,6 +174,7 @@ Route::prefix('admin')->middleware(['auth', 'admin'])->group(function () {
 
     Route::get('/users', [UserController::class, 'index'])->name('admin.user.index');
 
+    Route::resource('managead',AdController::class);
     Route::resource('youtube-videos', YoutubeVideoController::class);
     Route::post('/video/{id}/toggle-status', [YoutubeVideoController::class, 'toggleStatus'])->name('admin.video.toggleStatus');
     Route::controller(BannerController::class)->prefix('banner')->group(function () {
