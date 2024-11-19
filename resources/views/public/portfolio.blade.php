@@ -47,7 +47,7 @@
         }
 
         body {
-                background: url('./images/portfolio/background.png') repeat;
+                background: url('./images/static/background.png') repeat;
                 animation: moveBackground 30s linear infinite;
             }
 
@@ -106,7 +106,7 @@
 
         {{-- background image --}}
         <div class="w-full h-screen bg-cover bg-no-repeat relative flex items-center justify-center"
-            style="background-image: url('https://img.freepik.com/premium-photo/beautiful-fe…model-posing-studio-light-flashes_382934-4673.jpg');"
+            style="background-image: url('./images/static/studio-bg.jpg');"
             id="Home">
             <div class="absolute inset-0 bg-black opacity-60"></div>
             <div class="absolute inset-0 flex flex-col items-center justify-center text-center animate-fadeIn">
@@ -145,7 +145,7 @@
 
             <div class="lg:w-1/2 flex items-center justify-center p-4 relative">
 
-                <img src="{{asset('./images/portfolio/studio-bg.jpg')}}" alt=""
+                <img src="{{asset('./images/static/studio-bg.jpg')}}" alt=""
                     class="relative w-full h-auto border-b-8 border-r-8 border-yellow-500 max-h-[40rem] object-cover  shadow-lg">
             </div>
 
@@ -163,7 +163,7 @@
             @foreach ($categories as $item)
                 <div tabindex="0"
                     class="carousel-item snap-center h-80 sm:h-96 bg-cover bg-center relative focus:outline-none lg:min-w-[33.33%] md:min-w-[50%] min-w-full">
-                    <img src="{{ asset('images/' . $item->cat_image) }}" alt="">
+                    <img src="{{ asset('images/category/' . $item->cat_image) }}" alt="">
                     <div class="text-overlay">
                         <h2 class="text-lg font-bold uppercase">{{$item->cat_name}}</h2>
                         {{-- <p class="uppercase">Royalty / Wedding</p> --}}
@@ -183,7 +183,7 @@
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
             @if($galleryImages->count() > 0)
                 <div class="lg:col-span-2">
-                    <img src="{{ asset('images/' . $galleryImages->first()->image_path) }}" 
+                    <img src="{{ asset('images/gallery/' . $galleryImages->first()->image_path) }}" 
                          alt="{{ $galleryImages->first()->gallery->gallery_title ?? 'Gallery Image' }}" 
                          class="w-full h-full object-cover rounded-lg shadow-lg">
                 </div>
@@ -191,7 +191,7 @@
         
             @if($galleryImages->skip(1)->first())
                 <div class="lg:col-span-2 row-span-2">
-                    <img src="{{ asset('images/' . $galleryImages->skip(1)->first()->image_path) }}" 
+                    <img src="{{ asset('images/gallery/' . $galleryImages->skip(1)->first()->image_path) }}" 
                          alt="{{ $galleryImages->skip(1)->first()->gallery->gallery_title ?? 'Gallery Image' }}" 
                          class="w-full h-full object-cover rounded-lg shadow-lg">
                 </div>
@@ -211,7 +211,7 @@
         
             @foreach($galleryImages->skip(4)->take(3) as $image)
                 <div class="lg:col-span-1">
-                    <img src="{{ asset('images/' . $image->image_path) }}" 
+                    <img src="{{ asset('images/gallery/' . $image->image_path) }}" 
                          alt="{{ $image->gallery->gallery_title ?? 'Gallery Image' }}" 
                          class="w-full h-40 object-cover rounded-lg shadow-lg">
                 </div>

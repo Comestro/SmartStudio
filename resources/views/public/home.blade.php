@@ -105,7 +105,7 @@
     <div class="gallery-container px-10">
         @foreach ($categories->take(4) as $item)
         <div class="gallery-item">
-            <img src="{{ asset('images/' . $item->cat_image) }}" alt="{{ $item->cat_name }}">
+            <img src="{{ asset('images/category/' . $item->cat_image) }}" alt="{{ $item->cat_name }}">
         </div>
         @endforeach
     </div>
@@ -190,7 +190,7 @@
     @foreach ($galleries->take(2) as $item)
     <div
         class="bg-black flex items-center justify-center h-64 sm:h-80 overflow-hidden group relative rounded-lg shadow-lg">
-        <img src="{{ asset('images/' . $item->images->first()->image_path) }}"
+        <img src="{{ asset('images/gallery/' . $item->images->first()->image_path) }}"
             class="w-full h-full object-cover transform transition duration-500 group-hover:scale-110 rounded-lg"
             alt="{{ $item->gallery_title ?? 'Gallery image' }}" loading="lazy">
         <div
@@ -205,7 +205,7 @@
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 p-4 max-w-5xl">
         @foreach ($galleries->skip(2)->take(4) as $item)
         <div>
-            <img src="{{ asset('images/' . $item->images->first()->image_path) }}" class="h-64 w-full object-cover"
+            <img src="{{ asset('images/gallery/' . $item->images->first()->image_path) }}" class="h-64 w-full object-cover"
                 alt="Image 1">
         </div>
         @endforeach
@@ -216,7 +216,7 @@
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-screen-xl">
         @foreach ($galleries->skip(6)->take(3) as $item)
         <div>
-            <img src="{{ asset('images/' . $item->images->first()->image_path) }}" class="w-full h-64 object-cover"
+            <img src="{{ asset('images/gallery/' . $item->images->first()->image_path) }}" class="w-full h-64 object-cover"
                 alt="Image 1">
         </div>
         @endforeach
