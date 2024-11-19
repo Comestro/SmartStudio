@@ -332,15 +332,8 @@
 
 <a href="https://api.whatsapp.com/send?phone=+919472641988&text={{ urlencode('Hello, 
 
-I am interested in booking a photography session with your studio. Could you please let me know the availability for the following details:
-
-- Event Type: [e.g., Wedding, Portrait, Product Shoot]
-- Date: [Insert Date]
-- Time: [Insert Time]
-- Location: [Insert Location]
-
+I am interested in booking a photography session with your studio. Could you please let me know the availability.
 Looking forward to your response.
-
 Thank you!') }}"
     target="_blank"
     class="fixed md:bottom-10  bottom-20 right-2 md:right-10 z-20 group">
