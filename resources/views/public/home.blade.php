@@ -145,10 +145,9 @@
             Who We <span class="text-yellow-500">Are?</span>
         </h2>
         <p class="text-md md:text-lg text-gray-400">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque convallis,
-            augue ut imperdiet ultricies, leo mauris rhoncus. Pellentesque convallis.
+        SmartStudio: Where every moment is captured with creativity and precision. We specialize in transforming your cherished memories into timeless works of art. Experience photography that tells your unique story with style and elegance.
         </p>
-        <a href="#"
+        <a href="{{route('portfolio')}}"
             class="inline-flex items-center justify-center text-yellow-500 border border-yellow-400 px-4 py-2 md:px-6 md:py-3 rounded-lg hover:bg-yellow-500 hover:text-black transition duration-300 ease-in-out w-full md:w-auto">
             View All Services
             <i class="bi bi-arrow-right-circle-fill text-2xl ml-2"></i>
@@ -298,37 +297,38 @@
 </div>
 
 
-<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-    <div
-        class="flex flex-col items-center transform transition duration-300 hover:scale-105 hover:bg-gray-50 rounded-lg p-5 shadow-lg">
-        <img src="https://img.freepik.com/free-photo/young-beautiful-woman-portrait_23-2149263756.jpg?ga=GA1.1.1275289697.1728223870&semt=ais_hybrid"
-            alt="Professional Portraits" class="w-80 h-64 mb-4">
-        <h3 class="text-2xl font-semibold text-black mb-2">Elevate Your Portraits</h3>
-        <p class="text-gray-600 text-center mb-4">Experience the art of portrait photography, crafted to capture
-            your
-            essence and personality in every shot.</p>
-
-    </div>
-    <div
-        class="flex flex-col items-center transform transition duration-300 hover:scale-105 hover:bg-gray-50 rounded-lg p-5 shadow-lg">
-        <img src="https://img.freepik.com/free-photo/decorated-banquet-hall-with-flowers_8353-10058.jpg?ga=GA1.1.1275289697.1728223870&semt=ais_hybrid"
-            alt="Event Photography" class="w-80 h-64 mb-4">
-        <h3 class="text-2xl font-semibold text-black mb-2">Mastering Photography Art</h3>
-        <p class="text-gray-600 text-center mb-4">Capture your events with unparalleled expertise. Relive each
-            memorable moment with our professional event coverage.</p>
-
-    </div>
-    <div
-        class="flex flex-col items-center transform transition duration-300 hover:scale-105 hover:bg-gray-50 rounded-lg p-5 shadow-lg">
-        <img src="https://img.freepik.com/free-photo/immersive-experience-concept-collage_23-2149498342.jpg?ga=GA1.1.1275289697.1728223870&semt=ais_hybrid"
-            alt="Landscape & Nature" class="w-80 h-64 mb-4">
-        <h3 class="text-2xl font-semibold text-black mb-2">Capturing Moments</h3>
-        <p class="text-gray-600 text-center mb-4">Explore nature’s beauty through stunning captures of landscapes
-            and
-            outdoor scenes, designed to inspire and captivate.</p>
-
+<div class="p-4 sm:p-8 bg-gray-100">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Card 1 -->
+        <div
+            class="flex flex-col items-center transform transition duration-300 hover:scale-105 hover:bg-gray-50 rounded-lg p-5 shadow-lg">
+            <img src="https://images.unsplash.com/photo-1523712999610-f77fbcfc3843?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="Professional Portraits" class="w-full h-64 object-cover object-top rounded mb-4">
+            <h3 class="text-xl sm:text-2xl font-semibold text-black mb-2 text-center">Elevate Your Portraits</h3>
+            <p class="text-gray-600 text-center mb-4">Experience the art of portrait photography, crafted to capture
+                your essence and personality in every shot.</p>
+        </div>
+        <!-- Card 2 -->
+        <div
+            class="flex flex-col items-center transform transition duration-300 hover:scale-105 hover:bg-gray-50 rounded-lg p-5 shadow-lg">
+            <img src="https://img.freepik.com/free-photo/decorated-banquet-hall-with-flowers_8353-10058.jpg?ga=GA1.1.1275289697.1728223870&semt=ais_hybrid"
+                alt="Event Photography" class="w-full h-64 object-cover rounded mb-4">
+            <h3 class="text-xl sm:text-2xl font-semibold text-black mb-2 text-center">Mastering Photography Art</h3>
+            <p class="text-gray-600 text-center mb-4">Capture your events with unparalleled expertise. Relive each
+                memorable moment with our professional event coverage.</p>
+        </div>
+        <!-- Card 3 -->
+        <div
+            class="flex flex-col items-center transform transition duration-300 hover:scale-105 hover:bg-gray-50 rounded-lg p-5 shadow-lg">
+            <img src="https://img.freepik.com/free-photo/immersive-experience-concept-collage_23-2149498342.jpg?ga=GA1.1.1275289697.1728223870&semt=ais_hybrid"
+                alt="Landscape & Nature" class="w-full h-64 object-cover rounded mb-4">
+            <h3 class="text-xl sm:text-2xl font-semibold text-black mb-2 text-center">Capturing Moments</h3>
+            <p class="text-gray-600 text-center mb-4">Explore nature’s beauty through stunning captures of landscapes
+                and outdoor scenes, designed to inspire and captivate.</p>
+        </div>
     </div>
 </div>
+
 
 <a href="https://api.whatsapp.com/send?phone=+919472641988&text={{ urlencode('Hello,
 I am interested in booking a photography session with your studio. Could you please let me know the availability.
