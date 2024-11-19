@@ -34,6 +34,14 @@
     <livewire:public.banner.calling-banner />
 </main>
 <style>
+    .hidden {
+        display: none;
+    }
+
+    .fixed {
+        position: fixed;
+    }
+
     .gallery-container {
         display: flex;
         flex-wrap: wrap;
@@ -120,12 +128,12 @@
     <a href="{{ route('gallery') }}"
         class="bg-black text-yellow-500 px-6 py-2  hover:bg-yellow-600 transition duration-300">
         View All Services
-</a>
-<a href="{{route('gallery')}}">
-    <button class="bg-black text-yellow-500 px-3 py-1  hover:bg-yellow-600 transition duration-300">
-       <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/FAB005/long-arrow-right.png"
-       alt="long-arrow-right">
-    </button>
+    </a>
+    <a href="{{route('gallery')}}">
+        <button class="bg-black text-yellow-500 px-3 py-1  hover:bg-yellow-600 transition duration-300">
+            <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/FAB005/long-arrow-right.png"
+                alt="long-arrow-right">
+        </button>
     </a>
 </div>
 </section>
@@ -347,6 +355,23 @@ Thank you!') }}"
     </div>
 </a>
 
+<!-- Popup Container -->
+<div id="popup" class="hidden fixed inset-0 flex items-center justify-center bg-black bg-opacity-0 z-50">
+    <div class="relative bg-white rounded-lg opacity-40 shadow-lg p-6 w-96" style="opacity: 1;">
+        <!-- Cancel Button -->
+        <button id="cancel-popup" class="absolute top-2 right-2 text-gray-500 hover:text-gray-800">
+            &times;
+        </button>
+
+        <h2 class="text-xl font-bold mb-4">Welcome to Our Site!</h2>
+        <p class="mb-4">We're glad to have you here. Explore our features and offerings.</p>
+        <button id="close-popup" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
+            Close
+        </button>
+    </div>
+</div>
+
+
 
 
 <script>
@@ -370,6 +395,19 @@ Thank you!') }}"
         );
 
         observer.observe(banner);
+    });
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const popup = document.getElementById('popup');
+        const closePopup = document.getElementById('close-popup');
+
+        // Show the popup on page load
+        popup.classList.remove('hidden');
+
+        // Close the popup when the button is clicked
+        closePopup.addEventListener('click', function() {
+            popup.classList.add('hidden');
+        });
     });
 </script>
 @endsection
