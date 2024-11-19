@@ -140,7 +140,7 @@
 <section class="flex flex-col-reverse md:flex-row h-auto md:h-screen items-center justify-between bg-black mt-10">
 
 
-    <div class="md:w-1/2 w-full px-6 md:px-12 text-left  space-y-6">
+    <div class="md:w-1/2 w-full px-6 md:px-12 text-left space-y-6 py-10">
         <h2 class="text-3xl md:text-5xl font-bold uppercase text-white">
             Who We <span class="text-yellow-500">Are?</span>
         </h2>
@@ -148,7 +148,7 @@
              SmartStudio: Where every moment is captured with creativity and precision. We specialize in transforming your cherished memories into timeless works of art. Experience photography that tells your unique story with style and elegance.
         </p>
         <a href="{{route('portfolio')}}"
-            class="inline-flex items-center justify-center text-yellow-500 border border-yellow-400 px-4 py-2 md:px-6 md:py-3 rounded-lg hover:bg-yellow-500 hover:text-black transition duration-300 ease-in-out w-full md:w-auto">
+            class="inline-flex items-center justify-center text-yellow-500 border border-yellow-400 px-4 py-2 md:px-6 md:py-3 rounded-lg hover:bg-yellow-500 hover:text-black transition duration-300 ease-in-out w-full md:w-auto ">
             View All Services
             <i class="bi bi-arrow-right-circle-fill text-2xl ml-2"></i>
         </a>
