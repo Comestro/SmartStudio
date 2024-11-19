@@ -140,11 +140,11 @@
 <section class="flex flex-col-reverse md:flex-row h-auto md:h-screen items-center justify-between bg-black mt-10">
 
 
-    <div class="md:w-1/2 w-full px-6 md:px-12 text-left space-y-6">
+    <div class="md:w-1/2 w-full px-6 md:px-12 text-left  space-y-6">
         <h2 class="text-3xl md:text-5xl font-bold uppercase text-white">
             Who We <span class="text-yellow-500">Are?</span>
         </h2>
-        <p class="text-md md:text-lg text-gray-400">
+        <p class="text-md md:text-lg text-gray-400 ">
         SmartStudio: Where every moment is captured with creativity and precision. We specialize in transforming your cherished memories into timeless works of art. Experience photography that tells your unique story with style and elegance.
         </p>
         <a href="{{route('portfolio')}}"
@@ -347,7 +347,7 @@ Thank you!') }}"
 </a>
 
 <!-- Popup Container -->
-<div id="popup" class="hidden fixed inset-0 flex items-center justify-center bg-black bg-opacity-0 z-50">
+<!-- <div id="popup" class="hidden fixed inset-0 flex items-center justify-center bg-black bg-opacity-0 z-50">
     <div class="flex justify-between items-center">
         <div class="relative bg-white rounded-lg opacity-40 shadow-lg p-6 w-96" style="opacity: 1;">
             <!-- Cancel Button -->
@@ -364,7 +364,7 @@ Thank you!') }}"
 
         </div>
     </div>
-</div>
+</div> -->
 
 
 
