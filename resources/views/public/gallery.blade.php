@@ -119,7 +119,7 @@
                     <div class="relative group carousel-item">
                         @if ($item->images->first())
                             <a href="{{ route('gallery.viewGallery', $item->id) }}">
-                                <img src="{{ asset('images/' . $item->images->first()->image_path) }}"
+                                <img src="{{ asset('images/gallery/' . $item->images->first()->image_path) }}"
                                     alt="{{ $item->gallery_title }}" class="w-full h-64 object-cover">
                             </a>
                         @else
@@ -172,7 +172,7 @@
             <div class="grid grid-cols-4 gap-4">
                 @foreach ($categories as $item)
                     <div class="relative group">
-                        <img src="{{ asset('images/' . $item->cat_image) }}" alt="Gallery Image 1"
+                        <img src="{{ asset('images/category/' . $item->cat_image) }}" alt="Gallery Image 1"
                             class="w-full h-64 object-cover rounded-lg shadow-md" />
                     </div>
                 @endforeach
@@ -222,7 +222,7 @@
             <div class="gallery-container">
                 @foreach ($galleryFirst->images as $image)
                 <div class="gallery-item">
-                    <img src="{{ asset('images/' . $image->image_path) }}" alt="Gallery Image">
+                    <img src="{{ asset('images/gallery/' . $image->image_path) }}" alt="Gallery Image">
                     </div>
                 @endforeach
             </div>
@@ -255,7 +255,7 @@
         <div class="gallery-container">
             @foreach ($galleryLast->images as $image)
             <div class="gallery-item">
-                <img src="{{ asset('images/' . $image->image_path) }}" alt="Gallery Image">
+                <img src="{{ asset('images/gallery/' . $image->image_path) }}" alt="Gallery Image">
             </div>
             @endforeach
         </div>

@@ -1,9 +1,11 @@
 <?php
 
+use App\Http\Controllers\AdController;
 use App\Http\Controllers\BookingController;
 use App\Models\Gallery;
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Artisan;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\BannerController;
@@ -31,6 +33,11 @@ use function Symfony\Component\String\b;
 // Route::get('/portfolio', function () {
 //     return view('public.portfolio');
 // })->name('portfolio');
+
+Route::get("/generate/key", function(){
+    Artisan::command("key:generate");
+    return "Key generated successfully";
+});
 
 
 Route::get('/portfolio', [PortfolioController::class, 'index'])->name('portfolio');
@@ -173,6 +180,7 @@ Route::prefix('admin')->middleware(['auth', 'admin'])->group(function () {
 
     Route::get('/users', [UserController::class, 'index'])->name('admin.user.index');
 
+    Route::resource('managead',AdController::class);
     Route::resource('youtube-videos', YoutubeVideoController::class);
     Route::post('/video/{id}/toggle-status', [YoutubeVideoController::class, 'toggleStatus'])->name('admin.video.toggleStatus');
     Route::controller(BannerController::class)->prefix('banner')->group(function () {
