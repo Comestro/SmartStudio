@@ -11,7 +11,7 @@
 <body class="  bg-gradient-to-r from-yellow-500 via-yellow-300 to-black flex items-center justify-center min-h-screen">
     <div class="bg-white shadow-lg rounded-lg overflow-hidden max-w-4xl w-full flex flex-col md:flex-row">
         <div class="md:w-1/2 relative">
-            <img src="./images/user_profile.png" alt="" class="w-full h-full object-cover">
+            <img src="./images/static/user_profile.png" alt="" class="w-full h-full object-cover">
             <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-center text-white text-center p-4">
                 <h2 class="text-4xl font-bold">Smart Studio</h2>
                 <p class="mt-2 text-lg uppercase">Click for the shoot</p>
