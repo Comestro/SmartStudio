@@ -8,7 +8,7 @@
 
 
     <aside id="sidebar"
-        class="absolute top-0 left-0  w-[400px] bg-black text-white p-6 transform -translate-x-full transition-transform duration-300 z-40 shadow-lg">
+        class="absolute top-0 left-0  w-[350px] bg-black text-white p-6 transform -translate-x-full transition-transform duration-300 z-40 shadow-lg">
 
         <div class="flex flex-col items-center mb-6">
             <a href="{{route('home')}}"><img src="https://tse2.mm.bing.net/th?id=OIP.tEQ4HAiipGQ6oKYkdUGS8QHaHa&pid=Api&P=0&h=180"
@@ -35,26 +35,7 @@
             </ul>
 
             <!-- Logout Button -->
-            <div class="mt-4">
-                @auth
-                <form method="POST" action="{{ route('logout') }}">
-                    @csrf
-                    <button type="submit"
-                        class="w-full px-4 py-2 text-yellow-400 border border-yellow-400 rounded hover:bg-yellow-400 hover:text-white transition">
-                        Logout
-                    </button>
-                </form>
-                @endauth
-                @guest
-                <form action="{{ route('login') }}">
-                    @csrf
-                    <button type="submit"
-                        class="w-full px-4 py-2 text-yellow-400 border border-yellow-400 rounded hover:bg-yellow-400 hover:text-white transition">
-                        Login
-                    </button>
-                </form>
-                @endguest
-            </div>
+           
 
             <hr class="border-t border-white mt-6">
 
@@ -86,15 +67,34 @@
                         Book Now
                     </a>
                 </li>
+                <li>
+                <div class="mt-4">
+                @auth
+                <form method="POST" action="{{ route('logout') }}">
+                    @csrf
+                    <button type="submit"
+                        class="w-full px-4 py-2 text-yellow-400 border border-yellow-400 rounded hover:bg-yellow-400 hover:text-white transition">
+                        Logout
+                    </button>
+                </form>
+                @endauth
+                @guest
+                <form action="{{ route('login') }}">
+                    @csrf
+                    <button type="submit"
+                        class="w-full px-4 py-2 text-yellow-400 border border-yellow-400 rounded hover:bg-yellow-400 hover:text-white transition">
+                        Login
+                    </button>
+                </form>
+                @endguest
+            </div>
+                </li>
             </ul>
         </nav>
 
 
 
         <div class="flex flex-col items-center mt-6">
-            <img src="https://tse3.mm.bing.net/th?id=OIP.3q3KkIYCwkoXEXdh3KC3SgHaE8&pid=Api&P=0&h=180"
-                alt="Profile Picture"
-                class="rounded-full w-24 h-24 object-cover mb-4">
             <div class="flex space-x-6 text-yellow-500">
                 <i class="bi bi-facebook text-2xl"></i>
                 <i class="bi bi-twitter text-2xl"></i>
