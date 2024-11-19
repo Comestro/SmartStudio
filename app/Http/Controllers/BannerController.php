@@ -94,14 +94,14 @@ class BannerController extends Controller
     
         if ($request->hasFile('b_image')) {
             // Delete the old image if it exists
-            if (file_exists(public_path('images/' . $banner->b_image))) {
-                unlink(public_path('images/' . $banner->b_image));
+            if (file_exists(public_path('images/banner/' . $banner->b_image))) {
+                unlink(public_path('images/banner/' . $banner->b_image));
             }
     
             // Upload the new image
             $image = $request->file('b_image');
             $imageName = time() . '.' . $image->getClientOriginalExtension();
-            $image->move(public_path('images'), $imageName);
+            $image->move(public_path('images/banner'), $imageName);
     
             // Update the image name in the database
             $banner->b_image = $imageName;

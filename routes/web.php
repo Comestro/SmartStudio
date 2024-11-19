@@ -13,7 +13,7 @@ use App\Http\Controllers\BudgetController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\UserController;
-use App\Http\Controllers\contactController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PortfolioController;
 use App\Http\Controllers\YoutubeVideoController;
