@@ -69,7 +69,7 @@
             <details class="mt-2">
                 <summary
                     class="flex items-center gap-3 cursor-pointer hover:bg-gray-700 hover:border-r-8 border-yellow-500 p-2 rounded transition duration-300">
-                    <i class="bi bi-person-circle text-yellow-400 text-xl"></i>
+                    <i class="bi bi-images text-yellow-400 text-xl"></i>
                     <span class="text-[#eee] font-medium text-lg">Gallery</span>
                 </summary>
                 <ul class="pl-8">
