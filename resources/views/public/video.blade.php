@@ -29,15 +29,15 @@
                     title="YouTube video player" frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                <div class="absolute inset-0 flex items-center justify-center">
+                {{-- <div class="absolute inset-0 flex items-center justify-center">
                     <span class="text-white text-lg font-bold transition-opacity duration-300 group-hover:opacity-0">
                         {{ $item->title }}
                     </span>
-                </div>
-                <div
+                </div> --}}
+                {{-- <div
                     class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
                     <span class="text-white text-lg font-bold">{{ $item->title }}</span>
-                </div>
+                </div> --}}
             </div>
               @endforeach
 
