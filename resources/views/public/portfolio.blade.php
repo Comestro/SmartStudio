@@ -47,7 +47,7 @@
         }
 
         body {
-                background: url('./images/background.png') repeat;
+                background: url('./images/portfolio/background.png') repeat;
                 animation: moveBackground 30s linear infinite;
             }
 
@@ -145,7 +145,7 @@
 
             <div class="lg:w-1/2 flex items-center justify-center p-4 relative">
 
-                <img src="./images/studio-bg.jpg" alt=""
+                <img src="{{asset('./images/portfolio/studio-bg.jpg')}}" alt=""
                     class="relative w-full h-auto border-b-8 border-r-8 border-yellow-500 max-h-[40rem] object-cover  shadow-lg">
             </div>
 
