@@ -330,8 +330,7 @@
     </div>
 </div>
 
-<a href="https://api.whatsapp.com/send?phone=+919472641988&text={{ urlencode('Hello, 
-
+<a href="https://api.whatsapp.com/send?phone=+919472641988&text={{ urlencode('Hello,
 I am interested in booking a photography session with your studio. Could you please let me know the availability.
 Looking forward to your response.
 Thank you!') }}"
