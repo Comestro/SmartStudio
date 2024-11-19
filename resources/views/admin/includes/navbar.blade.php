@@ -1,4 +1,4 @@
-<div class="w-full h-auto bg-[#2f363e] flex flex-col md:flex-row items-center p-4">
+<div class=" lg:hidden bg-[#2f363e] flex flex-col md:flex-row items-center p-4">
     <div class="w-full md:w-1/3 h-auto flex items-center justify-center mb-2 md:mb-0">
     </div>
     <div class="w-full md:w-1/3 h-auto p-8 flex items-center justify-center">
