@@ -38,7 +38,7 @@
                     <tr class="border-t border-white hover:bg-gray-700 transition duration-300">
                         <td class="px-4 md:px-6 py-3 whitespace-nowrap">{{$item->id}}</td>
                         <td class="px-4 md:px-6 py-3 whitespace-nowrap">{{$item->title}}</td>
-                        <img src="{{ asset('images/ad/' .}$item->image} class="w-full h-48 object-cover">
+                        <img src="{{ asset('images/ad/' .$item->image)}} class="w-full h-48 object-cover">
 
                         <td class="px-4 md:px-6 py-3 whitespace-nowrap">
                             @if ($item->is_read)
