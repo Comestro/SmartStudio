@@ -59,7 +59,7 @@
              {{-- Include your sidebar here --}}
         </div>
       
-        <div class="flex-grow lg:ml-1/5 xl:ml-1/6">
+        <div class="flex-grow ">
             {{-- @include('admin.includes.navbar')  --}}
             <div class="w-full p-4">
                 @yield('content')

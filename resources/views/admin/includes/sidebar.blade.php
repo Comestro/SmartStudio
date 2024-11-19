@@ -51,7 +51,7 @@
                 </summary>
                 <ul class="pl-8">
                     <li class="flex items-center gap-3 hover:bg-gray-700 p-2 rounded transition duration-300">
-                        <a href="{{ route('category') }}" class="text-yellow-400 font-medium text-md">Add Event/manage
+                        <a href="{{ route('category') }}" class="text-white font-medium text-md">Add Event/manage
                             list</a>
                     </li>
 
