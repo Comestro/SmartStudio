@@ -25,7 +25,7 @@
             opacity: 1;
         }
 
-        /* .text-overlay {
+        .text-overlay {
                 position: absolute;
                 bottom: 0;
                 width: 100%;
@@ -33,21 +33,9 @@
                 color: white;
                 padding: 1rem;
                 text-align: center;
-            } */
+            }
 
-        .view-more-btn {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background-color: #ffffff;
-            color: #000;
-            padding: 0.5rem 1rem;
-            border-radius: 0.5rem;
-            font-weight: bold;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
+        
 
         .scrollbar-hide::-webkit-scrollbar {
             display: none;
@@ -58,10 +46,10 @@
             scrollbar-width: none;
         }
 
-        /* body {
+        body {
                 background: url('./images/background.png') repeat;
                 animation: moveBackground 30s linear infinite;
-            } */
+            }
 
         @keyframes moveBackground {
             0% {
@@ -123,9 +111,9 @@
             <div class="absolute inset-0 bg-black opacity-60"></div>
             <div class="absolute inset-0 flex flex-col items-center justify-center text-center animate-fadeIn">
                 <h1
-                    class="text-4xl md:text-5xl font-bold  bg-gradient-to-r from-white via-yellow-200 to-yellow-500  text-transparent bg-clip-text animate-gradientX drop-shadow-xl shadow-[#ffd700] duration-700 ease-in-out">
+                    class="text-4xl md:text-6xl font-extrabold  bg-gradient-to-r from-white via-yellow-200 to-yellow-500  text-transparent bg-clip-text animate-gradientX drop-shadow-xl shadow-[#ffd700] duration-700 ease-in-out">
                     Capturning Moments </h1>
-                <p class="text-lg md:text-xl mt-4 px-4 text-white">
+                <p class="text-lg md:text-xl mt-3 px-3 text-white">
                     “Turning life’s precious moments into timeless memories”
                 </p>
 
@@ -177,10 +165,10 @@
                     class="carousel-item snap-center h-80 sm:h-96 bg-cover bg-center relative focus:outline-none lg:min-w-[33.33%] md:min-w-[50%] min-w-full">
                     <img src="{{ asset('images/' . $item->cat_image) }}" alt="">
                     <div class="text-overlay">
-                        <h2 class="text-lg font-bold uppercase">Wedding</h2>
-                        <p class="uppercase">Royalty / Wedding</p>
+                        <h2 class="text-lg font-bold uppercase">{{$item->cat_name}}</h2>
+                        {{-- <p class="uppercase">Royalty / Wedding</p> --}}
                     </div>
-                    <button class="view-more-btn">View More</button>
+                    
                 </div>
             @endforeach
 

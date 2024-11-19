@@ -117,7 +117,7 @@
               <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <input type="text" name="name" placeholder="Your Name" required
                       class="w-full p-4 rounded-lg bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-yellow-500">
-                  <input type="email" name="email" placeholder="Your Email" required
+                      <input type="email" name="email" placeholder="Your Email" required
                       class="w-full p-4 rounded-lg bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-yellow-500">
                   <input type="text" name="phone_no" placeholder="Your phone_no" required
                       class="w-full p-4 rounded-lg bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-yellow-500">
