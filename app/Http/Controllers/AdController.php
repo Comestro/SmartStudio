@@ -28,10 +28,14 @@ class AdController extends Controller
             'price' => 'required|numeric',
         ]);
 
-        $imagePath = $request->file('image')->store('images', 'public');
+        $imagePath=$request->file('image');
+        $imageName = time() . '.' . $imagePath->getClientOriginalExtension();
+        $imagePath->move(public_path('images/ads'), $imageName);
+
+       
 
         AdInformation::create([
-            'image' => $imagePath,
+            'image' => $imageName,
             'title' => $request->title,
             'description' => $request->description,
             'status' => $request->status,

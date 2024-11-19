@@ -13,7 +13,7 @@
                 </a>
             </div>
         </div>
-        
+
 
         <div class="bg-gray-800 lg:p-7 p-3 rounded shadow-lg">
             <form action="{{route('managead.update',$items->id)}}" method="post" enctype="multipart/form-data" class="space-y-10">
@@ -48,9 +48,9 @@
                 </div>
                 <div>
                     <label for="image" class="block text-yellow-400 text-xl  font-medium mb-2">Ad Image</label>
-                    <input type="file" id="image" name="image" 
+                    <input type="file" id="image" name="image"
                         class="w-full px-4 py-2 border border-gray-300 text-black bg-white rounded-md shadow-sm focus:ring focus:ring-yellow-400 focus:outline-none">
-                        <img src="{{ asset('public/images/'. $items->image) }}" class="w-32 h-32" alt="">
+                    <img src="{{ asset('images/ads/'. $items->image) }}" alt="{{ $items->image }}" class="w-auto mt-2 h-32">
                     @error('image')
                     <span class="text-red-500 text-sm">{{ $message }}</span>
                     @enderror
