@@ -12,7 +12,7 @@
     @livewireStyles
 </head>
 
-<body class="bg-white min-h-screen">
+<body class="bg-white">
  <div class=" flex flex-col md:flex-row ">
         @include('public.includes.sidebar')
 
