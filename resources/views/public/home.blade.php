@@ -120,11 +120,13 @@
     <a href="{{ route('gallery') }}"
         class="bg-black text-yellow-500 px-6 py-2  hover:bg-yellow-600 transition duration-300">
         View All Services
-    </a>
+</a>
+<a href="{{route('gallery')}}">
     <button class="bg-black text-yellow-500 px-3 py-1  hover:bg-yellow-600 transition duration-300">
-        <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/FAB005/long-arrow-right.png"
-            alt="long-arrow-right" />
+       <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/FAB005/long-arrow-right.png"
+       alt="long-arrow-right">
     </button>
+    </a>
 </div>
 </section>
 
@@ -270,7 +272,7 @@
 
 
     <h1 class="text-lg md:text-xl text-yellow-500 mt-3 font-semibold">
-        SADIQUE HUSSAIN
+        SANTOSH KUMAR
     </h1>
 </div>
 
