@@ -1,4 +1,4 @@
-@section('title','SmartStudio|home')
+@section('title','SmartStudio')
 @extends('public.layout')
 
 @section('content')

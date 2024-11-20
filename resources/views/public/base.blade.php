@@ -7,6 +7,7 @@
     <title>@yield('title', 'Home Page')</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css" rel="stylesheet" />
 </head>
 
 <body class=" bg-black roboto-medium">
@@ -17,7 +18,7 @@
             <div class="flex items-center space-x-3">
                 <img src="https://th.bing.com/th?id=OIP.XfloBSB32f50RImZskOHFwHaHa&w=250&h=250" alt="Logo"
                     class="w-12 h-12 rounded-full">
-                    <a href="{{ route('home') }}"  class="text-xl font-bold">Smart studio</a>
+                <a href="{{ route('home') }}" class="text-xl font-bold">Smart studio</a>
             </div>
 
             <nav class="hidden md:flex space-x-6">
@@ -47,6 +48,7 @@
     @show
 
     @include('public.includes.footer')
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
 </body>
 
 </html>
