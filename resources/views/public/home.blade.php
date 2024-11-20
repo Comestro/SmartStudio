@@ -77,13 +77,15 @@
 
     @media (max-width: 768px) {
         .gallery-item {
-            width: 40%;
+            width: 70%;
+            height:300px;
         }
     }
 
     @media (max-width: 480px) {
         .gallery-item {
             width: 100%;
+            height: 250px;
         }
     }
 
@@ -192,7 +194,7 @@
                 </form>
 
             </div>
-        </div> -->
+        </div> 
  </div> 
 
 <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 p-6">
@@ -350,7 +352,7 @@ Thank you!') }}"
 <!-- <div id="popup" class="hidden fixed inset-0 flex items-center justify-center bg-black bg-opacity-0 z-50">
     <div class="flex justify-between items-center">
         <div class="relative bg-white rounded-lg opacity-40 shadow-lg p-6 w-96" style="opacity: 1;">
-            <!-- Cancel Button -->
+             Cancel Button -->
         <!--    <div class="flex justify-between items-center ">-->
         <!--        <h2 class="text-xl font-bold ">Welcome to Smart studio</h2>-->
         <!--        <button id="close-popup" class=" px-4 py-2 mb-2 rounded">-->
