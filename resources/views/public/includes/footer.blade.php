@@ -1,47 +1,54 @@
-<div class="flex flex-col bg-black text-white p-8 gap-6 justify-between mt-4 mb-12 ">
-  
-    <div class="flex flex-col md:flex-row justify-between flex-grow ">
-      
-        <div class="flex flex-col items-center md:items-start md:w-1/3">
-            <a href="{{route('home')}}"><img src="https://tse2.mm.bing.net/th?id=OIP.tEQ4HAiipGQ6oKYkdUGS8QHaHa&pid=Api&P=0&h=180"
-                alt="Logo" class="rounded-full w-28 h-28 object-cover mb-4"></a>
-            <p class="text-center md:text-left text-sm">
+<div class="flex flex-col bg-gradient-to-b from-gray-900 to-black text-white p-8 gap-8 mt-4">
+    <!-- Main Content Container -->
+    <div class="flex flex-col md:flex-row justify-between">
+        <!-- Logo and Description -->
+        <div class="flex flex-col items-center md:items-start md:w-1/3 text-center md:text-left space-y-4">
+            <a href="{{ route('home') }}">
+                <img src="https://tse2.mm.bing.net/th?id=OIP.tEQ4HAiipGQ6oKYkdUGS8QHaHa&pid=Api&P=0&h=180" 
+                     alt="Logo" class="rounded-full w-32 h-32 object-cover shadow-lg hover:scale-105 transition duration-300">
+            </a>
+            <p class="text-sm leading-relaxed">
                 We provide exceptional photography services that capture your moments beautifully.
             </p>
         </div>
 
-       
-        <div class="flex flex-col items-center md:w-1/3">
-            <h1 class="text-white text-xl font-semibold mb-4">INSTA GALLERY</h1>
-            <div class="grid grid-cols-2 gap-4 mt-2">
-                <img src="https://tse1.mm.bing.net/th?id=OIP.J0EyMPxp69oUBURsRtCqEwHaE7&pid=Api&P=0&h=180"
-                    alt="Image 1" class="w-24 h-24 object-cover rounded-md">
-                <img src="https://tse2.mm.bing.net/th?id=OIP.n1Ft5hFRPdgmYJQO-Fz3HgHaEK&pid=Api&P=0&h=180"
-                    alt="Image 2" class="w-24 h-24 object-cover rounded-md">
-                <img src="https://tse1.mm.bing.net/th?id=OIP.ZAzbO8SsQk5J40oI55OAIAHaE7&pid=Api&P=0&h=180"
-                    alt="Image 3" class="w-24 h-24 object-cover rounded-md">
-                <img src="https://tse2.mm.bing.net/th?id=OIP.49hIyMLKW4_HMjUK_PBZlQHaFD&pid=Api&P=0&h=180"
-                    alt="Image 4" class="w-24 h-24 object-cover rounded-md">
+        <!-- Instagram Gallery -->
+        <div class="flex flex-col items-center md:w-1/3 mt-8 text-center space-y-4">
+            <h1 class="text-yellow-500 text-xl font-semibold">Insta Gallery</h1>
+            <div class="grid grid-cols-2 md:grid-cols-4  gap-4">
+                <img src="https://tse1.mm.bing.net/th?id=OIP.J0EyMPxp69oUBURsRtCqEwHaE7&pid=Api&P=0&h=180" 
+                     alt="Image 1" class="w-24 h-24 object-cover rounded-md shadow-md hover:scale-105 transition duration-300">
+                <img src="https://tse2.mm.bing.net/th?id=OIP.n1Ft5hFRPdgmYJQO-Fz3HgHaEK&pid=Api&P=0&h=180" 
+                     alt="Image 2" class="w-24 h-24 object-cover rounded-md shadow-md hover:scale-105 transition duration-300">
+                <img src="https://tse1.mm.bing.net/th?id=OIP.ZAzbO8SsQk5J40oI55OAIAHaE7&pid=Api&P=0&h=180" 
+                     alt="Image 3" class="w-24 h-24 object-cover rounded-md shadow-md hover:scale-105 transition duration-300">
+                <img src="https://tse2.mm.bing.net/th?id=OIP.49hIyMLKW4_HMjUK_PBZlQHaFD&pid=Api&P=0&h=180" 
+                     alt="Image 4" class="w-24 h-24 object-cover rounded-md shadow-md hover:scale-105 transition duration-300">
             </div>
         </div>
 
-        <!-- Contact Information Section -->
-        <div class="flex flex-col items-center md:items-start md:w-1/3">
-            <h1 class="text-yellow-600 text-xl font-semibold mb-2">CONTACT</h1>
-            <p class="text-sm">Phone: +91 9546784398</p>
-            <p class="text-sm">Email: smartstudio@gmail.com</p>
-            <div class="flex justify-center md:justify-start space-x-4 mt-4">
-                <i class="bi bi-facebook text-2xl text-yellow-500"></i>
-                <a href="https://api.whatsapp.com/send?phone=+91-9472641988&text=Welcome To Smart Studio PURNEA, BIHAR" 
-                target="_blank"> <i class="bi bi-whatsapp text-2xl text-yellow-500"></i></a>
-               
-                <i class="bi bi-instagram text-2xl text-yellow-500"></i>
+        <!-- Contact Information -->
+        <div class="flex flex-col py-10 px-[10%] items-center md:items-start md:w-1/3 text-center md:text-left space-y-4">
+            <h1 class="text-yellow-500 text-xl font-semibold">Contact</h1>
+            <p class="text-sm">Phone: <a href="tel:+919546784398" class="hover:text-yellow-400">+91 9546784398</a></p>
+            <p class="text-sm">Email: <a href="mailto:smartstudio@gmail.com" class="hover:text-yellow-400">smartstudio@gmail.com</a></p>
+            <div class="flex space-x-4 mt-4">
+                <a href="https://facebook.com" class="text-yellow-500 hover:text-yellow-400 text-2xl">
+                    <i class="bi bi-facebook"></i>
+                </a>
+                <a href="https://api.whatsapp.com/send?phone=+91-9472641988&text=Hello,%20I%20am%20interested%20in%20booking%20a%20photography%20session.%20Could%20you%20please%20share%20the%20availability?" 
+                   target="_blank" class="text-yellow-500 hover:text-yellow-400 text-2xl">
+                    <i class="bi bi-whatsapp"></i>
+                </a>
+                <a href="https://instagram.com" class="text-yellow-500 hover:text-yellow-400 text-2xl">
+                    <i class="bi bi-instagram"></i>
+                </a>
             </div>
         </div>
     </div>
 
     <!-- Footer Section -->
-    <footer class="bg-black text-center text-white p-4 fixed bottom-0 left-0 w-full">
+    <footer class="text-center text-gray-400 border-t border-gray-700 pt-4">
         <p>&copy; 2024 Smart Studio. All Rights Reserved.</p>
     </footer>
 </div>

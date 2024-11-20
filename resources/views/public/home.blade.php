@@ -165,7 +165,7 @@
 
 
 
-<!-- <div class="bg-white py">
+ <div class="bg-white py">
 
      <div class="text-center px-6 md:px-36">
             <h1 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
@@ -193,7 +193,7 @@
 
             </div>
         </div> -->
-<!-- </div> --> 
+ </div> 
 
 <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 p-6">
     @foreach ($galleries->take(2) as $item)
@@ -351,18 +351,18 @@ Thank you!') }}"
     <div class="flex justify-between items-center">
         <div class="relative bg-white rounded-lg opacity-40 shadow-lg p-6 w-96" style="opacity: 1;">
             <!-- Cancel Button -->
-            <div class="flex justify-between items-center ">
-                <h2 class="text-xl font-bold ">Welcome to Smart studio</h2>
-                <button id="close-popup" class=" px-4 py-2 mb-2 rounded">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
-                    </svg>
+        <!--    <div class="flex justify-between items-center ">-->
+        <!--        <h2 class="text-xl font-bold ">Welcome to Smart studio</h2>-->
+        <!--        <button id="close-popup" class=" px-4 py-2 mb-2 rounded">-->
+        <!--            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5">-->
+        <!--                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />-->
+        <!--            </svg>-->
 
-            </div>
-            </button>
-            <p class="mb-4">We're glad to have you here. Explore our features and offerings.</p>
+        <!--    </div>-->
+        <!--    </button>-->
+        <!--    <p class="mb-4">We're glad to have you here. Explore our features and offerings.</p>-->
 
-        </div>
+        <!--</div>-->
     </div>
 </div> 
 

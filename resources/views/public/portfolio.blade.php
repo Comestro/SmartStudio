@@ -106,7 +106,7 @@
 
 
         {{-- background image --}}
-        <div class="w-full h-screen bg-cover bg-no-repeat relative flex items-center justify-center"
+        <div class="w-full h-screen bg-cover bg-no-repeat relative flex items-center justify-center mt-20 "
             style="background-image: url('./images/static/studio-bg.jpg');"
             id="Home">
             <div class="absolute inset-0 bg-black opacity-60"></div>
@@ -163,7 +163,7 @@
 
             @foreach ($categories as $item)
                 <div tabindex="0"
-                    class="carousel-item snap-center h-80 sm:h-96 bg-cover bg-center relative focus:outline-none lg:min-w-[33.33%] md:min-w-[50%] min-w-full">
+                    class="carousel-item snap-center h-80 sm:h-96 bg-cover bg-center relative focus:outline-none lg:min-w-[33.33%] md:min-w-[50%]  min-w-full">
                     <img src="{{ asset('images/category/' . $item->cat_image) }}" alt="">
                     <div class="text-overlay">
                         <h2 class="text-lg font-bold uppercase">{{$item->cat_name}}</h2>
@@ -178,7 +178,7 @@
         {{-- latest work --}}
         <div class="p-8 w-full md:w-1/2" id="Work">
             <h3 class="text-yellow-400 uppercase tracking-widest text-xl border-b-2 border-yellow-300 pb-2">My Work</h3>
-            <h1 class="text-4xl font-bold text-white mt-4">My Recent Work</h1>
+            <h1 class="text-4xl font-bold text-white mt-4">absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center</h1>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">

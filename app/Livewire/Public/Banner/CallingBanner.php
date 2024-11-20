@@ -32,7 +32,7 @@ class CallingBanner extends Component
     }
     public function render()
     {
-        $data['banners'] = Banner::where('status', 1)->get();
+        $data['banners'] = Banner::where('status', 1)->inRandomOrder()->limit(10)->get();
         return view('livewire.public.banner.calling-banner',$data);
     }
 }
