@@ -106,7 +106,7 @@
 
 
         {{-- background image --}}
-        <div class="w-full h-screen bg-cover bg-no-repeat relative flex items-center justify-center"
+        <div class="w-full h-screen bg-cover bg-no-repeat relative flex items-center justify-center mt-20 "
             style="background-image: url('./images/static/studio-bg.jpg');"
             id="Home">
             <div class="absolute inset-0 bg-black opacity-60"></div>
@@ -163,7 +163,7 @@
 
             @foreach ($categories as $item)
                 <div tabindex="0"
-                    class="carousel-item snap-center h-80 sm:h-96 bg-cover bg-center relative focus:outline-none lg:min-w-[33.33%] md:min-w-[50%] min-w-full">
+                    class="carousel-item snap-center h-80 sm:h-96 bg-cover bg-center relative focus:outline-none lg:min-w-[33.33%] md:min-w-[50%]  min-w-full">
                     <img src="{{ asset('images/category/' . $item->cat_image) }}" alt="">
                     <div class="text-overlay">
                         <h2 class="text-lg font-bold uppercase">{{$item->cat_name}}</h2>

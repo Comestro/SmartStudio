@@ -51,9 +51,9 @@
         </p>
       
         <div class="mt-6">
-          <button class="bg-yellow-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg text-lg font-semibold transition-all duration-300">
+         <a href="{{route('portfolio')}}"> <button class="bg-gradient-to-r from-yellow-400 via-yellow-300 to-yellow-200 text-black font-semibold hover:bg-yellow-400 px-6 py-3 rounded-lg text-lg  transition-all duration-300">
             See the Portfolio
-          </button>
+          </button></a>
         </div>
       </div>
       
