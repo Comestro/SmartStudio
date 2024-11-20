@@ -167,7 +167,7 @@
 
 
 
- <div class="bg-white py">
+ <div class="bg-white py-12">
 
      <div class="text-center px-6 md:px-36">
             <h1 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
@@ -178,7 +178,7 @@
             </p>
 
 
-            <div class="flex flex-wrap justify-center gap-8">
+            <div class="flex flex-wrap justify-center gap-4 md:gap-8">
                 <a href="/" class="text-lg text-gray-600 hover:text-yellow-500 transition">
                     All
                 </a>
