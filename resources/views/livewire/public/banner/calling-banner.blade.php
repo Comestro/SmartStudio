@@ -15,11 +15,11 @@
 
 
 
-        <div class="absolute bottom-16 left-1/2 transform -translate-x-1/2 w-full flex justify-center md:justify-end md:pr-10">
+        <div class="absolute bottom-16 left-1/2 transform -translate-x-1/2 w-full flex mb-12 justify-center md:justify-end md:pr-10">
            <div class="grid grid-cols-5 lg:grid-cols-10 gap-4 items-center" >
             @foreach ($banners as $item)
                 <img src="{{ asset('images/banner/' . $item->b_image) }}" alt=""
-                    class="rounded-full w-16 h-16 sm:w-20 sm:h-20 object-cover border-4 border-white hover:scale-105 transition-transform" wire:click="updateBackgroundImage('{{ asset('images/banner/' . $item->b_image) }}')">
+                    class="rounded-full w-12 h-12 sm:w-20 sm:h-20 object-cover border-4 border-white hover:scale-105 transition-transform" wire:click="updateBackgroundImage('{{ asset('images/banner/' . $item->b_image) }}')">
             @endforeach
             </div>
         </div>
