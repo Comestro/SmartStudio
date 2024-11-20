@@ -1,4 +1,4 @@
-<div class="flex flex-col bg-black text-white p-8 gap-6 justify-between mt-4 mb-12 ">
+<div class="flex flex-col bg-black text-white p-8 gap-6 justify-between mt-4">
   
     <div class="flex flex-col md:flex-row justify-between flex-grow ">
       
@@ -31,17 +31,17 @@
             <p class="text-sm">Phone: +91 9546784398</p>
             <p class="text-sm">Email: smartstudio@gmail.com</p>
             <div class="flex justify-center md:justify-start space-x-4 mt-4">
-                <i class="bi bi-facebook text-2xl text-yellow-500"></i>
+               <a href="https://facebook.com"><i class="bi bi-facebook text-2xl text-yellow-500"></i></a> 
                 <a href="https://api.whatsapp.com/send?phone=+91-9472641988&text=Welcome To Smart Studio PURNEA, BIHAR" 
                 target="_blank"> <i class="bi bi-whatsapp text-2xl text-yellow-500"></i></a>
                
-                <i class="bi bi-instagram text-2xl text-yellow-500"></i>
+                <a href="https://instagram.com"><i class="bi bi-instagram text-2xl text-yellow-500"></i></a>
             </div>
         </div>
     </div>
 
     <!-- Footer Section -->
-    <footer class="bg-black text-center text-white p-4 fixed bottom-0 left-0 w-full">
+    {{-- <footer class="bg-black text-center text-white p-4 fixed bottom-0 left-0 w-full">
         <p>&copy; 2024 Smart Studio. All Rights Reserved.</p>
-    </footer>
+    </footer> --}}
 </div>
