@@ -9,12 +9,12 @@
             font-style: normal;
         }
 
-        .carousel-item {
+        /* .carousel-item {
             position: relative;
             min-width: 33.33%;
-            /* Show 3 images at a time */
+            
             transition: transform 0.3s ease;
-        }
+        } */
 
         .carousel-item img {
             width: 100%;
@@ -178,10 +178,10 @@
         {{-- latest work --}}
         <div class="p-8 w-full md:w-1/2" id="Work">
             <h3 class="text-yellow-400 uppercase tracking-widest text-xl border-b-2 border-yellow-300 pb-2">My Work</h3>
-            <h1 class="text-4xl font-bold text-white mt-4">absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center</h1>
+            <h1 class="text-4xl font-bold text-white mt-4">My Recent Work</h1>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 px-4">
             @if($galleryImages->count() > 0)
                 <div class="lg:col-span-2">
                     <img src="{{ asset('images/gallery/' . $galleryImages->first()->image_path) }}" 
