@@ -13,23 +13,34 @@
 <body class=" bg-black roboto-medium">
 
 
-    <header class="bg-gray-900 text-white py-3 px-4 fixed top-0 w-full z-10 shadow-md">
-        <div class="container mx-auto flex items-center justify-between">
+    <header class="bg-gray-900 text-white  px-4 fixed top-0 w-full z-10 shadow-md">
+        <div class="container mx-auto flex items-center justify-between p-4">
+            <!-- Logo Section -->
             <div class="flex items-center space-x-3">
-                <img src="https://th.bing.com/th?id=OIP.XfloBSB32f50RImZskOHFwHaHa&w=250&h=250" alt="Logo"
-                    class="w-12 h-12 rounded-full">
-                <a href="{{ route('home') }}" class="text-xl font-bold">Smart studio</a>
+               <a href="{{ route('home') }}"><img src="https://th.bing.com/th?id=OIP.XfloBSB32f50RImZskOHFwHaHa&w=250&h=250" alt="Logo" class="w-12 h-12 rounded-full"></a> 
+                <a href="{{ route('home') }}" class="text-xl font-bold">Smart Studio</a>
             </div>
-
-            <nav class="hidden md:flex space-x-6">
+        
+            <!-- Hamburger Menu Button (Visible on small screens) -->
+            <div class="md:hidden">
+                <button id="menu-toggle" class="text-yellow-500 focus:outline-none">
+                    <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                    </svg>
+                </button>
+            </div>
+        
+            <!-- Navigation Links -->
+            <nav id="menu" class="hidden md:flex md:space-x-6">
                 <a href="{{ route('home') }}" class="text-yellow-500">Home</a>
                 <a href="{{ route('about') }}" class="hover:text-yellow-500">About</a>
                 <a href="{{ route('gallery') }}" class="hover:text-yellow-500">Gallery</a>
                 <a href="{{ route('portfolio') }}" class="hover:text-yellow-500">Portfolio</a>
                 <a href="{{ route('contact') }}" class="hover:text-yellow-500">Contact</a>
             </nav>
-
-            <div class="flex space-x-4">
+        
+            <!-- Social Icons -->
+            <div class="hidden md:flex space-x-4">
                 <a href="https://facebook.com" target="_blank" class="hover:text-blue-600">
                     <i class="bi bi-facebook text-xl"></i>
                 </a>
@@ -41,6 +52,38 @@
                 </a>
             </div>
         </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden flex flex-col space-y-4 p-4">
+            <a href="{{ route('home') }}" class="hover:text-yellow-500">Home</a>
+            <a href="{{ route('about') }}" class="hover:text-yellow-500">About</a>
+            <a href="{{ route('gallery') }}" class="hover:text-yellow-500">Gallery</a>
+            <a href="{{ route('portfolio') }}" class="hover:text-yellow-500">Portfolio</a>
+            <a href="{{ route('contact') }}" class="hover:text-yellow-500">Contact</a>
+            <div class="flex space-x-4 mt-4">
+                <a href="https://facebook.com" target="_blank" class="hover:text-blue-600">
+                    <i class="bi bi-facebook text-xl"></i>
+                </a>
+                <a href="https://instagram.com" target="_blank" class="hover:text-pink-500">
+                    <i class="bi bi-instagram text-xl"></i>
+                </a>
+                <a href="https://twitter.com" target="_blank" class="hover:text-blue-400">
+                    <i class="bi bi-twitter text-xl"></i>
+                </a>
+            </div>
+        </div>
+        
+        <!-- Script to Toggle Menu -->
+        <script>
+            const menuToggle = document.getElementById('menu-toggle');
+            const menu = document.getElementById('menu');
+            const mobileMenu = document.getElementById('mobile-menu');
+        
+            menuToggle.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        </script>
+        
     </header>
 
     @section('content')
