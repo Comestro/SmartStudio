@@ -56,7 +56,7 @@
 
     .carousel-track {
         display: flex;
-        animation: auto-scroll 10s linear infinite;
+        animation: auto-scroll 5s linear infinite;
     }
 
     .carousel-item {
@@ -81,15 +81,15 @@
             transform: translateX(0%);
         }
         100% {
-            transform: translateX(-100%);
+            transform: translateX(-50%);
         }
     }
 </style>
    
-    <div class="h-[80vh] bg-cover bg-center"
+    <div class=" relative h-[80vh] bg-cover bg-center"
         style="background-image: url('https://th.bing.com/th/id/OIP.01e67CZXYANik5BUvlo0YgHaEJ?w=281&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7');">
-        <div class="absolute inset-0 flex flex-col items-center justify-center text-center">
-            <h1 class="text-4xl md:text-5xl font-bold text-white">Capturning Your Most Presious <span
+        <div class="absolute inset-0 flex flex-col items-center justify-center text-center px-4">
+            <h1 class="text-3xl md:text-5xl font-bold text-white">Capturning Your Most Presious <span
                     class="text-yellow-600">Moments</span></h1>
             <p class="text-lg md:text-xl mt-4 px-4 text-white">
                 Are you planning a special event ?<br> We will make it a part of the history.
@@ -131,6 +131,27 @@
                         </div>
                     </div>
                     @endforeach
+                    @foreach ($galleries as $item)
+                    <div class="carousel-item flex-shrink-0 w-1/3 sm:w-1/2 md:w-1/3 lg:w-1/4 relative group">
+                        @if ($item->images->first())
+                            <a href="{{ route('gallery.viewGallery', $item->id) }}">
+                                <img src="{{ asset('images/gallery/' . $item->images->first()->image_path) }}"
+                                    alt="{{ $item->gallery_title }}" class="w-full h-72 object-cover">
+                            </a>
+                        @else
+                            <div class="w-full h-48 bg-gray-700 flex items-center justify-center text-white">No Image</div>
+                        @endif
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <span class="text-white text-lg font-bold transition-opacity duration-300 group-hover:opacity-0">
+                                {{ $item->gallery_title }}
+                            </span>
+                        </div>
+                        <div
+                            class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+                            <span class="text-white text-lg font-bold">{{ $item->category->cat_name }}</span>
+                        </div>
+                    </div>
+                @endforeach
              </div>
             </div>
         </div>
