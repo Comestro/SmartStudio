@@ -2,6 +2,10 @@
 
 @section('content')
 
+@section('meta_description')
+Smart Studio offers professional photography services, including portraits, weddings, and events. Explore our gallery to find the perfect shot for your memories.
+@endsection
+
 <style>
     html {
       scroll-behavior: smooth;

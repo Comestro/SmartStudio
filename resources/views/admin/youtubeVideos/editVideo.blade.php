@@ -1,6 +1,11 @@
 @extends('admin.adminBase')
 
 @section('content')
+@if(session('msg'))
+<div class="mt-4 p-4 bg-green-100 text-green-700 rounded-md">
+    {{ session('msg') }}
+</div>
+@endif
 
 <div class="w-full md:w-3/6 mx-auto">
     <h1 class="text-3xl font-bold text-yellow-500 mb-6 text-center">Edit Your Video</h1>

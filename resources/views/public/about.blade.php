@@ -2,6 +2,10 @@
 
   @extends('public.base')
 
+  @section('meta_description')
+  Smart Studio offers professional photography services, including portraits, weddings, and events. Explore our gallery to find the perfect shot for your memories. 
+  @endsection
+
 @section('content')
   <style>
     @keyframes fadeIn {

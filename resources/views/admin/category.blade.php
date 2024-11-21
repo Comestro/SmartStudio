@@ -14,6 +14,11 @@
             scrollbar-width: none;
         }
 </style>
+@if(session('msg'))
+<div class="mt-4 p-4 bg-green-100 text-green-700 rounded-md">
+    {{ session('msg') }}
+</div>
+@endif
 <div class="flex justify-center items-center p-6">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 w-full max-w-6xl">
 

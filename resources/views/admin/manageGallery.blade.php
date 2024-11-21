@@ -1,16 +1,14 @@
 @extends('admin.adminBase')
 
 @section('content')
-<div class="w-full h-auto m-0 p-0 ">
-    {{-- nav --}}
-   
-
-    {{-- Dashboard --}}
-    @if(session('msg'))
+@if(session('msg'))
     <div class="mt-4 p-4 bg-green-100 text-green-700 rounded-md">
         {{ session('msg') }}
     </div>
     @endif
+<div class="w-full h-auto m-0 p-0 ">
+    
+    
     
     <div class="flex justify-center items-center ">
 

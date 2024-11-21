@@ -1,6 +1,11 @@
 @extends('admin.adminBase')
 
 @section('content')
+@if(session('msg'))
+<div class="mt-4 p-4 bg-green-100 text-green-700 rounded-md">
+    {{ session('msg') }}
+</div>
+@endif
 <div class="w-full h-auto">
    
     <div class="container mx-auto p-1 lg:w-3/4">

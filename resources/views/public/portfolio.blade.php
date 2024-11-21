@@ -1,6 +1,9 @@
 @section('title', 'Portfolio')
 @extends('public.base')
 
+@section('meta_description')
+Explore the comprehensive portfolio of Smart Studio.Our work includes portraits, events and commercial photography.See our artistry in action.
+@endsection
 @section('content')
     <style>
         .roboto-medium {

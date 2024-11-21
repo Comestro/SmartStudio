@@ -1,4 +1,11 @@
+@section('title','Video')
 @extends('public.base')
+
+
+@section('meta_description')
+
+Experience the dynamic world of Smart Studio through our video. Watch our cinematic projects and see our storytelling in action.
+@endsection
 
 @section('content')
     <div class="relative h-[120vh]">
