@@ -77,13 +77,15 @@
 
     @media (max-width: 768px) {
         .gallery-item {
-            width: 40%;
+            width: 70%;
+            height:300px;
         }
     }
 
     @media (max-width: 480px) {
         .gallery-item {
             width: 100%;
+            height:250px;
         }
     }
 
@@ -165,7 +167,7 @@
 
 
 
- <div class="bg-white py">
+ <div class="bg-white py-12">
 
      <div class="text-center px-6 md:px-36">
             <h1 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
@@ -176,7 +178,7 @@
             </p>
 
 
-            <div class="flex flex-wrap justify-center gap-8">
+            <div class="flex flex-wrap justify-center gap-4 md:gap-8">
                 <a href="/" class="text-lg text-gray-600 hover:text-yellow-500 transition">
                     All
                 </a>
@@ -192,7 +194,7 @@
                 </form>
 
             </div>
-        </div> -->
+        </div> 
  </div> 
 
 <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 p-6">
@@ -350,7 +352,7 @@ Thank you!') }}"
 <!-- <div id="popup" class="hidden fixed inset-0 flex items-center justify-center bg-black bg-opacity-0 z-50">
     <div class="flex justify-between items-center">
         <div class="relative bg-white rounded-lg opacity-40 shadow-lg p-6 w-96" style="opacity: 1;">
-            <!-- Cancel Button -->
+             Cancel Button -->
         <!--    <div class="flex justify-between items-center ">-->
         <!--        <h2 class="text-xl font-bold ">Welcome to Smart studio</h2>-->
         <!--        <button id="close-popup" class=" px-4 py-2 mb-2 rounded">-->

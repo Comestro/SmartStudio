@@ -99,7 +99,7 @@ Explore the stunning gallery at Smart Studio. Our collection features breathtaki
                 Are you planning a special event ?<br> We will make it a part of the history.
             </p>
             <a href=""
-                class="mt-6 bg-yellow-500 text-black font-semibold py-2 px-4 rounded hover:bg-yellow-400 transition">
+                class="mt-6 bg-gradient-to-r from-yellow-400 via-yellow-300 to-yellow-200 text-black font-semibold py-2 px-4 rounded hover:bg-yellow-700 transition">
                 Explore Gallery
             </a>
         </div>
@@ -192,40 +192,7 @@ Explore the stunning gallery at Smart Studio. Our collection features breathtaki
                             class="w-full h-64 object-cover rounded-lg shadow-md" />
                     </div>
                 @endforeach
-
-
-                {{-- <div class="relative group">
-                    <img src="https://tse1.mm.bing.net/th?id=OIP.BtNI9puHmT5TFEec4PKB4AHaE6&pid=Api&P=0&h=180"
-                        alt="Gallery Image 2" class="w-full h-24 object-cover rounded-lg shadow-md" />
-                </div>
-
-                <div class="relative group">
-                    <img src="https://tse4.mm.bing.net/th?id=OIP.0_DkvHUdMfsJHif_IL9NpQHaFj&pid=Api&P=0&h=180"
-                        alt="Gallery Image 3" class="w-full h-24 object-cover rounded-lg shadow-md" />
-                </div>
-
-                <div class="relative group">
-                    <img src="https://tse1.mm.bing.net/th?id=OIP.vA1AyyXVZGakpvyE2s8c6AHaEo&pid=Api&P=0&h=180"
-                        alt="Gallery Image 4" class="w-full h-24 object-cover rounded-lg shadow-md" />
-                </div> --}}
             </div>
-
-
-            <!-- <button
-                class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-yellow-500 text-white p-2 rounded-full shadow-lg hover:bg-yellow-600 transition">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
-                    stroke="currentColor" stroke-width="2">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
-                </svg>
-            </button>
-
-            <button
-                class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-yellow-500 text-white p-2 rounded-full shadow-lg hover:bg-yellow-600 transition">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
-                    stroke="currentColor" stroke-width="2">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
-                </svg>
-            </button> -->
         </div>
     </section>
 
@@ -257,7 +224,7 @@ Explore the stunning gallery at Smart Studio. Our collection features breathtaki
                 forever.
             </p>
             <button
-                class="bg-yellow-500 hover:bg-blue-600 text-white px-6 py-2 rounded-lg text-lg transition-all duration-300">
+                class="bg-gradient-to-r from-yellow-400 via-yellow-300 to-yellow-200 text-black font-semibold  text-white px-6 py-2 rounded-lg text-lg transition-all duration-300">
                 Get in Touch
             </button>
         </div>

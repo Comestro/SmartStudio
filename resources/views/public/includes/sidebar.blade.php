@@ -10,14 +10,14 @@
     <aside id="sidebar"
         class="absolute top-0 left-0 h-screen w-[300px] sm:w-[350px] bg-black text-white p-6 transform -translate-x-full transition-transform duration-300 z-40 shadow-lg">
 
-        <div class="flex flex-col items-center mb-6">
+        <div class="flex flex-col items-center mb-2">
             <a href="{{route('home')}}"><img src="https://tse2.mm.bing.net/th?id=OIP.tEQ4HAiipGQ6oKYkdUGS8QHaHa&pid=Api&P=0&h=180"
                 alt="Logo"
                 class="rounded-full w-24 h-24 object-cover mb-4"></a>
 
         </div>
 
-        <div class="flex justify-between items-center w-full mb-4">
+        <div class="flex justify-between items-center w-full mb-2">
             <a href="{{route('home')}}" class="text-lg text-yellow-400">Home</a>
             @if(Auth::check())
             <span class="text-yellow-400 font-semibold">{{ Auth::user()->name }}</span>
@@ -26,7 +26,7 @@
         </div>
         
 
-        <nav class="flex-1 space-y-4">
+        <nav class="flex-1 space-y-1">
             <ul class="space-y-3">
                 <li><a href="{{ route('gallery') }}" class="text-lg text-yellow-400 hover:text-gray-300">Gallery Albums</a></li>
                 {{-- <li><a href="#" class="text-lg hover:text-gray-300">Background Images</a></li> --}}
@@ -62,13 +62,14 @@
                     <a href="{{ route('budget.index') }}" class="text-lg hover:text-yellow-500">Budget For Your Event</a>
                     <i class="bi bi-caret-left-fill text-2xl"></i>
                 </li>
-                <li>
+                </ul>
+                <div class="mt-4">
                     <a href="{{ route('category.view') }}"
                         class="block text-center text-yellow-400 border border-yellow-400 px-4 py-2 rounded hover:bg-yellow-400 hover:text-white transition">
                         Book Now
                     </a>
-                </li>
-                <li>
+                </div>
+               
                 <div class="mt-4">
                 @auth
                 <form method="POST" action="{{ route('logout') }}">
@@ -89,19 +90,19 @@
                 </form>
                 @endguest
             </div>
-                </li>
-            </ul>
-        </nav>
-
-
-
-        <div class="flex flex-col items-center mt-6">
+            <div class="flex flex-col items-center mt-6">
             <div class="flex space-x-6 text-yellow-500">
                 <i class="bi bi-facebook text-2xl"></i>
                 <i class="bi bi-twitter text-2xl"></i>
                 <i class="bi bi-instagram text-2xl"></i>
             </div>
-        </div>
+        </div>  
+           
+        </nav>
+
+
+
+       
     </aside>
 </div>
 
@@ -114,4 +115,4 @@
             sidebar.classList.toggle('-translate-x-full');
         });
     });
-</script>
+</script> 
