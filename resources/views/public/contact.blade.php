@@ -17,16 +17,17 @@
   </style>
   <div class="h-96 bg-cover bg-center flex items-center justify-center text-white px-4 animate-fadeIn"
        style="background-image: url('https://img.freepik.com/premium-photo/beautiful-female-model-posing-studio-light-flashes_382934-4673.jpg');">
-    <div class="text-center bg-black bg-opacity-50 p-8 rounded-lg max-w-xl w-full mt-5">
+    <div class="text-center bg-black bg-opacity-50 p-8 rounded-lg max-w-xl w-full mt-10">
       <h1 class="text-3xl md:text-4xl font-bold mb-4">Hello, I am the <span class="text-yellow-500">Photographer</span></h1>
       <p class="text-base md:text-lg mb-6">
         Explore the beauty captured through the lens. Dive into a world of moments and memories preserved forever.
       </p>
-      <button class="bg-yellow-600 hover:bg-yellow-500 text-white px-6 py-2 rounded-lg text-lg transition-all duration-300">
+      <button class="bg-gradient-to-r from-yellow-400 via-yellow-300 to-yellow-200 text-black font-semibold text-white px-6 py-2 rounded-lg text-lg transition-all duration-300">
         Contact Us
       </button>
     </div>
   </div>
+  
 
   <section class="text-center py-16 px-4 bg-black animate-fadeIn">
     <h2 class="text-3xl font-bold text-yellow-500 mb-4">Find Here</h2>

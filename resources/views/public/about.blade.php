@@ -19,7 +19,7 @@
       <p class="text-base md:text-lg mb-6">
         Explore the beauty captured through the lens. Dive into a world of moments and memories preserved forever.
       </p>
-      <a href="{{route('contact')}}" class="bg-yellow-600 hover:bg-yellow-500 text-white px-6 py-2 rounded-lg text-lg transition-all duration-300">
+      <a href="{{route('contact')}}" class="bg-gradient-to-r from-yellow-400 via-yellow-300 to-yellow-200 text-black font-semibold px-6 py-2 rounded-lg text-lg transition-all duration-300">
         Get in Touch
       </a>
     </div>
