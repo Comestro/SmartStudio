@@ -1,3 +1,4 @@
+@section('title','Booking')
 @extends('public.layout')
 
 @section('content')

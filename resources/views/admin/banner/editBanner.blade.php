@@ -1,12 +1,13 @@
 @extends('admin.adminBase')
 
 @section('content')
-<div class="w-full h-auto">
-    @if(session('msg'))
-    <div class="mt-4 p-4 bg-green-100 text-green-700 rounded-md">
-        {{ session('msg') }}
-    </div>
+@if(session('msg'))
+<div class="mt-4 p-4 bg-green-100 text-green-700 rounded-md">
+    {{ session('msg') }}
+</div>
 @endif
+<div class="w-full h-auto">
+   
     <div class="container mx-auto p-6">
 
         <div class="w-full mb-2 ">

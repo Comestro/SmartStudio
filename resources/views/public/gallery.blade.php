@@ -1,6 +1,10 @@
 @section('title','Gallery')
 @extends('public.base')
 
+@section('meta_description')
+Explore the stunning gallery at Smart Studio. Our collection features breathtaking portraits, landscapes, and event photography. Dive into our visual world now.
+@endsection
+
 @section('content')
 <style>
     .gallery-container {

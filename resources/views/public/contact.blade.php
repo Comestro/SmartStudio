@@ -2,6 +2,10 @@
  
   @extends('public.base')
 
+  @section('meta_description')
+  Get in touch with Smart Studio. We're here to answer your questions, discuss your photography needs, and book your next session. Contact us today.
+  @endsection
+  
 @section('content')
   
   <style>

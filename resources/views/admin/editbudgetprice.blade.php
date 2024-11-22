@@ -9,7 +9,7 @@
                 @csrf
                 @method('PUT')
                 <div class="mb-4">
-                    <label for="cam_category" class="text-gray-400 block mb-2">Category for Budget</label>
+                    <label for="cam_category" class="text-yellow-500 block mb-2">Category for Budget</label>
                     <select name="cam_category" id="cam_category" class="w-full p-3 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500">
                         <option value="null" class="text-gray-500">{{$editId->cam_category}}</option>
                         @foreach ($category as $cat)
@@ -21,7 +21,7 @@
                     <label for="cam_price" class="text-gray-400 block mb-2">Price</label>
                     <input type="number" name="cam_price" id="cam_price" placeholder="Enter the Price" value="{{$editId->cam_price}}" class="w-full p-3 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 placeholder-gray-500">
                 </div>
-                <button type="submit" class="w-full py-3 bg-indigo-600 rounded-lg text-gray-200 hover:bg-indigo-500 transition duration-300">Submit</button>
+                <button type="submit" class="w-full bg-gradient-to-r from-yellow-400 via-yellow-300 to-yellow-200 text-black font-semibold py-3 rounded-lg hover:bg-yellow-400 transition duration-300">Submit</button>
             </form>
         </div>
     </div>

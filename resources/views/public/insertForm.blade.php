@@ -1,5 +1,5 @@
 
-
+@section('title','Booking')
 @extends('public.base')
 
 @section('content')

@@ -12,6 +12,7 @@
            scrollbar-width: none;
        }
 </style>
+
 <div class="w-full h-auto  ">
    
     <div class="container mx-auto px-4 ">

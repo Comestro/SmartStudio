@@ -1,6 +1,5 @@
 @extends('admin.adminBase')
 
-
 @section('content')
 <div class="w-full h-auto ">
    
@@ -28,12 +27,6 @@
         </div>
     </div>
 
- 
-
-
-
-    
-    
 </div>
 
 
