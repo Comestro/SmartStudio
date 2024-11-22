@@ -5,46 +5,64 @@
 <style>
     .gallery-container {
         display: flex;
-        flex-wrap: wrap;
         gap: 20px;
-        justify-content: center;
+        overflow-x: auto; 
+        padding-bottom: 10px;
+        scrollbar-width: thin;
+        scrollbar-color: #ccc transparent; 
+    }
+
+    .gallery-container::-webkit-scrollbar {
+        height: 8px;
+    }
+
+    .gallery-container::-webkit-scrollbar-thumb {
+        background-color: #ccc;
+        border-radius: 4px;
     }
 
     .gallery-item {
-        flex: 1 1 calc(33.33% - 20px); 
-        max-width: calc(33.33% - 20px);
-        height: 400px;
+        flex: 0 0 calc(25% - 20px); 
+        max-width: calc(25% - 20px);
+        height: 300px;
         overflow: hidden;
         border-radius: 10px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        transition: transform 0.3s ease;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        transition: flex 0.3s ease, transform 0.3s ease;
     }
 
     .gallery-item img {
         width: 100%;
         height: 100%;
         object-fit: cover;
-        transition: all 0.3s ease;
+        transition: transform 0.3s ease;
     }
 
     .gallery-item:hover {
-        flex:4;
+        flex: 0 0 calc(50% - 20px); 
+        transform: scale(1.05);
+        z-index: 2;
     }
 
     @media (max-width: 768px) {
         .gallery-item {
-            flex: 1 1 calc(50% - 20px); 
+            flex: 0 0 calc(50% - 20px); 
             max-width: calc(50% - 20px);
+        }
+
+        .gallery-item:hover {
+            flex: 0 0 calc(75% - 20px); 
         }
     }
 
     @media (max-width: 480px) {
         .gallery-item {
-            flex: 1 1 100%; 
+            flex: 0 0 100%;
             max-width: 100%;
+        }
+
+        .gallery-item:hover {
+            flex: 0 0 100%; 
         }
     }
 </style>
@@ -210,6 +228,8 @@
     </div>
 </section>
 
+
+
     <div class="h-[80vh] bg-cover bg-center flex items-center justify-center text-white px-4"
         style="background-image: url('https://th.bing.com/th/id/OIP.NZ4lkEUp3MGsz0TRDxdPmgHaEl?w=311&h=193&c=7&r=0&o=5&dpr=1.3&pid=1.7');">
 
@@ -241,6 +261,8 @@
         @endif
     </div>
 </section>
+
+
 
 
 @endsection
