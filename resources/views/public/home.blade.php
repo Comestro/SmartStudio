@@ -113,12 +113,12 @@
             }
         }
 
-    @media (max-width: 480px) {
-        .gallery-item {
-            width: 100%;
-            height:250px;
+        @media (max-width: 480px) {
+            .gallery-item {
+                width: 100%;
+                height: 250px;
+            }
         }
-    }
 
         header {
             transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
@@ -153,7 +153,7 @@
     </section>
 
 
-    
+
     {{-- view button --}}
 
 
@@ -200,7 +200,7 @@
 
 
 
-      <div class="bg-white py-12">
+    <div class="bg-white py-12">
 
         <div class="text-center px-6 md:px-36">
             <h1 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
@@ -228,10 +228,10 @@
 
             </div>
         </div>
-    </div>  
-    
+    </div>
 
-   
+
+
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 p-6">
         @foreach ($galleries->take(2) as $item)
             <div
@@ -268,14 +268,14 @@
         </div>
     </div>
 
-    
+
     {{-- style="background-image: url('https://tse2.mm.bing.net/th?id=OIP.jt6i4yeTO_zMnivpc9nqXQHaEJ&pid=Api&P=0&h=180');"> --}}
 
 
-   
 
 
-    
+
+
     <div class="w-full h-auto bg-cover bg-center relative mt-10 flex flex-col justify-center items-center text-center py-8 md:py-10"
         style="background-image: url('https://tse2.mm.bing.net/th?id=OIP.jt6i4yeTO_zMnivpc9nqXQHaEJ&pid=Api&P=0&h=180');">
         <div class="mb-4">
@@ -363,9 +363,9 @@
 
 
     <a href="https://api.whatsapp.com/send?phone=+919472641988&text={{ urlencode('Hello,
-    I am interested in booking a photography session with your studio. Could you please let me know the availability.
-    Looking forward to your response.
-    Thank you!') }}"
+        I am interested in booking a photography session with your studio. Could you please let me know the availability.
+        Looking forward to your response.
+        Thank you!') }}"
         target="_blank" class="fixed md:bottom-10  bottom-20 right-2 md:right-10 z-20 group">
         <div
             class="flex items-center bg-green-500 rounded-full p-2 shadow-lg text-white hover:bg-green-600 transition-all duration-300">
@@ -382,9 +382,9 @@
 
     <!-- Popup Container -->
     <!-- <div id="popup" class="hidden fixed inset-0 flex items-center justify-center bg-black bg-opacity-0 z-50">
-        <div class="flex justify-between items-center">
-            <div class="relative bg-white rounded-lg opacity-40 shadow-lg p-6 w-96" style="opacity: 1;">
-                 Cancel Button -->
+            <div class="flex justify-between items-center">
+                <div class="relative bg-white rounded-lg opacity-40 shadow-lg p-6 w-96" style="opacity: 1;">
+                     Cancel Button -->
     <!--    <div class="flex justify-between items-center ">-->
     <!--        <h2 class="text-xl font-bold ">Welcome to Smart studio</h2>-->
     <!--        <button id="close-popup" class=" px-4 py-2 mb-2 rounded">-->
@@ -404,38 +404,37 @@
 
 
     <script>
+        const carousel = document.querySelector('.scrollable-carousel');
+        if (carousel) {
+            let isDown = false;
+            let startX;
+            let scrollLeft;
 
-const carousel = document.querySelector('.scrollable-carousel');
-if (carousel) {
-    let isDown = false;
-    let startX;
-    let scrollLeft;
+            carousel.addEventListener('mousedown', (e) => {
+                isDown = true;
+                carousel.classList.add('active');
+                startX = e.pageX - carousel.offsetLeft;
+                scrollLeft = carousel.scrollLeft;
+            });
 
-    carousel.addEventListener('mousedown', (e) => {
-        isDown = true;
-        carousel.classList.add('active');
-        startX = e.pageX - carousel.offsetLeft;
-        scrollLeft = carousel.scrollLeft;
-    });
+            carousel.addEventListener('mouseleave', () => {
+                isDown = false;
+                carousel.classList.remove('active');
+            });
 
-    carousel.addEventListener('mouseleave', () => {
-        isDown = false;
-        carousel.classList.remove('active');
-    });
+            carousel.addEventListener('mouseup', () => {
+                isDown = false;
+                carousel.classList.remove('active');
+            });
 
-    carousel.addEventListener('mouseup', () => {
-        isDown = false;
-        carousel.classList.remove('active');
-    });
-
-    carousel.addEventListener('mousemove', (e) => {
-        if (!isDown) return;
-        e.preventDefault();
-        const x = e.pageX - carousel.offsetLeft;
-        const walk = (x - startX) * 3; // Scroll speed factor
-        carousel.scrollLeft = scrollLeft - walk;
-    });
-}
+            carousel.addEventListener('mousemove', (e) => {
+                if (!isDown) return;
+                e.preventDefault();
+                const x = e.pageX - carousel.offsetLeft;
+                const walk = (x - startX) * 3; // Scroll speed factor
+                carousel.scrollLeft = scrollLeft - walk;
+            });
+        }
 
         document.addEventListener("DOMContentLoaded", () => {
             const header = document.querySelector("header");
