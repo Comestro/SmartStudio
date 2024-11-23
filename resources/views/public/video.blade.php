@@ -18,7 +18,7 @@ Experience the dynamic world of Smart Studio through our video. Watch our cinema
             <p class="text-lg md:text-xl mt-4 px-4 text-white">Are you planning a special event? <br> We will make it a part
                 of the history.</p>
             <a href="https://www.youtube.com/@smartstudiopurnea"
-                class="mt-6 bg-yellow-500 text-black font-semibold py-2 px-4 rounded hover:bg-yellow-400 transition">Explore
+                class="mt-6 bg-gradient-to-l from-yellow-500 to-white hover:bg-gradient-to-r text-black font-semibold py-2 px-4 rounded  transition">Explore
                 Video</a>
         </div>
     </div>
@@ -60,8 +60,8 @@ Experience the dynamic world of Smart Studio through our video. Watch our cinema
             <h2 class="text-3xl font-bold mb-4 text-yellow-500">Why Choose Us?</h2>
             <p class="text-lg mb-6">Years of experience and a unique perspective!</p>
             <a href="https://www.youtube.com/@smartstudiopurnea"
-                class="bg-yellow-500 text-black py-2 px-4 rounded font-semibold hover:bg-yellow-400 transition inline-flex items-center">
-                <i class="bi bi-youtube"></i> Youtube chanel
+                class="bg-gradient-to-l from-yellow-500 to-white hover:bg-gradient-to-r text-black py-2 px-4 rounded font-semibold  transition inline-flex items-center">
+                <i class="bi bi-youtube px-2"></i>  Youtube channel
             </a>
         </div>
     </section>

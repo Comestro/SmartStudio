@@ -19,7 +19,7 @@
       animation-delay: 0.5s; 
     }
   </style>
-  <div class="h-96 bg-cover bg-center flex items-center justify-center text-white px-4 animate-fadeIn"
+  <div class="h-96 bg-cover bg-center flex items-center justify-center text-white px-4 mt-12 animate-fadeIn"
        style="background-image: url('https://img.freepik.com/premium-photo/beautiful-female-model-posing-studio-light-flashes_382934-4673.jpg');">
     <div class="text-center bg-black bg-opacity-50 p-8 rounded-lg max-w-xl w-full mt-10">
       <h1 class="text-3xl md:text-4xl font-bold mb-4">Hello, I am the <span class="text-yellow-500">Photographer</span></h1>
@@ -132,7 +132,7 @@
               <textarea placeholder="Write your message here" name="message" rows="5"  required
                   class="w-full p-4 rounded-lg bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-yellow-500"></textarea>
               <button type="submit"
-                  class="w-full py-4 bg-gradient-to-r from-yellow-500 to-white font-semibold rounded-lg text-black">Submit
+                  class="w-full py-4 bg-gradient-to-r from-yellow-500 to-white hover:bg-gradient-to-l font-semibold rounded-lg text-black">Submit
                   Now</button>
           </form>
       </div>

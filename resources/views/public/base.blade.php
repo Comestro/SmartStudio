@@ -17,7 +17,7 @@
 <body class=" bg-black roboto-medium">
 
 
-    <header class="bg-gray-900 text-white  px-4 fixed top-0 w-full z-10 shadow-md">
+    <header class="bg-gradient-to-b from-gray-900 to-black shadow-md text-white px-4 fixed top-0 w-full z-10 ">
         <div class="container mx-auto flex items-center justify-between p-4">
             <!-- Logo Section -->
             <div class="flex items-center space-x-3">
@@ -35,7 +35,7 @@
             </div>
         
             <!-- Navigation Links -->
-            <nav id="menu" class="hidden md:flex md:space-x-6">
+            <nav id="menu" class="hidden md:flex md:space-x-6 font-semibold text-lg">
                 <a href="{{ route('home') }}" class="text-yellow-500">Home</a>
                 <a href="{{ route('about') }}" class="hover:text-yellow-500">About</a>
                 <a href="{{ route('gallery') }}" class="hover:text-yellow-500">Gallery</a>

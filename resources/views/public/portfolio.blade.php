@@ -204,8 +204,8 @@ Explore the comprehensive portfolio of Smart Studio.Our work includes portraits,
             @if($galleryImages->skip(2)->count() >= 2)
                 <div class="hidden lg:grid grid-rows-2 gap-4">
                     @foreach($galleryImages->skip(2)->take(2) as $image)
-                        <div class="h-52">
-                            <img src="{{ asset('images/' . $image->image_path) }}" 
+                        <div class="h-auto">
+                            <img src="{{ asset('images/gallery/' . $image->image_path) }}" 
                                  alt="{{ $image->gallery->gallery_title ?? 'Gallery Image' }}" 
                                  class="w-full h-full object-cover rounded-lg shadow-lg">
                         </div>
@@ -217,7 +217,7 @@ Explore the comprehensive portfolio of Smart Studio.Our work includes portraits,
                 <div class="lg:col-span-1">
                     <img src="{{ asset('images/gallery/' . $image->image_path) }}" 
                          alt="{{ $image->gallery->gallery_title ?? 'Gallery Image' }}" 
-                         class="w-full h-40 object-cover rounded-lg shadow-lg">
+                         class="w-full h-48 object-cover rounded-lg shadow-lg">
                 </div>
             @endforeach
         </div>

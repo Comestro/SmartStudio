@@ -16,7 +16,7 @@
       animation: fadeIn 1s ease-in-out forwards;
     }
   </style>
-  <div class="h-96 bg-cover bg-center flex items-center justify-center text-white px-4 animate-fadeIn"
+  <div class="h-96 bg-cover bg-center flex items-center justify-center text-white px-4 mt-12 animate-fadeIn"
        style="background-image: url('https://img.freepik.com/premium-photo/beautiful-female-model-posing-studio-light-flashes_382934-4673.jpg');">
     <div class="text-center bg-black bg-opacity-50 p-8 rounded-lg max-w-xl w-full mt-10">
       <h1 class="text-3xl md:text-4xl font-bold mb-4">ABOUT US</h1>

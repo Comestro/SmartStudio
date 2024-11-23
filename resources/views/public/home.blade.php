@@ -1,4 +1,4 @@
-@section('title', 'SmartStudio|home')
+@section('title', 'SmartStudio')
 @extends('public.layout')
 
 @section('extra')
@@ -32,7 +32,8 @@
 
 @endsection
 @section('content')
-    <header class="bg-gray-900 text-white py-3 px-4 fixed top-0 w-full z-10 shadow-md">
+
+    <header class="bg-gradient-to-b from-gray-900 to-black text-white py-3 px-4 fixed top-0 w-full z-10 shadow-md">
         <div class="container mx-auto flex items-center justify-between">
             <div class="flex items-center space-x-3">
                 <img src="https://th.bing.com/th?id=OIP.XfloBSB32f50RImZskOHFwHaHa&w=250&h=250" alt="Logo"
@@ -40,7 +41,7 @@
                 <a href="{{ route('home') }}" class="text-xl font-bold">Smart studio</a>
             </div>
 
-            <nav class="hidden md:flex space-x-6">
+            <nav class="hidden md:flex space-x-6 text-lg font-semibold">
                 <a href="{{ route('home') }}" class="text-yellow-500">Home</a>
                 <a href="{{ route('about') }}" class="hover:text-yellow-500">About</a>
                 <a href="{{ route('gallery') }}" class="hover:text-yellow-500">Gallery</a>
@@ -134,7 +135,7 @@
     <div class="bg-white py-12">
         <div class="text-left px-6 md:px-36">
             <h1 class="text-2xl md:text-3xl font-bold text-gray-800 mb-4">
-                Bringing Dreams To <span class="text-yellow-500">Reality</span>
+                Bringing Dreams To <span class="text-yellow-500 text-4xl">Reality</span>
             </h1>
             <p class="text-lg md:text-xl text-gray-600">
                 We provide exceptional photography services that capture your moments beautifully.
@@ -152,11 +153,11 @@
     </section>
 
 
-    <div class="py-8"></div>
+    
     {{-- view button --}}
 
 
-    <div class="text-center mt-5 flex item-center justify-center gap-1">
+    <div class="text-center mt-10 flex item-center justify-center gap-1">
         <a href="{{ route('gallery') }}"
             class="bg-black text-yellow-500 px-6 py-2  hover:bg-yellow-600 transition duration-300">
             View All Services
@@ -192,7 +193,7 @@
 
         <div class="md:w-1/2 w-full h-64 md:h-full flex justify-center items-center">
             <img src="https://img.freepik.com/premium-photo/neonlit-woman-portriat_862994-2959.jpg?ga=GA1.1.1275289697.1728223870&semt=ais_siglip"
-                alt="Illustration Image" class="w-full h-full object-cover rounded-lg border border-white shadow-lg" />
+                alt="Illustration Image" class="w-full h-full object-cover  border border-white shadow-lg" />
         </div>
     </section>
 
@@ -265,20 +266,15 @@
         </div>
     </div>
 
-    <div class="py-12"></div>
-
-
+    
     {{-- style="background-image: url('https://tse2.mm.bing.net/th?id=OIP.jt6i4yeTO_zMnivpc9nqXQHaEJ&pid=Api&P=0&h=180');"> --}}
 
 
-    <div class="mb-6">
-        <i class="bi bi-music-note-beamed text-7xl text-white"></i>
-    </div>
+   
 
 
-
-    </div>
-    <div class="w-full h-auto bg-cover bg-center relative mt-5 flex flex-col justify-center items-center text-center py-6 md:py-10"
+    
+    <div class="w-full h-auto bg-cover bg-center relative mt-10 flex flex-col justify-center items-center text-center py-8 md:py-10"
         style="background-image: url('https://tse2.mm.bing.net/th?id=OIP.jt6i4yeTO_zMnivpc9nqXQHaEJ&pid=Api&P=0&h=180');">
         <div class="mb-4">
             <i class="bi bi-music-note-beamed text-4xl md:text-6xl text-white"></i>
@@ -317,7 +313,7 @@
     </div>
 
 
-    <div class="py-12"></div>
+    {{-- <div class="py-12"></div> --}}
 
     <div class="text-center px-6 md:px-36 py-10">
         <h1 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6 leading-tight">
