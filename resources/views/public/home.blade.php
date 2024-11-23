@@ -1,6 +1,22 @@
 @section('title','SmartStudio|home')
 @extends('public.layout')
 
+@section('extra')
+    <style>
+        .scrollable-carousel {
+    overflow-x: auto; /* Enable horizontal scrolling */
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on mobile */
+    scrollbar-width: none; /* Hide scrollbar in Firefox */
+}
+
+/* Hide scrollbar in Webkit browsers (Chrome, Safari) */
+.scrollable-carousel::-webkit-scrollbar {
+    display: none;
+}
+
+
+    </style>
+@endsection
 @section('content')
 <header class="bg-gray-900 text-white py-3 px-4 fixed top-0 w-full z-10 shadow-md">
     <div class="container mx-auto flex items-center justify-between">
@@ -194,8 +210,8 @@
                 </form>
 
             </div>
-        </div> 
- </div> 
+        </div>
+ </div>
 
 <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 p-6">
     @foreach ($galleries->take(2) as $item)
@@ -366,7 +382,7 @@ Thank you!') }}"
 
         <!--</div>-->
     </div>
-</div> 
+</div>
 
 
 

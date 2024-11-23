@@ -13,7 +13,7 @@
     <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css" rel="stylesheet" />
     <link rel="icon" href="{{ asset('images/i.png') }}" type="image/png">
 
-
+    @yield('extra')
     @livewireStyles
 </head>
 
