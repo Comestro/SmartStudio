@@ -87,7 +87,7 @@
             overflow: hidden;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 30s ease;
+            transition: all 1s ease;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -97,7 +97,7 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: all 0.3s ease;
+            transition: transform 5s ease;
         }
 
 
@@ -141,7 +141,7 @@
             </p>
         </div>
     </div>
-    <section id="gallery" class="py-20 bg-gray-200">
+    <section id="gallery" class="py-20 bg-gray-100">
         <div class="gallery-container px-10">
             @foreach ($categories->take(4) as $item)
                 <div class="gallery-item">
@@ -199,7 +199,7 @@
 
 
 
-    <div class="bg-white py-12">
+      <div class="bg-white py-12">
 
         <div class="text-center px-6 md:px-36">
             <h1 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
@@ -211,13 +211,13 @@
 
 
             <div class="flex flex-wrap justify-center gap-4 md:gap-8">
-                <a href="/" class="text-lg text-gray-600 hover:text-yellow-500 transition">
+                <a href="{{ url('/') }}" class="text-lg text-gray-600 hover:text-yellow-500 transition">
                     All
                 </a>
-                <form method="GET" action="{{ route('home') }}" class="flex flex-wrap justify-center gap-8">
+                <form method="GET" action="" class="flex flex-wrap justify-center gap-8">
                     @foreach ($categories->take(4) as $item)
                         <div class="category-item">
-                            <a href="{{ route('home') }}?category_slug={{ $item->cat_slug }}"
+                            <a href="{{ url('/') }}?category_slug={{ $item->cat_slug }}"
                                 class="text-lg text-yellow-500 hover:text-gray-800 transition {{ $item->cat_slug == $selectedCategorySlug ? 'font-bold' : '' }}">
                                 {{ $item->cat_name }}
                             </a>
@@ -227,8 +227,10 @@
 
             </div>
         </div>
-    </div>
+    </div>  
+    
 
+   
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 p-6">
         @foreach ($galleries->take(2) as $item)
             <div
