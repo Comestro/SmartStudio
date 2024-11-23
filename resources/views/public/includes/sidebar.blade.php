@@ -1,9 +1,8 @@
 <div class="relative">
 
-
     <button id="menuToggle"
-        class="absolute top-4 left-4 border border-yellow-400 text-yellow-400 bg-transparent hover:bg-yellow-400 hover:text-white transition p-2 rounded z-50">
-        <i class="bi bi-list text-2xl"></i>
+        class="absolute top-4 left-4  border border-yellow-400 text-yellow-400 bg-transparent hover:bg-yellow-400 hover:text-white transition p-2 md:p-1 rounded z-50">
+        <i class="bi bi-list text-2xl "></i>
     </button>
 
 

@@ -1,4 +1,4 @@
-<div class="flex flex-col bg-gradient-to-b from-gray-900 to-black text-white p-8 gap-8 mt-4">
+<div class="flex flex-col bg-gradient-to-b from-gray-900 to-black text-white p-8 gap-8 ">
     <!-- Main Content Container -->
     <div class="flex flex-col md:flex-row justify-between">
         <!-- Logo and Description -->
