@@ -10,10 +10,10 @@ Explore the stunning gallery at Smart Studio. Our collection features breathtaki
     .gallery-container {
         display: flex;
         gap: 20px;
-        overflow-x: auto; 
+        overflow-x: auto;
         padding-bottom: 10px;
         scrollbar-width: thin;
-        scrollbar-color: #ccc transparent; 
+        scrollbar-color: #ccc transparent;
     }
 
     .gallery-container::-webkit-scrollbar {
@@ -26,7 +26,7 @@ Explore the stunning gallery at Smart Studio. Our collection features breathtaki
     }
 
     .gallery-item {
-        flex: 0 0 calc(25% - 20px); 
+        flex: 0 0 calc(25% - 20px);
         max-width: calc(25% - 20px);
         height: 300px;
         overflow: hidden;
@@ -43,19 +43,19 @@ Explore the stunning gallery at Smart Studio. Our collection features breathtaki
     }
 
     .gallery-item:hover {
-        flex: 0 0 calc(50% - 20px); 
-        transform: scale(1.05);
+        flex: 0 0 calc(50% - 20px);
+        transform: scale(1);
         z-index: 2;
     }
 
     @media (max-width: 768px) {
         .gallery-item {
-            flex: 0 0 calc(50% - 20px); 
+            flex: 0 0 calc(50% - 20px);
             max-width: calc(50% - 20px);
         }
 
         .gallery-item:hover {
-            flex: 0 0 calc(75% - 20px); 
+            flex: 0 0 calc(75% - 20px);
         }
     }
 
@@ -66,7 +66,7 @@ Explore the stunning gallery at Smart Studio. Our collection features breathtaki
         }
 
         .gallery-item:hover {
-            flex: 0 0 100%; 
+            flex: 0 0 100%;
         }
     }
 </style>
@@ -88,7 +88,7 @@ Explore the stunning gallery at Smart Studio. Our collection features breathtaki
 
     @media (max-width: 1024px) {
         .carousel-item {
-            width: calc(100% / 2); 
+            width: calc(100% / 2);
         }
     }
 
@@ -107,7 +107,7 @@ Explore the stunning gallery at Smart Studio. Our collection features breathtaki
         }
     }
 </style>
-   
+
     <div class=" relative h-[80vh] bg-cover bg-center"
         style="background-image: url('https://th.bing.com/th/id/OIP.01e67CZXYANik5BUvlo0YgHaEJ?w=281&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7');">
         <div class="absolute inset-0 flex flex-col items-center justify-center text-center px-4">
@@ -177,7 +177,7 @@ Explore the stunning gallery at Smart Studio. Our collection features breathtaki
              </div>
             </div>
         </div>
-    
+
     </section>
     <section id="content-section" class="py-16">
         <div class="container mx-auto px-6 lg:px-12 flex flex-col lg:flex-row items-center gap-12">
