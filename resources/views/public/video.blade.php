@@ -54,8 +54,8 @@ Experience the dynamic world of Smart Studio through our video. Watch our cinema
         </div>
         </div>
     </section>
-    <div class="bg-white py-6"></div>
-    <section id="download-app" class="bg-black text-white py-16">
+    {{-- <div class="bg-white py-6"></div> --}}
+    <section id="download-app" class="bg-black text-white py-16 mb-4">
         <div class="container mx-auto text-center px-6">
             <h2 class="text-3xl font-bold mb-4 text-yellow-500">Why Choose Us?</h2>
             <p class="text-lg mb-6">Years of experience and a unique perspective!</p>
@@ -66,9 +66,9 @@ Experience the dynamic world of Smart Studio through our video. Watch our cinema
         </div>
     </section>
 
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 px-8 py-10 bg-white">
+    {{-- <div class="grid grid-cols-1 md:grid-cols-3 gap-8 px-8 py-10 bg-white"> --}}
         {{-- {{dd($data);}} --}}
-        @foreach ($videos as $item)
+        {{-- @foreach ($videos as $item)
             <div
                 class="flex flex-col items-center transform transition duration-300 hover:scale-105 hover:bg-gray-50 rounded-lg p-5 shadow-lg">
                 <iframe width="300" height="200" src="{{ str_replace('watch?v=', 'embed/', $item->link) }}"
@@ -79,7 +79,7 @@ Experience the dynamic world of Smart Studio through our video. Watch our cinema
                 <p class="text-gray-600 text-center mb-4">{{ $item->description }}</p>
                 <p class="text-gray-600 text-left w-full">{{ $item->created_at->format('d M Y, h:i A') }}</p>
             </div>
-        @endforeach
+        @endforeach --}}
         {{-- <div class="flex flex-col items-center transform transition duration-300 hover:scale-105 hover:bg-gray-50 rounded-lg p-5 shadow-lg">
                     <iframe width="300" height="200" src="https://www.youtube.com/embed/QEXSoF5TI5U?si=3Cptp4O8rZfRoCmb" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                     <h3 class="text-2xl font-semibold text-black mb-2">Elevate Your Portraits</h3>
@@ -93,5 +93,5 @@ Experience the dynamic world of Smart Studio through our video. Watch our cinema
                     <p class="text-gray-600 text-left w-full">26 May 2023</p>
                 </div> --}}
 
-    </div>
+    {{-- </div> --}}
 @endsection

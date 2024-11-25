@@ -1,6 +1,6 @@
-<div class="flex flex-col bg-gradient-to-b from-gray-900 to-black text-white p-8 gap-8 ">
+<div class="flex flex-col bg-gradient-to-b from-gray-900 to-black text-white p-8 gap-8">
     <!-- Main Content Container -->
-    <div class="flex flex-col md:flex-row justify-between">
+    <div class="flex flex-col md:flex-row justify-between gap-8">
         <!-- Logo and Description -->
         <div class="flex flex-col items-center md:items-start md:w-1/3 text-center md:text-left space-y-4">
             <a href="{{ route('home') }}">
@@ -13,9 +13,9 @@
         </div>
 
         <!-- Instagram Gallery -->
-        <div class="flex flex-col items-center md:w-1/3 mt-8 text-center space-y-4">
+        <div class="flex flex-col items-center md:w-1/3 mt-8 md:mt-0 text-center space-y-4">
             <h1 class="text-yellow-500 text-xl font-semibold">Insta Gallery</h1>
-            <div class="grid grid-cols-2 md:grid-cols-4  gap-4">
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-2 lg:grid-cols-4 gap-4">
                 <img src="https://tse1.mm.bing.net/th?id=OIP.J0EyMPxp69oUBURsRtCqEwHaE7&pid=Api&P=0&h=180" 
                      alt="Image 1" class="w-24 h-24 object-cover rounded-md shadow-md hover:scale-105 transition duration-300">
                 <img src="https://tse2.mm.bing.net/th?id=OIP.n1Ft5hFRPdgmYJQO-Fz3HgHaEK&pid=Api&P=0&h=180" 
@@ -28,7 +28,7 @@
         </div>
 
         <!-- Contact Information -->
-        <div class="flex flex-col py-10 px-[10%] items-center md:items-start md:w-1/3 text-center md:text-left space-y-4">
+        <div class="flex flex-col items-center  md:w-1/3 text-center  space-y-4">
             <h1 class="text-yellow-500 text-xl font-semibold">Contact</h1>
             <p class="text-sm">Phone: <a href="tel:+919546784398" class="hover:text-yellow-400">+91 9546784398</a></p>
             <p class="text-sm">Email: <a href="mailto:smartstudio@gmail.com" class="hover:text-yellow-400">smartstudio@gmail.com</a></p>

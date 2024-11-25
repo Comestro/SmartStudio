@@ -88,7 +88,7 @@
             overflow: hidden;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 30s ease;
+            transition: all 1s ease;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -98,7 +98,7 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: all 0.3s ease;
+            transition: transform 5s ease;
         }
 
 
@@ -142,7 +142,7 @@
             </p>
         </div>
     </div>
-    <section id="gallery" class="py-20 bg-gray-200">
+    <section id="gallery" class="py-20 bg-gray-100">
         <div class="gallery-container px-10">
             @foreach ($categories->take(4) as $item)
                 <div class="gallery-item">
@@ -153,7 +153,7 @@
     </section>
 
 
-    
+
     {{-- view button --}}
 
 
@@ -193,7 +193,17 @@
 
         <div class="md:w-1/2 w-full h-64 md:h-full flex justify-center items-center">
             <img src="https://img.freepik.com/premium-photo/neonlit-woman-portriat_862994-2959.jpg?ga=GA1.1.1275289697.1728223870&semt=ais_siglip"
-                alt="Illustration Image" class="w-full h-full object-cover  border border-white shadow-lg" />
+                alt="Illustration Image" class="w-full h-full object-cover  border border-white shadow-lg cursor-pointer"onclick="openFullScreen(this)" />
+        </div>
+        <div id="fullscreenModal" class="fixed inset-0 bg-black bg-opacity-75 hidden flex justify-center items-center z-50 ">
+            <img id="fullscreenImage" 
+             class="w-[50rem] h-[30rem] object-cover rounded-lg" 
+             alt="Fullscreen Image">
+            
+            <button id=""
+                class="absolute top-4 right-4 text-white transition p-2 rounded-full bg-black bg-opacity-50 hover:bg-opacity-75">
+                <i class="bi bi-x-circle-fill text-2xl text-white"></i>
+            </button>
         </div>
     </section>
 
@@ -212,13 +222,13 @@
 
 
             <div class="flex flex-wrap justify-center gap-4 md:gap-8">
-                <a href="/" class="text-lg text-gray-600 hover:text-yellow-500 transition">
+                <a href="{{ url('/') }}" class="text-lg text-gray-600 hover:text-yellow-500 transition">
                     All
                 </a>
-                <form method="GET" action="{{ route('home') }}" class="flex flex-wrap justify-center gap-8">
+                <form method="GET" action="" class="flex flex-wrap justify-center gap-8">
                     @foreach ($categories->take(4) as $item)
                         <div class="category-item">
-                            <a href="{{ route('home') }}?category_slug={{ $item->cat_slug }}"
+                            <a href="{{ url('/') }}?category_slug={{ $item->cat_slug }}"
                                 class="text-lg text-yellow-500 hover:text-gray-800 transition {{ $item->cat_slug == $selectedCategorySlug ? 'font-bold' : '' }}">
                                 {{ $item->cat_name }}
                             </a>
@@ -230,10 +240,12 @@
         </div>
     </div>
 
+
+
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 p-6">
         @foreach ($galleries->take(2) as $item)
-            <div
-                class="bg-black flex items-center justify-center h-64 sm:h-80 overflow-hidden group relative rounded-lg shadow-lg">
+         <div
+                class="bg-black flex items-center justify-center h-64 sm:h-80 overflow-hidden group relative rounded-lg shadow-lg" >
                 <img src="{{ asset('images/gallery/' . $item->images->first()->image_path) }}"
                     class="w-full h-full object-cover transform transition duration-500 group-hover:scale-110 rounded-lg"
                     alt="{{ $item->gallery_title ?? 'Gallery image' }}" loading="lazy">
@@ -244,17 +256,28 @@
             </div>
         @endforeach
     </div>
+    
     <div class="flex justify-center">
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 p-4 max-w-5xl">
             @foreach ($galleries->skip(2)->take(4) as $item)
                 <div>
                     <img src="{{ asset('images/gallery/' . $item->images->first()->image_path) }}"
-                        class="h-64 w-full object-cover" alt="Image 1">
+                        class="h-64 w-full object-cover cursor-pointer"onclick="openFullScreen(this)" alt="Image 1">
                 </div>
             @endforeach
         </div>
     </div>
-
+    <div id="fullscreenModal" class="fixed inset-0 bg-black bg-opacity-75 hidden flex justify-center items-center z-50 ">
+        <img id="fullscreenImage" 
+         class="w-[50rem] h-[30rem] object-cover rounded-lg" 
+         alt="Fullscreen Image">
+        
+        <button id=""
+            class="absolute top-4 right-4 text-white transition p-2 rounded-full bg-black bg-opacity-50 hover:bg-opacity-75">
+            <i class="bi bi-x-circle-fill text-2xl text-white"></i>
+        </button>
+    </div>
+    
     <div class="flex justify-center px-4">
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-screen-xl">
             @foreach ($galleries->skip(6)->take(3) as $item)
@@ -266,14 +289,14 @@
         </div>
     </div>
 
-    
+
     {{-- style="background-image: url('https://tse2.mm.bing.net/th?id=OIP.jt6i4yeTO_zMnivpc9nqXQHaEJ&pid=Api&P=0&h=180');"> --}}
 
 
-   
 
 
-    
+
+
     <div class="w-full h-auto bg-cover bg-center relative mt-10 flex flex-col justify-center items-center text-center py-8 md:py-10"
         style="background-image: url('https://tse2.mm.bing.net/th?id=OIP.jt6i4yeTO_zMnivpc9nqXQHaEJ&pid=Api&P=0&h=180');">
         <div class="mb-4">
@@ -333,37 +356,67 @@
             <div
                 class="flex flex-col items-center transform transition duration-300 hover:scale-105 hover:bg-gray-50 rounded-lg p-5 shadow-lg">
                 <img src="https://images.unsplash.com/photo-1523712999610-f77fbcfc3843?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                    alt="Professional Portraits" class="w-full h-64 object-cover object-top rounded mb-4">
+                    alt="Professional Portraits" class="w-full h-64 object-cover object-top rounded mb-4 cursor-pointer"onclick="openFullScreen(this)">
                 <h3 class="text-xl sm:text-2xl font-semibold text-black mb-2 text-center">Elevate Your Portraits</h3>
                 <p class="text-gray-600 text-center mb-4">Experience the art of portrait photography, crafted to capture
                     your essence and personality in every shot.</p>
+            </div>
+            <div id="fullscreenModal" class="fixed inset-0 bg-black bg-opacity-75 hidden flex justify-center items-center z-50 ">
+                <img id="fullscreenImage" 
+                 class="w-[50rem] h-[30rem] object-cover rounded-lg" 
+                 alt="Fullscreen Image">
+                
+                <button id=""
+                    class="absolute top-4 right-4 text-white transition p-2 rounded-full bg-black bg-opacity-50 hover:bg-opacity-75">
+                    <i class="bi bi-x-circle-fill text-2xl text-white"></i>
+                </button>
             </div>
             <!-- Card 2 -->
             <div
                 class="flex flex-col items-center transform transition duration-300 hover:scale-105 hover:bg-gray-50 rounded-lg p-5 shadow-lg">
                 <img src="https://img.freepik.com/free-photo/decorated-banquet-hall-with-flowers_8353-10058.jpg?ga=GA1.1.1275289697.1728223870&semt=ais_hybrid"
-                    alt="Event Photography" class="w-full h-64 object-cover rounded mb-4">
+                    alt="Event Photography" class="w-full h-64 object-cover rounded mb-4 cursor-pointer"onclick="openFullScreen(this)">
                 <h3 class="text-xl sm:text-2xl font-semibold text-black mb-2 text-center">Mastering Photography Art</h3>
                 <p class="text-gray-600 text-center mb-4">Capture your events with unparalleled expertise. Relive each
                     memorable moment with our professional event coverage.</p>
+            </div>
+            <div id="fullscreenModal" class="fixed inset-0 bg-black bg-opacity-75 hidden flex justify-center items-center z-50 ">
+                <img id="fullscreenImage" 
+                 class="w-[50rem] h-[30rem] object-cover rounded-lg" 
+                 alt="Fullscreen Image">
+                
+                <button id=""
+                    class="absolute top-4 right-4 text-white transition p-2 rounded-full bg-black bg-opacity-50 hover:bg-opacity-75">
+                    <i class="bi bi-x-circle-fill text-2xl text-white"></i>
+                </button>
             </div>
             <!-- Card 3 -->
             <div
                 class="flex flex-col items-center transform transition duration-300 hover:scale-105 hover:bg-gray-50 rounded-lg p-5 shadow-lg">
                 <img src="https://img.freepik.com/free-photo/immersive-experience-concept-collage_23-2149498342.jpg?ga=GA1.1.1275289697.1728223870&semt=ais_hybrid"
-                    alt="Landscape & Nature" class="w-full h-64 object-cover rounded mb-4">
+                    alt="Landscape & Nature" class="w-full h-64 object-cover rounded mb-4 cursor-pointer"onclick="openFullScreen(this)">
                 <h3 class="text-xl sm:text-2xl font-semibold text-black mb-2 text-center">Capturing Moments</h3>
                 <p class="text-gray-600 text-center mb-4">Explore nature’s beauty through stunning captures of landscapes
                     and outdoor scenes, designed to inspire and captivate.</p>
+            </div>
+            <div id="fullscreenModal" class="fixed inset-0 bg-black bg-opacity-75 hidden flex justify-center items-center z-50 ">
+                <img id="fullscreenImage" 
+                 class="w-[50rem] h-[30rem] object-cover rounded-lg" 
+                 alt="Fullscreen Image">
+                
+                <button id=""
+                    class="absolute top-4 right-4 text-white transition p-2 rounded-full bg-black bg-opacity-50 hover:bg-opacity-75">
+                    <i class="bi bi-x-circle-fill text-2xl text-white"></i>
+                </button>
             </div>
         </div>
     </div>
 
 
     <a href="https://api.whatsapp.com/send?phone=+919472641988&text={{ urlencode('Hello,
-    I am interested in booking a photography session with your studio. Could you please let me know the availability.
-    Looking forward to your response.
-    Thank you!') }}"
+        I am interested in booking a photography session with your studio. Could you please let me know the availability.
+        Looking forward to your response.
+        Thank you!') }}"
         target="_blank" class="fixed md:bottom-10  bottom-20 right-2 md:right-10 z-20 group">
         <div
             class="flex items-center bg-green-500 rounded-full p-2 shadow-lg text-white hover:bg-green-600 transition-all duration-300">
@@ -380,9 +433,9 @@
 
     <!-- Popup Container -->
     <!-- <div id="popup" class="hidden fixed inset-0 flex items-center justify-center bg-black bg-opacity-0 z-50">
-        <div class="flex justify-between items-center">
-            <div class="relative bg-white rounded-lg opacity-40 shadow-lg p-6 w-96" style="opacity: 1;">
-                 Cancel Button -->
+            <div class="flex justify-between items-center">
+                <div class="relative bg-white rounded-lg opacity-40 shadow-lg p-6 w-96" style="opacity: 1;">
+                     Cancel Button -->
     <!--    <div class="flex justify-between items-center ">-->
     <!--        <h2 class="text-xl font-bold ">Welcome to Smart studio</h2>-->
     <!--        <button id="close-popup" class=" px-4 py-2 mb-2 rounded">-->
@@ -402,38 +455,37 @@
 
 
     <script>
+        const carousel = document.querySelector('.scrollable-carousel');
+        if (carousel) {
+            let isDown = false;
+            let startX;
+            let scrollLeft;
 
-const carousel = document.querySelector('.scrollable-carousel');
-if (carousel) {
-    let isDown = false;
-    let startX;
-    let scrollLeft;
+            carousel.addEventListener('mousedown', (e) => {
+                isDown = true;
+                carousel.classList.add('active');
+                startX = e.pageX - carousel.offsetLeft;
+                scrollLeft = carousel.scrollLeft;
+            });
 
-    carousel.addEventListener('mousedown', (e) => {
-        isDown = true;
-        carousel.classList.add('active');
-        startX = e.pageX - carousel.offsetLeft;
-        scrollLeft = carousel.scrollLeft;
-    });
+            carousel.addEventListener('mouseleave', () => {
+                isDown = false;
+                carousel.classList.remove('active');
+            });
 
-    carousel.addEventListener('mouseleave', () => {
-        isDown = false;
-        carousel.classList.remove('active');
-    });
+            carousel.addEventListener('mouseup', () => {
+                isDown = false;
+                carousel.classList.remove('active');
+            });
 
-    carousel.addEventListener('mouseup', () => {
-        isDown = false;
-        carousel.classList.remove('active');
-    });
-
-    carousel.addEventListener('mousemove', (e) => {
-        if (!isDown) return;
-        e.preventDefault();
-        const x = e.pageX - carousel.offsetLeft;
-        const walk = (x - startX) * 3; // Scroll speed factor
-        carousel.scrollLeft = scrollLeft - walk;
-    });
-}
+            carousel.addEventListener('mousemove', (e) => {
+                if (!isDown) return;
+                e.preventDefault();
+                const x = e.pageX - carousel.offsetLeft;
+                const walk = (x - startX) * 3; // Scroll speed factor
+                carousel.scrollLeft = scrollLeft - walk;
+            });
+        }
 
         document.addEventListener("DOMContentLoaded", () => {
             const header = document.querySelector("header");
@@ -470,4 +522,35 @@ if (carousel) {
             });
         });
     </script>
+
+    
+<script>
+    function openFullScreen(imgElement) {
+        const modal = document.getElementById('fullscreenModal');
+        const fullScreenImage = document.getElementById('fullscreenImage');
+        
+     
+        fullScreenImage.src = imgElement.src;
+
+     
+        modal.classList.remove('hidden');
+        
+        
+        fullScreenImage.onload = function() {
+          
+            fullScreenImage.classList.add('max-w-full', 'max-h-full', 'object-contain');
+        };
+
+      
+        modal.onclick = function() {
+            modal.classList.add('hidden');
+        };
+    }
+</script>
+
+
+
+
+
+
 @endsection

@@ -109,7 +109,7 @@ Explore the comprehensive portfolio of Smart Studio.Our work includes portraits,
 
 
         {{-- background image --}}
-        <div class="w-full h-screen bg-cover bg-no-repeat relative flex items-center justify-center mt-20 "
+        <div class="w-full h-80 md:h-screen bg-cover bg-no-repeat relative flex items-center justify-center mt-20 "
             style="background-image: url('./images/static/studio-bg.jpg');"
             id="Home">
             <div class="absolute inset-0 bg-black opacity-60"></div>
@@ -135,13 +135,10 @@ Explore the comprehensive portfolio of Smart Studio.Our work includes portraits,
                 </h3>
                 <h1 class="text-4xl font-bold text-white mt-4">Read More About Me</h1>
                 <p class="text-white mt-4">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint excepturi animi eos numquam, asperiores
-                    quaerat? Quidem est qui ducimus incidunt.
+                    Welcome to Smart Studio, where your moments become timeless memories. With years of experience and a passion for photography, we capture the essence of each moment, telling stories that will be cherished forever.
                 </p>
                 <p class="text-white mt-4">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore ipsa, quae facilis, quis velit deserunt
-                    beatae vel est ad natus obcaecati illo. Reprehenderit, dicta. Numquam sequi, ipsa saepe eveniet libero
-                    nihil aliquam ullam porro.
+                    Our services include wedding, portrait, event, commercial, and landscape photography. We create stunning visuals that reflect unique beauty and emotion, ensuring every click preserves the essence of the present for future generations.
                 </p>
 
             </div>
@@ -184,7 +181,7 @@ Explore the comprehensive portfolio of Smart Studio.Our work includes portraits,
             <h1 class="text-4xl font-bold text-white mt-4">My Recent Work</h1>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 px-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 px-4 mb-5">
             @if($galleryImages->count() > 0)
                 <div class="lg:col-span-2">
                     <img src="{{ asset('images/gallery/' . $galleryImages->first()->image_path) }}" 
