@@ -158,11 +158,11 @@
 
 
     <div class="text-center mt-10 flex item-center justify-center gap-1">
-        <a href="{{ route('gallery') }}"
+        <a href="{{ route('service') }}"
             class="bg-black text-yellow-500 px-6 py-2  hover:bg-yellow-600 transition duration-300">
             View All Services
         </a>
-        <a href="{{ route('gallery') }}">
+        <a href="{{ route('service') }}">
             <button class="bg-black text-yellow-500 px-3 py-1  hover:bg-yellow-600 transition duration-300">
                 <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/FAB005/long-arrow-right.png"
                     alt="long-arrow-right">
@@ -183,7 +183,7 @@
                 your cherished memories into timeless works of art. Experience photography that tells your unique story with
                 style and elegance.
             </p>
-            <a href="{{ route('portfolio') }}"
+            <a href="{{ route('about') }}"
                 class="inline-flex items-center justify-center text-yellow-500 border border-yellow-400 px-4 py-2 md:px-6 md:py-3 rounded-lg hover:bg-yellow-500 hover:text-black transition duration-300 ease-in-out w-full md:w-auto ">
                 View All Services
                 <i class="bi bi-arrow-right-circle-fill text-2xl ml-2"></i>
