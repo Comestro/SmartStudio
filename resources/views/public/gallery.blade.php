@@ -141,12 +141,12 @@ Explore the stunning gallery at Smart Studio. Our collection features breathtaki
 
 
 
-                        <div class="absolute inset-0 flex items-center justify-center">
+                        {{-- <div class="absolute inset-0 flex items-center justify-center">
                             <span
                                 class="text-white text-lg font-bold transition-opacity duration-300 group-hover:opacity-0">
-                                {{ $item->gallery_title }}
+                               
                             </span>
-                        </div>
+                        </div> --}}
                         <div
                             class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
                             <span class="text-white text-lg font-bold">{{ $item->category->cat_name }}</span>
@@ -165,7 +165,7 @@ Explore the stunning gallery at Smart Studio. Our collection features breathtaki
                         @endif
                         <div class="absolute inset-0 flex items-center justify-center">
                             <span class="text-white text-lg font-bold transition-opacity duration-300 group-hover:opacity-0">
-                                {{ $item->gallery_title }}
+                               
                             </span>
                         </div>
                         <div
@@ -200,18 +200,23 @@ Explore the stunning gallery at Smart Studio. Our collection features breathtaki
                 </p>
             </div>
         </div>
-
-
         <div class="container mx-auto mt-8 relative">
-            <div class="grid grid-cols-4 gap-4">
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                 @foreach ($categories as $item)
                     <div class="relative group">
                         <img src="{{ asset('images/category/' . $item->cat_image) }}" alt="Gallery Image 1"
-                            class="w-full h-64 object-cover rounded-lg shadow-md" />
+                            class="w-full h-64 object-cover rounded-lg shadow-md group-hover:filter-none filter grayscale transition-all duration-500 cursor-pointer image-item "onclick="openFullScreen(this)"/>
                     </div>
                 @endforeach
             </div>
         </div>
+        <div id="fullscreenModal" class="fixed inset-0 bg-black bg-opacity-75 hidden flex justify-center items-center z-50 ">
+    <img id="fullscreenImage" class="max-w-full max-h-full object-contain"style="width: 35rem; height:35rem" > 
+    <button id=""
+        class="absolute top-4 right-4 text-white transition p-2 rounded-full bg-black bg-opacity-50 hover:bg-opacity-75">
+        <i class="bi bi-x-circle-fill text-2xl text-white"></i>
+    </button>
+</div>
     </section>
 
 
@@ -265,6 +270,31 @@ Explore the stunning gallery at Smart Studio. Our collection features breathtaki
         @endif
     </div>
 </section>
+
+
+<script>
+    function openFullScreen(imgElement) {
+        const modal = document.getElementById('fullscreenModal');
+        const fullScreenImage = document.getElementById('fullscreenImage');
+        
+     
+        fullScreenImage.src = imgElement.src;
+
+     
+        modal.classList.remove('hidden');
+        
+        
+        fullScreenImage.onload = function() {
+          
+            fullScreenImage.classList.add('max-w-full', 'max-h-full', 'object-contain');
+        };
+
+      
+        modal.onclick = function() {
+            modal.classList.add('hidden');
+        };
+    }
+</script>
 
 
 

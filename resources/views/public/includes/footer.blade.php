@@ -17,13 +17,23 @@
             <h1 class="text-yellow-500 text-xl font-semibold">Insta Gallery</h1>
             <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-2 lg:grid-cols-4 gap-4">
                 <img src="https://tse1.mm.bing.net/th?id=OIP.J0EyMPxp69oUBURsRtCqEwHaE7&pid=Api&P=0&h=180" 
-                     alt="Image 1" class="w-24 h-24 object-cover rounded-md shadow-md hover:scale-105 transition duration-300">
+                     alt="Image 1" class="w-24 h-24 object-cover rounded-md shadow-md hover:scale-105 transition duration-300 cursor-pointer"onclick="openFullScreen(this)">
                 <img src="https://tse2.mm.bing.net/th?id=OIP.n1Ft5hFRPdgmYJQO-Fz3HgHaEK&pid=Api&P=0&h=180" 
-                     alt="Image 2" class="w-24 h-24 object-cover rounded-md shadow-md hover:scale-105 transition duration-300">
+                     alt="Image 2" class="w-24 h-24 object-cover rounded-md shadow-md hover:scale-105 transition duration-300 cursor-pointer"onclick="openFullScreen(this)">
                 <img src="https://tse1.mm.bing.net/th?id=OIP.ZAzbO8SsQk5J40oI55OAIAHaE7&pid=Api&P=0&h=180" 
-                     alt="Image 3" class="w-24 h-24 object-cover rounded-md shadow-md hover:scale-105 transition duration-300">
+                     alt="Image 3" class="w-24 h-24 object-cover rounded-md shadow-md hover:scale-105 transition duration-300 cursor-pointer"onclick="openFullScreen(this)">
                 <img src="https://tse2.mm.bing.net/th?id=OIP.49hIyMLKW4_HMjUK_PBZlQHaFD&pid=Api&P=0&h=180" 
-                     alt="Image 4" class="w-24 h-24 object-cover rounded-md shadow-md hover:scale-105 transition duration-300">
+                     alt="Image 4" class="w-24 h-24 object-cover rounded-md shadow-md hover:scale-105 transition duration-300 cursor-pointer"onclick="openFullScreen(this)">
+            </div>
+            <div id="fullscreenModal" class="fixed inset-0 bg-black bg-opacity-75 hidden flex justify-center items-center z-50 ">
+                <img id="fullscreenImage" 
+                 class="w-[50rem] h-[30rem] object-cover rounded-lg" 
+                 alt="Fullscreen Image">
+                
+                <button id=""
+                    class="absolute top-4 right-4 text-white transition p-2 rounded-full bg-black bg-opacity-50 hover:bg-opacity-75">
+                    <i class="bi bi-x-circle-fill text-2xl text-white"></i>
+                </button>
             </div>
         </div>
 
