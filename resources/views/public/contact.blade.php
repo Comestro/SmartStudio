@@ -52,7 +52,7 @@
         <div class="flex flex-col items-center justify-center py-16 px-4" id="">
 
              <div class="grid grid-cols-1 md:grid-cols-2 gap-10 w-full max-w-7xl">
-                <div>
+                <div class="flex items-stretch">
                     <img src="{{ asset('./images/static/studio-bg.jpg') }}"
                         class="border-b-8 border-l-8 border-yellow-500 shadow-lg" alt="">
                 </div>
