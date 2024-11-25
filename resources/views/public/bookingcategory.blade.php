@@ -1,14 +1,14 @@
-@section('title','Booking')
+@section('title','Booking | SmartStudio')
 @extends('public.layout')
 
 @section('content')
     <!-- Main Content -->
     <div class="w-full flex flex-col items-center p-6 bg-black">
         <!-- Categories Section -->
-        <div class="bg-gradient-to-r from-gray-700 to-gray-500 h-auto p-6 rounded-lg shadow-lg w-full max-w-5xl">
+        <div class="bg-gradient-to-r from-gray-700 to-gray-500 h-auto p-6 rounded-lg shadow-lg w-full max-w-5xl mt-16">
             <div
                 class="flex justify-between items-center bg-gradient-to-r from-yellow-400 to-yellow-200 text-gray-800 p-4 rounded-lg shadow-lg">
-                <h2 class="text-2xl font-semibold">Categories</h2>
+                <h2 class="text-2xl font-semibold">Albums</h2>
             </div>
 
             <div class="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-6">
@@ -26,26 +26,30 @@
             </div>
         </div>
 
-        <!-- Booking Calendar Section -->
-        <div class="w-full flex justify-center py-6">
+         {{-- Booking Calendar Section  --}}
+          <div class="w-full flex justify-center py-6">
             <div class="bg-white p-6 rounded-lg shadow-lg max-w-5xl w-full">
                 <h1 class="text-3xl font-bold text-center mb-6">Booking Calendar</h1>
 
-                <div class="flex justify-between items-center mb-4">
-                    <button id="prevMonth" class="px-4 py-2 bg-gray-300 rounded hover:bg-gray-400">
-                        &lt; Previous
+               
+                <div class="flex justify-between items-center mb-4 px-6  md:px-8">
+                    <button id="prevMonth" class="px-2 md:px-6 py-3 bg-yellow-400 text-white rounded-lg hover:bg-yellow-500 transition duration-200 ease-in-out transform hover:scale-105 mr-4 md:mr-0">
+                        <span class="px-2">&lt; Previous</span>
                     </button>
-                    <h2 id="monthYear" class="text-xl font-semibold"></h2>
-                    <button id="nextMonth" class="px-4 py-2 bg-gray-300 rounded hover:bg-gray-400">
-                        Next &gt;
+                    <h2 id="monthYear" class=" font-semibold text-gray-700 text-md md:text-3xl"></h2>
+                    <button id="nextMonth" class="px-2 md:px-6 py-3 bg-yellow-400 text-white rounded-lg hover:bg-yellow-500 transition duration-200 ease-in-out transform hover:scale-105">
+                        <span class="px-2">Next &gt;</span>
                     </button>
                 </div>
-
+                
                 <div id="calendar" class="grid grid-cols-7 gap-2 text-center">
                     <!-- Calendar days will render here -->
                 </div>
             </div>
-        </div>
+        </div> 
+         
+       
+        
     </div>
 
     <script>

@@ -1,4 +1,4 @@
-@section('title', 'contact')
+@section('title', 'contact | SmartStudio')
 
 @extends('public.base')
 

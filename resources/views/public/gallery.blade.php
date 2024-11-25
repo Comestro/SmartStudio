@@ -1,4 +1,4 @@
-@section('title','Gallery')
+@section('title','Gallery | Smart Studio')
 @extends('public.base')
 
 @section('meta_description')
@@ -228,7 +228,7 @@ Explore the stunning gallery at Smart Studio. Our collection features breathtaki
             <div class="gallery-container">
                 @foreach ($galleryFirst->images as $image)
                 <div class="gallery-item">
-                    <img src="{{ asset('images/gallery/' . $image->image_path) }}" alt="Gallery Image">
+                    <img src="{{ asset('images/gallery/' . $image->image_path) }} " alt="Gallery Image">
                     </div>
                 @endforeach
             </div>
@@ -263,13 +263,20 @@ Explore the stunning gallery at Smart Studio. Our collection features breathtaki
         <div class="gallery-container">
             @foreach ($galleryLast->images as $image)
             <div class="gallery-item">
-                <img src="{{ asset('images/gallery/' . $image->image_path) }}" alt="Gallery Image">
+                <img src="{{ asset('images/gallery/' . $image->image_path) }}" class ="cursor-pointer"onclick="openFullScreen(this)" alt="Gallery Image">
             </div>
             @endforeach
         </div>
         @endif
     </div>
 </section>
+<div id="fullscreenModal" class="fixed inset-0 bg-black bg-opacity-75 hidden flex justify-center items-center z-50 ">
+    <img id="fullscreenImage" class="max-w-full max-h-full object-contain"style="width: 35rem; height:35rem" > 
+    <button id=""
+        class="absolute top-4 right-4 text-white transition p-2 rounded-full bg-black bg-opacity-50 hover:bg-opacity-75">
+        <i class="bi bi-x-circle-fill text-2xl text-white"></i>
+    </button>
+</div>
 
 
 <script>

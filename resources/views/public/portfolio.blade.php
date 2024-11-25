@@ -1,4 +1,4 @@
-@section('title', 'Portfolio')
+@section('title', 'Portfolio | SmartStudio')
 @extends('public.base')
 
 @section('meta_description')

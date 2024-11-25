@@ -193,17 +193,7 @@
 
         <div class="md:w-1/2 w-full h-64 md:h-full flex justify-center items-center">
             <img src="https://img.freepik.com/premium-photo/neonlit-woman-portriat_862994-2959.jpg?ga=GA1.1.1275289697.1728223870&semt=ais_siglip"
-                alt="Illustration Image" class="w-full h-full object-cover  border border-white shadow-lg cursor-pointer"onclick="openFullScreen(this)" />
-        </div>
-        <div id="fullscreenModal" class="fixed inset-0 bg-black bg-opacity-75 hidden flex justify-center items-center z-50 ">
-            <img id="fullscreenImage" 
-             class="w-[50rem] h-[30rem] object-cover rounded-lg" 
-             alt="Fullscreen Image">
-            
-            <button id=""
-                class="absolute top-4 right-4 text-white transition p-2 rounded-full bg-black bg-opacity-50 hover:bg-opacity-75">
-                <i class="bi bi-x-circle-fill text-2xl text-white"></i>
-            </button>
+                alt="Illustration Image" class="w-full h-full object-cover  border border-white shadow-lg" />
         </div>
     </section>
 
@@ -247,14 +237,24 @@
          <div
                 class="bg-black flex items-center justify-center h-64 sm:h-80 overflow-hidden group relative rounded-lg shadow-lg" >
                 <img src="{{ asset('images/gallery/' . $item->images->first()->image_path) }}"
-                    class="w-full h-full object-cover transform transition duration-500 group-hover:scale-110 rounded-lg"
+                    class="w-full h-full object-cover transform transition duration-500 group-hover:scale-110  rounded-lg cursor-pointer"onclick="openFullScreen(this)" 
                     alt="{{ $item->gallery_title ?? 'Gallery image' }}" loading="lazy">
-                <div
+                {{-- <div
                     class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 transition-opacity duration-500 group-hover:opacity-100">
                     <p class="text-white text-lg sm:text-xl font-semibold">{{ $item->gallery_title ?? 'Models Pose' }}</p>
-                </div>
+                </div> --}}
             </div>
         @endforeach
+    </div>
+    <div id="fullscreenModal" class="fixed inset-0 bg-black bg-opacity-75 hidden flex justify-center items-center z-50 ">
+        <img id="fullscreenImage" 
+         class="w-[50rem] h-[30rem] object-cover rounded-lg px-4" 
+         alt="Fullscreen Image">
+        
+        <button id=""
+            class="absolute top-4 right-4 text-white transition p-2 rounded-full bg-black bg-opacity-50 hover:bg-opacity-75">
+            <i class="bi bi-x-circle-fill text-2xl text-white"></i>
+        </button>
     </div>
     
     <div class="flex justify-center">
@@ -269,7 +269,7 @@
     </div>
     <div id="fullscreenModal" class="fixed inset-0 bg-black bg-opacity-75 hidden flex justify-center items-center z-50 ">
         <img id="fullscreenImage" 
-         class="w-[50rem] h-[30rem] object-cover rounded-lg" 
+         class="w-[50rem] h-[30rem] object-cover rounded-lg px-4" 
          alt="Fullscreen Image">
         
         <button id=""
@@ -356,58 +356,30 @@
             <div
                 class="flex flex-col items-center transform transition duration-300 hover:scale-105 hover:bg-gray-50 rounded-lg p-5 shadow-lg">
                 <img src="https://images.unsplash.com/photo-1523712999610-f77fbcfc3843?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                    alt="Professional Portraits" class="w-full h-64 object-cover object-top rounded mb-4 cursor-pointer"onclick="openFullScreen(this)">
+                    alt="Professional Portraits" class="w-full h-64 object-cover object-top rounded mb-4">
                 <h3 class="text-xl sm:text-2xl font-semibold text-black mb-2 text-center">Elevate Your Portraits</h3>
                 <p class="text-gray-600 text-center mb-4">Experience the art of portrait photography, crafted to capture
                     your essence and personality in every shot.</p>
             </div>
-            <div id="fullscreenModal" class="fixed inset-0 bg-black bg-opacity-75 hidden flex justify-center items-center z-50 ">
-                <img id="fullscreenImage" 
-                 class="w-[50rem] h-[30rem] object-cover rounded-lg" 
-                 alt="Fullscreen Image">
-                
-                <button id=""
-                    class="absolute top-4 right-4 text-white transition p-2 rounded-full bg-black bg-opacity-50 hover:bg-opacity-75">
-                    <i class="bi bi-x-circle-fill text-2xl text-white"></i>
-                </button>
-            </div>
+            
             <!-- Card 2 -->
             <div
                 class="flex flex-col items-center transform transition duration-300 hover:scale-105 hover:bg-gray-50 rounded-lg p-5 shadow-lg">
                 <img src="https://img.freepik.com/free-photo/decorated-banquet-hall-with-flowers_8353-10058.jpg?ga=GA1.1.1275289697.1728223870&semt=ais_hybrid"
-                    alt="Event Photography" class="w-full h-64 object-cover rounded mb-4 cursor-pointer"onclick="openFullScreen(this)">
+                    alt="Event Photography" class="w-full h-64 object-cover rounded mb-4">
                 <h3 class="text-xl sm:text-2xl font-semibold text-black mb-2 text-center">Mastering Photography Art</h3>
                 <p class="text-gray-600 text-center mb-4">Capture your events with unparalleled expertise. Relive each
                     memorable moment with our professional event coverage.</p>
             </div>
-            <div id="fullscreenModal" class="fixed inset-0 bg-black bg-opacity-75 hidden flex justify-center items-center z-50 ">
-                <img id="fullscreenImage" 
-                 class="w-[50rem] h-[30rem] object-cover rounded-lg" 
-                 alt="Fullscreen Image">
-                
-                <button id=""
-                    class="absolute top-4 right-4 text-white transition p-2 rounded-full bg-black bg-opacity-50 hover:bg-opacity-75">
-                    <i class="bi bi-x-circle-fill text-2xl text-white"></i>
-                </button>
-            </div>
+           
             <!-- Card 3 -->
             <div
                 class="flex flex-col items-center transform transition duration-300 hover:scale-105 hover:bg-gray-50 rounded-lg p-5 shadow-lg">
                 <img src="https://img.freepik.com/free-photo/immersive-experience-concept-collage_23-2149498342.jpg?ga=GA1.1.1275289697.1728223870&semt=ais_hybrid"
-                    alt="Landscape & Nature" class="w-full h-64 object-cover rounded mb-4 cursor-pointer"onclick="openFullScreen(this)">
+                    alt="Landscape & Nature" class="w-full h-64 object-cover rounded mb-4">
                 <h3 class="text-xl sm:text-2xl font-semibold text-black mb-2 text-center">Capturing Moments</h3>
                 <p class="text-gray-600 text-center mb-4">Explore nature’s beauty through stunning captures of landscapes
                     and outdoor scenes, designed to inspire and captivate.</p>
-            </div>
-            <div id="fullscreenModal" class="fixed inset-0 bg-black bg-opacity-75 hidden flex justify-center items-center z-50 ">
-                <img id="fullscreenImage" 
-                 class="w-[50rem] h-[30rem] object-cover rounded-lg" 
-                 alt="Fullscreen Image">
-                
-                <button id=""
-                    class="absolute top-4 right-4 text-white transition p-2 rounded-full bg-black bg-opacity-50 hover:bg-opacity-75">
-                    <i class="bi bi-x-circle-fill text-2xl text-white"></i>
-                </button>
             </div>
         </div>
     </div>

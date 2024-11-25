@@ -1,6 +1,6 @@
 
 
-@section('title','Budget Calculator')
+@section('title','Budget Calculator | SmartStudio')
 @extends('public.base')
 
 @section('content')

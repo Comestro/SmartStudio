@@ -1,4 +1,4 @@
-@section('title','Video')
+@section('title','Video | SmartStudio')
 @extends('public.base')
 
 
