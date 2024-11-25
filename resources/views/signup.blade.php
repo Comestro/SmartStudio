@@ -21,26 +21,42 @@
         <div class="md:w-1/2 p-8">
             <h2 class="text-3xl font-bold text-black mb-2 ">Sign Up</h2>
             <p class="text-sm text-gray-500 mb-6 uppercase">Click For Your Shoot</p>
-            <form action="{{ route('register.submit') }}" class="space-y-4" method="POST">
+            <form action="{{ route('register.submit') }}" class="space-y-4 w-full" method="POST">
                 @csrf
-                <div class="flex items-center">
+                <div class="flex flex-col">
                     <label for="" class="w-1/4 text-sm font-semibold text-gray-700">Name</label>
-                    <input type="text" name="name" id="" class="p-2.5 w-3/4 border border-gray-300 rounded focus:outline-none focus:border-yellow-500">
+                    <input type="text" name="name" id="" class="p-2.5 w-full border border-gray-300 rounded focus:outline-none focus:border-yellow-500">
+                    @error('name')
+                    <p class="text-sm text-red-500">{{$message}}</p>
+                        
+                    @enderror
+
                 </div>
-                <div class="flex items-center">
+                <div class="flex flex-col">
                     <label for="" class="w-1/4 text-sm font-semibold text-gray-700">Email</label>
-                    <input type="email" id="" name="email" class="p-2.5 w-3/4 border border-gray-300 rounded focus:outline-none focus:border-yellow-500">
+                    <input type="email" id="" name="email" class="p-2.5 w-full border border-gray-300 rounded focus:outline-none focus:border-yellow-500">
+                    @error('email')
+                    <p class="text-sm text-red-500">{{$message}}</p>
+                        
+                    @enderror
                 </div>
-                <div class="flex items-center">
+                <div class="flex flex-col">
                     <label for="" class="w-1/4 text-sm font-semibold text-gray-700">Phone No.</label>
-                    <input type="text" name="phone_no" id="" class="p-2.5 w-3/4 border border-gray-300 rounded focus:outline-none focus:border-yellow-500">
+                    <input type="text" name="phone_no" maxlength="10" id="" class="p-2.5 w-full border border-gray-300 rounded focus:outline-none focus:border-yellow-500">
+                    @error('phone_no')
+                        <p class="text-xs text-red-500">{{$message}}</p>
+                    @enderror
                 </div>
                
                
                 
-                <div class="flex items-center">
+                <div class="flex flex-col">
                     <label for="" class="w-1/4 text-sm font-semibold text-gray-700">Password</label>
-                    <input type="password" name="password" id="" class="p-2.5 w-3/4 border border-gray-300 rounded focus:outline-none focus:border-yellow-500">
+                    <input type="password" name="password" id="" class="p-2.5 w-full border border-gray-300 rounded focus:outline-none focus:border-yellow-500">
+                    @error('password')
+                    <p class="text-sm text-red-500">{{$message}}</p>
+                        
+                    @enderror
                 </div>
                 
                
