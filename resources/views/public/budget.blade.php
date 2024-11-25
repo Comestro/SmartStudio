@@ -9,10 +9,10 @@
 Find the perfect photography package for your budget at Smart Studio. We offer a range of options to fit your needs and ensure quality results.
 @endsection
 
-<div class=" mt-32  w-full"  >
+<div class=" mt-32   w-full"  >
        
 
-    <div class=" justify-center items-center px-4">
+    <div class=" justify-center items-center px-4 mb-8">
         
         <form class="w-full max-w-lg mx-auto p-6 bg-gray-800 h-[500px] rounded-lg shadow-lg" action="" method="post">
             @csrf
