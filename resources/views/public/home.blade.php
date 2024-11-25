@@ -41,7 +41,7 @@
                 <a href="{{ route('home') }}" class="text-xl font-bold">Smart studio</a>
             </div>
 
-            <nav class="hidden md:flex space-x-6 text-lg font-semibold">
+            <nav class=" md:flex space-x-6 text-lg font-semibold">
                 <a href="{{ route('home') }}" class="text-yellow-500">Home</a>
                 <a href="{{ route('about') }}" class="hover:text-yellow-500">About</a>
                 <a href="{{ route('gallery') }}" class="hover:text-yellow-500">Gallery</a>
@@ -127,6 +127,16 @@
         }
 
         header.visible {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        #whatsapp {
+            transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+            transform: translateY(-100%);
+            opacity: 0;
+        }
+
+        #whatsapp.visible {
             transform: translateY(0);
             opacity: 1;
         }
@@ -389,7 +399,7 @@
         I am interested in booking a photography session with your studio. Could you please let me know the availability.
         Looking forward to your response.
         Thank you!') }}"
-        target="_blank" class="fixed md:bottom-10  bottom-20 right-2 md:right-10 z-20 group">
+        target="_blank" id="whatsapp" class="fixed md:bottom-10  bottom-20 right-2 md:right-10 z-20 group">
         <div
             class="flex items-center bg-green-500 rounded-full p-2 shadow-lg text-white hover:bg-green-600 transition-all duration-300">
             <div
@@ -461,6 +471,7 @@
 
         document.addEventListener("DOMContentLoaded", () => {
             const header = document.querySelector("header");
+            const whatsapp = document.getElementById("whatsapp");
             const banner = document.querySelector("main");
 
             const observer = new IntersectionObserver(
@@ -468,9 +479,11 @@
                     if (entry.isIntersecting) {
                         // Banner is in view, hide the header
                         header.classList.remove("visible");
+                        whatsapp.classList.remove("visible");
                     } else {
                         // Banner is out of view, show the header
                         header.classList.add("visible");
+                        whatsapp.classList.add("visible");
                     }
                 }, {
                     root: null,
