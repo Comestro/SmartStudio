@@ -56,9 +56,15 @@
                 <a href="https://twitter.com" target="_blank" class="hover:text-blue-400">
                     <i class="bi bi-twitter text-xl"></i>
                 </a> --}}
-                <a href="{{ route('category.view') }}"
-                class="block text-yellow-400 border border-yellow-400 px-2 py-2 rounded hover:bg-yellow-400 hover:text-white transition">
+                {{-- <a href="{{ route('category.view') }}"
+                class=" px-2 py-2  w-full text-center text-yellow-400 border border-yellow-400  rounded hover:bg-yellow-400 hover:text-white transition">
                 Book Now
+                </a> --}}
+                <a href="{{ route('category.view') }}">
+                    <button type="submit"
+                            class="w-full px-2 py-2 text-yellow-400 border border-yellow-400 rounded hover:bg-yellow-400 hover:text-white transition">
+                            Book Now
+                    </button>
                 </a>
 
                 @auth
