@@ -72,9 +72,11 @@
             <a href="https://twitter.com" target="_blank" class="hover:text-blue-400">
                 <i class="bi bi-twitter text-xl"></i>
             </a> --}}
-            <a href="{{ route('category.view') }}"
-            class="block text-center text-yellow-400 border border-yellow-400 px-2 py-2 rounded hover:bg-yellow-400 hover:text-white transition">
-            Book Now
+            <a href="{{ route('category.view') }}">
+                <button type="submit"
+                        class="w-full px-2 py-2 text-yellow-400 border border-yellow-400 rounded hover:bg-yellow-400 hover:text-white transition">
+                        Book Now
+                </button>
             </a>
 
             @auth
@@ -99,7 +101,7 @@
     </div>
     
     <!-- Mobile Menu -->
-    <div id="mobile-menu" class="hidden md:hidden flex flex-col space-y-4 p-4 text-lg font-semibold">
+    <div id="mobile-menu" class="hidden md:hidden flex flex-col items-center justify-center space-y-4 p-4 text-lg font-semibold">
         <a href="{{ route('home') }}" class="text-yellow-500 hover:text-white"> <i class="bi bi-house-fill"></i> Home</a>
         <a href="{{ route('about') }}" class="text-yellow-500 hover:text-white"> <i class="bi bi-person-circle"></i> About</a>
         <a href="{{ route('gallery') }}" class="text-yellow-500 hover:text-white"><i class="bi bi-images"></i> Gallery</a>
@@ -388,20 +390,10 @@
             @foreach ($galleries->skip(6)->take(3) as $item)
                 <div>
                     <img src="{{ asset('images/gallery/' . $item->images->first()->image_path) }}"
-                        class="w-full h-64 object-cover cursor-pointer"onclick="openFullScreen(this)" alt="Image 1">
+                        class="w-full h-64 object-cover" alt="Image 1">
                 </div>
             @endforeach
         </div>
-    </div>
-    <div id="fullscreenModal" class="fixed inset-0 bg-black bg-opacity-75 hidden flex justify-center items-center z-50 ">
-        <img id="fullscreenImage" 
-         class="w-[50rem] h-[30rem] object-cover rounded-lg px-4" 
-         alt="Fullscreen Image">
-        
-        <button id=""
-            class="absolute top-4 right-4 text-white transition p-2 rounded-full bg-black bg-opacity-50 hover:bg-opacity-75">
-            <i class="bi bi-x-circle-fill text-2xl text-white"></i>
-        </button>
     </div>
 
 
