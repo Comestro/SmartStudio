@@ -33,35 +33,130 @@
 @endsection
 @section('content')
 
-    <header class="bg-gradient-to-b from-gray-900 to-black text-white py-3 px-4 fixed top-0 w-full z-10 shadow-md">
-        <div class="container mx-auto flex items-center justify-between">
-            <div class="flex items-center space-x-3">
-                <img src="https://th.bing.com/th?id=OIP.XfloBSB32f50RImZskOHFwHaHa&w=250&h=250" alt="Logo"
-                    class="w-12 h-12 rounded-full">
-                <a href="{{ route('home') }}" class="text-xl font-bold">Smart studio</a>
-            </div>
-
-            <nav class="hidden md:flex space-x-6 text-lg font-semibold">
-                <a href="{{ route('home') }}" class="text-yellow-500">Home</a>
-                <a href="{{ route('about') }}" class="hover:text-yellow-500">About</a>
-                <a href="{{ route('gallery') }}" class="hover:text-yellow-500">Gallery</a>
-                <a href="{{ route('portfolio') }}" class="hover:text-yellow-500">Portfolio</a>
-                <a href="{{ route('contact') }}" class="hover:text-yellow-500">Contact</a>
-            </nav>
-
-            <div class="flex space-x-4">
-                <a href="https://facebook.com" target="_blank" class="hover:text-blue-600">
-                    <i class="bi bi-facebook text-xl"></i>
-                </a>
-                <a href="https://instagram.com" target="_blank" class="hover:text-pink-500">
-                    <i class="bi bi-instagram text-xl"></i>
-                </a>
-                <a href="https://twitter.com" target="_blank" class="hover:text-blue-400">
-                    <i class="bi bi-twitter text-xl"></i>
-                </a>
-            </div>
+<header class="bg-gradient-to-b from-gray-900 to-black shadow-md text-white px-2 lg:px-4 fixed top-0 w-full z-10 ">
+    <div class="container mx-auto flex items-center justify-between p-2 lg:p-4">
+        <!-- Logo Section -->
+        <div class="flex items-center space-x-3">
+           <a href="{{ route('home') }}"><img src="https://th.bing.com/th?id=OIP.XfloBSB32f50RImZskOHFwHaHa&w=250&h=250" alt="Logo" class="w-12 h-12 rounded-full"></a> 
+            <a href="{{ route('home') }}" class=" text-md lg:text-xl font-bold">Smart Studio</a>
         </div>
-    </header>
+    
+        <!-- Hamburger Menu Button (Visible on small screens) -->
+        <div class="md:hidden">
+            <button id="menu-toggle" class="text-yellow-500 focus:outline-none">
+                <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </button>
+        </div>
+    
+        <!-- Navigation Links -->
+        <nav id="menu" class="hidden md:flex md:space-x-4 font-semibold text-sm lg:text-lg">
+            <a href="{{ route('home') }}" class="text-yellow-500">Home</a>
+            <a href="{{ route('about') }}" class="hover:text-yellow-500">About</a>
+            <a href="{{ route('gallery') }}" class="hover:text-yellow-500">Gallery</a>
+            <a href="{{ route('portfolio') }}" class="hover:text-yellow-500">Portfolio</a>
+            <a href="{{ route('contact') }}" class="hover:text-yellow-500">Contact</a>
+            <a href="{{ route('budget.index') }}" class="hover:text-yellow-500">Budget</a>
+            
+        </nav>
+    
+        <!-- Social Icons -->
+        <div class="hidden md:flex space-x-2">
+            {{-- <a href="https://facebook.com" target="_blank" class="hover:text-blue-600">
+                <i class="bi bi-facebook text-xl"></i>
+            </a>
+            <a href="https://instagram.com" target="_blank" class="hover:text-pink-500">
+                <i class="bi bi-instagram text-xl"></i>
+            </a>
+            <a href="https://twitter.com" target="_blank" class="hover:text-blue-400">
+                <i class="bi bi-twitter text-xl"></i>
+            </a> --}}
+            <a href="{{ route('category.view') }}"
+            class="block text-center text-yellow-400 border border-yellow-400 px-2 py-2 rounded hover:bg-yellow-400 hover:text-white transition">
+            Book Now
+            </a>
+
+            @auth
+            <form method="POST" action="{{ route('logout') }}">
+                @csrf
+                <button type="submit"
+                    class="w-full px-2 py-2 text-yellow-400 border border-yellow-400 rounded hover:bg-yellow-400 hover:text-white transition">
+                    Logout
+                </button>
+            </form>
+            @endauth
+            @guest
+            <form action="{{ route('login') }}">
+                @csrf
+                <button type="submit"
+                    class="w-full px-2 py-2 text-yellow-400 border border-yellow-400 rounded hover:bg-yellow-400 hover:text-white transition">
+                    Login
+                </button>
+            </form>
+            @endguest
+        </div>
+    </div>
+    
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden flex flex-col items-center justify-center space-y-4 p-4 text-lg font-semibold">
+        <a href="{{ route('home') }}" class="text-yellow-500 hover:text-white"> <i class="bi bi-house-fill"></i> Home</a>
+        <a href="{{ route('about') }}" class="text-yellow-500 hover:text-white"> <i class="bi bi-person-circle"></i> About</a>
+        <a href="{{ route('gallery') }}" class="text-yellow-500 hover:text-white"><i class="bi bi-images"></i> Gallery</a>
+        <a href="{{ route('portfolio') }}" class="text-yellow-500 hover:text-white"> <i class="bi bi-images"></i> Portfolio</a>
+        <a href="{{ route('contact') }}" class="text-yellow-500 hover:text-white"><i class="bi bi-phone-vibrate-fill"></i> Contact</a>
+        <a href="{{ route('budget.index') }}" class="text-yellow-500 hover:text-white"><i class="bi bi-cash-coin"></i> Budget</a>
+        
+        <div class="flex flex-col space-y-4  mt-4">
+            
+
+            <a href="{{ route('category.view') }}"
+            class=" w-48 py-2  block text-center text-yellow-400 border border-yellow-400 rounded hover:bg-yellow-400 hover:text-white transition">
+            Book Now
+            </a>
+
+            @auth
+            <form method="POST" action="{{ route('logout') }}">
+                @csrf
+                <button type="submit"
+                    class="w-48 py-2  text-yellow-400 border border-yellow-400 rounded hover:bg-yellow-400 hover:text-white transition">
+                    Logout
+                </button>
+            </form>
+            @endauth
+            @guest
+            <form action="{{ route('login') }}">
+                @csrf
+                <button type="submit"
+                    class="w-48 py-2  text-yellow-400 border border-yellow-400 rounded hover:bg-yellow-400 hover:text-white transition">
+                    Login
+                </button>
+            </form>
+            @endguest
+            {{-- <a href="https://facebook.com" target="_blank" class="hover:text-blue-600">
+                <i class="bi bi-facebook text-xl"></i>
+            </a>
+            <a href="https://instagram.com" target="_blank" class="hover:text-pink-500">
+                <i class="bi bi-instagram text-xl"></i>
+            </a>
+            <a href="https://twitter.com" target="_blank" class="hover:text-blue-400">
+                <i class="bi bi-twitter text-xl"></i>
+            </a> --}}
+        </div>
+    </div>
+    
+    <!-- Script to Toggle Menu -->
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const menu = document.getElementById('menu');
+        const mobileMenu = document.getElementById('mobile-menu');
+    
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+    
+</header>
     <main class="relative w-full md:w-4/4 ">
         <livewire:public.banner.calling-banner />
     </main>
@@ -127,6 +222,16 @@
         }
 
         header.visible {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        #whatsapp {
+            transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+            transform: translateY(-100%);
+            opacity: 0;
+        }
+
+        #whatsapp.visible {
             transform: translateY(0);
             opacity: 1;
         }
@@ -399,7 +504,7 @@
         I am interested in booking a photography session with your studio. Could you please let me know the availability.
         Looking forward to your response.
         Thank you!') }}"
-        target="_blank" class="fixed md:bottom-10  bottom-20 right-2 md:right-10 z-20 group">
+        target="_blank" id="whatsapp" class="fixed md:bottom-10  bottom-20 right-2 md:right-10 z-20 group">
         <div
             class="flex items-center bg-green-500 rounded-full p-2 shadow-lg text-white hover:bg-green-600 transition-all duration-300">
             <div
@@ -471,6 +576,7 @@
 
         document.addEventListener("DOMContentLoaded", () => {
             const header = document.querySelector("header");
+            const whatsapp = document.getElementById("whatsapp");
             const banner = document.querySelector("main");
 
             const observer = new IntersectionObserver(
@@ -478,9 +584,11 @@
                     if (entry.isIntersecting) {
                         // Banner is in view, hide the header
                         header.classList.remove("visible");
+                        whatsapp.classList.remove("visible");
                     } else {
                         // Banner is out of view, show the header
                         header.classList.add("visible");
+                        whatsapp.classList.add("visible");
                     }
                 }, {
                     root: null,

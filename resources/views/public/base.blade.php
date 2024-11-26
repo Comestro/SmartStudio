@@ -91,11 +91,11 @@
             <a href="{{ route('contact') }}" class="text-yellow-500 hover:text-white"><i class="bi bi-phone-vibrate-fill"></i> Contact</a>
             <a href="{{ route('budget.index') }}" class="text-yellow-500 hover:text-white"><i class="bi bi-cash-coin"></i> Budget</a>
             
-            <div class="flex flex-col space-y-4 space-x-4 mt-4">
+            <div class="flex flex-col space-y-4  mt-4">
                 
 
                 <a href="{{ route('category.view') }}"
-                class=" w-48 py-2 ml-4 block text-center text-yellow-400 border border-yellow-400 rounded hover:bg-yellow-400 hover:text-white transition">
+                class=" w-48 py-2  block text-center text-yellow-400 border border-yellow-400 rounded hover:bg-yellow-400 hover:text-white transition">
                 Book Now
                 </a>
 
@@ -103,7 +103,7 @@
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf
                     <button type="submit"
-                        class="w-48 py-2 mr-0 text-yellow-400 border border-yellow-400 rounded hover:bg-yellow-400 hover:text-white transition">
+                        class="w-48 py-2  text-yellow-400 border border-yellow-400 rounded hover:bg-yellow-400 hover:text-white transition">
                         Logout
                     </button>
                 </form>
@@ -112,7 +112,7 @@
                 <form action="{{ route('login') }}">
                     @csrf
                     <button type="submit"
-                        class="w-48 py-2 mr-0 text-yellow-400 border border-yellow-400 rounded hover:bg-yellow-400 hover:text-white transition">
+                        class="w-48 py-2  text-yellow-400 border border-yellow-400 rounded hover:bg-yellow-400 hover:text-white transition">
                         Login
                     </button>
                 </form>
