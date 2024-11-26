@@ -101,7 +101,7 @@
     </div>
     
     <!-- Mobile Menu -->
-    <div id="mobile-menu" class="hidden md:hidden flex flex-col items-center justify-center space-y-4 p-4 text-lg font-semibold">
+    <div id="mobile-menu" class="hidden md:hidden flex flex-col  space-y-4 p-4 text-lg font-semibold">
         <a href="{{ route('home') }}" class="text-yellow-500 hover:text-white"> <i class="bi bi-house-fill"></i> Home</a>
         <a href="{{ route('about') }}" class="text-yellow-500 hover:text-white"> <i class="bi bi-person-circle"></i> About</a>
         <a href="{{ route('gallery') }}" class="text-yellow-500 hover:text-white"><i class="bi bi-images"></i> Gallery</a>
