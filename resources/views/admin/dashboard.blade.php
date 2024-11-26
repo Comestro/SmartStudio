@@ -10,7 +10,7 @@
             scrollbar-width: none;
         }
     </style>
-    <div class="w-full h-auto ">
+    <div class="w-full h-auto p-8 ">
         {{-- nav --}}
 
 

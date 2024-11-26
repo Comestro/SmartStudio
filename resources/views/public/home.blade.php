@@ -72,9 +72,11 @@
             <a href="https://twitter.com" target="_blank" class="hover:text-blue-400">
                 <i class="bi bi-twitter text-xl"></i>
             </a> --}}
-            <a href="{{ route('category.view') }}"
-            class="block text-center text-yellow-400 border border-yellow-400 px-2 py-2 rounded hover:bg-yellow-400 hover:text-white transition">
-            Book Now
+            <a href="{{ route('category.view') }}">
+                <button type="submit"
+                        class="w-full px-2 py-2 text-yellow-400 border border-yellow-400 rounded hover:bg-yellow-400 hover:text-white transition">
+                        Book Now
+                </button>
             </a>
 
             @auth
@@ -99,7 +101,7 @@
     </div>
     
     <!-- Mobile Menu -->
-    <div id="mobile-menu" class="hidden md:hidden flex flex-col items-center justify-center space-y-4 p-4 text-lg font-semibold">
+    <div id="mobile-menu" class="hidden md:hidden flex flex-col  space-y-4 p-4 text-lg font-semibold">
         <a href="{{ route('home') }}" class="text-yellow-500 hover:text-white"> <i class="bi bi-house-fill"></i> Home</a>
         <a href="{{ route('about') }}" class="text-yellow-500 hover:text-white"> <i class="bi bi-person-circle"></i> About</a>
         <a href="{{ route('gallery') }}" class="text-yellow-500 hover:text-white"><i class="bi bi-images"></i> Gallery</a>
