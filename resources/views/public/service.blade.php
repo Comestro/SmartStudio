@@ -45,11 +45,11 @@ Smart Studio offers professional photography services, including portraits, wedd
       <div class="text-center text-white px-4 sm:px-8">
         <h1 class="text-5xl font-bold mb-4">Photography Services</h1>
         <p class="text-xl mb-6">Turning Moments into Timeless Memories</p>
-        <a href="#services" class="mt-8 inline-block bg-yellow-500 text-white py-3 px-6 rounded-full hover:bg-blue-700 transition">Explore Services</a>
+        <a href="#services" class="mt-8 inline-block bg-gradient-to-r from-yellow-400 via-yellow-300 to-yellow-200 text-black font-semibold py-3 px-6 rounded-full transition">Explore Services</a>
       </div>
     </div>
   </section>
-<div class="py-8 bg-white"></div>
+{{-- <div class="py-8 bg-white"></div> --}}
  
   <section id="services" class="py-20 bg-black text-gray-50">
     <div class="container mx-auto px-6">
@@ -104,13 +104,13 @@ Smart Studio offers professional photography services, including portraits, wedd
       </div>
     </div>
   </section>
-  <div class="py-8 bg-white"></div>
+  {{-- <div class="py-8 bg-white"></div> --}}
   <section class="bg-black py-12">
     <div class="container mx-auto text-center text-white">
         <h2 class="text-3xl font-bold mb-4 text-yellow-600">Book a Session Today!</h2>
         <p class="mb-6">Let's create beautiful memories together. Contact us to discuss your photography needs.</p>
-        <a href="{{route('contact')}}" class="bg-yellow-500 text-black font-semibold py-3 px-6 rounded-full hover:bg-gray-200 transition">Contact Us</a>
+        <a href="{{route('contact')}}" class="bg-gradient-to-r from-yellow-400 via-yellow-300 to-yellow-200 text-black font-semibold py-3 px-6 rounded-full transition">Contact Us</a>
     </div>
 </section>
-<div class="py-8 bg-white"></div>
+{{-- <div class="py-8 bg-white"></div> --}}
 @endsection
