@@ -57,7 +57,7 @@
                     <i class="bi bi-twitter text-xl"></i>
                 </a> --}}
                 <a href="{{ route('category.view') }}"
-                class="block text-center text-yellow-400 border border-yellow-400 px-2 py-2 rounded hover:bg-yellow-400 hover:text-white transition">
+                class="block text-yellow-400 border border-yellow-400 px-2 py-2 rounded hover:bg-yellow-400 hover:text-white transition">
                 Book Now
                 </a>
 

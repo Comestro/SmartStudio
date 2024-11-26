@@ -164,7 +164,7 @@ Explore the comprehensive portfolio of Smart Studio.Our work includes portraits,
             @foreach ($categories as $item)
                 <div tabindex="0"
                     class="carousel-item snap-center h-80 sm:h-96 bg-cover bg-center relative focus:outline-none lg:min-w-[33.33%] md:min-w-[50%]  min-w-full">
-                    <img src="{{ asset('images/category/' . $item->cat_image) }}" alt="">
+                    <img src="{{ asset('images/category/' . $item->cat_image) }}"class="cursor-pointer"onclick="openFullScreen(this)" alt="">
                     <div class="text-overlay">
                         <h2 class="text-lg font-bold uppercase">{{$item->cat_name}}</h2>
                         {{-- <p class="uppercase">Royalty / Wedding</p> --}}
@@ -174,6 +174,17 @@ Explore the comprehensive portfolio of Smart Studio.Our work includes portraits,
             @endforeach
 
         </div>
+        <div id="fullscreenModal" class="fixed inset-0 bg-black bg-opacity-75 hidden flex justify-center items-center z-50 ">
+            <img id="fullscreenImage" 
+             class="w-[50rem] h-[30rem] object-cover rounded-lg px-4" 
+             alt="Fullscreen Image">
+            
+            <button id=""
+                class="absolute top-4 right-4 text-white transition p-2 rounded-full bg-black bg-opacity-50 hover:bg-opacity-75">
+                <i class="bi bi-x-circle-fill text-2xl text-white"></i>
+            </button>
+        </div>
+    
 
         {{-- latest work --}}
         <div class="p-8 w-full md:w-1/2" id="Work">
@@ -186,37 +197,78 @@ Explore the comprehensive portfolio of Smart Studio.Our work includes portraits,
                 <div class="lg:col-span-2">
                     <img src="{{ asset('images/gallery/' . $galleryImages->first()->image_path) }}" 
                          alt="{{ $galleryImages->first()->gallery->gallery_title ?? 'Gallery Image' }}" 
-                         class="w-full h-full object-cover rounded-lg shadow-lg">
+                         class="w-full h-full object-cover rounded-lg shadow-lg cursor-pointer"onclick="openFullScreen(this)">
                 </div>
             @endif
+            <div id="fullscreenModal" class="fixed inset-0 bg-black bg-opacity-75 hidden flex justify-center items-center z-50 ">
+                <img id="fullscreenImage" 
+                 class="w-[50rem] h-[30rem] object-cover rounded-lg px-4" 
+                 alt="Fullscreen Image">
+                
+                <button id=""
+                    class="absolute top-4 right-4 text-white transition p-2 rounded-full bg-black bg-opacity-50 hover:bg-opacity-75">
+                    <i class="bi bi-x-circle-fill text-2xl text-white"></i>
+                </button>
+            </div>
+            
+
         
             @if($galleryImages->skip(1)->first())
                 <div class="lg:col-span-2 row-span-2">
                     <img src="{{ asset('images/gallery/' . $galleryImages->skip(1)->first()->image_path) }}" 
                          alt="{{ $galleryImages->skip(1)->first()->gallery->gallery_title ?? 'Gallery Image' }}" 
-                         class="w-full h-full object-cover rounded-lg shadow-lg">
+                         class="w-full h-full object-cover rounded-lg shadow-lg cursor-pointer"onclick="openFullScreen(this)">
                 </div>
             @endif
-        
+            <div id="fullscreenModal" class="fixed inset-0 bg-black bg-opacity-75 hidden flex justify-center items-center z-50 ">
+                <img id="fullscreenImage" 
+                 class="w-[50rem] h-[30rem] object-cover rounded-lg px-4" 
+                 alt="Fullscreen Image">
+                
+                <button id=""
+                    class="absolute top-4 right-4 text-white transition p-2 rounded-full bg-black bg-opacity-50 hover:bg-opacity-75">
+                    <i class="bi bi-x-circle-fill text-2xl text-white"></i>
+                </button>
+            </div>
             @if($galleryImages->skip(2)->count() >= 2)
                 <div class="hidden lg:grid grid-rows-2 gap-4">
                     @foreach($galleryImages->skip(2)->take(2) as $image)
                         <div class="h-auto">
                             <img src="{{ asset('images/gallery/' . $image->image_path) }}" 
                                  alt="{{ $image->gallery->gallery_title ?? 'Gallery Image' }}" 
-                                 class="w-full h-full object-cover rounded-lg shadow-lg">
+                                 class="w-full h-full object-cover rounded-lg shadow-lg cursor-pointer"onclick="openFullScreen(this)">
                         </div>
                     @endforeach
                 </div>
             @endif
+            <div id="fullscreenModal" class="fixed inset-0 bg-black bg-opacity-75 hidden flex justify-center items-center z-50 ">
+                <img id="fullscreenImage" 
+                 class="w-[50rem] h-[30rem] object-cover rounded-lg px-4" 
+                 alt="Fullscreen Image">
+                
+                <button id=""
+                    class="absolute top-4 right-4 text-white transition p-2 rounded-full bg-black bg-opacity-50 hover:bg-opacity-75">
+                    <i class="bi bi-x-circle-fill text-2xl text-white"></i>
+                </button>
+            </div>
         
             @foreach($galleryImages->skip(4)->take(3) as $image)
                 <div class="lg:col-span-1">
                     <img src="{{ asset('images/gallery/' . $image->image_path) }}" 
                          alt="{{ $image->gallery->gallery_title ?? 'Gallery Image' }}" 
-                         class="w-full h-48 object-cover rounded-lg shadow-lg">
+                         class="w-full h-48 object-cover rounded-lg shadow-lg cursor-pointer"onclick="openFullScreen(this)">
                 </div>
             @endforeach
+            <div id="fullscreenModal" class="fixed inset-0 bg-black bg-opacity-75 hidden flex justify-center items-center z-50 ">
+                <img id="fullscreenImage" 
+                 class="w-[50rem] h-[30rem] object-cover rounded-lg px-4" 
+                 alt="Fullscreen Image">
+                
+                <button id=""
+                    class="absolute top-4 right-4 text-white transition p-2 rounded-full bg-black bg-opacity-50 hover:bg-opacity-75">
+                    <i class="bi bi-x-circle-fill text-2xl text-white"></i>
+                </button>
+            </div>
         </div>
         
 
@@ -255,3 +307,27 @@ Explore the comprehensive portfolio of Smart Studio.Our work includes portraits,
             </div>
         </div> --}}
     @endsection
+    <script>
+        function openFullScreen(imgElement) {
+            const modal = document.getElementById('fullscreenModal');
+            const fullScreenImage = document.getElementById('fullscreenImage');
+            
+         
+            fullScreenImage.src = imgElement.src;
+    
+         
+            modal.classList.remove('hidden');
+            
+            
+            fullScreenImage.onload = function() {
+              
+                fullScreenImage.classList.add('max-w-full', 'max-h-full', 'object-contain');
+            };
+    
+          
+            modal.onclick = function() {
+                modal.classList.add('hidden');
+            };
+        }
+    </script>
+    
