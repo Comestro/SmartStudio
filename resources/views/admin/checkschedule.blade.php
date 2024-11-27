@@ -6,7 +6,7 @@
     <h2 class="text-3xl text-yellow-500 font-bold mb-6">Manage Booking</h2>
     <table class=" w-full bg-gray-700 rounded-lg">
         <thead class="">
-            <tr class="bg-yellow-400 text-black ">
+            <tr class="bg-yellow-400 text-black rounded-lg">
                 <th class="px-4 py-3 text-left font-medium">Booking Id</th>
                 <th class="px-4 py-3 text-left font-medium"> Name</th>
                 <th class="px-4 py-3 text-left font-medium"> Mobile</th>
