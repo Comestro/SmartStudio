@@ -1,5 +1,5 @@
 
-@section('title','Booking')
+@section('title','Booking | SmartStudio')
 @extends('public.base')
 
 @section('content')
@@ -9,6 +9,12 @@
        
 
     <div class=" justify-center items-center py-28">
+        @if(session('success'))
+    <div class="w-full max-w-lg mx-auto mb-4 p-4 text-white bg-green-500 rounded-lg">
+        {{ session('success') }}
+    </div>
+@endif
+
         <form action="{{route('category.store',$categorySlug)}}" class="w-full max-w-lg mx-auto p-6 bg-gray-800 h-[500px] rounded-lg shadow-lg" method="post">
             @csrf
             <div class="space-y-4">
@@ -62,4 +68,5 @@
             </div>
         </form>
 </div>
+
 @endsection

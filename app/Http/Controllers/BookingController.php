@@ -23,11 +23,14 @@ class BookingController extends Controller
             ]);
 
             Booking::create($data);
+            return redirect()->back()->with('success', 'Booking request successfully done  we will contact as soon as possible');
 
     }
     public function showBooking(){
         $data['bookings']=Booking::all();
         return view('admin.checkschedule',$data);
+         
     }
-    
+   
+
 }
