@@ -392,10 +392,20 @@
             @foreach ($galleries->skip(6)->take(3) as $item)
                 <div>
                     <img src="{{ asset('images/gallery/' . $item->images->first()->image_path) }}"
-                        class="w-full h-64 object-cover" alt="Image 1">
+                        class="w-full h-64 object-cover cursor-pointer"onclick="openFullScreen(this)" alt="Image 1">
                 </div>
             @endforeach
         </div>
+    </div>
+    <div id="fullscreenModal" class="fixed inset-0 bg-black bg-opacity-75 hidden flex justify-center items-center z-50 ">
+        <img id="fullscreenImage" 
+         class="w-[50rem] h-[30rem] object-cover rounded-lg px-4" 
+         alt="Fullscreen Image">
+        
+        <button id=""
+            class="absolute top-4 right-4 text-white transition p-2 rounded-full bg-black bg-opacity-50 hover:bg-opacity-75">
+            <i class="bi bi-x-circle-fill text-2xl text-white"></i>
+        </button>
     </div>
 
 

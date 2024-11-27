@@ -24,7 +24,9 @@
                 wire:click="updateBackgroundImage('{{ asset('images/banner/' . $item->b_image) }}')">
         @endforeach
     </div>
-    <div class="text-yellow-500 hover:text-white text-4xl py-8 px-2 "><i class="bi bi-arrow-right-circle-fill"></i></div>
+    <div class="text-yellow-500 hover:text-white text-4xl py-8 px-2 ">
+        {{-- <i class="bi bi-arrow-right-circle-fill"></i> --}}
+    </div>
 </div>
 
 
