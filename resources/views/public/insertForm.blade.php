@@ -5,7 +5,7 @@
 @section('content')
 
 
-<div class="  px-4 w-full"  >
+<div class="   w-full"  >
        
 
     <div class=" justify-center items-center py-28">
@@ -23,7 +23,7 @@
                     <label for="name" class="block text-sm font-medium text-gray-200">Your Name</label>
                     <input type="text" id="name" name="name" value="{{ old('name') }}"
                         placeholder="Enter your name"
-                        class="w-full p-3 mt-1  text-slate-200 capitalize bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 transition duration-200">
+                        class="w-full p-3 mt-1  text-slate-200 capitalize bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 transition duration-200">
                     @error('name')
                     <p class="text-sm text-red-500">{{ $message }}</p>
                     @enderror
@@ -34,7 +34,7 @@
                     <label for="mobile" class="block text-sm font-medium text-gray-200">Mobile Number</label>
                     <input type="number" id="mobile" name="mobile" value="{{ old('mobile') }}"
                         placeholder="Enter your Mobile Number"
-                        class="w-full p-3 mt-1 text-salte-200 capitalize bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 transition duration-200">
+                        class="w-full p-3 mt-1 text-salte-200 capitalize bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 transition duration-200">
                     @error('mobile')
                     <p class="text-sm text-red-500">{{ $message }}</p>
                     @enderror
@@ -44,7 +44,7 @@
                     <label for="category" class="block text-sm font-medium text-gray-200">Category</label>
                     <input id="category" name="category" value="{{$categorySlug}}"
                         placeholder="Type Of Category"
-                        class="w-full p-3 mt-1 text-slate-200 capitalize bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 transition ">
+                        class="w-full p-3 mt-1 text-slate-200 capitalize bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 transition ">
                     @error('category')
                     <p class="text-sm text-red-500">{{ $message }}</p>
                     @enderror
@@ -55,7 +55,7 @@
                     <input id="date" name="date"
                     type="date"
                         placeholder="Enter the Date of Booking"
-                        class="w-full p-3 mt-1 text-slate-200 capitalize bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 transition ">
+                        class="w-full p-3 mt-1 text-slate-200 capitalize bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 transition ">
                     @error('date')
                     <p class="text-sm text-red-500">{{ $message }}</p>
                     @enderror
