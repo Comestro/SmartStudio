@@ -10,7 +10,7 @@
 </div>
 <div class="flex flex-col md:flex-row items-center justify-center mt-2 lg:mt-4 px-6 ">
     <p class="text-white text-lg  text-center ">
-        This is a paragraph inside the fullscreen image. The content is centered both vertically and horizontally.
+        "welcome to a world where every click creates a timeless masterpiece."
     </p>
 </div>
 
