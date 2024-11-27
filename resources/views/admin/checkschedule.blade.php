@@ -2,17 +2,17 @@
 
 @section('content')
 
-<div class="bg-gray-800 w-full flex-col items-center flex p-8 rounded-lg shadow-lg overflow-x-auto">
-    <h2 class="text-2xl font-semibold mb-6">Manage Booking</h2>
+<div class="bg-gray-800 w-full flex-col mt-6 items-center flex p-8 rounded-lg shadow-lg overflow-x-auto">
+    <h2 class="text-3xl text-yellow-500 font-bold mb-6">Manage Booking</h2>
     <table class=" w-full bg-gray-700 rounded-lg">
-        <thead>
-            <tr class="bg-gray-600">
+        <thead class="">
+            <tr class="bg-yellow-400 text-black ">
                 <th class="px-4 py-3 text-left font-medium">Booking Id</th>
                 <th class="px-4 py-3 text-left font-medium"> Name</th>
                 <th class="px-4 py-3 text-left font-medium"> Mobile</th>
                 <th class="px-4 py-3 text-left font-medium"> Date</th>
                 <th class="px-4 py-3 text-left font-medium">Booking Category</th>
-                <th class="px-4 py-3 font-medium">Actions</th>
+                {{-- <th class="px-4 py-3 font-medium">Actions</th> --}}
             </tr>
         </thead>
         <tbody>
@@ -24,9 +24,9 @@
                 <td class="px-4 py-3">{{ $item->date }}</td>
                 <td class="px-4 py-3">{{ $item->category }}</td>
 
-                <td class="px-4 py-3 flex ">
+                {{-- <td class="px-4 py-3 flex ">
                     <a class="bg-red-500 px-3 py-1 rounded text-white" href="">Email</a>
-                </td>
+                </td> --}}
             </tr>
             @endforeach
         </tbody>

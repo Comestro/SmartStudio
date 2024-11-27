@@ -158,6 +158,10 @@
             </li>
             </li>
             <li class="flex items-center gap-3 hover:bg-gray-700 p-2 rounded transition duration-300 mt-2 hover:border-r-8 border-yellow-500">
+                <i class="bi bi-calendar2-check-fill text-yellow-500"></i>
+                <a href="{{ route('booking.show') }}" class="text-[#eee] font-medium text-lg">Manage Booking</a>
+            </li>
+            <li class="flex items-center gap-3 hover:bg-gray-700 p-2 rounded transition duration-300 mt-2 hover:border-r-8 border-yellow-500">
                 <i class="bi bi-badge-ad-fill text-yellow-400 text-xl "></i>
                 <a href="{{ route('managead.index') }}" class="text-[#eee] font-medium text-lg">Manage Your Ad</a>
             </li>

@@ -16,7 +16,7 @@
 
 
 
-<div class="absolute bottom-16 left-1/2 transform -translate-x-1/2 flex mb-12 justify-center md:justify-end  md:pr-10">
+<div class="absolute bottom-2 md:bottom-16 left-1/2 transform -translate-x-1/2 flex mb-12 justify-center md:justify-end  md:pr-10">
     <div class="scrollable-carousel w-full flex gap-4 items-center cursor-pointer">
         @foreach ($banners as $item)
             <img src="{{ asset('images/banner/' . $item->b_image) }}" alt=""
