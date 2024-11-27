@@ -46,7 +46,7 @@
                                     <i class="bi bi-folder text-yellow-500 mr-2"></i>
                                     <p class="text-gray-300">Category: {{ $item->category->cat_name }}</p>
                                 </div>
-                                <div class="mt-4 flex justify-between items-center">
+                                <div class="mt-4 flex justify-between items-center gap-1">
                                     <a href="{{ route('gallery.viewGallery', $item->id) }}" class="bg-gradient-to-r from-green-400 to-green-600 hover:bg-gradient-to-l text-white px-3 py-1 rounded-md  transition duration-300 flex items-center">
                                         <i class="bi bi-eye mr-1"></i> View
                                     </a>

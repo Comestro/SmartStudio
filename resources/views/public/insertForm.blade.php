@@ -8,7 +8,7 @@
 <div class="   w-full"  >
        
 
-    <div class=" justify-center items-center py-28">
+    <div class=" justify-center items-center py-28 px-4">
         @if(session('success'))
     <div class="w-full max-w-lg mx-auto mb-4 p-4 text-white bg-green-500 rounded-lg">
         {{ session('success') }}
