@@ -1,3 +1,5 @@
+@section('title', 'service | SmartStudio')
+
 @extends('public.base')
 
 @section('content')
@@ -12,7 +14,7 @@ Smart Studio offers professional photography services, including portraits, wedd
     }
   </style>
  <body class=" text-gray-800">
-  <header class="bg-gray-900 text-white py-3 px-4 fixed top-0 w-full z-10 shadow-md">
+  {{-- <header class="bg-gray-900 text-white py-3 px-4 fixed top-0 w-full z-10 shadow-md">
     <div class="container mx-auto flex items-center justify-between">
       <div class="flex items-center space-x-3">
         <img src="https://th.bing.com/th?id=OIP.XfloBSB32f50RImZskOHFwHaHa&w=250&h=250" alt="Logo" class="w-12 h-12 rounded-full">
@@ -37,7 +39,7 @@ Smart Studio offers professional photography services, including portraits, wedd
         </a>
       </div>
     </div>
-  </header>
+  </header> --}}
 
  
   <section class="bg-cover bg-center bg-black h-screen relative" style="background-image: url('https://img.freepik.com/premium-photo/beautiful-female-model-posing-studio-light-flashes_382934-4673.jpg');">
