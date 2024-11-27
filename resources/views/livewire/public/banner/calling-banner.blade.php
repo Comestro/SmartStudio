@@ -20,7 +20,7 @@
     <div class="scrollable-carousel w-full flex gap-4 items-center cursor-pointer">
         @foreach ($banners as $item)
             <img src="{{ asset('images/banner/' . $item->b_image) }}" alt=""
-                class="rounded-full w-10 h-10 lg:w-20 lg:h-20 object-cover border-2 lg:border-4 border-white hover:scale-105 transition-transform"
+                class="rounded-full w-9 h-9 lg:w-20 lg:h-20 object-cover border-2 lg:border-4 border-white hover:scale-105 transition-transform"
                 wire:click="updateBackgroundImage('{{ asset('images/banner/' . $item->b_image) }}')">
         @endforeach
     </div>
