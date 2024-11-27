@@ -74,11 +74,13 @@
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden flex flex-col space-y-4 p-4 text-md font-semibold">
             <a href="{{ route('home') }}" class="text-yellow-500 hover:text-white"> <i class="bi bi-house-fill"></i> Home</a>
-            <a href="{{ route('about') }}" class="text-yellow-500 hover:text-white"> <i class="bi bi-person-circle"></i> About</a>
-            <a href="{{ route('gallery') }}" class="text-yellow-500 hover:text-white"><i class="bi bi-images"></i> Gallery</a>
-            <a href="{{ route('portfolio') }}" class="text-yellow-500 hover:text-white"> <i class="bi bi-images"></i> Portfolio</a>
-            <a href="{{ route('contact') }}" class="text-yellow-500 hover:text-white"><i class="bi bi-phone-vibrate-fill"></i> Contact</a>
+            <a href="{{ route('portfolio') }}" class="text-yellow-500 hover:text-white"> <i class="bi bi-journal-medical"></i> Portfolio</a>
             <a href="{{ route('budget.index') }}" class="text-yellow-500 hover:text-white"><i class="bi bi-cash-coin"></i> Budget</a>
+            <a href="{{ route('gallery') }}" class="text-yellow-500 hover:text-white"><i class="bi bi-images"></i> Gallery</a>
+            <a href="{{ route('video') }}" class="text-yellow-500 hover:text-white"><i class="bi bi-fast-forward-btn"></i> Video</a>
+            <a href="{{ route('contact') }}" class="text-yellow-500 hover:text-white"><i class="bi bi-phone-vibrate-fill"></i> Contact</a>
+            <a href="{{ route('about') }}" class="text-yellow-500 hover:text-white"> <i class="bi bi-person-circle"></i> About</a>
+
             
             <div class="flex flex-col space-y-4  mt-4">
                 

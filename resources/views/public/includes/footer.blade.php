@@ -15,7 +15,7 @@
         <!-- Instagram Gallery -->
         <div class="flex flex-col items-center md:w-1/3 mt-8 md:mt-0 text-center space-y-4">
             <h1 class="text-yellow-500 text-xl font-semibold">Insta Gallery</h1>
-            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            <a href="{{route('gallery')}}"><div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-2 lg:grid-cols-4 gap-4">
                 <img src="https://tse1.mm.bing.net/th?id=OIP.J0EyMPxp69oUBURsRtCqEwHaE7&pid=Api&P=0&h=180" 
                      alt="Image 1" class="w-24 h-24 object-cover rounded-md shadow-md hover:scale-105 transition duration-300">
                 <img src="https://tse2.mm.bing.net/th?id=OIP.n1Ft5hFRPdgmYJQO-Fz3HgHaEK&pid=Api&P=0&h=180" 
@@ -24,7 +24,7 @@
                      alt="Image 3" class="w-24 h-24 object-cover rounded-md shadow-md hover:scale-105 transition duration-300">
                 <img src="https://tse2.mm.bing.net/th?id=OIP.49hIyMLKW4_HMjUK_PBZlQHaFD&pid=Api&P=0&h=180" 
                      alt="Image 4" class="w-24 h-24 object-cover rounded-md shadow-md hover:scale-105 transition duration-300">
-            </div>
+            </div></a>
         </div>
 
         <!-- Contact Information -->

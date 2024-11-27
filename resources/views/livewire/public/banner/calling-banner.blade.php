@@ -4,13 +4,13 @@
         alt="Fullscreen Image" class="object-cover w-full h-full">
 
     <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-cenetr items-center p-4">
-<div class="flex flex-col md:flex-row items-center justify-center mt-14 lg:mt-16 px-6 md:px-10">
-    <a href="" class="text-white text-3xl md:text-5xl font-bold mb-2 md:mb-0  text-center ">WELCOME TO <span class="text-yellow-400 ">SMART STUDIO</span></a>
+<div class="flex flex-col md:flex-row items-center justify-center mt-24 lg:mt-16  md:px-10">
+    <a href="" class="text-white text-2xl md:text-5xl lg:text-5xl font-bold md:mb-0  text-center ">WELCOME TO <span class="text-yellow-400 ">SMART STUDIO</span></a>
 
 </div>
 <div class="flex flex-col md:flex-row items-center justify-center mt-2 lg:mt-4 px-6 ">
-    <p class="text-white text-lg  text-center ">
-        This is a paragraph inside the fullscreen image. The content is centered both vertically and horizontally.
+    <p class="text-white text-md md:text-xl  text-center ">
+        Elevate your moments with stunning photography that speaks to the heart. Let us transform ordinary into extraordinary.
     </p>
 </div>
 

@@ -1,8 +1,15 @@
 <div class="relative">
 
     <button id="menuToggle"
-        class="absolute top-4 left-4  border border-yellow-400 text-yellow-400 bg-transparent hover:bg-yellow-400 hover:text-white transition p-2 md:p-1 rounded z-50">
-        <i class="bi bi-list text-2xl "></i>
+        class="absolute top-4 left-4   text-yellow-400 bg-transparent  hover:text-white transition p-2 md:p-1 rounded z-50">
+        {{-- <i class="bi bi-list text-2xl "></i> --}}
+        {{-- <img width="32" height="24" src="https://img.icons8.com/pulsar-line/48/FAB005/menu-squared-2.png" alt="menu-squared-2"/> --}}
+        <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+        </svg>          
+          
+          
+          
     </button>
 
 
