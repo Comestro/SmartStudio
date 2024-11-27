@@ -82,7 +82,6 @@ Route::get('/booking/{category}', function ($category) {
     $data['categorySlug'] = $category;
     return view('public.insertForm', $data);
 })->name('category.name');
-
 Route::post('/booking/{category}', [BookingController::class, 'store'])->name('category.store');
 Route::get('admin/checkschedule', [BookingController::class, 'showBooking'])->name('booking.show');
 
