@@ -15,10 +15,12 @@ use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\LetterPadController;
 use App\Http\Controllers\PortfolioController;
 use App\Http\Controllers\YoutubeVideoController;
 use App\Models\Category;
 use Illuminate\Http\Request;
+
 
 use App\Models\youtubeVideo;
 
@@ -209,3 +211,7 @@ Route::put('/admin/budget/update/{id}', [BudgetController::class, 'updateBudget'
 Route::post('/admin/budget', [BudgetController::class, 'CategoryPrice'])->name('budget.create');
 Route::match(["get", "post"], '/budget', [BudgetController::class, 'index'])->name('budget.index');
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+
+Route::get('/letter/create', [LetterPadController::class, 'create'])->name('letter.create');
+Route::post('/letter', [LetterPadController::class, 'store'])->name('letter.store');
+Route::get('/letter/{id}', [LetterPadController::class, 'show'])->name('letter.show');
