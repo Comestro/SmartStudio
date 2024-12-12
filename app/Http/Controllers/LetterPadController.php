@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
@@ -6,11 +7,13 @@ use App\Models\LetterPad;
 
 class LetterPadController extends Controller
 {
+   
     public function create()
     {
-        return view('letter.create'); // Make sure the folder and view exist
+        return view('letter.create');
     }
 
+   
     public function store(Request $request)
     {
         $request->validate([
@@ -18,16 +21,16 @@ class LetterPadController extends Controller
             'address' => 'required|string',
             'subject' => 'required|string',
             'body' => 'required|string',
-            'signature' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048'
+            'signature' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
 
-        // Handle file upload if exists
+       
         $signaturePath = null;
         if ($request->hasFile('signature')) {
             $signaturePath = $request->file('signature')->store('signatures', 'public');
         }
 
-        // Create a new LetterPad entry
+       
         $letterPad = LetterPad::create([
             'name' => $request->name,
             'address' => $request->address,
@@ -36,16 +39,64 @@ class LetterPadController extends Controller
             'signature_image' => $signaturePath,
         ]);
 
-        // Redirect to the show page with the newly created letter pad ID
-        return redirect()->route('letter.show', $letterPad->id)->with('success', 'Letter Pad Created Successfully!');
+        return redirect()->route('letter.index')->with('success', 'Letter Pad Created Successfully!');
     }
 
+    
     public function show($id)
     {
-        // Find the letter pad by ID or fail
+        $letterPad = LetterPad::findOrFail($id);
+        return view('letter.show', compact('letterPad'));
+    }
+
+
+    public function index()
+    {
+        $letterPad = LetterPad::all();
+        return view('letter.index', compact('letterPad'));
+    }
+
+    public function edit($id)
+    {
+        $letterPad = LetterPad::findOrFail($id);
+        return view('letter.edit', compact('letterPad'));
+    }
+
+   
+    public function update(Request $request, $id)
+    {
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'address' => 'required|string',
+            'subject' => 'required|string',
+            'body' => 'required|string',
+            'signature' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+        ]);
+
         $letterPad = LetterPad::findOrFail($id);
 
-        // Return the letter.show view and pass the letterPad data
-        return view('letter.show', compact('letterPad'));
+      
+        if ($request->hasFile('signature')) {
+            $signaturePath = $request->file('signature')->store('signatures', 'public');
+            $letterPad->signature_image = $signaturePath;
+        }
+
+        $letterPad->update([
+            'name' => $request->name,
+            'address' => $request->address,
+            'subject' => $request->subject,
+            'body' => $request->body,
+        ]);
+
+        return redirect()->route('letter.index')->with('success', 'Letter Pad Updated Successfully!');
+    }
+
+  
+    public function destroy($id)
+    {
+        $letterPad = LetterPad::findOrFail($id);
+        $letterPad->delete();
+
+        return redirect()->route('letter.index')->with('success', 'Letter Pad Deleted Successfully!');
     }
 }

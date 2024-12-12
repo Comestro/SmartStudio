@@ -2,13 +2,13 @@
 
 @section('content')
     <div class="max-w-3xl mx-auto p-6 bg-gray-800 shadow-lg rounded-lg">
-        <h1 class="text-2xl font-bold text-yellow-400 mb-6 text-center">Create Letter Pad</h1>
+        <a href="{{route('letter.index')}}"><h1 class="text-2xl font-bold text-yellow-400 mb-6 text-center">Create Letter Pad</h1></a>
 
         <form action="{{ route('letter.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="mb-4">
                 <label for="name" class="block text-lg font-medium text-yellow-400">Name:</label>
-                <input type="text" id="name" name="name" class="mt-2 p-3 w-full border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                <input type="text" id="name" name="name" class="mt-2 p-3 w-full  text-black border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required>
             </div>
 
           
