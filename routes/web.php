@@ -201,6 +201,15 @@ Route::prefix('admin')->middleware(['auth', 'admin'])->group(function () {
     Route::get('/youtube-video/edit/{id}', [YoutubeVideoController::class, 'edit'])->name('youtube-video.edit');
     Route::put('/youtube-video/edit/{id}', [YoutubeVideoController::class, 'update'])->name('youtube-video.update');
     Route::delete('/video/trash/{id}', [YoutubeVideoController::class, 'trashYoutubeVideo'])->name('youtube-video.trash');
+
+    Route::get('/letter', [LetterPadController::class, 'index'])->name('letter.index'); 
+     Route::get('/letter/create', [LetterPadController::class, 'create'])->name('letter.create');
+         Route::post('/letter', [LetterPadController::class, 'store'])->name('letter.store'); 
+Route::get('/letter/{id}', [LetterPadController::class, 'show'])->name('letter.show');
+Route::get('/letter/{id}/edit', [LetterPadController::class, 'edit'])->name('letter.edit'); 
+Route::put('/letter/{id}', [LetterPadController::class, 'update'])->name('letter.update'); 
+Route::delete('/letter/{id}', [LetterPadController::class, 'destroy'])->name('letter.destroy'); 
+
 });
 
 Route::delete('admin/budget/trash/{id}', [BudgetController::class, 'destroy'])->name('budget.trash');
@@ -212,19 +221,3 @@ Route::post('/admin/budget', [BudgetController::class, 'CategoryPrice'])->name('
 Route::match(["get", "post"], '/budget', [BudgetController::class, 'index'])->name('budget.index');
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
-
-Route::get('/letter', [LetterPadController::class, 'index'])->name('letter.index'); 
-Route::get('/letter/create', [LetterPadController::class, 'create'])->name('letter.create');
-Route::post('/letter', [LetterPadController::class, 'store'])->name('letter.store'); 
-Route::get('/letter/{id}', [LetterPadController::class, 'show'])->name('letter.show');
-Route::get('/letter/{id}/edit', [LetterPadController::class, 'edit'])->name('letter.edit'); 
-Route::put('/letter/{id}', [LetterPadController::class, 'update'])->name('letter.update'); 
-Route::delete('/letter/{id}', [LetterPadController::class, 'destroy'])->name('letter.destroy'); 
-
-
-// Route::get('/', function () {
-    //     return view('public.home');
-    // })->name('home');
-// Route::get('/latter/insert', function () {
-//     return view('letter.insert');
-// })->name('letter.insert');
