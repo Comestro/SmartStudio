@@ -5,14 +5,14 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\LetterPad;
 
-class LetterPadController extends Controller
+class   LetterPadController extends Controller
 {
    
     public function create()
-    {
-        return view('letter.create');
-    }
-
+     {
+         return view('letter.create');
+     }
+   
    
     public function store(Request $request)
     {
@@ -20,7 +20,7 @@ class LetterPadController extends Controller
             'name' => 'required|string|max:255',
             'address' => 'required|string',
             'subject' => 'required|string',
-            'body' => 'required|string',
+            'body' => 'required',
             'signature' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
 
@@ -30,17 +30,18 @@ class LetterPadController extends Controller
             $signaturePath = $request->file('signature')->store('signatures', 'public');
         }
 
-       
-        $letterPad = LetterPad::create([
+      
+         $letterPad = LetterPad::create([
             'name' => $request->name,
             'address' => $request->address,
             'subject' => $request->subject,
             'body' => $request->body,
             'signature_image' => $signaturePath,
         ]);
-
+      
         return redirect()->route('letter.index')->with('success', 'Letter Pad Created Successfully!');
     }
+   
 
     
     public function show($id)
@@ -55,13 +56,14 @@ class LetterPadController extends Controller
         $letterPad = LetterPad::all();
         return view('letter.index', compact('letterPad'));
     }
+    
 
     public function edit($id)
     {
         $letterPad = LetterPad::findOrFail($id);
         return view('letter.edit', compact('letterPad'));
     }
-
+      
    
     public function update(Request $request, $id)
     {
@@ -99,4 +101,6 @@ class LetterPadController extends Controller
 
         return redirect()->route('letter.index')->with('success', 'Letter Pad Deleted Successfully!');
     }
+    
+    
 }

@@ -220,3 +220,11 @@ Route::get('/letter/{id}', [LetterPadController::class, 'show'])->name('letter.s
 Route::get('/letter/{id}/edit', [LetterPadController::class, 'edit'])->name('letter.edit'); 
 Route::put('/letter/{id}', [LetterPadController::class, 'update'])->name('letter.update'); 
 Route::delete('/letter/{id}', [LetterPadController::class, 'destroy'])->name('letter.destroy'); 
+
+
+// Route::get('/', function () {
+    //     return view('public.home');
+    // })->name('home');
+// Route::get('/latter/insert', function () {
+//     return view('letter.insert');
+// })->name('letter.insert');

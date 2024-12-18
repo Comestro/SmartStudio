@@ -9,10 +9,7 @@
     <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css"  rel="stylesheet" />
     <link rel="icon" href="{{ asset('images/i.png') }}" type="image/png">
 
-
-    <link href="/css/app.css" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
-<script src="/js/app.js" defer></script>
 </head>
 <body class="bg-gray-900 text-gray-200">
     <div class="flex w-full">
@@ -32,6 +29,8 @@
         </div>
        
     <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
+
+@yield('js')
     </body>
     </html>
     
