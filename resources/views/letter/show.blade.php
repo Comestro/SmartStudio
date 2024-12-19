@@ -49,7 +49,7 @@
 
             <div class="mb-6">
                 <h2 class="text-xl font-semibold mb-2 text-black"></h2>
-                <p class="text-gray-700 leading-relaxed text-black">{!! $letterPad->body !!}</p>
+                <p class="text-gray-800 leading-relaxed">{!! $letterPad->body !!}</p>
             </div>
 
 
@@ -57,11 +57,7 @@
                 <div class="mt-6">
                     <p class="text-xl font-semibold mb-2 text-black">Signature:</p>
                     <div class="flex items-center">
-                        {{-- <div>
-                            <p class="font-bold text-gray-900 text-lg">{{ $letterPad->name }}</p>
-                            <img src="{{ asset('storage/' . $letterPad->signature_image) }}" alt="Signature"
-                                class="rounded-lg shadow-md max-w-xs mt-2">
-                        </div> --}}
+                       
                         <div>
                             <p class="font-bold text-gray-900 text-lg">{{ $letterPad->name }}</p>
                             <img src="{{ asset('storage/' . $letterPad->signature_image) }}" 
@@ -98,18 +94,28 @@
 
  @endsection
  <style>
-@media print {
+@media print { 
+
+    @page {
+          margin: 0;
+      }
+      
     body {
         -webkit-print-color-adjust: exact;
         print-color-adjust: exact;
+        margin: 0;
+        padding: 0;
     }
 
-    .w-[800px] {
-        padding: 20px;
-        background: white;
+     .w-[800px] {
+         padding: 20px; 
+         background: white;
         box-shadow: none;
         color: black;
-    }
+        
+    }  
+    
+
 
     .bg-orange-500 {
         background-color: #f97316 !important; 
@@ -123,5 +129,20 @@
     .print\:hidden {
         display: none !important;
     }
-}
-</style> 
+     
+      title {
+          display: none;
+      }
+      #sidebar {
+          display: none;
+      }
+     
+      header, footer {
+          display: none;
+      }
+  }
+ </style> 
+
+  
+
+ 

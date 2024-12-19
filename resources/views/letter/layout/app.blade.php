@@ -33,30 +33,7 @@
 @yield('js')
     </body>
     </html>
-    <style>
-    @media print {
-       
-        @page {
-            margin: 0;
-        }
-        body {
-            margin: 0;
-            padding: 0;
-        }
-        
-       
-        title {
-            display: none;
-        }
-        #sidebar {
-            display: none;
-        }
-       
-        header, footer {
-            display: none;
-        }
-    }
-    </style>
+ 
     
     
     
